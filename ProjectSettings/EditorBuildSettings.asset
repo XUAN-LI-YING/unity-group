@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Team-01/Scene/Menu.unity
+    guid: 0c35e530a79d24afb94f2589989b1012
+  - enabled: 1
     path: Assets/Team-00/Scenes/STAR BACKGROUND.unity
     guid: 755c46f14d3978a44b5f8f52998361a1
   - enabled: 1
