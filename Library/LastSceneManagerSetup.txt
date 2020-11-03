@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Team-01/Scenes/QTE_Scene.unity
+- path: Assets/Team-01/Scene/SampleScene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
