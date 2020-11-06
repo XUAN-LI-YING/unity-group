@@ -5,12 +5,13 @@ using UnityEngine;
 public class animyPrefab : MonoBehaviour
 {
     public GameObject catPrefab;
-    float span = 5;
+    float span = 2;
+    //怪物出現間隔時間
     float delta = 0;
-    // Start is called before the first frame update
+    // 怪物產生計時器
     
 
-    // Update is called once per frame
+    // 怪物產生位置
     void Update()
     {
        this.delta+=Time.deltaTime;
@@ -19,6 +20,7 @@ public class animyPrefab : MonoBehaviour
            GameObject go =Instantiate(catPrefab) as GameObject;
            go.transform.position=new Vector3(-32,-16,0);
        }
+       //定義位置
        
     }
 }

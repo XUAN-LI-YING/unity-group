@@ -17,6 +17,8 @@ public class Trap : MonoBehaviour
     {
 
     }
+
+    //產生黃色爆炸物件
     void OnTriggerEnter2D(Collider2D col)
     {
         Instantiate(explo, transform.position, transform.rotation);

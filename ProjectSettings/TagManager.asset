@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Cat
   - Trap
+  - spider
   layers:
   - Default
   - TransparentFX
@@ -45,6 +46,9 @@ TagManager:
     locked: 0
   - name: floor
     uniqueID: 210270307
+    locked: 0
+  - name: UI
+    uniqueID: 3278200885
     locked: 0
   - name: Default
     uniqueID: 0

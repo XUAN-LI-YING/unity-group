@@ -12,10 +12,13 @@ public class animy_move : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {this.speed=0.008f;
     transform.Translate(this.speed,0,0);
+    //怪物速度
+
+    //怪物消失判斷，只靠位置
     if(transform.position.x>32)    
     {
         Destroy(gameObject);
