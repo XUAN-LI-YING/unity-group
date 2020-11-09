@@ -80,7 +80,7 @@ public class fearBar : MonoBehaviour
 
  
     
-    void Decrease()
+    public void Decrease()
     {
         Debug.Log("正在耗費恐懼!!");
         Debug.Log($"此動作耗費了{costvalue}恐懼值");
@@ -91,7 +91,7 @@ public class fearBar : MonoBehaviour
     }
 
     // //When pressing the Increase key
-    void Increase()
+    public void Increase()
     {
         Debug.Log($"增加恐懼！！");
         Debug.Log($"此動作增加了{timePress}恐懼值");
