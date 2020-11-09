@@ -41,11 +41,20 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: background
+  - name: backGround
     uniqueID: 529041531
     locked: 0
-  - name: floor
+  - name: Floor
     uniqueID: 210270307
+    locked: 0
+  - name: underFloor
+    uniqueID: 3178453621
+    locked: 0
+  - name: castle
+    uniqueID: 3300106411
+    locked: 0
+  - name: character
+    uniqueID: 1114842331
     locked: 0
   - name: UI
     uniqueID: 3278200885
