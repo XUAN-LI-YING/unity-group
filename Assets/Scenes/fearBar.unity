@@ -318,7 +318,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &233142897
 MonoBehaviour:
@@ -1507,7 +1507,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
     m_FontSize: 42
     m_FontStyle: 0
     m_BestFit: 0
@@ -1519,7 +1519,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Count Down
+  m_Text: "\u261D( \u25E0\u203F\u25E0 )\u261D"
 --- !u!222 &1773641492
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2148,9 +2148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eedf853188210146aca7c412a4c4a9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToAdd: 3
+  timeToAdd: 4
   timePress: 6
-  delayBetweenAdd: 4
+  delayBetweenAdd: 3
   value_Min: 0
   value_Max: 100
   ui_fillBar: {fileID: 1225888157}
@@ -2160,8 +2160,8 @@ MonoBehaviour:
   ui_countvalue: {fileID: 1773641491}
   points: 40
   autoAddValue: 2
-  addValue: 1
-  costvalue: 3
+  addValue: 15
+  costvalue: 20
 --- !u!4 &2106970128
 Transform:
   m_ObjectHideFlags: 0

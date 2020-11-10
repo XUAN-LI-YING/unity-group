@@ -43,9 +43,12 @@ public class fearBar : MonoBehaviour
 
        CheckingForInput();
 
-
-    //InokeRepeating 重複呼叫(“函式名”，第一次間隔幾秒呼叫，每幾秒呼叫一次)。
-
+   
+        // if (startAddFear == true)
+        // {
+        //   AutoAddFear();  
+        // }
+        
     
     
     
@@ -69,13 +72,9 @@ public class fearBar : MonoBehaviour
         //Enable the boolean to check the input
         waitingForInput = true;
 
+       InvokeRepeating("AutoAddFear", 1, 1);  
+        //InokeRepeating 重複呼叫(“函式名”，第一次間隔幾秒呼叫，每幾秒呼叫一次)。
 
-
-       if (startAddFear)
-       {
-          InvokeRepeating("AutoAddFear", 1, 1);  
-          
-       }
     }
 
  
@@ -119,14 +118,8 @@ public class fearBar : MonoBehaviour
         {
          Increase();
         }
-
-        if (timeToAdd <= 0)
-        {
-        StartCoroutine(DelayAfterAdd()); 
  
-       
-        
-        }
+
         
           
                     
@@ -134,23 +127,38 @@ public class fearBar : MonoBehaviour
     void AutoAddFear()
     {
 
+ 
         timeToAdd -= 1;
         ui_countvalue.text = timeToAdd.ToString() + "sec";
+        
+        if (timeToAdd <= 0)
+        {
+        CancelInvoke("AutoAddFear");
+        ui_countvalue.text =  " ☝( ◠‿◠ )☝ sec";
+        points = points + autoAddValue;
+        ui_value.text = points.ToString();
+        
+        // startAddFear = false;
+        StartCoroutine(DelayAfterAdd()); 
+ 
+        }
+
+        
         // 顯示倒數幾秒增加恐懼數值 
         Debug.Log($"{timeToAdd}");
-        
+
+
     
     }
 
 
     IEnumerator DelayAfterAdd(){
     yield return new WaitForSeconds(delayBetweenAdd);
-        startAddFear = false;
-        points = points + autoAddValue;
-        ui_value.text = points.ToString();
-        
-    timeToAdd = 10;  
-    startAddFear = true;
+        // startAddFear = false;
+        timeToAdd = 4;  
+
+        InvokeRepeating("AutoAddFear", 1, 1); 
+    
     // ui_countvalue.text = $"add {autoAddValue}\nAllPoints={points}";  
     }
 
