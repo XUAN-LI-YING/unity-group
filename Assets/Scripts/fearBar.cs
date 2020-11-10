@@ -5,15 +5,19 @@ using UnityEngine.UI;
 
 public class fearBar : MonoBehaviour 
 {
+    // 時間參數
     [Header("Time")]
     public int timeToAdd;
     public int timePress;
     public float delayBetweenAdd;
 
+    // 恐懼最大最小數值
     [Range(0,100)]
     public float value_Min, value_Max;
 
-    //UI
+
+
+    //各種 UI 
     [Header("UI")]
     public Image ui_fillBar;
     public Text ui_value;
@@ -22,13 +26,14 @@ public class fearBar : MonoBehaviour
     public Text ui_countvalue;
 
     
-    bool startAddFear = true;
+    // bool startAddFear = true;
+    //改用滑鼠觸發
     bool waitingForInput = false;
     bool createMonster = false;
     bool combo = false;
 
 
-    //Other
+    //Other 反應事件
     [Header("FearEvent")]
     public int points;
     public int autoAddValue;
@@ -36,49 +41,42 @@ public class fearBar : MonoBehaviour
     public int costvalue;
 
 
-
+    // 持續偵測有無事件
     void Update()
     {        
-        if (waitingForInput){
+    
+     if (waitingForInput){
 
        CheckingForInput();
-
-   
-        // if (startAddFear == true)
-        // {
-        //   AutoAddFear();  
-        // }
-        
-    
     
     
     }
-     
-    // ui_fillBar.fillAmount = points;
-    
-
        
     }
 
     //Start the game
     public void StartGame()
     {      
-        // points = 0;
-        ui_value.text = points.ToString();
-        ui_addvalue.text = autoAddValue.ToString();
-        ui_costvalue.text = costvalue.ToString();
+        // points = 0 顯示初始數值
+        ui_value.text = points.ToString() + " FearPoint";
+        ui_addvalue.text = "add"  + (autoAddValue.ToString())+"points";
+        ui_costvalue.text = "- " + (costvalue.ToString());
         ui_countvalue.text = timeToAdd.ToString() + "sec";
 
         //Enable the boolean to check the input
+        //打開偵測事件開關
         waitingForInput = true;
 
        InvokeRepeating("AutoAddFear", 1, 1);  
         //InokeRepeating 重複呼叫(“函式名”，第一次間隔幾秒呼叫，每幾秒呼叫一次)。
 
+        // ui_fillBar.fillAmount = points;  
+        //將數值 （江直樹) 轉換為圖案
     }
 
  
-    
+    // 顯示耗費多少恐懼
+    // When pressing the Increase button
     public void Decrease()
     {
         Debug.Log("正在耗費恐懼!!");
@@ -86,10 +84,13 @@ public class fearBar : MonoBehaviour
 
         points = points - costvalue;
         ui_value.text = $"恐懼值下降中!!\n 目前存量={points}";
+        //update points on the UI
+        //更新分數顯示
         ui_fillBar.fillAmount = points ;              
     }
 
-    // //When pressing the Increase key
+    //When pressing the Increase button
+
     public void Increase()
     {
         Debug.Log($"增加恐懼！！");
@@ -98,39 +99,44 @@ public class fearBar : MonoBehaviour
         ui_fillBar.fillAmount = points ;  
 
         points = points + timePress;
-        //Write points on the UI
-        ui_value.text = $"Total points {points}";        
+        //update points on the UI
+        //更新分數顯示
+        ui_value.text = $"恐懼值增加{timePress}次!!\n 目前存量={points}";        
             
     }   
      
      
     
 
-    // //Checking the input for key
+    // //Checking the input for button
     void CheckingForInput()
     {
+        //創立小怪事件
         if (createMonster){
 
 
           Decrease();
         }
+        //連段QTE
         if (combo)
         {
          Increase();
         }
- 
-
-        
           
                     
     }
+
+    // 自動新增恐懼值
     void AutoAddFear()
     {
 
- 
+        //update time on the UI
+        //更新倒數顯示
         timeToAdd -= 1;
         ui_countvalue.text = timeToAdd.ToString() + "sec";
-        
+    
+        //小於零停止倒數計時
+        //並秀出 ☝( ◠‿◠ )☝ 文字
         if (timeToAdd <= 0)
         {
         CancelInvoke("AutoAddFear");
@@ -138,9 +144,12 @@ public class fearBar : MonoBehaviour
         points = points + autoAddValue;
         ui_value.text = points.ToString();
         
+        //增加恐懼值
         // startAddFear = false;
+        // 上面參數沒用到 bool startAddFea;
+
+        // 延遲幾秒重新計時
         StartCoroutine(DelayAfterAdd()); 
- 
         }
 
         
@@ -154,12 +163,11 @@ public class fearBar : MonoBehaviour
 
     IEnumerator DelayAfterAdd(){
     yield return new WaitForSeconds(delayBetweenAdd);
-        // startAddFear = false;
+        // 重新設置倒數器
         timeToAdd = 4;  
-
         InvokeRepeating("AutoAddFear", 1, 1); 
-    
-    // ui_countvalue.text = $"add {autoAddValue}\nAllPoints={points}";  
+        // 重新啟動計時器
+
     }
 
 
