@@ -5561,3 +5561,8 @@ Library/Artifacts/06/061563ebb2731b6ad8eb54ae197d928a
 Library/Artifacts/03/03819a60198aa3e9c3d487564d28c6ab
 Library/Artifacts/03/035d1ffef8968a145d09214e297d0ef6
 Library/Artifacts/03/0300570a005d0ad525a9551ee01d6afb
+*.bin
+*.pdb
+*.dll
+*.json
+*.info
