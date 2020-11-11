@@ -1,4 +1,6 @@
+# unity ignore dir
 /[Ll]ibrary/
+/[Bb]in/
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
@@ -16,3 +18,8 @@
 *.booproj
 *.apk
 *.unitypackage
+*.bin
+*.bin
+*.bin
+*.bin
+*.unity
