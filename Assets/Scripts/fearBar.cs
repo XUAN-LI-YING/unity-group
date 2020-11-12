@@ -6,20 +6,23 @@ using UnityEngine.UI;
 public class fearBar : MonoBehaviour 
 {
     // 時間參數
-    [Header("Time")]
+    [Header("Timer")]
     public int timeToAdd;
     public int timePress;
     public float delayBetweenAdd;
 
     // 恐懼最大最小數值
-    [Range(0,100)]
-    public float value_Min, value_Max;
+    // [Range(0,100)]
+    [Header("Value")]
+    public int value_Min = 0;
+    public int value_Max = 80;
 
 
 
     //各種 UI 
     [Header("UI")]
     public Image ui_fillBar;
+    public Image ui_fillBar_effect;
     public Text ui_value;
     public Text ui_addvalue;
     public Text ui_costvalue;  
@@ -27,7 +30,7 @@ public class fearBar : MonoBehaviour
 
     
     // bool startAddFear = true;
-    //改用滑鼠觸發
+    //改用滑鼠觸發增加
     bool waitingForInput = false;
     bool createMonster = false;
     bool combo = false;
@@ -59,10 +62,12 @@ public class fearBar : MonoBehaviour
     {      
         // points = 0 顯示初始數值
         ui_value.text = points.ToString() + " FearPoint";
-        ui_addvalue.text = "add"  + (autoAddValue.ToString())+"points";
+        ui_addvalue.text = "add "  + (autoAddValue.ToString())+"points";
         ui_costvalue.text = "- " + (costvalue.ToString());
         ui_countvalue.text = timeToAdd.ToString() + "sec";
-
+        
+        float fillAmount = points / value_Max;
+        ui_fillBar.fillAmount = fillAmount ;
         //Enable the boolean to check the input
         //打開偵測事件開關
         waitingForInput = true;
@@ -83,6 +88,8 @@ public class fearBar : MonoBehaviour
         Debug.Log($"此動作耗費了{costvalue}恐懼值");
 
         points = points - costvalue;
+        float fillAmount = points / value_Max;
+        ui_fillBar.fillAmount = fillAmount ; 
         ui_value.text = $"恐懼值下降中!!\n 目前存量={points}";
         //update points on the UI
         //更新分數顯示
@@ -93,12 +100,13 @@ public class fearBar : MonoBehaviour
 
     public void Increase()
     {
+        points = points + timePress;
         Debug.Log($"增加恐懼！！");
         Debug.Log($"此動作增加了{timePress}恐懼值");
         
-        ui_fillBar.fillAmount = points ;  
-
-        points = points + timePress;
+        float fillAmount = points / value_Max;
+        
+        ui_fillBar.fillAmount = fillAmount ;  
         //update points on the UI
         //更新分數顯示
         ui_value.text = $"恐懼值增加{timePress}次!!\n 目前存量={points}";        
@@ -129,7 +137,7 @@ public class fearBar : MonoBehaviour
     // 自動新增恐懼值
     void AutoAddFear()
     {
-
+        float fillAmount = points / value_Max;
         //update time on the UI
         //更新倒數顯示
         timeToAdd -= 1;
@@ -142,11 +150,14 @@ public class fearBar : MonoBehaviour
         CancelInvoke("AutoAddFear");
         ui_countvalue.text =  " ☝( ◠‿◠ )☝ sec";
         points = points + autoAddValue;
+        
         ui_value.text = points.ToString();
         
+
+
         //增加恐懼值
         // startAddFear = false;
-        // 上面參數沒用到 bool startAddFea;
+        // 上面參數沒用到預設是永遠增加;
 
         // 延遲幾秒重新計時
         StartCoroutine(DelayAfterAdd()); 
@@ -169,7 +180,17 @@ public class fearBar : MonoBehaviour
         // 重新啟動計時器
 
     }
-
+    void FearEvent(){
+        if (points == value_Min  || points < value_Min)
+        {
+           Debug.Log($"LOSE！");
+        }
+        if (points > value_Min  || points >= value_Min)
+        {
+           Debug.Log($"WIN！");
+        }
+        
+    }
 
 
 
