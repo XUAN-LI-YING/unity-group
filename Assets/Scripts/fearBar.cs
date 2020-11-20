@@ -80,10 +80,10 @@ public class fearBar : MonoBehaviour
         //打開偵測事件開關
         waitingForInput = true;
 
-    //    InvokeRepeating("AutoAddFear", 1, 1);  
+       InvokeRepeating("AutoAddFear", 1, 1);  
         //InokeRepeating 重複呼叫(“函式名”，第一次間隔幾秒呼叫，每幾秒呼叫一次)。
 
-        // ui_fillBar.fillAmount = points;  
+        // ui_fillBar.fillAmount = points/valumax;  
         //將數值 （江直樹) 轉換為圖案
     }
 
@@ -95,7 +95,7 @@ public class fearBar : MonoBehaviour
        
         Debug.Log("正在耗費恐懼!!");
         Debug.Log($"此動作耗費了{costvalue}恐懼值");
-        points = points - costvalue;
+        
         
         DetectHurt();
       
@@ -131,18 +131,16 @@ public class fearBar : MonoBehaviour
 
     public void DetectHurt(){
 
+    Checking = false;
 
+    points = points - costvalue;
+    float fillAmount = points / value_Max;
+    ui_Hurteffect.fillAmount = fillAmount;
             
-    double effectHurt = ui_Hurteffect.fillAmount;  
-        
-
-    if (effectHurt > ui_fillBar.fillAmount)
-    {
-             effectHurt -= 0.2  ;
             Debug.Log("傷害進行中!!");
 
-    }
- 
+
+     StartCoroutine(DelayCostEffect()); 
     
     }
 
@@ -162,6 +160,7 @@ public class fearBar : MonoBehaviour
 
      
      
+     
 
 
     IEnumerator DelayAddEffect(){
@@ -169,10 +168,16 @@ public class fearBar : MonoBehaviour
         // 延遲獲得恐懼動畫
 
          Checking = true;
+    }   
+    
+    IEnumerator DelayCostEffect(){
+    yield return new WaitForSeconds(delayAddSec);
+        // 延遲獲得恐懼動畫
 
-
+         Checking = true;
     }
     
+
 
     // //Checking the input for button
     void CheckingForInput()
@@ -194,7 +199,7 @@ public class fearBar : MonoBehaviour
         {
         //Convert the timeToClick to match the 0-1 ratio
         // 計時器轉換成圖像表示
-        
+        // 特效動畫完成後真正數值圖形增加
        
         float fillAmount = points / value_Max;
         //Apply the ratio to the bar UI fill amount
