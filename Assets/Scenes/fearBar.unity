@@ -1253,7 +1253,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1403967553
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2232,7 +2232,7 @@ MonoBehaviour:
   value_Max: 100
   ui_fillBar: {fileID: 1225888157}
   ui_Addeffect: {fileID: 455723340}
-  ui_Hurteffect: {fileID: 1403967554}
+  ui_Hurteffect: {fileID: 455723340}
   ui_value: {fileID: 704448257}
   ui_addvalue: {fileID: 1448060189}
   ui_costvalue: {fileID: 281473108}
