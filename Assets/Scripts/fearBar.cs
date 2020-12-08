@@ -11,6 +11,7 @@ public class fearBar : MonoBehaviour
     public int timePress;
     public float delayBetweenAdd;
     public float delayAddSec;
+    
 
 
     // 恐懼最大最小數值
@@ -18,7 +19,6 @@ public class fearBar : MonoBehaviour
     [Header("Value")]
     public int value_Min = 0;
     public float value_Max = 80;
-
 
 
     //各種 UI 
@@ -67,6 +67,7 @@ public class fearBar : MonoBehaviour
     //Start the game
     public void StartGame()
     {      
+        float fillAmount = points / value_Max;
         // points = 0 顯示初始數值
         ui_value.text = points.ToString() + " FearPoint";
         ui_addvalue.text = "add "  + (autoAddValue.ToString())+"points";
@@ -135,9 +136,9 @@ public class fearBar : MonoBehaviour
 
     points = points - costvalue;
     float fillAmount = points / value_Max;
-    ui_Hurteffect.fillAmount = fillAmount;
+    ui_fillBar.fillAmount = fillAmount;
             
-            Debug.Log("傷害進行中!!");
+     Debug.Log("傷害進行中!!");
 
 
      StartCoroutine(DelayCostEffect()); 
@@ -149,11 +150,13 @@ public class fearBar : MonoBehaviour
     Checking = false;
 
     points = points + timePress;
+    
     float fillAmount = points / value_Max;
+
     ui_Addeffect.fillAmount = fillAmount;
 
       
-            Debug.Log("add進行中!!"); 
+    Debug.Log("add進行中!!"); 
      
      StartCoroutine(DelayAddEffect()); 
     }
@@ -166,15 +169,16 @@ public class fearBar : MonoBehaviour
     IEnumerator DelayAddEffect(){
     yield return new WaitForSeconds(delayAddSec);
         // 延遲獲得恐懼動畫
-
+    
          Checking = true;
     }   
     
     IEnumerator DelayCostEffect(){
     yield return new WaitForSeconds(delayAddSec);
         // 延遲獲得恐懼動畫
-
-         Checking = true;
+    float fillAmount = points / value_Max;
+    ui_Addeffect.fillAmount = fillAmount;
+    Checking = true;
     }
     
 
@@ -270,7 +274,7 @@ public class fearBar : MonoBehaviour
         timeToAdd = 5;
         //增加增魔所需時間  
         ui_countvalue.text =  " LEVEL2 (͡° ͜ʖ ͡°)  ";
-        InvokeRepeating("AutoAddFear", 3, 1); 
+        InvokeRepeating("AutoAddFear", 5, 1); 
         // 重新啟動計時器
 
     }
@@ -288,6 +292,7 @@ public class fearBar : MonoBehaviour
            Debug.Log($"WIN！");
            ui_fillBar.fillAmount = 1 ;
         StartCoroutine(DelayAfterAdd_1()); 
+        
 
         }
         
