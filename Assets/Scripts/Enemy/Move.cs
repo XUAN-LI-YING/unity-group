@@ -17,7 +17,7 @@ public class Move : MonoBehaviour
     {
         if (hitTrap)
         {
-            transform.Translate(new Vector2(1, 0) * Time.deltaTime);
+            transform.Translate(new Vector2(10, 0) * Time.deltaTime);
         }
         
     }

@@ -12,6 +12,7 @@ public class Event : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // fearvalue = Getscript <>(); 
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
@@ -27,6 +28,7 @@ public class Event : MonoBehaviour
         {
             
             Debug.Log(coll);
+            fearvalue += 1;
 
             // Destroy(other.gameObject);
 
