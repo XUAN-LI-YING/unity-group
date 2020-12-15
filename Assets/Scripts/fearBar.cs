@@ -3,8 +3,10 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class fearBar : MonoBehaviour 
 {
+    public static fearBar instance;
     // 時間參數
     [Header("Timer")]
     public int timeToAdd;
@@ -62,11 +64,18 @@ public class fearBar : MonoBehaviour
 
        
     }
+    void Start()
+    {
+        instance = this;
+
+
+    }
 
 
     //Start the game
     public void StartGame()
     {      
+        
         float fillAmount = points / value_Max;
         // points = 0 顯示初始數值
         ui_value.text = points.ToString() + " FearPoint";

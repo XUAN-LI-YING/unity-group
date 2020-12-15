@@ -671,7 +671,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.42
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -1080,9 +1080,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1014482713}
+  - component: {fileID: 1014482714}
   - component: {fileID: 1014482712}
   - component: {fileID: 1014482711}
-  - component: {fileID: 1014482714}
   m_Layer: 0
   m_Name: Trap
   m_TagString: Collection
@@ -1194,6 +1194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1614248979}
+  anim: {fileID: 1614248982}
   coll: {fileID: 1614248980}
   fearvalue: 0
 --- !u!1 &1145251600
@@ -1392,7 +1393,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.32
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -2651,6 +2652,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: smallEnemy-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7781661962388625534, guid: 74457a5eb38bc41f1980635b00823aeb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74457a5eb38bc41f1980635b00823aeb, type: 3}

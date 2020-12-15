@@ -5,17 +5,17 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
 
-    public bool hitTrap;
+    public bool move;
     // Start is called before the first frame update
     void Start()
     {
-        hitTrap = true;
+        move = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (hitTrap)
+        if (move)
         {
             transform.Translate(new Vector2(10, 0) * Time.deltaTime);
         }
@@ -26,12 +26,12 @@ public class Move : MonoBehaviour
     {
         if (other.tag == "Collection")
         {
-            hitTrap = false;
+            move = false;
             transform.Translate(new Vector2(0, 0) * Time.deltaTime);
-            Debug.Log("hittrap");
+            Debug.Log("stopmove");
             
 
-            Destroy(other.gameObject);
+            // Destroy(other.gameObject);
 
         }
     }

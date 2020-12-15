@@ -2,10 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class Event : MonoBehaviour
 {
-    [SerializeField] private Rigidbody2D rb;
-    private Animator anim;
+    
+    [SerializeField] 
+    private Rigidbody2D rb;
+     [SerializeField] 
+    private Animator anim;  
+    
     public Collider2D coll;
     public int fearvalue;
 
@@ -24,11 +30,14 @@ public class Event : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Collection")
+        if (other.tag == "Enemy")
         {
-            
-            Debug.Log(coll);
             fearvalue += 1;
+
+            Debug.Log(coll);
+            Debug.Log(fearvalue);
+            
+                fearBar.instance.Increase();
 
             // Destroy(other.gameObject);
 
