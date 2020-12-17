@@ -30,6 +30,8 @@ public class Event : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
+
+    
         if (other.tag == "Enemy")
         {
             fearvalue += 1;
@@ -38,6 +40,8 @@ public class Event : MonoBehaviour
             Debug.Log(fearvalue);
             
                 fearBar.instance.Increase();
+                
+                
 
             // Destroy(other.gameObject);
 

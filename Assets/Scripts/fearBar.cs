@@ -127,9 +127,23 @@ public class fearBar : MonoBehaviour
 
         //update points on the UI
         //更新分數顯示
+
+        // 因陷阱產生的分數
+
+        if (combo)
+        {
+        ui_value.text = $"陷阱因恐懼值增加 {timePress} !!\n 目前存量={points}";  
+        }
+        
+        // 其他狀況
+        else
+        {
+        
         ui_value.text = $"恐懼值增加{timePress}!!\n 目前存量={points}";        
         
         Debug.Log($"{(points/value_Max)*100}% 恐懼值");
+        }
+       
         
         
         
