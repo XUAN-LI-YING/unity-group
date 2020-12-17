@@ -24,6 +24,8 @@ public class QTE : MonoBehaviour
     int keyID;
     char[] keys= "Z".ToCharArray();    
     bool waitingForInput = false;
+    bool waitingReturnBack = false;
+
 
     //Other 得分數
     [Header("Others")]
@@ -33,6 +35,11 @@ public class QTE : MonoBehaviour
     {        
         if (waitingForInput)
             CheckingForInput();
+
+        if (waitingReturnBack)
+        {
+            ReturnBack();
+        }
     }
 
     //Start the game
@@ -114,6 +121,51 @@ public class QTE : MonoBehaviour
         
     }
 
+    IEnumerator ReturnBack()
+    {
+        
+        //Wait (delayBetweenClick) seconds
+        // 輸入等待時間
+        yield return new WaitForSeconds(delayBetweenClick);
+        //Reset the click timer
+        // 計時器倒數
+        timeToClick -= Time.deltaTime;
+        
+
+        //Assign a random ID for the key
+        keyID = Random.Range(0, keys.Length);
+        //Write the key on the UI (according to the chosen keyID)
+        ui_key.text = keys[keyID].ToString();
+        
+                //Check all keyboard input
+        // 確認所有按鍵輸入
+        foreach (KeyCode kcode in System.Enum.GetValues(typeof(KeyCode)))
+        {
+            //If the key is more than one char (like spacebar, return, or mouse) ignore it
+            //We need one letter input, like single char (Q,W,E,R,T...)
+            //輸入值若是單一個，判斷是否只有按下一次
+            
+            if (kcode.ToString().Length==1 && Input.GetKeyDown(kcode))
+            {
+                //float currentClickPercentage=()
+                //If the pressed key is the same as the key assigned by the keyID
+                //Call correct method
+
+                if (char.Parse(kcode.ToString()) == keys[keyID]&& IsInRange())
+                    Correct();
+                //If it's not the same call Failed method
+                else
+                    Failed();
+            }                
+        }
+        
+       
+        
+        
+        
+    }
+    
+
     //Checking the input for key
     void CheckingForInput()
     {
@@ -132,10 +184,19 @@ public class QTE : MonoBehaviour
         ui_fillBar_short.fillAmount = v;
 
 
-        //If time to click passes the total time to Click Fail
-        // 超過時間輸入 = 導引線至終點
+       If time to click passes the total time to Click Fail
+        超過時間輸入 = 導引線至終點
         if (timeToClick >= maxTimeToClick)
-            Failed();
+            {
+            
+            
+            waitingForInput = false;
+            waitingReturnBack = true;
+            
+              
+
+            }
+           
 
         //Check all keyboard input
         // 確認所有按鍵輸入
