@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class animyPrefab : MonoBehaviour
 {
-    public GameObject catPrefab;
-    public float span = 2;
+    public GameObject catPrefab,healthController;
+   // public float span = 900000;
     //怪物出現間隔時間
     public float delta = 0;
     // 怪物產生計時器
@@ -14,12 +14,13 @@ public class animyPrefab : MonoBehaviour
     // 怪物產生位置
     void Update()
     {
+       Debug.Log(catPrefab.transform);
        this.delta+=Time.deltaTime;
-       if(this.delta>this.span){
+       if(this.delta>10f){
            this.delta=0;
            GameObject go =Instantiate(catPrefab) as GameObject;
-
-           go.transform.position=new Vector3(-158,35,0);
+        
+           go.transform.position=new Vector3(-180,35,0);
     //    transform.localScale = new Vector3(1.5f, 1.5f,1.5f);
     //更改為1.5倍大
            

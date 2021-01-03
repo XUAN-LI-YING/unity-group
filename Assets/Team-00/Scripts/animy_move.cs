@@ -14,7 +14,7 @@ public class animy_move : MonoBehaviour
 
     
     void Update()
-    {this.speed=0.008f;
+    {this.speed=0.04f;
     transform.Translate(this.speed,0,0);
     //怪物速度
 
@@ -24,7 +24,8 @@ public class animy_move : MonoBehaviour
         Destroy(gameObject);
     }
     }
-    void OnTriggerEnter2D(Collider2D col)
+    //碰撞後消失
+    /* void OnTriggerEnter2D(Collider2D col)
     {
       if(col.tag=="Trap")
         {
@@ -32,5 +33,5 @@ public class animy_move : MonoBehaviour
              Destroy(gameObject);
             
         }
-    }
+    } */
 }
