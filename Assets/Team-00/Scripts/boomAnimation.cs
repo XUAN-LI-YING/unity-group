@@ -10,13 +10,14 @@ public class boomAnimation : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    // Update is called once per frames
     void Update()
     {
-        
+    
     }
-    void AnimationEnd() 
-    {
-    Destroy (gameObject); //消滅物件
-    }
+     void AnimationEnd() 
+     {
+     Destroy (gameObject); //消滅物件
+    
+     }  
 }
