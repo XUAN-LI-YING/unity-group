@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,7 +14,7 @@ public class animy_move : MonoBehaviour
 
     
     void Update()
-    {this.speed=0.04f;
+    {this.speed=0.08f;
     transform.Translate(this.speed,0,0);
     //怪物速度
 

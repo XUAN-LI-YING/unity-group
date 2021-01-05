@@ -4,6 +4,8 @@
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
+/[Ar]tifactDB/
+
 
 .vs/
 .vscode/
@@ -23,3 +25,9 @@
 *.bin
 *.bin
 *.unity
+
+
+Library/ArtifactDB
+Library/ArtifactDB
+Library/Style.catalog
+Library/ArtifactDB
