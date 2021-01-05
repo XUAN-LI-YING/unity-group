@@ -22,9 +22,9 @@ public class QTE : MonoBehaviour
 
     //Key handling 產生隨機字母(目前只有Z)    
     int keyID;
-    char[] keys= "Z".ToCharArray();    
+    char[] keys= "AXZ".ToCharArray();    
     bool waitingForInput = false;
-    bool waitingReturnBack = false;
+    // bool waitingReturnBack = false;
 
 
     //Other 得分數
@@ -33,13 +33,13 @@ public class QTE : MonoBehaviour
 
     void Update()
     {        
-        if (waitingForInput)
-            CheckingForInput();
+        if (waitingForInput){
+        CheckingForInput();
 
-        if (waitingReturnBack)
-        {
-            ReturnBack();
         }
+    
+
+     
     }
 
     //Start the game
@@ -121,69 +121,7 @@ public class QTE : MonoBehaviour
         
     }
 
-    IEnumerator ReturnBack()
-    {
-        
-        //Wait (delayBetweenClick) seconds
-        // 第二次等待時間
-        yield return new WaitForSeconds(delayBetweenClick);
-        
-        //Assign a random ID for the key
-        keyID = Random.Range(0, keys.Length);
-        //Write the key on the UI (according to the chosen keyID)
-        ui_key.text = keys[keyID].ToString();
-        
-        //Reset the click timer
-        // 計時器倒數
-        timeToClick -= Time.deltaTime;
-        
-        //Convert the timeToClick to match the 0-1 ratio
-        // 計時器轉換成圖像表示
-        float fillAmount = timeToClick / maxTimeToClick;
-        //Apply the ratio to the bar UI fill amount
-        // 載入 UI 物件
-        ui_fillBar_short.fillAmount = fillAmount;
 
-        float v = (float)(fillAmount - 0.03);
-        // 新增導引線遮罩
-        ui_fillBar.fillAmount = v;
-
-        
-
-        //Check all keyboard input
-        // 確認所有按鍵輸入
-        foreach (KeyCode kcode in System.Enum.GetValues(typeof(KeyCode)))
-        {
-            //If the key is more than one char (like spacebar, return, or mouse) ignore it
-            //We need one letter input, like single char (Q,W,E,R,T...)
-            //輸入值若是單一個，判斷是否只有按下一次
-            
-            if (kcode.ToString().Length==1 && Input.GetKeyDown(kcode))
-            {
-                //float currentClickPercentage=()
-                //If the pressed key is the same as the key assigned by the keyID
-                //Call correct method
-
-                if (char.Parse(kcode.ToString()) == keys[keyID]&& IsInRange())
-                    {
-                    
-                    Correct();
-
-                    }
-                    
-                //If it's not the same call Failed method
-                else
-                    
-                    Failed();
-            }                
-        }
-        
-       
-        
-        
-        
-    }
-    
 
     //Checking the input for key
     void CheckingForInput()
@@ -209,11 +147,11 @@ public class QTE : MonoBehaviour
             {
             
             
-            waitingForInput = false;
-            waitingReturnBack = true;
-            Debug.Log($"waiting check");
             
-              
+            // waitingReturnBack = true;
+            Debug.Log($"waiting check");
+            Failed();
+            
 
             }
            
@@ -222,17 +160,17 @@ public class QTE : MonoBehaviour
         // 確認所有按鍵輸入
         foreach (KeyCode kcode in System.Enum.GetValues(typeof(KeyCode)))
         {
-            //If the key is more than one char (like spacebar, return, or mouse) ignore it
-            //We need one letter input, like single char (Q,W,E,R,T...)
-            //輸入值若是單一個，判斷是否只有按下一次
+        //    kcode.ToString().Length==1 &&
             
-            if (kcode.ToString().Length==1 && Input.GetKeyDown(kcode))
+            if ( Input.GetKeyDown(kcode))
             {
-                //float currentClickPercentage=()
                 //If the pressed key is the same as the key assigned by the keyID
                 //Call correct method
 
-                if (char.Parse(kcode.ToString()) == keys[keyID]&& IsInRange())
+
+                // && IsInRange()
+
+                if (char.Parse(kcode.ToString()) == keys[keyID])
                     {
                     Debug.Log($"Correct check");
                     
@@ -244,7 +182,7 @@ public class QTE : MonoBehaviour
                 //If it's not the same call Failed method
                 else
                     Debug.Log($"failed check");
-                    
+                    //這邊出錯？？為啥
                     Failed();
             }                
         }
@@ -262,13 +200,14 @@ public class QTE : MonoBehaviour
         {
             
             return true;
-
+            Debug.Log($"IsInRange-true");
             
         }
 
             
         else
             return false;
+              Debug.Log($"IsInRange-false");
     }
 
 
