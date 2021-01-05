@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2033339458103847988}
   - component: {fileID: 594930874914999285}
-  - component: {fileID: -3277582205445185506}
+  - component: {fileID: 4429746593117314150}
   - component: {fileID: 3337954811726552616}
   - component: {fileID: 189450058882339784}
   m_Layer: 9
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5864442023429252347}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -71,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1184312719
-  m_SortingLayer: 3
+  m_SortingLayerID: 1114842331
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9812a270810a340299216aa14cebe545, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-3277582205445185506
+--- !u!114 &4429746593117314150
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,10 +94,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5864442023429252347}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cb3411c5bdb443afbaeb890cfc82016, type: 3}
+  m_Script: {fileID: 11500000, guid: baa1e6c71bc3642f5b27d43c32354d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster: {fileID: 5864442023429252347}
+  Speed: 1
+  max_hp: 50
+  HP_Bar: {fileID: 1132532168935155376, guid: b027fe5037f7946d39f6da17479b1b1f, type: 3}
+  ATK: 10
 --- !u!61 &3337954811726552616
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -111,18 +114,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -1.4241791, y: -3.0517044}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.58, y: 5.54}
+    oldSize: {x: 37.2, y: 36.933334}
     newSize: {x: 5.58, y: 5.54}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.58, y: 5.54}
+  m_Size: {x: 40.1659, y: 32.801918}
   m_EdgeRadius: 0
 --- !u!50 &189450058882339784
 Rigidbody2D:

@@ -44,7 +44,7 @@ public class MonsterCreater : MonoBehaviour
 
             //產生隨機的X座標
 
-            x = Random.Range(25, 32);
+            x = Random.Range(128, 132);
 
             //生成怪物
 
@@ -55,6 +55,8 @@ public class MonsterCreater : MonoBehaviour
         }
 
     }
+    //01註解
+    //討論後不帶血量... 先留者用在別處
     // public void CreatHP()
     
     // {
