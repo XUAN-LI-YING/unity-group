@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Team-00\Scripts\boomAnimation.cs" />
+     <Compile Include="Assets\Team-00\Scripts\healthBar.cs" />
      <Compile Include="Assets\Team-00\Scripts\animy_move.cs" />
      <Compile Include="Assets\Team-00\Scripts\Trap.cs" />
      <Compile Include="Assets\Scripts\GameEnv.cs" />
@@ -53,7 +54,6 @@
      <Compile Include="Assets\Team-01\Scripts\Battle_Scripts\Enemy\PlayerController.cs" />
      <Compile Include="Assets\Team-01\Scripts\Menu_Scripts\MainMenu.cs" />
      <Compile Include="Assets\Team-01\Scripts\Menu_Scripts\CreatController.cs" />
-     <Compile Include="Assets\Team-00\Scripts\healthBar.cs" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
