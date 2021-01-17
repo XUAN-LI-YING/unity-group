@@ -9,6 +9,7 @@ public class Move : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // 產生怪物，程式還沒寫
         move = true;
     }
 
