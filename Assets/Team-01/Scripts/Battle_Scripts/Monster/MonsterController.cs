@@ -7,8 +7,8 @@ public class MonsterController : MonoBehaviour
     int hp = 0;
     public float Speed;
     public int max_hp = 0;
-    public GameObject HP_Bar;
-
+    // public GameObject HPBar;
+    // 暗部取名為 monster 
     public int ATK;
 
     // Start is called before the first frame update
@@ -25,7 +25,7 @@ public class MonsterController : MonoBehaviour
         float ratio = ((float)hp/(float)max_hp);
         
        
-        HP_Bar.transform.localScale = new Vector3(ratio, HP_Bar.transform.localScale.y, HP_Bar.transform.localScale.z);
+    //    HP_Bar.transform.localScale = new Vector3(ratio, HP_Bar.transform.localScale.y, HP_Bar.transform.localScale.z);
 
         this.gameObject.transform.position += new Vector3(-Speed / 250, 0, 0);
 
@@ -76,7 +76,7 @@ public class MonsterController : MonoBehaviour
     public void OnCollisionExit(Collision other)
     {
 
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Enemy")
         {
             Speed = 2;
             this.gameObject.transform.position += new Vector3(-Speed / 250, 0, 0);
