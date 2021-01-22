@@ -23,15 +23,9 @@ public class animy_move : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
     }
-    //碰撞後消失
-    /* void OnTriggerEnter2D(Collider2D col)
-    {
-      if(col.tag=="Trap")
-        {
-            Destroy(col.gameObject);
-             Destroy(gameObject);
-            
-        }
-    } */
+   
+
+   
 }

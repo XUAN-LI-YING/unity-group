@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
     public float Speed;
     public int HP;
@@ -21,10 +21,10 @@ public class PlayerController : MonoBehaviour
         this.gameObject.transform.position += new Vector3(Speed / 150, 0, 0);
     }
 
-    //Player01攻擊動畫
+    //Enemy01攻擊動畫
     public void OnCollisionEnter2D(Collision2D OBJ)
     {
-        if (OBJ.gameObject.name == "Monster01(Clone)")
+        if (OBJ.gameObject.name == "守門人")
         {
 
             print("Meet:" + OBJ.gameObject.name);
@@ -46,13 +46,13 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    //Player攻擊
+    //Enemy攻擊
     public void OnCollisionStay2D(Collision2D OBJ)
     {
         if (OBJ.gameObject.name == "Monster01(Clone)")
         {
 
-            print("PlayerATK:" + OBJ.gameObject.name);
+            print("EnemyATK:" + OBJ.gameObject.name);
         }
 
     }
