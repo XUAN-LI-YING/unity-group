@@ -19,19 +19,10 @@ public class animy_move : MonoBehaviour
     //怪物速度
 
     //怪物消失判斷，只靠位置
-    if(transform.position.x>32)    
+    if(transform.position.x>50)    
     {
         Destroy(gameObject);
     }
     }
-    //碰撞後消失
-    /* void OnTriggerEnter2D(Collider2D col)
-    {
-      if(col.tag=="Trap")
-        {
-            Destroy(col.gameObject);
-             Destroy(gameObject);
-            
-        }
-    } */
+    
 }
