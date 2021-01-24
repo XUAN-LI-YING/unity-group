@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+//我也不知道叫甚麼
 public class Slot : MonoBehaviour
 {
     public Item slotItem;
     public Image slotImage;
-    //public Text slotNum;
+    public Text slotNum;
     public string slotInfo;   //物件資訊 字串
 
     public GameObject itemInSlot;
     public void  ItemOnClicked()  //按鈕點擊
     {
         
-        InventoryManager.UpdateItemInfo(slotInfo);   //更新物件資訊
+        InventoryManager.UpdateItemInfo(slotItem.itemInfo);   //更新物件資訊
     }
     
     public void SetupSlot(Item item)
@@ -24,9 +24,9 @@ public class Slot : MonoBehaviour
             itemInSlot.SetActive(false);    //不顯示
             return;
         }
-
+        slotItem = item;
         slotImage.sprite = item.itemImage;
-        //slotNum.text = item.itemHeld.ToString();
+        slotNum.text = item.itemHeld.ToString();
         slotInfo = item.itemInfo;
 
 
