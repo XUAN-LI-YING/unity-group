@@ -6,7 +6,7 @@ public class animyPrefab : MonoBehaviour
 {
     public GameObject catPrefab;
     [Header("TIME")] 
-    public float span = 4;
+    public float span = 1;
     //怪物出現間隔時間
     public float delta = 0;
     // 怪物產生計時器
