@@ -23,6 +23,7 @@ public class animy_move : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
     }
     
 }
