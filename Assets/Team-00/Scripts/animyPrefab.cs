@@ -17,20 +17,22 @@ public class animyPrefab : MonoBehaviour
     {
       // Debug.Log(catPrefab.transform);
        this.delta+=Time.deltaTime;
-       if(this.delta>10f){
+       if(this.delta>5f){
            this.delta=0;
            GameObject go =Instantiate(catPrefab) as GameObject;
         
            go.transform.position=new Vector3(-180,35,0);
+             //定義位置
     //    transform.localScale = new Vector3(1.5f, 1.5f,1.5f);
     //更改為1.5倍大
+    //之後依據條件做為特效之類的
            
 
        }
-       //定義位置
+     
        
     }
 
 
-    //請閱讀：https://dometi.com.tw/blog/unity-2d-lesson3/
+    //https://dometi.com.tw/blog/unity-2d-lesson3/
 }

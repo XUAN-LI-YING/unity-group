@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Team-00\Scripts\boomAnimation.cs" />
+     <Compile Include="Assets\Team-00\Scripts\EnemyHPContron.cs" />
      <Compile Include="Assets\Team-00\Scripts\healthBar.cs" />
      <Compile Include="Assets\Team-00\Scripts\animy_move.cs" />
      <Compile Include="Assets\Team-00\Scripts\Trap.cs" />
@@ -66,17 +67,17 @@
      <Compile Include="Assets\Team-01\Scripts\Battle_Scripts\Score\ScoreCode.cs" />
      <Compile Include="Assets\Team-00\Scripts\animyPrefab.cs" />
      <Compile Include="Assets\Team-01\Scripts\Battle_Scripts\Score\GetScore.cs" />
+     <Compile Include="Assets\Team-01\Scripts\Battle_Scripts\Enemy\Enemy2Prefab.cs" />
      <Compile Include="Assets\Team-01\Scripts\Battle_Scripts\Monster\MonsterCreater.cs" />
      <Compile Include="Assets\Team-00\Scripts\starBackgroundDireator.cs" />
      <Compile Include="Assets\FearBarScripts\Trap\Event.cs" />
      <Compile Include="Assets\Plugin\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
      <Compile Include="Assets\Team-01\Scripts\Battle_Scripts\Button\Onclick.cs" />
-     <Compile Include="Assets\Team-01\Scripts\Battle_Scripts\Wallcreater.cs" />
-     <Compile Include="Assets\Team-01\Scripts\Battle_Scripts\Enemy\PlayerController.cs" />
+     <Compile Include="Assets\Team-01\Scripts\Battle_Scripts\自己之前做的\Wallcreater.cs" />
      <Compile Include="Assets\Team-01\Scripts\Menu_Scripts\MainMenu.cs" />
      <Compile Include="Assets\FearBarScripts\Enemy\Move.cs" />
      <Compile Include="Assets\Team-01\Scripts\Menu_Scripts\CreatController.cs" />
-     <Compile Include="Assets\Team-00\Scripts\EnemyHPContron.cs" />
+     <Compile Include="Assets\Team-01\Scripts\Battle_Scripts\Enemy\EnemyController.cs" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
