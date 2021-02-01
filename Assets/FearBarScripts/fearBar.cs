@@ -12,6 +12,9 @@ public class fearBar : MonoBehaviour
     public int timeToAdd;
     public int timePress;
     public float delayBetweenAdd;
+    public float delayFearvalueCost;
+    public float delayFearvalueAdd;
+
     public float delayAddSec;
     
 
@@ -165,7 +168,7 @@ public class fearBar : MonoBehaviour
 
 
      StartCoroutine(DelayCostEffect()); 
-    
+     StartCoroutine(RepeatDecrease()); 
     }
 
     public void DetectAdd(){
@@ -205,6 +208,10 @@ public class fearBar : MonoBehaviour
     }
     
 
+    IEnumerator RepeatDecrease(){
+ yield return new WaitForSeconds(delayFearvalueCost);
+
+    }
 
     // //Checking the input for button
     void CheckingForInput()
@@ -257,7 +264,7 @@ public class fearBar : MonoBehaviour
         if (timeToAdd <= 0)
         {
         CancelInvoke("AutoAddFear");
-        ui_countvalue.text =  " ☝ (͡° ͜ʖ ͡°) ☝ sec";
+        ui_countvalue.text =  " (͡° ͜ʖ ͡°)  sec";
         points = points + autoAddValue;
         
         ui_value.text = points.ToString();

@@ -2248,9 +2248,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2011090336}
+      - m_Target: {fileID: 2011090335}
         m_TargetAssemblyTypeName: fearBar, Assembly-CSharp
-        m_MethodName: Decrease
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2477,6 +2477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxTimeToClick: 3
   delayBetweenClick: 1
+  playtime: 0
   timeRangeToClick_Min: 0
   timeRangeToClick_Max: 100
   ui_fillBar: {fileID: 2000667672}
@@ -5541,6 +5542,8 @@ MonoBehaviour:
   timeToAdd: 4
   timePress: 10
   delayBetweenAdd: 3
+  delayFearvalueCost: 0
+  delayFearvalueAdd: 0
   delayAddSec: 0.2
   value_Min: 0
   value_Max: 100
