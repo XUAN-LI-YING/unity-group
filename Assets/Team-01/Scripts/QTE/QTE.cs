@@ -124,6 +124,16 @@ public class QTE : MonoBehaviour
 
                      
         }
+         if (playtime > 2)
+        {
+            waitingForInput = false;
+            timeToClick = 0;
+
+            ui_key.text = $"還敢失敗rr\n失敗第{playtime}次";
+            Debug.Log("END QTE");
+            // QTE 無效扣恐懼值
+
+        }
     }
 
     //Check if in range of time input
@@ -176,11 +186,11 @@ public class QTE : MonoBehaviour
         ui_fillBar.fillAmount = 0;
         //增加恐懼值
         // call fearbar script
-        //
-        //
-        //
-        //
-    
+        
+        fearBar.instance.Increase();
+
+
+        
         //Call the delay before next key
         // 開始等待下次判斷時間
         StartCoroutine(DelayAfterCorrect());           
@@ -206,14 +216,8 @@ public class QTE : MonoBehaviour
     IEnumerator DelayAfterFailed()
     {
         yield return new WaitForSeconds(delayBetweenClick);
-        if (playtime > 2)
-        {
-            waitingForInput = false;
-            ui_key.text = $"Miss\n失敗第{playtime}次";
-            Debug.Log("END QTE");
-            // QTE 無效扣恐懼值?
+ 
 
-        }
          //Reset the click timer
         // 重置計時器
         timeToClick = 0;

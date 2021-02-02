@@ -39,7 +39,7 @@ public class Event : MonoBehaviour
             Debug.Log(coll);
             Debug.Log(fearvalue);
             
-                fearBar.instance.Increase();
+            fearBar.instance.Increase();
                 
                 
 
