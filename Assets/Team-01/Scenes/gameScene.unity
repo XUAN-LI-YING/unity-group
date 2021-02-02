@@ -336,7 +336,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.128
+  m_FillAmount: 0.3
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -2248,9 +2248,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2011090335}
+      - m_Target: {fileID: 2011090336}
         m_TargetAssemblyTypeName: fearBar, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Decrease
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2478,8 +2478,8 @@ MonoBehaviour:
   maxTimeToClick: 3
   delayBetweenClick: 1
   playtime: 0
-  timeRangeToClick_Min: 0
-  timeRangeToClick_Max: 100
+  timeRangeToClick_Min: 30
+  timeRangeToClick_Max: 70
   ui_fillBar: {fileID: 2000667672}
   ui_fillBar_short: {fileID: 111700046}
   ui_key: {fileID: 1168266301}
@@ -4002,7 +4002,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: b6349d08a5335cd4aa534282435d11cc, type: 3}
-    m_FontSize: 40
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 4
@@ -4038,8 +4038,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 14, y: 161}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -1.9, y: 161.3}
+  m_SizeDelta: {x: 248.94153, y: 129.30002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1217220723
 GameObject:
@@ -5505,7 +5505,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.386
+  m_FillAmount: 0.339
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0

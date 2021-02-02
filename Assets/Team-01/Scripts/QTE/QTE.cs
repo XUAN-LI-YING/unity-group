@@ -97,9 +97,9 @@ public class QTE : MonoBehaviour
         {
             // kcode.ToString().Length==1 &&
 
-            if ( Input.GetKeyDown(kcode) && IsInRange())
+            if ( Input.GetKeyDown(kcode) )
             {
-                if (char.Parse(kcode.ToString()) == keys[keyID] )
+                if (char.Parse(kcode.ToString()) == keys[keyID] && IsInRange() )
                     {
                     Debug.Log($"Correct check");
                     
@@ -119,6 +119,9 @@ public class QTE : MonoBehaviour
            
             }
 
+
+
+
                      
         }
     }
@@ -135,6 +138,7 @@ public class QTE : MonoBehaviour
         {
           Debug.Log(currentRatio);            
           Debug.Log(timeRangeToClick_Min);
+          Debug.Log(timeRangeToClick_Max);
          
 
             Debug.Log($"IsInRange-true");
@@ -146,8 +150,6 @@ public class QTE : MonoBehaviour
             
         else
             Debug.Log(currentRatio);            
-            Debug.Log(timeRangeToClick_Min);
-            Debug.Log(timeRangeToClick_Max);
            Debug.Log($"IsInRange-false");
            return false;
            
