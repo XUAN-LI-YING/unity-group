@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtomManager : MonoBehaviour
+public class MiddleManager : MonoBehaviour
 {
-    static ButtomManager instance;
+    static MiddleManager instance;
 
     public Inventory trapBox;
     //public Inventory trapselect;
@@ -74,12 +74,4 @@ public class ButtomManager : MonoBehaviour
 
 
     }
-
-
-
-
-    
-
-
 }
-

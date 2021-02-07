@@ -14,7 +14,7 @@ public class Slot : MonoBehaviour
     public void  ItemOnClicked()  //按鈕點擊
     {
         
-        InventoryManager.UpdateItemInfo(slotItem.itemInfo);   //更新物件資訊
+        InventoryManager.UpdateItemInfo(slotInfo);   //更新物件資訊
     }
     
     public void SetupSlot(Item item)
