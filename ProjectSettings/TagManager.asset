@@ -7,6 +7,9 @@ TagManager:
   - Cat
   - Trap
   - spider
+  - Collection
+  - Enemy
+  - boom
   layers:
   - Default
   - TransparentFX
@@ -61,4 +64,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: boomeffect
+    uniqueID: 3822751351
     locked: 0

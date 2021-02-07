@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 61797436552318614}
   - component: {fileID: 61797436552318615}
   - component: {fileID: 61797436552318612}
-  - component: {fileID: 4906738436541488868}
+  - component: {fileID: 6889998272423806845}
   m_Layer: 0
   m_Name: catPrefab
   m_TagString: Cat
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f9edecad6adaab841a2c8fd53a3560bb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -183,7 +183,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4906738436541488868
+--- !u!114 &6889998272423806845
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -59,6 +59,7 @@
      <Compile Include="Assets\FearBarScripts\Enemy\Move.cs" />
      <Compile Include="Assets\Team-01\Scripts\Menu_Scripts\CreatController.cs" />
      <Compile Include="Assets\Team-01\Scripts\Battle_Scripts\Enemy\EnemyController.cs" />
+     <Compile Include="Assets\Team-00\Scripts\StartButton.cs" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -84,6 +85,7 @@
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
      <None Include="Assets\Plugin\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+     <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_Sprite.shader" />
      <None Include="Assets\Plugin\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
     <Reference Include="UnityEngine">
