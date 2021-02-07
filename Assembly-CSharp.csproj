@@ -37,7 +37,6 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Inventory\InventoryScripts\Inventory.cs" />
-     <Compile Include="Assets\Inventory\InventoryScripts\ClickMove.cs" />
      <Compile Include="Assets\Inventory\InventoryScripts\InventoryManager.cs" />
      <Compile Include="Assets\Inventory\InventoryScripts\TrapOnDrag.cs" />
      <Compile Include="Assets\Inventory\InventoryScripts\MiddleManager.cs" />
@@ -46,6 +45,7 @@
      <Compile Include="Assets\Inventory\InventoryScripts\trapOnRoad.cs" />
      <Compile Include="Assets\Inventory\InventoryScripts\Slot.cs" />
      <Compile Include="Assets\Inventory\InventoryScripts\Item.cs" />
+     <Compile Include="Assets\Inventory\InventoryScripts\ChessMove.cs" />
     <Reference Include="UnityEngine">
         <HintPath>D:/unity/2020.1.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
