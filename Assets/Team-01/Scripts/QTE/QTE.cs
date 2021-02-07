@@ -11,6 +11,7 @@ public class QTE : MonoBehaviour
     public float maxTimeToClick;
     float timeToClick;
     public float delayBetweenClick;
+    public int playtime;
     [Range(0,100)]
     public float timeRangeToClick_Min, timeRangeToClick_Max;
 
@@ -22,7 +23,7 @@ public class QTE : MonoBehaviour
 
     //Key handling 產生隨機字母(目前只有Z)    
     int keyID;
-    char[] keys= "ASDZXC".ToCharArray();    
+    char[] keys= "Z".ToCharArray();    
     bool waitingForInput = false;
     // bool waitingReturnBack = false;
 
@@ -45,6 +46,7 @@ public class QTE : MonoBehaviour
     //Start the game
     public void StartGame()
     {
+        playtime = 0;
         //Reset the click timer
         // 重置計時器
         timeToClick = 0;        
@@ -79,11 +81,15 @@ public class QTE : MonoBehaviour
         ui_fillBar_short.fillAmount = v;
         //    If time to click passes the total time to Click Fail
         // 超過時間輸入 = 導引線至終點
-        if (timeToClick >= maxTimeToClick)
+        if (timeToClick > (maxTimeToClick +1) )
             {    
+            waitingForInput = false;
+            // timeToClick = 0;
             // waitingReturnBack = true;
-            Debug.Log($"waiting check");
-            StartCoroutine(DelayAfterCorrect());   
+            Debug.Log($"waiting next");
+            playtime += 1;
+            ui_key.text = $"Miss\n失敗第{playtime}次";
+            StartCoroutine(DelayAfterFailed());   
             }
         //Check all keyboard input
         // 確認所有按鍵輸入
@@ -91,9 +97,9 @@ public class QTE : MonoBehaviour
         {
             // kcode.ToString().Length==1 &&
 
-            if ( Input.GetKeyDown(kcode) && IsInRange())
+            if ( Input.GetKeyDown(kcode) )
             {
-                if (char.Parse(kcode.ToString()) == keys[keyID] )
+                if (char.Parse(kcode.ToString()) == keys[keyID] && IsInRange() )
                     {
                     Debug.Log($"Correct check");
                     
@@ -113,7 +119,20 @@ public class QTE : MonoBehaviour
            
             }
 
+
+
+
                      
+        }
+         if (playtime > 2)
+        {
+            waitingForInput = false;
+            timeToClick = 0;
+
+            ui_key.text = $"還敢失敗rr\n失敗第{playtime}次";
+            Debug.Log("END QTE");
+            // QTE 無效扣恐懼值
+
         }
     }
 
@@ -129,6 +148,7 @@ public class QTE : MonoBehaviour
         {
           Debug.Log(currentRatio);            
           Debug.Log(timeRangeToClick_Min);
+          Debug.Log(timeRangeToClick_Max);
          
 
             Debug.Log($"IsInRange-true");
@@ -140,8 +160,6 @@ public class QTE : MonoBehaviour
             
         else
             Debug.Log(currentRatio);            
-            Debug.Log(timeRangeToClick_Min);
-            Debug.Log(timeRangeToClick_Max);
            Debug.Log($"IsInRange-false");
            return false;
            
@@ -162,10 +180,17 @@ public class QTE : MonoBehaviour
         points++;
         //Write points on the UI
         // 顯示成功共得幾分
-        ui_key.text = $"Total points {points}";        
+        ui_key.text = $"獲得 {points} 分";        
         //Reset the bar
         // 重置導引線
         ui_fillBar.fillAmount = 0;
+        //增加恐懼值
+        // call fearbar script
+        
+        fearBar.instance.Increase();
+
+
+        
         //Call the delay before next key
         // 開始等待下次判斷時間
         StartCoroutine(DelayAfterCorrect());           
@@ -188,12 +213,12 @@ public class QTE : MonoBehaviour
         waitingForInput = true;
         
     }
-        IEnumerator DelayBeforeBack()
+    IEnumerator DelayAfterFailed()
     {
-        //Wait (delayBetweenClick) seconds
-        // 輸入等待時間
         yield return new WaitForSeconds(delayBetweenClick);
-        //Reset the click timer
+ 
+
+         //Reset the click timer
         // 重置計時器
         timeToClick = 0;
         //Assign a random ID for the key
@@ -203,25 +228,28 @@ public class QTE : MonoBehaviour
 
         //Enable the boolean to check the input
         waitingForInput = true;
-        
+
     }
+   
       //When clicking the wrong key
     void Failed()
     {
          waitingForInput = false;
         // 顯示失敗並落在哪個區間
-        Debug.Log("Gameee Over");
+        Debug.Log("lose");
         Debug.Log($"Clicked at ratio {(timeToClick / maxTimeToClick) * 100}");
         //Stop the boolean for input check
         //停止偵測鍵盤輸入
        
         //Write losing text on UI
-        // 顯示失敗共得幾分
-        ui_key.text = $"Game Over\nPoints={points}";
+        // 顯示失敗 
+        playtime += 1;
+        ui_key.text = $"Miss\n失敗第{playtime}次";
         //Reset the bar
         // 重置導引線
         ui_fillBar.fillAmount = 0; 
-        StartCoroutine(DelayAfterCorrect());                   
+  
+        StartCoroutine(DelayAfterFailed());                   
     }
 
 
