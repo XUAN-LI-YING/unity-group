@@ -4,20 +4,10 @@ using UnityEngine;
 
 public class boomAnimation : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frames
-    void Update()
-    {
-    
-    }
+   
      void AnimationEnd() 
      {
-     Destroy (gameObject); //消滅物件
+     Destroy (gameObject); //當動畫結束消滅此爆炸物件
     
      }  
 }
