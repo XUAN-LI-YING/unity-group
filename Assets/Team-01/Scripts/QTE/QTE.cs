@@ -21,9 +21,9 @@ public class QTE : MonoBehaviour
     public Image ui_fillBar_short;
     public Text ui_key;
 
-    //Key handling 產生隨機字母(目前只有Z)    
+    //Key handling 產生隨機字母    
     int keyID;
-    char[] keys= "Z".ToCharArray();    
+    char[] keys= "ZXCVBNM".ToCharArray();    
     bool waitingForInput = false;
     // bool waitingReturnBack = false;
 
@@ -86,7 +86,7 @@ public class QTE : MonoBehaviour
             waitingForInput = false;
             // timeToClick = 0;
             // waitingReturnBack = true;
-            Debug.Log($"waiting next");
+            //Debug.Log($"waiting next");
             playtime += 1;
             ui_key.text = $"Miss\n失敗第{playtime}次";
             StartCoroutine(DelayAfterFailed());   
@@ -101,7 +101,7 @@ public class QTE : MonoBehaviour
             {
                 if (char.Parse(kcode.ToString()) == keys[keyID] && IsInRange() )
                     {
-                    Debug.Log($"Correct check");
+                    //Debug.Log($"Correct check");
                     
                     Correct();
                     }
@@ -110,7 +110,7 @@ public class QTE : MonoBehaviour
                                    
                 //If it's not the same call Failed method
                   
-                    Debug.Log($"failed key");
+                    //Debug.Log($"failed key");
                     
                     Failed(); 
                 }    
@@ -146,12 +146,12 @@ public class QTE : MonoBehaviour
         //Check if the current time ratio is between the Min and the Max
         if (currentRatio > timeRangeToClick_Min && currentRatio < timeRangeToClick_Max)
         {
-          Debug.Log(currentRatio);            
-          Debug.Log(timeRangeToClick_Min);
-          Debug.Log(timeRangeToClick_Max);
+          //Debug.Log(currentRatio);            
+          //Debug.Log(timeRangeToClick_Min);
+          //Debug.Log(timeRangeToClick_Max);
          
 
-            Debug.Log($"IsInRange-true");
+            //Debug.Log($"IsInRange-true");
             return true;
             
             
@@ -159,8 +159,8 @@ public class QTE : MonoBehaviour
 
             
         else
-            Debug.Log(currentRatio);            
-           Debug.Log($"IsInRange-false");
+        //Debug.Log(currentRatio);            
+        //Debug.Log($"IsInRange-false");
            return false;
            
     }
@@ -170,8 +170,8 @@ public class QTE : MonoBehaviour
     {
         waitingForInput = false;
         // 顯示成功並落在哪個區間
-        Debug.Log($"Correct Key");
-        Debug.Log($"Clicked at ratio {(timeToClick / maxTimeToClick) * 100}");
+        //Debug.Log($"Correct Key");
+        //Debug.Log($"Clicked at ratio {(timeToClick / maxTimeToClick) * 100}");
         //Disable the boolean for input check
         //停止偵測鍵盤輸入
         
