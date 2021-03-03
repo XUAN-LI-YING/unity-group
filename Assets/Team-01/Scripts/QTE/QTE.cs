@@ -23,7 +23,7 @@ public class QTE : MonoBehaviour
 
     //Key handling 產生隨機字母    
     int keyID;
-    char[] keys= "ZXCVBNM".ToCharArray();    
+    char[] keys= "Z".ToCharArray();    
     bool waitingForInput = false;
     // bool waitingReturnBack = false;
 
