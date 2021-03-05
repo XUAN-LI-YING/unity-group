@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class QTE : MonoBehaviour 
 {
+    public static QTE instance;
 
     //Time 設置判斷時間參數
     [Header("Time")]
@@ -42,10 +43,14 @@ public class QTE : MonoBehaviour
 
      
     }
+ 
 
     //Start the game
     public void StartGame()
     {
+        instance = this;
+
+
         playtime = 0;
         //Reset the click timer
         // 重置計時器
