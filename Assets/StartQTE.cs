@@ -9,6 +9,7 @@ public class StartQTE : MonoBehaviour
   void Start()
   {
   instance = this;
+  
   }
 
   // Update is called once per frame
@@ -18,8 +19,13 @@ public class StartQTE : MonoBehaviour
     if (Input.GetButtonDown("Jump"))
     {
       Debug.Log($"+1");
-      QTE.instance.();
+      QTE.instance.StartGame();
+      // fearBar.instance.StartGame();
     }
+
+  }
+  void Detect()
+  {
 
   }
 }
