@@ -43,14 +43,17 @@ public class QTE : MonoBehaviour
 
      
     }
+    void Start()
+    {
+        instance = this;
+
+
+    }
  
 
     //Start the game
     public void StartGame()
     {
-        instance = this;
-
-
         playtime = 0;
         //Reset the click timer
         // 重置計時器
@@ -240,6 +243,9 @@ public class QTE : MonoBehaviour
     void Failed()
     {
          waitingForInput = false;
+         fearBar.instance.Decrease();
+
+
         // 顯示失敗並落在哪個區間
         Debug.Log("lose");
         Debug.Log($"Clicked at ratio {(timeToClick / maxTimeToClick) * 100}");
