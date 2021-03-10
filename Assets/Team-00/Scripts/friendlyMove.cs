@@ -17,7 +17,7 @@ public class friendlyMove : MonoBehaviour
         transform.Translate(this.speed,0,0);
 
         //怪物消失判斷，只靠位置
-        if(transform.position.x>200)    
+        if(transform.position.x<-200)    
         {
         Destroy(gameObject);
         }

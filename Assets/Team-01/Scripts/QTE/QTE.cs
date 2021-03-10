@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class QTE : MonoBehaviour 
 {
+    public static QTE instance;
 
     //Time 設置判斷時間參數
     [Header("Time")]
@@ -23,7 +24,7 @@ public class QTE : MonoBehaviour
 
     //Key handling 產生隨機字母    
     int keyID;
-    char[] keys= "ZXCVBNM".ToCharArray();    
+    char[] keys= "Z".ToCharArray();    
     bool waitingForInput = false;
     // bool waitingReturnBack = false;
 
@@ -42,6 +43,13 @@ public class QTE : MonoBehaviour
 
      
     }
+    void Start()
+    {
+        instance = this;
+
+
+    }
+ 
 
     //Start the game
     public void StartGame()
@@ -235,6 +243,9 @@ public class QTE : MonoBehaviour
     void Failed()
     {
          waitingForInput = false;
+         fearBar.instance.Decrease();
+
+
         // 顯示失敗並落在哪個區間
         Debug.Log("lose");
         Debug.Log($"Clicked at ratio {(timeToClick / maxTimeToClick) * 100}");
