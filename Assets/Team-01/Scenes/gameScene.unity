@@ -6133,7 +6133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f40115bd768e6c4c93d619aa102b4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aniexplo: {fileID: 8434979036201812742, guid: ff197d2ad652ae34898aadd64f6191e1,
+  aniexplo: {fileID: 4961772322803558437, guid: 40c1f91c69f447c46ad7d6b0a2d0448d,
     type: 3}
 --- !u!61 &2093948387
 BoxCollider2D:
@@ -6147,7 +6147,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: -0.3, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -6157,7 +6157,7 @@ BoxCollider2D:
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_AutoTiling: 1
   serializedVersion: 2
   m_Size: {x: 4, y: 7}
   m_EdgeRadius: 0
@@ -6220,8 +6220,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2093948385}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -80.4, y: 32.6, z: 0}
-  m_LocalScale: {x: 2.9001544, y: 2.9001544, z: 2.9001544}
+  m_LocalPosition: {x: 53.8, y: 36, z: 0}
+  m_LocalScale: {x: 3.6285367, y: 3.6285367, z: 3.6285367}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 21

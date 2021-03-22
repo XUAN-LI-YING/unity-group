@@ -49,6 +49,14 @@ public class EnemyHPContron : MonoBehaviour
         {
            IsCollide=true;
         }
+
+        if(col.tag=="rockboom")
+        {
+           hp -= 10 ;
+        }
+
     }
+
+    
 } 
 
