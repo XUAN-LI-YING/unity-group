@@ -11,7 +11,7 @@ public class animy_move : MonoBehaviour
     {
       IsCollide=false;
       //怪物初始數度
-      this.speed=0.08f;  
+      this.speed=0.09f;  
     }
     void Update()
     {
