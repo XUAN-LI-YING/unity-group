@@ -6,17 +6,12 @@ public class MagicTrap : MonoBehaviour
 {
 
     public GameObject aniexplo;
-
+//滑鼠按下時，出現動畫aniexplo，且動畫位置為(X,y)(gameObject.transform.position, gameObject.transform.rotation)
     void OnMouseDown()
     {    
-        // if (col.tag == "Cat")
-         //{
-             
-         //}
 
          Instantiate(aniexplo, gameObject.transform.position, gameObject.transform.rotation);
          Destroy(this.gameObject);
 
-      
     }
 }

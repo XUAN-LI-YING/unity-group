@@ -49,7 +49,7 @@ public class EnemyHPContron : MonoBehaviour
         {
            IsCollide=true;
         }
-
+    //如果碰撞到rockboom(也就是魔法地雷的特效時)hp-10
         if(col.tag=="rockboom")
         {
            hp -= 10 ;
