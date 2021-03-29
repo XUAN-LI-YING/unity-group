@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - boom
   - rockboom
+  - Friendly
   layers:
   - Default
   - TransparentFX
@@ -60,11 +61,20 @@ TagManager:
   - name: character
     uniqueID: 1114842331
     locked: 0
+  - name: trap
+    uniqueID: 3036948621
+    locked: 0
   - name: UI
     uniqueID: 3278200885
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: EnemyPrefab
+    uniqueID: 3671733509
+    locked: 0
+  - name: FriendlyPrefab
+    uniqueID: 134500273
     locked: 0
   - name: boomeffect
     uniqueID: 3822751351
