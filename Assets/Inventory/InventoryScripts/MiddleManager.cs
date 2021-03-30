@@ -60,6 +60,7 @@ public class MiddleManager : MonoBehaviour
             if (instance.slotGrid.transform.childCount == 0)
                 break;
             Destroy(instance.slotGrid.transform.GetChild(i).gameObject);        //循環到第i個子物件
+            instance.slots.Clear();
         }
 
         for (int i = 0; i <instance.trapBox.itemList.Count; i++)
