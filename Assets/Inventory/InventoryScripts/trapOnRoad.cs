@@ -20,8 +20,16 @@ public class trapOnRoad : MonoBehaviour
     {
         if (!playerInventory.itemList.Contains(thisItem))
         {
-            playerInventory.itemList.Add(thisItem);     //添加列表中項目
+            //playerInventory.itemList.Add(thisItem);     //添加列表中項目
             //InventoryManager.CreateNewItem(thisItem);     //因InventoryManager 使用OnEnable調用RefreshItem
+            for (int i = 0; i < playerInventory.itemList.Count; i++)
+            {
+                if (playerInventory.itemList[i] == null)
+                {
+                    playerInventory.itemList[i] = thisItem;
+                    break;
+                }
+            }
         }
         else
         {

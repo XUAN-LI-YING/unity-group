@@ -20,12 +20,12 @@ public class friendlyPref : MonoBehaviour
     {  //  Debug.Log(activeSelf);
       //如果時間累積到了5秒針，讓DELTA歸零且產生敵人
        this.delta+=Time.deltaTime;
-       if(this.delta>5f ){ //& appear_toggle==true
+       if(this.delta>2f ){ //& appear_toggle==true
     
            this.delta=0;
            GameObject go =Instantiate(friendlyForce) as GameObject;
            //定義產生位置
-           go.transform.position=new Vector3(180,35,0);
+           go.transform.position=new Vector3(180,33,0);
         }
 
     }

@@ -11,7 +11,7 @@ public class animy_move : MonoBehaviour
     {
       IsCollide=false;
       //怪物初始數度
-      this.speed=0.08f;  
+      this.speed=0.09f;  
     }
     void Update()
     {
@@ -19,7 +19,7 @@ public class animy_move : MonoBehaviour
         transform.Translate(this.speed,0,0);
 
         //怪物消失判斷，只靠位置
-        if(transform.position.x>200)    
+        if(transform.position.x>150)    
         {
         Destroy(gameObject);
         }
