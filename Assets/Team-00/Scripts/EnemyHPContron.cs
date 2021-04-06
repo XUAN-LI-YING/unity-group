@@ -55,6 +55,18 @@ public class EnemyHPContron : MonoBehaviour
            hp -= 10 ;
         }
 
+        if(col.tag=="Friendly")
+        {   //hp-0.1
+            hp -= 0.1f;
+            //this.gameObject.transform.position=new Vector3(this.gameObject.transform.position.X+0.5f, this.gameObject.transform.position.y,this.gameObject.transform.position.z);
+            //偵測現在move到哪裡的位置
+            Vector3 move = gameObject.transform.position;
+            //move比現在的位置多5
+            move = new Vector3(move.x -5f, move.y, move.z);
+            //現在的位置等於現在+5後的move
+            gameObject.transform.position = move;
+        }
+
     }
 
     
