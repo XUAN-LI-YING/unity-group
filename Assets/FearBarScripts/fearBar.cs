@@ -51,6 +51,7 @@ public class fearBar : MonoBehaviour
     public int autoAddValue;
     public int addValue;   
     public int costvalue;
+    public int eachpresscost;
 
 
     // 持續偵測有無事件
@@ -106,17 +107,30 @@ public class fearBar : MonoBehaviour
     public void Decrease()
     {
        
-        Debug.Log("正在耗費恐懼!!");
-        Debug.Log($"此動作耗費了{costvalue}恐懼值");
-        
-        
+        Debug.Log($"此動作耗費了{costvalue}魔力值"); 
         DetectHurt();
       
-        ui_value.text = $"恐懼值下降中!!\n 目前存量={points}";
+        ui_value.text = $"魔力值下降中!!\n 目前存量={points}";
         //update points on the UI
         //更新分數顯示
        
                   
+    }
+    public void Decrease01()
+    {
+        Debug.Log($"出動友軍耗費{eachpresscost}魔力值"); 
+
+        Checking = false;
+
+        points = points - eachpresscost;
+        float fillAmount = points / value_Max;
+        ui_fillBar.fillAmount = fillAmount;
+                
+        Debug.Log("友軍出動");
+
+
+        StartCoroutine(DelayCostEffect()); 
+        StartCoroutine(RepeatDecrease()); 
     }
 
     //When pressing the Increase button
@@ -126,7 +140,7 @@ public class fearBar : MonoBehaviour
         DetectAdd();  
        
         // Debug.Log($"增加恐懼！！");
-        // Debug.Log($"此動作增加了{timePress}恐懼值");
+        // Debug.Log($"此動作增加了{timePress}魔力值");
 
         //update points on the UI
         //更新分數顯示
@@ -135,16 +149,16 @@ public class fearBar : MonoBehaviour
 
         if (combo)
         {
-        ui_value.text = $"陷阱因恐懼值增加 {timePress} !!\n 目前存量={points}";  
+        ui_value.text = $"陷阱因魔力值增加 {timePress} !!\n 目前存量={points}";  
         }
         
         // 其他狀況
         else
         {
         
-        ui_value.text = $"恐懼值增加{timePress}!!\n 目前存量={points}";        
+        ui_value.text = $"魔力值增加{timePress}!!\n 目前存量={points}";        
         
-        Debug.Log($"{(points/value_Max)*100}% 恐懼值");
+        Debug.Log($"{(points/value_Max)*100}% 魔力值");
         }
        
         
@@ -157,7 +171,7 @@ public class fearBar : MonoBehaviour
 
 
     public void DetectHurt(){
-
+    
     Checking = false;
 
     points = points - costvalue;
@@ -250,7 +264,7 @@ public class fearBar : MonoBehaviour
 
     }
 
-    // 自動新增恐懼值
+    // 自動新增魔力值
     void AutoAddFear()
     {
         
@@ -271,7 +285,7 @@ public class fearBar : MonoBehaviour
         
 
 
-        //增加恐懼值
+        //增加魔力值
         // startAddFear = false;
         // 上面參數沒用到預設是永遠增加;
 
