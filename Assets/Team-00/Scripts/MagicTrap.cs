@@ -22,7 +22,7 @@ public class MagicTrap : MonoBehaviour
 
   void Update()
   {
-
+    
   }
 
   public void OnTriggerExit2D(Collider2D other)
@@ -32,8 +32,7 @@ public class MagicTrap : MonoBehaviour
     {
       Debug.Log("遇到貓沒點擊");
 
-      // Instantiate(aniexplo, gameObject.transform.position, gameObject.transform.rotation);
-      // Destroy(this.gameObject);
+      
 
     }
 
@@ -66,7 +65,10 @@ public class MagicTrap : MonoBehaviour
   }
 
   public void OnMouseDown()
-  {
+  {  
+    Instantiate(aniexplo, this.gameObject.transform.position, this.gameObject.transform.rotation);
+     Destroy(this.gameObject);
+
     if (collision == true)
     {
 
@@ -77,7 +79,7 @@ public class MagicTrap : MonoBehaviour
     Instantiate(aniexplo, gameObject.transform.position, gameObject.transform.rotation);
     Destroy(this.gameObject);
 
-    // 欸都 全部敵人會一起爆裂 bug !!!!!!!! 
+    // 欸都 全部敵人會一起爆裂 bug                 ??????????
 
   }
 

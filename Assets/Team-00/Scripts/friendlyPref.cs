@@ -22,7 +22,7 @@ public class friendlyPref : MonoBehaviour
 
     //如果時間累積到了5秒針，讓DELTA歸零且產生敵人
     this.delta += Time.deltaTime;
-    if (this.delta > 2f)
+    if (this.delta > 10f)
     { //& appear_toggle==true
 
       this.delta = 0;
