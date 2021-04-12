@@ -19,12 +19,20 @@ public class animy_move : MonoBehaviour
         //怪物速度
         transform.Translate(this.speed,0,0);
 
-        //怪物消失判斷，只靠位置
-        if(transform.position.x>150)    
+        //當物體超過畫面時(x=200)怪物移動到的二層的位置
+        if(transform.position.x>200)    
         {
-        Destroy(gameObject);
+        
+        gameObject.transform.position = new Vector3(-200, -43, 0);
+
+        }
+        //物體在第二層超過畫面時則讓她消失
+        if(transform.position.y==-43 && transform.position.x>200)
+        {
+            Destroy(gameObject);
         }
 
+        
         if(IsCollide==true)
         {
            // Debug.Log(this.speed);
