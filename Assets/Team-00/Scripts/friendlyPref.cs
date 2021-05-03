@@ -40,7 +40,7 @@ public class friendlyPref : MonoBehaviour
 
   }
 
-  //映璇做的部分 目前一旦按了會一直出兵哦哦
+
 
 
 }
