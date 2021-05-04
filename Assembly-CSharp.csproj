@@ -52,8 +52,10 @@
      <Compile Include="Assets\Team-00\Scripts\friendlyPref.cs" />
      <Compile Include="Assets\StartQTE.cs" />
      <Compile Include="Assets\Scripts\QTE\QTE.cs" />
+     <Compile Include="Assets\Team-01\Scripts\Battle_Scripts\Monster\MonsterController.cs" />
      <Compile Include="Assets\Team-00\Scripts\friendlyButton.cs" />
      <Compile Include="Assets\Team-00\Scripts\animyPrefab.cs" />
+     <Compile Include="Assets\Team-01\Scripts\Battle_Scripts\Monster\MonsterCreater.cs" />
      <Compile Include="Assets\Team-00\Scripts\starBackgroundDireator.cs" />
      <Compile Include="Assets\Team-00\Scripts\Builder.cs" />
      <Compile Include="Assets\Team-00\Scripts\GuardHP01.cs" />
@@ -67,6 +69,7 @@
      <Compile Include="Assets\Team-00\Scripts\Slot.cs" />
      <Compile Include="Assets\Team-00\Scripts\Item.cs" />
      <Compile Include="Assets\Team-00\Scripts\friendlyMove.cs" />
+     <Compile Include="Assets\Team-01\Scripts\Battle_Scripts\Monster\BloodController.cs" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

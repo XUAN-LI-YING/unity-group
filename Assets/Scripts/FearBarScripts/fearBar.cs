@@ -125,8 +125,8 @@ public class fearBar : MonoBehaviour
     // float fillAmount = points / value_Max;
     // points = 0 顯示初始數值
     ui_value.text = points.ToString() + " FearPoint";
-    ui_addvalue.text = "add " + (autoAddValue.ToString()) + "points";
-    ui_costvalue.text = "- " + (costvalue.ToString());
+    // ui_addvalue.text = (autoAddValue.ToString()) + "points/sec";
+    // ui_costvalue.text = "- " + (costvalue.ToString());
     ui_countvalue.text = timeToAdd.ToString() + "sec";
 
     ui_Hurteffect.fillAmount = ui_fillBar.fillAmount;
@@ -257,7 +257,7 @@ public class fearBar : MonoBehaviour
     // 延遲獲得恐懼動畫
     float fillAmount = points / value_Max;
     ui_Addeffect.fillAmount = fillAmount;
-    
+
   }
 
 
@@ -285,7 +285,7 @@ public class fearBar : MonoBehaviour
     if (timeToAdd <= 0)
     {
       CancelInvoke("AutoAddFear");
-      ui_countvalue.text = " (͡° ͜ʖ ͡°)  sec";
+      ui_countvalue.text = " 加值中請稍候";
       points = points + autoAddValue;
 
       ui_value.text = points.ToString();
@@ -323,6 +323,7 @@ public class fearBar : MonoBehaviour
   IEnumerator RunSecvalue()
   {
     yield return new WaitForSeconds(delayBetweenAdd);
+    ui_fillBar.fillAmount = 0;
     // 重新設置倒數器
     timeToAdd = 5;
     //增加增魔所需時間  
@@ -340,11 +341,11 @@ public class fearBar : MonoBehaviour
       ui_fillBar.fillAmount = 0;
 
     }
-    if (points >= value_Min)
+    if (points >= value_Max)
     {
       CancelInvoke("AutoAddFear");
       //   Debug.Log($"WIN！");
-      ui_fillBar.fillAmount = 1;
+      // ui_fillBar.fillAmount = 1;
       StartCoroutine(RunSecvalue());
 
 
