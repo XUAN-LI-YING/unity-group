@@ -54,7 +54,7 @@ public class EnemyHPContron : MonoBehaviour
     //rockboom tag 未加入 --commit by 01
     if (col.tag == "rockboom")
     {
-      // hp -= 1;
+      hp -= 1;
       // trap-02物件 要更換tag哦 
     }
 

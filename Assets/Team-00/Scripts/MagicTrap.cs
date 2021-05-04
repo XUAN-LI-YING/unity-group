@@ -68,7 +68,7 @@ public class MagicTrap : MonoBehaviour
     }
 
     Instantiate(aniexplo, gameObject.transform.position, gameObject.transform.rotation);
-    // Destroy(this.gameObject);
+     Destroy(this.gameObject);
 
     // 日後再自動產生
 
