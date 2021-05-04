@@ -14,6 +14,7 @@ TagManager:
   - TileMap
   - SpikedTrap
   - Mg_LandmineTrap
+  - BuildTrap
   layers:
   - Default
   - TransparentFX
@@ -80,4 +81,7 @@ TagManager:
     locked: 0
   - name: boomeffect
     uniqueID: 3822751351
+    locked: 0
+  - name: Player
+    uniqueID: 3226078249
     locked: 0
