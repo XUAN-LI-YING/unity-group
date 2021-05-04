@@ -22,24 +22,14 @@ public class MagicTrap : MonoBehaviour
 
   void Update()
   {
-    
+
   }
 
-  public void OnTriggerExit2D(Collider2D other)
+  public void OnTriggerEnter2D(Collider2D other)
   {
-    collision = false;
-    if (other.gameObject.tag == "Cat")
-    {
-      Debug.Log("遇到貓沒點擊");
-
-      
-
-    }
-
-
+    collision = true;
+    Debug.Log("only meet sth");
   }
-
-
 
 
   public void OnTriggerStay2D(Collider2D other)
@@ -48,47 +38,46 @@ public class MagicTrap : MonoBehaviour
     {
 
 
-      Debug.Log("meet cat");
+      // Debug.Log("meet cat and plz click !!");
+    }
+
+  }
+
+
+  public void OnTriggerExit2D(Collider2D other)
+  {
+    collision = false;
+    if (other.gameObject.tag == "Cat")
+    {
+      Debug.Log("遇到貓沒點擊");
+
     }
 
 
-
-
-
-
-
-  }
-  public void OnTriggerEnter2D(Collider2D other)
-  {
-    collision = true;
-    Debug.Log("only meet ");
   }
 
   public void OnMouseDown()
-  {  
-    Instantiate(aniexplo, this.gameObject.transform.position, this.gameObject.transform.rotation);
-     Destroy(this.gameObject);
+  {
 
     if (collision == true)
     {
 
+
       Correct();
 
     }
-    Debug.Log("click");
-    Instantiate(aniexplo, gameObject.transform.position, gameObject.transform.rotation);
-    Destroy(this.gameObject);
 
-    // 欸都 全部敵人會一起爆裂 bug                 ??????????
+    Instantiate(aniexplo, gameObject.transform.position, gameObject.transform.rotation);
+     Destroy(this.gameObject);
+
+    // 日後再自動產生
 
   }
 
   void Correct()
   {
 
-
-
-    Debug.Log("meet cat and click");
+    Debug.Log("click correct");
     fearBar.instance.Increase();
 
 
