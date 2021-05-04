@@ -38,7 +38,6 @@
   <ItemGroup>
      <Compile Include="Assets\Team-00\Scripts\boomAnimation.cs" />
      <Compile Include="Assets\Team-00\Scripts\EnemyHPContron.cs" />
-     <Compile Include="Assets\Team-00\Scripts\healthBar.cs" />
      <Compile Include="Assets\Team-00\Scripts\animy_move.cs" />
      <Compile Include="Assets\Team-00\Scripts\Player.cs" />
      <Compile Include="Assets\Team-00\Scripts\SpikedTrapAni.cs" />
@@ -61,17 +60,24 @@
      <Compile Include="Assets\Team-01\Scripts\Battle_Scripts\Enemy\Enemy2Prefab.cs" />
      <Compile Include="Assets\Team-01\Scripts\Battle_Scripts\Monster\MonsterCreater.cs" />
      <Compile Include="Assets\Team-00\Scripts\starBackgroundDireator.cs" />
+<<<<<<< HEAD
      <Compile Include="Assets\FearBarScripts\Trap\Event.cs" />
      <Compile Include="Assets\Team-00\Scripts\Builder.cs" />
+=======
+>>>>>>> cdaf7387c87c3ce8c01146d1b15e731c047b348b
      <Compile Include="Assets\Plugin\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
      <Compile Include="Assets\Team-01\Scripts\Battle_Scripts\Button\Onclick.cs" />
-     <Compile Include="Assets\Team-01\Scripts\Battle_Scripts\自己之前做的\Wallcreater.cs" />
      <Compile Include="Assets\Team-00\Scripts\MagicTrap.cs" />
+<<<<<<< HEAD
      <Compile Include="Assets\Team-01\Scripts\Menu_Scripts\MainMenu.cs" />
      <Compile Include="Assets\FearBarScripts\Enemy\Move.cs" />
      <Compile Include="Assets\Team-00\Scripts\Trap.cs" />
      <Compile Include="Assets\Team-01\Scripts\Menu_Scripts\CreatController.cs" />
      <Compile Include="Assets\Team-00\Scripts\ButtomManager.cs" />
+=======
+     <Compile Include="Assets\Team-00\Scripts\Trap.cs" />
+     <Compile Include="Assets\Inventory\InventoryScripts\ButtomManager.cs" />
+>>>>>>> cdaf7387c87c3ce8c01146d1b15e731c047b348b
      <Compile Include="Assets\Team-00\Scripts\FriendlyHPContron.cs" />
      <Compile Include="Assets\Team-01\Scripts\Battle_Scripts\Enemy\EnemyController.cs" />
      <Compile Include="Assets\Team-00\Scripts\trapOnRoad.cs" />
@@ -80,6 +86,11 @@
      <Compile Include="Assets\Team-00\Scripts\Item.cs" />
      <Compile Include="Assets\Scripts\Trap.cs" />
      <Compile Include="Assets\Team-00\Scripts\friendlyMove.cs" />
+<<<<<<< HEAD
+=======
+     <Compile Include="Assets\Team-00\Scripts\GuardHP01.cs" />
+     <Compile Include="Assets\Team-00\Scripts\GuardHP02.cs" />
+>>>>>>> cdaf7387c87c3ce8c01146d1b15e731c047b348b
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
