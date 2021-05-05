@@ -109,9 +109,12 @@ public class fearBar : MonoBehaviour
     }
 
 
-    if (points <= value_Min || points >= value_Max)
+    if (points < value_Min || points >= value_Max)
     {
+      waitingForInput = false;
+      CancelInvoke("AutoAddFear");
       FearEvent();
+     
     }
     //判斷晉級或失敗事件  
 
@@ -248,15 +251,19 @@ public class fearBar : MonoBehaviour
   {
     yield return new WaitForSeconds(delaySec);
     // 延遲獲得恐懼動畫
+    float fillAmount = points / value_Max;
+    ui_fillBar.fillAmount = fillAmount;
+    waitingForInput = true;
 
   }
+  //這是特效動畫的延遲！！！ 我看錯好幾次了註解一下
 
   IEnumerator DelayCostEffect()
   {
     yield return new WaitForSeconds(delaySec);
     // 延遲獲得恐懼動畫
     float fillAmount = points / value_Max;
-    ui_Addeffect.fillAmount = fillAmount;
+    ui_Hurteffect.fillAmount = fillAmount;
 
   }
 
@@ -284,19 +291,18 @@ public class fearBar : MonoBehaviour
     //並秀出 ☝( ◠‿◠ )☝ 文字
     if (timeToAdd <= 0)
     {
+      waitingForInput = false;
       CancelInvoke("AutoAddFear");
-      ui_countvalue.text = " 加值中請稍候";
+      ui_countvalue.text = "O(∩_∩)O";
       points = points + autoAddValue;
-
+      float fillAmount = points / value_Max;
+      ui_Addeffect.fillAmount = fillAmount;
       ui_value.text = points.ToString();
 
+      StartCoroutine(DelayAddEffect());
+      // 兩個delay搞錯.... 這是特效(effect)的delay 
 
-
-      //增加魔力值
-      // startAddFear = false;
-      // 上面參數沒用到預設是永遠增加;
-
-      // 延遲幾秒重新計時
+      // 延遲幾秒重新計時 time delay 
       StartCoroutine(DelayAfterAdd());
     }
 
@@ -328,22 +334,22 @@ public class fearBar : MonoBehaviour
     timeToAdd = 5;
     //增加增魔所需時間  
     ui_countvalue.text = " LEVEL2 (͡° ͜ʖ ͡°)  ";
-    InvokeRepeating("AutoAddFear", 5, 1);
+    InvokeRepeating("AutoAddFear", 3, 1);
     // 重新啟動計時器
 
   }
   void FearEvent()
   {
-    if (points <= value_Min)
+    if (points < value_Min)
     {
-      CancelInvoke("AutoAddFear");
-      //   Debug.Log($"LOSE！");
+     
+      Debug.Log($"LOSE！");
       ui_fillBar.fillAmount = 0;
 
     }
     if (points >= value_Max)
     {
-      CancelInvoke("AutoAddFear");
+      
       //   Debug.Log($"WIN！");
       // ui_fillBar.fillAmount = 1;
       StartCoroutine(RunSecvalue());
