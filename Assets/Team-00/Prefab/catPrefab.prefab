@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 688061106}
   - component: {fileID: 688061107}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,8 +25,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 688061105}
   m_LocalRotation: {x: -0, y: -0, z: 0.47317028, w: -0.880971}
-  m_LocalPosition: {x: 0.092, y: -0.082, z: 0}
-  m_LocalScale: {x: 0.17482996, y: -0.06851586, z: 0}
+  m_LocalPosition: {x: 0.0859, y: -0.086, z: 0}
+  m_LocalScale: {x: 0.17482996, y: -0.069480695, z: 0}
   m_Children: []
   m_Father: {fileID: 61797436552318610}
   m_RootOrder: 1
@@ -92,13 +92,12 @@ GameObject:
   m_Component:
   - component: {fileID: 61797436552318610}
   - component: {fileID: 61797436552318611}
-  - component: {fileID: 61797436552318608}
   - component: {fileID: 61797436552318614}
   - component: {fileID: 61797436552318615}
-  - component: {fileID: 61797436552318612}
   - component: {fileID: 6889998272423806845}
   - component: {fileID: 436531507517393958}
-  m_Layer: 9
+  - component: {fileID: 6547853523155515524}
+  m_Layer: 0
   m_Name: catPrefab
   m_TagString: Cat
   m_Icon: {fileID: 0}
@@ -172,32 +171,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &61797436552318608
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 61797436552318613}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.07641554, y: 0.02614218}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.96, y: 0.96}
-    newSize: {x: 0.96, y: 0.96}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.90328074, y: 0.90164006}
-  m_EdgeRadius: 0
 --- !u!114 &61797436552318614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,6 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsCollide: 0
+  back: 0
 --- !u!58 &61797436552318615
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -224,28 +198,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.3}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.15
---- !u!95 &61797436552318612
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 61797436552318613}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8d5fe6b3396259647a57a5900ce55659, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_Radius: 0.45408407
 --- !u!114 &6889998272423806845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,6 +237,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &6547853523155515524
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61797436552318613}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c365bb655ea16c94c8714e85e439f213, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4913606489332287915
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,7 +266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 483494975635963174}
   - component: {fileID: 2314483186715958859}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: EnemyAllHP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,7 +348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7060406964334100700}
   - component: {fileID: 640530213861834974}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: EnemyHP
   m_TagString: Untagged
   m_Icon: {fileID: 0}

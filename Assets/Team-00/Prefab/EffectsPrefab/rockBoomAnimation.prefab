@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4961772322803558438}
   - component: {fileID: 4961772322803558436}
-  - component: {fileID: 4961772322803558439}
   - component: {fileID: 4961772322803558433}
   - component: {fileID: 2068386167921989355}
+  - component: {fileID: 1602049900465006723}
   m_Layer: 0
   m_Name: rockBoomAnimation
   m_TagString: rockboom
@@ -86,25 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &4961772322803558439
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4961772322803558437}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0de3a8ff06bd40048a14db0a73cc3b61, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &4961772322803558433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,3 +124,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 24.351364, y: 4.7376947}
   m_EdgeRadius: 0
+--- !u!95 &1602049900465006723
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4961772322803558437}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 21e057c1c50bc1347904e32c19ae743d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

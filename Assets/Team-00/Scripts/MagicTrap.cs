@@ -13,17 +13,7 @@ public class MagicTrap : MonoBehaviour
 
   //滑鼠按下時，出現動畫aniexplo，且動畫位置為(X,y)(gameObject.transform.position, gameObject.transform.rotation)
 
-  void Start()
-  {
-
-    // Correct();
-
-  }
-
-  void Update()
-  {
-
-  }
+ 
 
   public void OnTriggerEnter2D(Collider2D other)
   {

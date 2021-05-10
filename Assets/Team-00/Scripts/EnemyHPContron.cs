@@ -36,7 +36,7 @@ public class EnemyHPContron : MonoBehaviour
       hp -= Time.deltaTime * 1;
       delta += 1;
     }
-    if (delta >= 500)
+    if (delta >= 800)
     {
       IsCollide = false;
     }
@@ -58,17 +58,10 @@ public class EnemyHPContron : MonoBehaviour
       // trap-02物件 要更換tag哦 
     }
 
+    //如果敵人撞到友軍則扣血
     if (col.tag == "Friendly")
     {   //hp-0.1
-      hp -= 0.1f;
-
-      //this.gameObject.transform.position=new Vector3(this.gameObject.transform.position.X+0.5f, this.gameObject.transform.position.y,this.gameObject.transform.position.z);
-      //偵測現在move到哪裡的位置
-      Vector3 move = gameObject.transform.position;
-      //move比現在的位置多5
-      move = new Vector3(move.x - 5f, move.y, move.z);
-      //現在的位置等於現在+5後的move
-      gameObject.transform.position = move;
+      hp -= 1f;
     }
 
   }
