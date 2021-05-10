@@ -85,3 +85,6 @@ TagManager:
   - name: Player
     uniqueID: 3226078249
     locked: 0
+  - name: guard
+    uniqueID: 1132092615
+    locked: 0
