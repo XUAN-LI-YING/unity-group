@@ -29,7 +29,7 @@ public class Main : MonoBehaviour
         if (hit == false) return;
 
         Vector3 pos = hit.point;
-        pos = new Vector3(pos.x, pos.y+0.4f, pos.z);
+        pos = new Vector3(pos.x, pos.y+0.7f, pos.z);
         if (Player.IsLadder) Player.MoveTo(pos, "Player@Back");
         if (Mathf.Abs(pos.y - Player.transform.position.y) <= 1) Player.MoveTo(pos, "Player@Walk");
         
