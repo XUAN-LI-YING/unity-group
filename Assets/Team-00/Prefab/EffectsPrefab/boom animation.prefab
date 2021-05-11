@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8434979036201812794}
   - component: {fileID: 8434979036201812795}
-  - component: {fileID: 8434979036201812792}
   - component: {fileID: 8434979036201812793}
+  - component: {fileID: -3251426306813243282}
   m_Layer: 0
   m_Name: boom animation
   m_TagString: boom
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -472215945
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -421637309335713622, guid: c58de8b85e280144f925786ca3a91afa,
     type: 3}
@@ -85,25 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &8434979036201812792
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8434979036201812742}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b235c76385b482e459845ef0a1d3ae5b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &8434979036201812793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,3 +97,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c1c14085777734f854077bd708d7fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &-3251426306813243282
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8434979036201812742}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2ac09755fe72cc44baaead4576816a46, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
