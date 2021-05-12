@@ -29,19 +29,41 @@ public class Player : MonoBehaviour
     private void Update()
     {
         Movement();
+        //Debug.Log(CurrentPos.x);
+        //Debug.Log(GoalPos.y);
+        //Debug.Log()
     }
 
     private void Movement()
     {
-        if (Vector2.Distance(transform.position, GoalPos) < 0.01f) { Stop(); return; }
-        CurrentPos = transform.position;        //當前位置
+        
+                
+        
+            if (Vector2.Distance(transform.position, GoalPos) < 0.01f) { Stop(); return; }
+                CurrentPos = transform.position;        //當前位置
 
-        Sprite.flipX = false;
-        if (CurrentPos.x > GoalPos.x) Sprite.flipX = true;
-        Sprite.flipY = false;
+                Sprite.flipX = true;
+                if (CurrentPos.x > GoalPos.x) Sprite.flipX = false;
+                Sprite.flipY = false;
 
-        transform.position = Vector2.MoveTowards(CurrentPos, GoalPos, speed);
-        Collider2D.enabled = false;
+                
+                
+            if ( 2.9f < CurrentPos.x && CurrentPos.x < 3.9f )
+            {
+                if (GoalPos.x > 3.9f) GoalPos.x = 3.9f;
+                if (GoalPos.x < 2.9f) GoalPos.x = 2.9f;
+                Collider2D.enabled = false;
+                transform.position = Vector2.MoveTowards(new Vector3(CurrentPos.x,CurrentPos.y,0), new Vector3(GoalPos.x,GoalPos.y,0), speed);
+                return;
+                
+            }
+            else
+            {
+                Collider2D.enabled = false;
+                transform.position = Vector2.MoveTowards(new Vector3(CurrentPos.x,CurrentPos.y,0), new Vector3(GoalPos.x,CurrentPos.y,0), speed);
+            }
+            
+        
     }
 
     private void Stop()
