@@ -12,7 +12,7 @@ public class fearBar : MonoBehaviour
   public int timeToAdd;
   //倒數幾秒
   public int timePress;
-  //QTE連擊次數 (先留者特殊加分用?)
+  //QTE連擊次數 (變為魔法地累加分用 參數名稱之後要改掉)
   public float delayBetweenAdd;
   //倒數器間隔時間
   public float delaySec;
@@ -114,7 +114,7 @@ public class fearBar : MonoBehaviour
       waitingForInput = false;
       CancelInvoke("AutoAddFear");
       FearEvent();
-     
+
     }
     //判斷晉級或失敗事件  
 
@@ -127,7 +127,7 @@ public class fearBar : MonoBehaviour
     waitingForInput = true;
     // float fillAmount = points / value_Max;
     // points = 0 顯示初始數值
-    ui_value.text = points.ToString() + " FearPoint";
+    ui_value.text = points.ToString() + "";
     // ui_addvalue.text = (autoAddValue.ToString()) + "points/sec";
     // ui_costvalue.text = "- " + (costvalue.ToString());
     ui_countvalue.text = timeToAdd.ToString() + "sec";
@@ -152,7 +152,7 @@ public class fearBar : MonoBehaviour
     Debug.Log($"此動作耗費了{costvalue}魔力值");
     DetectHurt();
 
-    ui_value.text = $"魔力值下降中!!\n 目前存量={points}";
+    ui_value.text = $"{points}";
     //update points on the UI
     //更新分數顯示
 
@@ -163,7 +163,7 @@ public class fearBar : MonoBehaviour
     Checking = false;
     points = points - eachpresscost;
     float fillAmount = points / value_Max;
-    ui_value.text = $"魔力值損耗{eachpresscost}!!\n 目前存量={points}";
+    ui_value.text = $"{points}";
     Debug.Log($"出動友軍耗費{eachpresscost}魔力值");
     ui_fillBar.fillAmount = fillAmount;
 
@@ -184,20 +184,23 @@ public class fearBar : MonoBehaviour
     //update points on the UI
     //更新分數顯示
 
-    if (combo)
-    {
-      ui_value.text = $"魔力值增加 {timePress} !!\n 目前存量={points}";
-    }
+    // if (combo)
+    // {
+    //   ui_value.text = $"{points}";
+    //   Debug.Log($"增加{timePress}!\n目前存量={points}");
+    // }
     // 本來用在 QTE 後來取消先留著 特殊加分
 
     // 其他一般狀況
-    else
-    {
+    // else
+    // {
 
-      ui_value.text = $"魔力值增加{timePress}!!\n 目前存量={points}";
+    //   ui_value.text = $"{points}";
+    //   // debug 增加{timePress}!!\n目前存量=
+    //   Debug.Log($"增加{timePress}!\n目前存量={points}");
 
-      Debug.Log($"{(points / value_Max) * 100}% 魔力值");
-    }
+
+    // }
 
 
 
@@ -293,7 +296,7 @@ public class fearBar : MonoBehaviour
     {
       waitingForInput = false;
       CancelInvoke("AutoAddFear");
-      ui_countvalue.text = "O(∩_∩)O";
+      // ui_countvalue.text = "++魔力值！"
       points = points + autoAddValue;
       float fillAmount = points / value_Max;
       ui_Addeffect.fillAmount = fillAmount;
@@ -342,14 +345,14 @@ public class fearBar : MonoBehaviour
   {
     if (points < value_Min)
     {
-     
+
       Debug.Log($"LOSE！");
       ui_fillBar.fillAmount = 0;
 
     }
     if (points >= value_Max)
     {
-      
+
       //   Debug.Log($"WIN！");
       // ui_fillBar.fillAmount = 1;
       StartCoroutine(RunSecvalue());

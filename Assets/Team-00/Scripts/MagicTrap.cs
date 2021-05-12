@@ -24,27 +24,32 @@ public class MagicTrap : MonoBehaviour
 
   public void OnTriggerStay2D(Collider2D other)
   {
-    if ((other.gameObject.tag == "Cat") && (collision = true))
+    if ((other.gameObject.tag == "Cat") )
     {
-
 
       // Debug.Log("meet cat and plz click !!");
     }
 
   }
-
-
   public void OnTriggerExit2D(Collider2D other)
   {
     collision = false;
-    if (other.gameObject.tag == "Cat")
-    {
-      Debug.Log("遇到貓沒點擊");
-
-    }
-
+    //碰到任一object 且離開，collision 失效，使點擊無效
 
   }
+
+
+  // public void OnTriggerExit2D(Collider2D other)
+  // {
+  //   collision = false;
+  //   if (other.gameObject.tag == "Cat")
+  //   {
+  //     Debug.Log("遇到貓沒點擊");
+
+  //   }
+
+
+  // }
 
   public void OnMouseDown()
   {
@@ -66,7 +71,6 @@ public class MagicTrap : MonoBehaviour
 
   void Correct()
   {
-
     Debug.Log("click correct");
     fearBar.instance.Increase();
 
