@@ -33,5 +33,4 @@ Library/Style.catalog
 Library/ArtifactDB
 *.csproj
 ProjectSettings/ProjectVersion.txt
-*.txt
 *.json
