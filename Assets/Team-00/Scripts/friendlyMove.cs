@@ -20,14 +20,14 @@ public class friendlyMove : MonoBehaviour
         transform.Translate(this.speed,0,0);
 
         //當物體超過畫面時(x=200)怪物移動到第一層的位置
-        if(transform.position.x<-200 && transform.position.y==-40 )    
+        if(transform.position.x<-101 && transform.position.y <= -15 && transform.position.y > -20)    
         {
         
-        gameObject.transform.position = new Vector3(200, 40, 0);
+        gameObject.transform.position = new Vector3(90, 13, 0);
 
         }
         //物體在第一層超過畫面時則讓她消失
-        if(transform.position.y==40 && transform.position.x<-200)
+        if(transform.position.x<-100 && transform.position.y <= 20 && transform.position.y > 12)
         {
             Destroy(gameObject);
         }
@@ -39,31 +39,31 @@ public class friendlyMove : MonoBehaviour
     {
        
         //敵方碰撞到我方友軍被擊退一點
-        if (col.tag == "Cat")
-        {   
-            if(back==true)
-            {
+        // if (col.tag == "Cat")
+        // {   
+        //     if(back==true)
+        //     {
             
-            //偵測現在move到哪裡的位置
-            Vector3 move = gameObject.transform.position;
-            //move比現在的位置加5
-            move = new Vector3(move.x + 10f, move.y, move.z);
-           //現在的位置等於現在+5後的move
-            gameObject.transform.position = move;
-            }
+        //     //偵測現在move到哪裡的位置
+        //     Vector3 move = gameObject.transform.position;
+        //     //move比現在的位置加5
+        //     move = new Vector3(move.x + 10f, move.y, move.z);
+        //    //現在的位置等於現在+5後的move
+        //     gameObject.transform.position = move;
+        //     }
             
-            times+=1;          //紀錄第一次碰撞到友軍
-        }
+        //     times+=1;          //紀錄第一次碰撞到友軍
+        // }
     
-         if(times>=1 && times<=5)  //每碰裝到友軍5次才會又擊退一次
-         {   
-                 back=false;
-         }
+        //  if(times>=1 && times<=5)  //每碰裝到友軍5次才會又擊退一次
+        //  {   
+        //          back=false;
+        //  }
 
-         else
-         {
-            times=0;
-            back=true; 
-         }
+        //  else
+        //  {
+        //     times=0;
+        //     back=true; 
+        //  }
     }
 }

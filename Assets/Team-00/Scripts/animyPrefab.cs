@@ -20,7 +20,7 @@ public class animyPrefab : MonoBehaviour
       this.delta = 0;
       GameObject go = Instantiate(catPrefab) as GameObject;
       //定義產生位置
-      go.transform.position = new Vector3(-200, 36, 0);
+      go.transform.position = new Vector3(-104, 13.6f, 0);
 
       //    transform.localScale = new Vector3(1.5f, 1.5f,1.5f);
       //更改為1.5倍大

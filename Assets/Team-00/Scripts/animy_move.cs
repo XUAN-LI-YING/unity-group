@@ -24,14 +24,14 @@ public class animy_move : MonoBehaviour
     transform.Translate(this.speed, 0, 0);
 
     //當物體超過畫面時(x=200)怪物移動到的二層的位置
-    if (transform.position.x > 200 && transform.position.y >= 30 && transform.position.y <= 40)
+    if (transform.position.x > 101 && transform.position.y >= 10 && transform.position.y <= 20)
     {
 
-      gameObject.transform.position = new Vector3(-200, -43, 0);
+      gameObject.transform.position = new Vector3(-104, -18, 0);
 
     }
     //物體在第二層超過畫面時則讓她消失
-    if (transform.position.y >= -43 && transform.position.y <= -20 && transform.position.x > 200)
+    if (transform.position.y >= -20 && transform.position.y <= -15 && transform.position.x > 69)
     {
       Destroy(gameObject);
     }
@@ -64,37 +64,37 @@ public class animy_move : MonoBehaviour
 
 
 
-    //敵方碰撞到我方友軍被擊退一點
-    if (col.tag == "Friendly")
-    {
-      if (back == true)
-      {
-        Debug.Log(back);
-        Vector3 move = gameObject.transform.position;
-        //move比現在的位置扣5
-        move = new Vector3(move.x - 10f, move.y, move.z);
-        //現在的位置等於現在-5後的move
-        gameObject.transform.position = move;
-      }
+    // //敵方碰撞到我方友軍被擊退一點
+    // if (col.tag == "Friendly")
+    // {
+    //   if (back == true)
+    //   {
+    //     Debug.Log(back);
+    //     Vector3 move = gameObject.transform.position;
+    //     //move比現在的位置扣5
+    //     move = new Vector3(move.x - 10f, move.y, move.z);
+    //     //現在的位置等於現在-5後的move
+    //     gameObject.transform.position = move;
+    //   }
 
-      times += 1;          //紀錄第一次碰撞到友軍
-    }
+    //   times += 1;          //紀錄第一次碰撞到友軍
+    // }
 
-    if (times >= 1 && times <= 5)  //每碰撞到友軍5次才會又擊退一次
-    {
-      Debug.Log(times);
-      back = false;
-    }
+    // if (times >= 1 && times <= 5)  //每碰撞到友軍5次才會又擊退一次
+    // {
+    //   Debug.Log(times);
+    //   back = false;
+    // }
 
-    else
-    {
-      times = 0; //這邊可能要修改只要碰撞到object time就會歸0
-      //參考解法：
-      // update 隨時偵測 time 若大於5 back = true  碰到friendly & back=true時 time 重置= 0,否則time+-1; 
-      // commit by 01
-      Debug.Log($"{times}秒//擊退友軍");
-      back = true;
-    }
+    // else
+    // {
+    //   times = 0; //這邊可能要修改只要碰撞到object time就會歸0
+    //   //參考解法：
+    //   // update 隨時偵測 time 若大於5 back = true  碰到friendly & back=true時 time 重置= 0,否則time+-1; 
+    //   // commit by 01
+    //   Debug.Log($"{times}秒//擊退友軍");
+    //   back = true;
+    // }
   }
 
 }
