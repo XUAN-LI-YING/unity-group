@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/StartGame/Art/Menus.json.meta
 guid: e72eb13f4a634445e98f5da0ed4f0822
 TextScriptImporter:
+=======
+guid: 6a614c78c2510454790135292d878946
+folderAsset: yes
+DefaultImporter:
+>>>>>>> 6eff58a4242270ce3843cdedb8f8f058229222ac:Assets/Inventory/Prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

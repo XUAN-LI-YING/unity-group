@@ -24,7 +24,7 @@
 *.bin
 *.bin
 *.bin
-
+Assembly-CSharp.csproj
 
 Library/ArtifactDB
 Library/ArtifactDB
