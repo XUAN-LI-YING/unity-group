@@ -5,9 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class StartButton : MonoBehaviour
 {
-   //切換畫面到gamescene
-   public void ButtonMoveScene(string gamescene) 
-   {
-       SceneManager.LoadScene(gamescene);
-   }
+//    //切換畫面到gamescene
+//    public void ButtonMoveScene(string gamescene) 
+//    {
+//        SceneManager.LoadScene(gamescene);
+//    }
+void Update()
+{
+    if (Input.GetKeyUp(KeyCode.Space))
+    {
+        SceneManager.LoadScene("DevilDefend");
+    }
+}
+
 }

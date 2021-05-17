@@ -58,14 +58,27 @@ public class EnemyHPContron : MonoBehaviour
       // trap-02物件 要更換tag哦 
     }
 
-    //如果敵人撞到友軍則扣血
+    // 如果敵人撞到友軍則扣血
     if (col.tag == "Friendly")
     {   //hp-0.1
       hp -= 1f;
     }
 
   }
-
+// void OnCollisionEnter2D(Collision2D coll) 
+//     {   //如果碰撞到cat
+//         if(coll.gameObject.tag=="Cat")
+//         {   //hp-0.1
+//             hp -= 1f;
+            
+//             // //偵測現在move到哪裡的位置
+//             // Vector3 move = gameObject.transform.position;
+//             // //move比現在的位置多5
+//             // move = new Vector3(move.x +5f, move.y, move.z);
+//             // //現在的位置等於現在+5後的move
+//             // gameObject.transform.position = move;
+//         }
+//     }
 
 }
 
