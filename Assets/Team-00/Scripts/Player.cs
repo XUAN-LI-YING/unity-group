@@ -78,13 +78,12 @@ public class Player : MonoBehaviour
         if (other != Main.Ladder) return;       //若非Ladder 返回
         IsLadder = true;        //IsLadder為真
         //transform.Translate(CurrentPos.y);
-
     }
 
     void OnTriggerExit2D(Collider2D other)//離開物件
     {
         if (other != Main.Ladder) return;
-        IsLadder = false;       //IsLadder不為真
+        IsLadder = false;       //IsLadder不為真 
     }
 
 }

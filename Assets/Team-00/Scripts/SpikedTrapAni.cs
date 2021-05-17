@@ -14,5 +14,10 @@ public class SpikedTrapAni : MonoBehaviour
       Debug.Log("pink meet cat");
       Instantiate(explo, col.gameObject.transform.position, col.gameObject.transform.rotation);
     }
+    if (col.tag == "Player")
+    {
+      Debug.Log("trap meet player");
+      Instantiate(explo, col.gameObject.transform.position, col.gameObject.transform.rotation);
+    }
   }
 }
