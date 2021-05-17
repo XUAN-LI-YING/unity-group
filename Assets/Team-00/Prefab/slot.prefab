@@ -331,6 +331,7 @@ GameObject:
   - component: {fileID: 8369066762966714598}
   - component: {fileID: 4503201164853803698}
   - component: {fileID: 2728720872629780215}
+  - component: {fileID: 1115819031455305121}
   m_Layer: 5
   m_Name: Item
   m_TagString: BuildTrap
@@ -508,6 +509,19 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &1115819031455305121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6279337860207992194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ef7872d85519a48aa99e2a05b75000, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explo: {fileID: 8434979036201812742, guid: ff197d2ad652ae34898aadd64f6191e1, type: 3}
 --- !u!1 &8994224933451555853
 GameObject:
   m_ObjectHideFlags: 0
