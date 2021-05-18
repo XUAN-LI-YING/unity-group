@@ -16,7 +16,7 @@ public class animy_move : MonoBehaviour
     IsCollide = false;
     back = false;
     //怪物初始數度
-    this.speed = 0.09f;
+    this.speed = 0.1f;
   }
   void Update()
   {
@@ -41,15 +41,15 @@ public class animy_move : MonoBehaviour
     if (IsCollide == true)
     {
       // Debug.Log(this.speed);
-      this.speed = 0.05f;
+      this.speed = 0.04f;
       delta += 1;
     }
     //緩速到一定時間後便正常
-    if (delta >= 1500)
+    if (delta >= 800)
     {
       //Debug.Log("阿我恢復了!");
       IsCollide = false;
-      this.speed = 0.09f;
+      this.speed = 0.1f;
     }
 
   }
