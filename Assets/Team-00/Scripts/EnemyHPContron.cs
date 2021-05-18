@@ -40,6 +40,7 @@ public class EnemyHPContron : MonoBehaviour
     {
       IsCollide = false;
     }
+    //Debug.Log(hp);
   }
 
   //碰撞後bool為真開始持續扣血

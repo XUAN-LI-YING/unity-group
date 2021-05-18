@@ -22,8 +22,9 @@ public class Player : MonoBehaviour
     }
     internal void MoveTo(Vector2 pos, string animation)
     {
-        Animator.Play(animation);           //動畫
         GoalPos = pos;
+        Animator.Play(animation);           //動畫
+        Debug.Log("1");
         
     }
     private void Update()
@@ -39,31 +40,31 @@ public class Player : MonoBehaviour
         
                 
         
-            if (Vector2.Distance(transform.position, GoalPos) < 0.01f) { Stop(); return; }
-                CurrentPos = transform.position;        //當前位置
+        if (Vector2.Distance(transform.position, GoalPos) < 0.01f) { Stop(); return; }
+            CurrentPos = transform.position;        //當前位置
 
-                Sprite.flipX = true;
-                if (CurrentPos.x > GoalPos.x) Sprite.flipX = false;
-                Sprite.flipY = false;
+            Sprite.flipX = true;
+            if (CurrentPos.x > GoalPos.x) Sprite.flipX = false;
+            Sprite.flipY = false;
 
+            //Collider2D.enabled = false;
+            //transform.position = Vector2.MoveTowards(CurrentPos, GoalPos, speed);
                 
-                
-            if ( 2.9f < CurrentPos.x && CurrentPos.x < 3.9f )
+            if ( 39.5f < CurrentPos.x && CurrentPos.x < 49.5f )
             {
-                if (GoalPos.x > 3.9f) GoalPos.x = 3.9f;
-                if (GoalPos.x < 2.9f) GoalPos.x = 2.9f;
-                Collider2D.enabled = false;
+                
+                //Collider2D.enabled = false;
                 transform.position = Vector2.MoveTowards(new Vector3(CurrentPos.x,CurrentPos.y,0), new Vector3(GoalPos.x,GoalPos.y,0), speed);
                 return;
                 
             }
             else
             {
-                Collider2D.enabled = false;
+                //Collider2D.enabled = false;
                 transform.position = Vector2.MoveTowards(new Vector3(CurrentPos.x,CurrentPos.y,0), new Vector3(GoalPos.x,CurrentPos.y,0), speed);
             }
             
-        
+        //Debug.Log("2");
     }
 
     private void Stop()
