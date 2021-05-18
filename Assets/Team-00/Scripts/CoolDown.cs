@@ -5,16 +5,20 @@ using UnityEngine.UI;
 
 public class CoolDown : MonoBehaviour
 {
-    public float coldTime = 2.0f;   //定義冷卻時間
-    private float timer = 0;        //計時器
+    
+    public float timer = 2.0f;   //定義冷卻時間
+    public float coldTime = 0;        //計時器
     public Image filledImage;      //填充圖
     
-    private bool isStartTime = false;   //定義標誌量，開始計時
+    
+    public bool isStartTime = false;   //定義標誌量，開始計時
     //GameObject trap = GameObject.FindWithTag("BuildTrap");
     //GameObject[] traps = GameObject.FindGameObjectsWithTag("BuildTrap");
     // Start is called before the first frame update
+    public static CoolDown instance;
     void Start()
     {
+        instance = this;
         filledImage = transform.Find("FillImage").GetComponent<Image>();
     }
 
@@ -25,17 +29,25 @@ public class CoolDown : MonoBehaviour
             isStartTime = true;*/
         if (isStartTime)              //當開始計時執行下列代碼
         {
-            timer += Time.deltaTime;
-            filledImage.fillAmount = (coldTime - timer) / coldTime;
-            if(timer>=coldTime)       //判斷是否到達冷卻時間
-            {
+            coldTime += Time.deltaTime;
+            filledImage.fillAmount = (timer - coldTime) / timer;
+            if(timer<=coldTime)       //判斷是否到達冷卻時間
+            {  
                 filledImage.fillAmount = 0;//冷卻不顯示
-                timer = 0;            //重置計時器
-                isStartTime = false;  //結束計時
+                coldTime = 0;//重置計時器
+                isStartTime = false;  //結束計時      
+            }//Debug.Log(timer);
+            if(filledImage.fillAmount == 0)
+            {
+                if(SpikedTrapAni.instance.touch == true)
+                SpikedTrapAni.instance.bomb();
             }
+            //Debug.Log(coldTime);
         }
         
     }
+
+    
     public void OnShow()               //定義點擊按鈕觸發
     {
                     //當點擊時開始計時
@@ -58,6 +70,11 @@ public class CoolDown : MonoBehaviour
         {
             isStartTime = true;
         }
+
+        /*if (other.gameObject.CompareTag("Cat"))
+        {
+            isStartTime = true;
+        }*/
 
     }
 
