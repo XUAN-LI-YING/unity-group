@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class animy_move : MonoBehaviour
 {
 
@@ -16,7 +16,7 @@ public class animy_move : MonoBehaviour
     IsCollide = false;
     back = false;
     //怪物初始數度
-    this.speed = 0.08f;
+    this.speed = 0.09f;
   }
   void Update()
   {
@@ -34,6 +34,7 @@ public class animy_move : MonoBehaviour
     if (transform.position.y >= -20 && transform.position.y <= -15 && transform.position.x > 69)
     {
       Destroy(gameObject);
+      SceneManager.LoadScene("gameOver");
     }
 
     //IsCollide==true也就是遇到尖刺陷阱時，持續緩速
@@ -44,11 +45,11 @@ public class animy_move : MonoBehaviour
       delta += 1;
     }
     //緩速到一定時間後便正常
-    if (delta >= 2000)
+    if (delta >= 1500)
     {
       //Debug.Log("阿我恢復了!");
       IsCollide = false;
-      this.speed = 0.08f;
+      this.speed = 0.09f;
     }
 
   }
