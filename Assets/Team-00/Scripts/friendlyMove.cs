@@ -5,7 +5,7 @@ using UnityEngine;
 public class friendlyMove : MonoBehaviour
 {
     float speed=0;
-    int times= 0;           //撞到次數
+    //int times= 0;           //撞到次數
 
     public bool back;      //擊退判定
     void Start()

@@ -30,6 +30,7 @@ public class FriendlyHPContron : MonoBehaviour
 
     //碰撞後bool為真開始持續扣血
      void OnTriggerEnter2D(Collider2D col)
+    // void OnCollisionEnter2D(Collision2D coll) 
     {   //如果碰撞到cat
         if(col.tag=="Cat")
         {   //hp-0.1
