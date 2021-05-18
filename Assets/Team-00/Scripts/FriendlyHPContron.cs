@@ -29,12 +29,12 @@ public class FriendlyHPContron : MonoBehaviour
     }
 
     //碰撞後bool為真開始持續扣血
-     void OnTriggerEnter2D(Collider2D col)
-    // void OnCollisionEnter2D(Collision2D coll) 
+    //  void OnTriggerEnter2D(Collider2D col)
+     void OnCollisionStay2D(Collision2D col) 
     {   //如果碰撞到cat
-        if(col.tag=="Cat")
-        {   //hp-0.1
-            hp -= 1f;
+        if(col.gameObject.tag=="Cat")
+        {    hp -= 0.05f;
+            //  hp -= Time.deltaTime * 5;
             
             // //偵測現在move到哪裡的位置
             // Vector3 move = gameObject.transform.position;
