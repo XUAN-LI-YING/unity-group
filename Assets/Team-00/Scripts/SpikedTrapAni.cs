@@ -28,7 +28,7 @@ public class SpikedTrapAni : MonoBehaviour
     }
   }
   //產生黃色爆炸物件
-  public void OnTriggerEnter2D(Collider2D col)
+  public void OnTriggerStay2D(Collider2D col)
   {
     //Instantiate(explo, transform.position, transform.rotation);
     /*if(CoolDown.Update.isStartTime == false)
