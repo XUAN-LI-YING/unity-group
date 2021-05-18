@@ -6,7 +6,7 @@ public class animy_move : MonoBehaviour
 {
 
   int delta = 0;
-  int times = 0;    //撞到次數
+ // int times = 0;    //撞到次數
   float speed = 0;
 
   public bool IsCollide; //尖刺陷阱判定
