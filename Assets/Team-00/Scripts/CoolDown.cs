@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class CoolDown : MonoBehaviour
 {
     
@@ -42,9 +43,8 @@ public class CoolDown : MonoBehaviour
                 if(SpikedTrapAni.instance.touch == true)
                 SpikedTrapAni.instance.bomb();
             }
-            //Debug.Log(coldTime);
+            //Debug.Log(filledImage.fillAmount);
         }
-        
     }
 
     

@@ -18,12 +18,17 @@ public class Main : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*if(Input.GetKeyDown("D"))
+        {
+
+        }*/
         InputUpdate();
        
     }
 
     void InputUpdate()
     {
+        
         if (Input.GetMouseButtonDown(0) == false) return;
         Vector3 mousePoint = Camera.main.ScreenPointToRay(Input.mousePosition).origin;
         if (Physics2D.Raycast(mousePoint, Vector2.zero)) return;
@@ -32,14 +37,14 @@ public class Main : MonoBehaviour
         if (hit == false) return;
 
         Vector3 pos = hit.point;
-        pos = new Vector3(pos.x, pos.y+5, pos.z);
+        pos = new Vector3(pos.x, pos.y, pos.z);
         
         if (Player.IsLadder) Player.MoveTo(pos, "Player@Back");
         if (Mathf.Abs(pos.y - Player.transform.position.y) >= 1) Player.MoveTo(pos, "Player@Walk");
-        Debug.Log(Mathf.Abs(pos.y - Player.transform.position.y));
+        //Debug.Log(Mathf.Abs(pos.y - Player.transform.position.y));
         MoveCursor.transform.position = pos;
         MoveCursor.SetActive(true);
         Debug.Log(pos);
-        Debug.Log(Player.CurrentPos.y);
+        //Debug.Log(Player.CurrentPos.y);
     }
 }
