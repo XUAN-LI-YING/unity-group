@@ -62,7 +62,10 @@ public class animy_move : MonoBehaviour
       //Debug.Log("阿我撞到了QQ");
       IsCollide = true;
     }
-
+    /*if(col.tag == "Player")
+    {
+      IsCollide = false;
+    }*/
 
 
     // //敵方碰撞到我方友軍被擊退一點

@@ -6,7 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Main Main;
-    [SerializeField] private float speed = 0.01f;
+    [SerializeField] private float speed = 0.1f;
     public Animator Animator;
     public SpriteRenderer Sprite;
     public  bool IsLadder;
@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
     {
         GoalPos = pos;
         Animator.Play(animation);           //動畫
-        Debug.Log("1");
+        //Debug.Log("1");
         
     }
     private void Update()
@@ -39,28 +39,28 @@ public class Player : MonoBehaviour
     {
         
                 
-        
-        if (Vector2.Distance(transform.position, GoalPos) < 0.01f) { Stop(); return; }
+       // Vector2.Distance(transform.position, GoalPos
+        if (transform.position.x == GoalPos.x) { Stop(); return; }
             CurrentPos = transform.position;        //當前位置
 
             Sprite.flipX = true;
             if (CurrentPos.x > GoalPos.x) Sprite.flipX = false;
             Sprite.flipY = false;
 
-            //Collider2D.enabled = false;
+            Collider2D.enabled = false;
             //transform.position = Vector2.MoveTowards(CurrentPos, GoalPos, speed);
                 
-            if ( 39.5f < CurrentPos.x && CurrentPos.x < 49.5f )
+            if ( 23 < CurrentPos.x && CurrentPos.x < 33 )
             {
                 
-                //Collider2D.enabled = false;
+                Collider2D.enabled = false;
                 transform.position = Vector2.MoveTowards(new Vector3(CurrentPos.x,CurrentPos.y,0), new Vector3(GoalPos.x,GoalPos.y,0), speed);
                 return;
                 
             }
             else
             {
-                //Collider2D.enabled = false;
+                Collider2D.enabled = false;
                 transform.position = Vector2.MoveTowards(new Vector3(CurrentPos.x,CurrentPos.y,0), new Vector3(GoalPos.x,CurrentPos.y,0), speed);
             }
             
@@ -79,6 +79,10 @@ public class Player : MonoBehaviour
         if (other != Main.Ladder) return;       //若非Ladder 返回
         IsLadder = true;        //IsLadder為真
         //transform.Translate(CurrentPos.y);
+        /*if(other.gameObject.CompareTag("Cat"))
+        {
+            Collider2D.enabled = false;
+        }*/
     }
 
     void OnTriggerExit2D(Collider2D other)//離開物件
