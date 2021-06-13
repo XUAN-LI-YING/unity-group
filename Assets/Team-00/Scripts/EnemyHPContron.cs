@@ -7,13 +7,16 @@ public class EnemyHPContron : MonoBehaviour
   float hp = 0;
   float delta = 0;
   public bool IsCollide;
+  public bool back;
   public int max_hp = 0;
   public GameObject EnemyAllHP;
+  public int times=0;
   // Start is called before the first frame update
   //最大血量為10，而初始HP血量=最大血量
   void Start()
-  {
+  { 
     IsCollide = false;
+    back=true;
     max_hp = 10;
     hp = max_hp;
   }
@@ -41,6 +44,8 @@ public class EnemyHPContron : MonoBehaviour
       IsCollide = false;
     }
     //Debug.Log(hp);
+    
+  
   }
 
   //碰撞後bool為真開始持續扣血
@@ -69,18 +74,43 @@ public class EnemyHPContron : MonoBehaviour
 void OnCollisionStay2D(Collision2D coll) 
     {   //如果碰撞到cat
         if(coll.gameObject.tag=="Friendly")
-        {   hp -=0.01f;
+        {   hp -=0.03f;
             
-            //  hp -= Time.deltaTime * 5;
-            
-            // //偵測現在move到哪裡的位置
-            // Vector3 move = gameObject.transform.position;
-            // //move比現在的位置多5
-            // move = new Vector3(move.x +5f, move.y, move.z);
-            // //現在的位置等於現在+5後的move
-            // gameObject.transform.position = move;
+        
         }
     }
+
+void OnCollisionEnter2D(Collision2D coll) 
+{
+  if(coll.gameObject.tag=="Friendly")
+  {     if( times>=2)
+            {
+              back=true;
+              times=0;
+            }
+        // else if (times==0)
+        //  {
+        //   back=true;
+        //  times += 1 ;
+        // }    
+            
+            else
+            {
+              times += 1 ;
+            }
+            Debug.Log($"{times}秒");
+            if(back==true)
+            {//偵測現在move到哪裡的位置
+            Vector3 move = gameObject.transform.position;
+            //move比現在的位置-5
+            move = new Vector3(move.x-20f, move.y, move.z);
+            //現在的位置等於現在-5後的move
+            gameObject.transform.position = move;
+            back=false;
+            
+            }
+  }
+}
 
 }
 

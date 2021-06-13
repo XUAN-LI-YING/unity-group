@@ -26,7 +26,7 @@ public class SpikedTrapAni : MonoBehaviour
       if(touch == true)
       bomb();
     }
-    Debug.Log(touch);
+    //Debug.Log(touch);
   }
   //產生黃色爆炸物件
   public void OnTriggerStay2D(Collider2D col)

@@ -8,7 +8,7 @@ public class animy_move : MonoBehaviour
   int delta = 0;
  // int times = 0;    //撞到次數
   float speed = 0;
-
+ 
   public bool IsCollide; //尖刺陷阱判定
   public bool back;      //擊退判定
   void Start()
@@ -16,7 +16,7 @@ public class animy_move : MonoBehaviour
     IsCollide = false;
     back = false;
     //怪物初始數度
-    this.speed = 0.1f;
+    this.speed = 0.09f;
   }
   void Update()
   {
@@ -34,7 +34,7 @@ public class animy_move : MonoBehaviour
     if (transform.position.y >= -20 && transform.position.y <= -15 && transform.position.x > 69)
     {
       Destroy(gameObject);
-      SceneManager.LoadScene("gameOver");
+      //SceneManager.LoadScene("gameOver"); //跳到結束畫面
     }
 
     //IsCollide==true也就是遇到尖刺陷阱時，持續緩速
@@ -62,6 +62,8 @@ public class animy_move : MonoBehaviour
       //Debug.Log("阿我撞到了QQ");
       IsCollide = true;
     }
+  }
+  
     /*if(col.tag == "Player")
     {
       IsCollide = false;
@@ -99,6 +101,5 @@ public class animy_move : MonoBehaviour
     //   Debug.Log($"{times}秒//擊退友軍");
     //   back = true;
     // }
-  }
 
 }
