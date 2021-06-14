@@ -22,9 +22,6 @@ public class animyPrefab : MonoBehaviour
       //定義產生位置
       go.transform.position = new Vector3(-104, 13.6f, 0);
 
-      //    transform.localScale = new Vector3(1.5f, 1.5f,1.5f);
-      //更改為1.5倍大
-      //之後依據條件做為特效之類的
 
 
     }
@@ -32,6 +29,4 @@ public class animyPrefab : MonoBehaviour
 
   }
 
-
-  //https://dometi.com.tw/blog/unity-2d-lesson3/
 }
