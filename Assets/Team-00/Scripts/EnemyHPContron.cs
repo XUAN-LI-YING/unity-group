@@ -11,6 +11,7 @@ public class EnemyHPContron : MonoBehaviour
   public int max_hp = 0;
   public GameObject EnemyAllHP;
   public int times=0;
+  
   // Start is called before the first frame update
   //最大血量為10，而初始HP血量=最大血量
   void Start()
@@ -27,7 +28,9 @@ public class EnemyHPContron : MonoBehaviour
     if (hp <= 0)
     {
       Destroy(this.gameObject);
+      
     }
+   
     //如果HP沒有小於0目前的血條位置就會為 目前血量/最大血量
     float _percent = ((float)hp / (float)max_hp);
     EnemyAllHP.transform.localScale = new Vector3(_percent, EnemyAllHP.transform.localScale.y, EnemyAllHP.transform.localScale.z);
@@ -78,6 +81,11 @@ void OnCollisionStay2D(Collision2D coll)
             
         
         }
+        if(coll.gameObject.tag=="guard")
+        {   //hp-0.1
+            hp -= 0.1f;
+            
+        }
     }
 
 void OnCollisionEnter2D(Collision2D coll) 
@@ -110,7 +118,10 @@ void OnCollisionEnter2D(Collision2D coll)
             
             }
   }
+  
 }
+
+
 
 }
 
