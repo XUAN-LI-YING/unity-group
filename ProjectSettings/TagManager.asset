@@ -15,6 +15,7 @@ TagManager:
   - SpikedTrap
   - Mg_LandmineTrap
   - BuildTrap
+  - guard
   layers:
   - Default
   - TransparentFX
