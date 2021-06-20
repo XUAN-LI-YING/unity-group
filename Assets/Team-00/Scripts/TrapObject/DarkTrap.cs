@@ -23,16 +23,14 @@ public class DarkTrap : MonoBehaviour
 
             if (other.gameObject.tag == "Cat")
             {
-            Debug.Log("遇到守衛");
-
+            Correct();
             }
     }
+    
     void Correct()
     {
         Debug.Log("catch enemy");
         fearBar.instance.Increase();
-
-
 
     }
 }
