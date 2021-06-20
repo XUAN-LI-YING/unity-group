@@ -23,7 +23,22 @@ public class animy_move : MonoBehaviour
     //怪物速度
     transform.Translate(this.speed, 0, 0);
 
-    //當物體超過畫面時(x=200)怪物移動到的二層的位置
+    //當物體超過畫面時(x>101,y>=10)怪物移動到的二層的位置
+
+    // 不能直接放 update 
+
+    // 需判定狀態再來 call back funtion 呼叫函式
+
+    // 思緒：有何狀態
+
+    // 正常行走、遇到特定物件、無法攻擊狀態
+
+    // 先拿一張紙寫流程圖 先不管程式會不會寫
+
+    // 避免敵人一直困在同一陷阱 紀錄單一碰撞次數
+
+    // CheckCondition();
+
     if (transform.position.x > 101 && transform.position.y >= 10 && transform.position.y <= 20)
     {
 
@@ -40,9 +55,10 @@ public class animy_move : MonoBehaviour
     //IsCollide==true也就是遇到尖刺陷阱時，持續緩速
     if (IsCollide == true)
     {
-      // Debug.Log(this.speed);
       this.speed = 0.04f;
       delta += 1;
+      // Debug.Log(delta);
+
     }
     //緩速到一定時間後便正常
     if (delta >= 800)
@@ -50,6 +66,7 @@ public class animy_move : MonoBehaviour
       //Debug.Log("阿我恢復了!");
       IsCollide = false;
       this.speed = 0.1f;
+      // 速度與原先設定預設速度不同
     }
 
   }
@@ -62,44 +79,12 @@ public class animy_move : MonoBehaviour
       //Debug.Log("阿我撞到了QQ");
       IsCollide = true;
     }
-  }
-  
-    /*if(col.tag == "Player")
+    if (col.tag == "DarkTrap")
     {
-      IsCollide = false;
-    }*/
-
-
-    // //敵方碰撞到我方友軍被擊退一點
-    // if (col.tag == "Friendly")
-    // {
-    //   if (back == true)
-    //   {
-    //     Debug.Log(back);
-    //     Vector3 move = gameObject.transform.position;
-    //     //move比現在的位置扣5
-    //     move = new Vector3(move.x - 10f, move.y, move.z);
-    //     //現在的位置等於現在-5後的move
-    //     gameObject.transform.position = move;
-    //   }
-
-    //   times += 1;          //紀錄第一次碰撞到友軍
-    // }
-
-    // if (times >= 1 && times <= 5)  //每碰撞到友軍5次才會又擊退一次
-    // {
-    //   Debug.Log(times);
-    //   back = false;
-    // }
-
-    // else
-    // {
-    //   times = 0; //這邊可能要修改只要碰撞到object time就會歸0
-    //   //參考解法：
-    //   // update 隨時偵測 time 若大於5 back = true  碰到friendly & back=true時 time 重置= 0,否則time+-1; 
-    //   // commit by 01
-    //   Debug.Log($"{times}秒//擊退友軍");
-    //   back = true;
-    // }
-
+      //Debug.Log("meet darktrap");
+      // IsCollide = true;
+      // animy move 敵方移動需重構邏輯判斷[待調整]
+      fearBar.instance.Increase();
+    }
+  }
 }
