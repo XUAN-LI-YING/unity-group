@@ -27,11 +27,7 @@ public class SpikedTrapAni : MonoBehaviour
       bomb();
       // 應該放置在此 commit by 01
     }
-<<<<<<< HEAD:Assets/Team-00/Scripts/SpikedTrapAni.cs
     //Debug.Log(touch);
-=======
-    // Debug.Log(touch);
->>>>>>> 97cf06d82050f8da1bdfe2f149684aa9ec92b98c:Assets/Team-00/Scripts/TrapObject/SpikedTrapAni.cs
   }
   //產生黃色爆炸物件
   public void OnTriggerStay2D(Collider2D col)
