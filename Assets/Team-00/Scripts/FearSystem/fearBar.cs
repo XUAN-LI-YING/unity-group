@@ -185,6 +185,7 @@ public class fearBar : MonoBehaviour
     //更新分數顯示
 
     // if (combo)
+    // 有機會用在觸發後播放動畫判斷次數用
     // {
     //   ui_value.text = $"{points}";
     //   Debug.Log($"增加{timePress}!\n目前存量={points}");
