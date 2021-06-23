@@ -94,17 +94,11 @@ void OnCollisionEnter2D(Collision2D coll)
               back=true;
               times=0;
             }
-        // else if (times==0)
-        //  {
-        //   back=true;
-        //  times += 1 ;
-        // }    
-            
+
             else
             {
               times += 1 ;
             }
-            Debug.Log($"{times}秒");
             if(back==true)
             {//偵測現在move到哪裡的位置
             Vector3 move = gameObject.transform.position;
@@ -113,7 +107,6 @@ void OnCollisionEnter2D(Collision2D coll)
             //現在的位置等於現在-5後的move
             gameObject.transform.position = move;
             back=false;
-            
             }
   }
   
