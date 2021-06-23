@@ -58,26 +58,25 @@ public class FriendlyHPContron : MonoBehaviour
             {
               back=true;
               times=0;
-            }
-        // else if (times==0)
-        //  {
-        //   back=true;
-        //  times += 1 ;
-        // }    
-            
+              Debug.Log(back);
+            }            
             else
             {
               times += 1 ;
+               Debug.Log(times);
             }
-            Debug.Log($"{times}秒");
+            Debug.Log($"{times}次");
             if(back==true)
-            {//偵測現在move到哪裡的位置
+            {
+            //偵測現在move到哪裡的位置
             Vector3 move = gameObject.transform.position;
             //move比現在的位置-5
             move = new Vector3(move.x+10f, move.y, move.z);
             //現在的位置等於現在-5後的move
             gameObject.transform.position = move;
             back=false;
+              Debug.Log(back);
+            
             
             }
         }
