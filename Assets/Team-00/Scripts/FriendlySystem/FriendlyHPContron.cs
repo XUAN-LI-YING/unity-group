@@ -58,14 +58,11 @@ public class FriendlyHPContron : MonoBehaviour
             {
               back=true;
               times=0;
-              Debug.Log(back);
             }            
             else
             {
               times += 1 ;
-               Debug.Log(times);
             }
-            Debug.Log($"{times}次");
             if(back==true)
             {
             //偵測現在move到哪裡的位置
@@ -75,8 +72,6 @@ public class FriendlyHPContron : MonoBehaviour
             //現在的位置等於現在-5後的move
             gameObject.transform.position = move;
             back=false;
-              Debug.Log(back);
-            
             
             }
         }
