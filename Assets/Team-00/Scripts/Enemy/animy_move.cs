@@ -14,27 +14,31 @@ public class animy_move : MonoBehaviour
   
   public bool walking;   //正常走路狀態
   public bool IsCollide; //尖刺陷阱碰撞判定
-  public bool blacktrap = true; //暗黑陷阱碰撞判定
+  public bool blacktrap; //暗黑陷阱碰撞判定
   public bool spiketrap;
+  public bool check;
   public int stucktraptime;
   
   
 
-  public int caseSwitch = 2; //暗黑陷阱觸發事件判定
+  public int caseSwitch ; //暗黑陷阱觸發事件判定
 
 
   void Start()
   {
+    check = true;
     walking = true;
     IsCollide = false;
-    // blacktrap = 第一次是 ture 後退離開後是 false 遇到下一個 trap 才變 true;
+    // blacktrap = 預設 false  第一次碰撞是 true 後退離開後是 false 遇到下一個 trap 才變 true;
     // back = false; 後續被刪除沒用上
     this.speed = 0.09f; //怪物初始速度
+    blacktrap = false;
+    stucktraptime = 0;
   }
   void Update()
   {
     //怪物速度
-    transform.Translate(this.speed, 0, 0);
+    
 
     //當物體超過畫面時(x>101,y>=10)怪物移動到的二層的位置
 
@@ -50,7 +54,11 @@ public class animy_move : MonoBehaviour
 
     // 避免敵人一直困在同一陷阱 紀錄單一碰撞次數
 
-    CheckCondition();
+    if (check)
+    {
+      CheckCondition();
+    }
+
 
     // SpikeTrap();
 
@@ -69,12 +77,7 @@ public class animy_move : MonoBehaviour
     }
     if (blacktrap)
     {
-        walking = false;
-
         CheckTime();
-
-    
-   
         
     }
 
@@ -84,17 +87,27 @@ public class animy_move : MonoBehaviour
   }
   void CheckTime(){
 
-    
-    //確認是否第一次碰撞暗黑陷阱
-    // 再想想怎做
+    check = false;
+    // 停止判別狀態
 
-      Blacktrap();
+    //確認是否第一次碰撞暗黑陷阱
+
+    if (stucktraptime > 1)
+    {
+      caseSwitch = 2;
+
+    }  
+    
+    Blacktrap();
+
 
 
   }
   
   
   void WalkMode(){
+
+            transform.Translate(this.speed, 0, 0);
     	  
             if (transform.position.x > 101 && transform.position.y >= 10 && transform.position.y <= 20){
 
@@ -136,25 +149,38 @@ public class animy_move : MonoBehaviour
 
   void Blacktrap(){
 
-      Debug.Log("執行判斷");
+      // Debug.Log("執行判斷");
           
           switch (caseSwitch)
           {
           case 1: 
-            Debug.Log("Case 1後退");
+
           
             break;
 
           case 2:
+
           
-            Debug.Log("Case 2略過");
+            // Debug.Log("Case 2略過");
+            check = true;
+
 
             break;
           
           default:
-          
+
+            Vector3 move = gameObject.transform.position;
+            //move比現在的位置-5
+            move = new Vector3(move.x-20f, move.y, move.z);
+            //現在的位置等於現在-5後的move
+            gameObject.transform.position = move;
             Debug.Log("預設後退");
+          
+            blacktrap = false;
+            check = true;
+            Debug.Log($"預設後退且判別狀態改為 {check}");
             break;
+
           
           
           
@@ -172,16 +198,19 @@ public class animy_move : MonoBehaviour
   {
     if (col.tag == "SpikedTrap")
     {
-      //Debug.Log("阿我撞到了QQ");
+      Debug.Log("阿我撞到了QQ");
       IsCollide = true;
       SpikedTrap();
     }
     if (col.tag == "DarkTrap")
     {
+
       blacktrap = true;
+
       stucktraptime += 1;
-      //time+1
-      // animy move 敵方移動需重構邏輯判斷[待調整]
+
+      Debug.Log(stucktraptime);
+
       fearBar.instance.Increase();
     }
   }
