@@ -16,6 +16,7 @@ TagManager:
   - Mg_LandmineTrap
   - BuildTrap
   - guard
+  - DarkTrap
   layers:
   - Default
   - TransparentFX
