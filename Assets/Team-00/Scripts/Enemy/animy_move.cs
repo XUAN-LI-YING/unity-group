@@ -11,6 +11,7 @@ public class animy_move : MonoBehaviour
  
   public bool IsCollide; //尖刺陷阱判定
   public bool back;      //擊退判定
+  public int caseSwitch = 1;
   void Start()
   {
     IsCollide = false;
@@ -37,20 +38,60 @@ public class animy_move : MonoBehaviour
 
     // 避免敵人一直困在同一陷阱 紀錄單一碰撞次數
 
-    // CheckCondition();
+    CheckCondition();
 
-    if (transform.position.x > 101 && transform.position.y >= 10 && transform.position.y <= 20)
-    {
+    // SpikeTrap();
 
-      gameObject.transform.position = new Vector3(-104, -18, 0);
+  }
+  void CheckCondition(){
+    	
+      
 
-    }
-    //物體在第二層超過畫面時則讓她消失
-    if (transform.position.y >= -20 && transform.position.y <= -15 && transform.position.x > 69)
-    {
-      Destroy(gameObject);
-      //SceneManager.LoadScene("gameOver"); //跳到結束畫面
-    }
+  
+          switch (caseSwitch)
+          {
+          case 1:
+            Debug.Log("Case 1");
+            if (transform.position.x > 101 && transform.position.y >= 10 && transform.position.y <= 20){
+
+            gameObject.transform.position = new Vector3(-104, -18, 0);
+
+            }
+            //物體在第二層超過畫面時則讓她消失
+            if (transform.position.y >= -20 && transform.position.y <= -15 && transform.position.x > 69)
+            {
+              Destroy(gameObject);
+              //SceneManager.LoadScene("gameOver"); //跳到結束畫面
+            }
+            break;
+
+          case 2:
+            Debug.Log("Case 2");
+
+            break;
+          
+          default:
+          
+            Debug.Log("Default case");
+            break;
+          
+          
+          
+          
+          }
+
+
+
+
+    
+
+
+
+
+  }
+  void SpikedTrap(){
+
+    
 
     //IsCollide==true也就是遇到尖刺陷阱時，持續緩速
     if (IsCollide == true)
@@ -69,6 +110,10 @@ public class animy_move : MonoBehaviour
       // 速度與原先設定預設速度不同
     }
 
+
+
+
+
   }
   //當撞到尖刺陷阱時IsCollide==true
 
@@ -82,9 +127,11 @@ public class animy_move : MonoBehaviour
     if (col.tag == "DarkTrap")
     {
       //Debug.Log("meet darktrap");
-      // IsCollide = true;
+      
       // animy move 敵方移動需重構邏輯判斷[待調整]
       fearBar.instance.Increase();
     }
   }
+
+
 }
