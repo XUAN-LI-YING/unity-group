@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 public class animy_move : MonoBehaviour
 {
 
-<<<<<<< HEAD
   int Spikedelta = 0;
   int Trapsdelta=0;
  // int times = 0;    //撞到次數
@@ -23,33 +22,30 @@ public class animy_move : MonoBehaviour
   public bool blacktrap; //暗黑陷阱碰撞判定
   // public bool spiketrap; 
   public bool check;
-  public int stucktraptime;
-=======
+  
 // 碰撞黑暗陷阱流程圖
 // https://upload.cc/i1/2021/06/25/edz4bn.jpg
   
-  float speed; //怪物速度量值
+  
   //更改組員設置參數數值
   //解釋：數值可先不定義方便再 unity 內調整 
   //且 start()函式中已宣吿數值;
->>>>>>> 01
   
-  
-  public bool walking;   //正常走路狀態
+
 
   // public bool IsCollide; 
   // 因陷阱碰撞判定有多樣 替換為特定參數： spiketrap 還請見諒
 
   
    [Header("狀態機IDE")] 
-  public bool check;     //偵測敵人當下狀態
+ 
   public Vector3 EnemyPos; //偵測敵人當下位置
    [Header("尖刺陷阱")] 
   public bool spiketrap; //尖刺陷阱碰撞判定  
-  int delta = 0;         //敵人緩速時間
+ 
    [Header("暗黑陷阱")] 
   public int stucktraptime; //單一陷阱碰撞次數
-  public bool blacktrap;    //暗黑陷阱碰撞判定
+  
   public int caseSwitch ; //暗黑陷阱觸發事件判定
 
 
@@ -57,7 +53,6 @@ public class animy_move : MonoBehaviour
   {
     check = true;
     walking = true;
-<<<<<<< HEAD
     SpikedIsCollide = false;
     Traps02IsCollide=false;
     // blacktrap = 預設 false  第一次碰撞是 true 後退離開後是 false 遇到下一個 trap 才變 true;
@@ -65,12 +60,6 @@ public class animy_move : MonoBehaviour
     this.speed = 0.1f; //怪物初始速度
     blacktrap = false;
     stucktraptime = 0;
-=======
-    this.speed = 0.09f; 
-    blacktrap = false;  
-    stucktraptime = 0; 
-  
->>>>>>> 01
   }
   void Update()
   {
@@ -78,6 +67,7 @@ public class animy_move : MonoBehaviour
     {
       CheckCondition(); //判斷敵人狀態
     }
+    
 
   }
   void CheckCondition(){
@@ -160,7 +150,8 @@ public class animy_move : MonoBehaviour
 
           
 
-            transform.Translate(this.speed*Time.deltaTime, 0, 0);
+            // transform.Translate(this.speed*Time.deltaTime, 0, 0);
+             transform.Translate(this.speed, 0, 0);
             // reference : https://www.jianshu.com/p/d2a83d49d027
             // https://rayfly0225.wordpress.com/2016/07/05/unity-time時間類1/
         
@@ -169,7 +160,7 @@ public class animy_move : MonoBehaviour
     	  
             if (EnemyPos.x > 101 && EnemyPos.y >= 10 && EnemyPos.y <= 20){
 
-            gameObject.EnemyPos = new Vector3(-104, -18, 0);
+            gameObject.transform.position = new Vector3(-104, -18, 0);
 
             }
             if (EnemyPos.y >= -20 && EnemyPos.y <= -15 && EnemyPos.x > 69)
@@ -193,13 +184,10 @@ public class animy_move : MonoBehaviour
     if (Spikedelta >= deltaSum)
     {
       //Debug.Log("阿我恢復了!");
-<<<<<<< HEAD
       SpikedIsCollide = false;
-=======
-      // IsCollide = false;
+      
       //移除組員側置參數
       //commit by 01
->>>>>>> 01
       this.speed = 0.1f;
       Spikedelta=0;
       spikecollide=0;
@@ -208,7 +196,6 @@ public class animy_move : MonoBehaviour
     }
   }
 
-<<<<<<< HEAD
   void Traps02()
   //當遇到捕獸夾則被困住所以速度為0
   {
@@ -226,8 +213,6 @@ public class animy_move : MonoBehaviour
       Trapsdelta=0;
       // 速度與原先設定預設速度不同
     }
-=======
->>>>>>> 01
   }
 
   void BlackTrap(){
@@ -281,16 +266,10 @@ public class animy_move : MonoBehaviour
   {
     if (col.tag == "SpikedTrap")
     {
-<<<<<<< HEAD
       // Debug.Log("阿我撞到了QQ");
       SpikedIsCollide = true;
       //SpikedTrap();
       spikecollide += 1 ;
-=======
-      Debug.Log("撞到SpikedTrap");
-      // IsCollide = true;
-      SpikedTrap();
->>>>>>> 01
     }
     if (col.tag == "DarkTrap")
     {
