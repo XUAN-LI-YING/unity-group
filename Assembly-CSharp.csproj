@@ -59,6 +59,7 @@
      <Compile Include="Assets\Team-00\Scripts\FriendlySystem\friendlyButton.cs" />
      <Compile Include="Assets\Team-00\Scripts\Enemy\animyPrefab.cs" />
      <Compile Include="Assets\Team-00\Scripts\RandomNumber\RandomNumber.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapObject\Traps02.cs" />
      <Compile Include="Assets\Team-00\Scripts\Builder.cs" />
      <Compile Include="Assets\Team-00\Scripts\GuardSystem\GuardHP01.cs" />
      <Compile Include="Assets\StartGame\script\AnimatorFunctions.cs" />
@@ -74,7 +75,6 @@
      <Compile Include="Assets\Team-00\Scripts\TrapSystem\Slot.cs" />
      <Compile Include="Assets\Team-00\Scripts\Item.cs" />
      <Compile Include="Assets\Team-00\Scripts\FriendlySystem\friendlyMove.cs" />
-     <Compile Include="Assets\Team-00\Scripts\TrapObject\Traps02.cs" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
