@@ -5,17 +5,22 @@ using UnityEngine.SceneManagement;
 public class animy_move : MonoBehaviour
 {
 
-  int delta = 0;
+  int Spikedelta = 0;
+  int Trapsdelta=0;
  // int times = 0;    //撞到次數
+ float deltaSum=0; //delta要比deltaSum大 的值
   float speed = 0;
+  float spikecollide=0; //尖刺陷阱碰撞次數加成
   
 // public bool back;      //擊退判定
 //沒用到參數 先註解
   
   public bool walking;   //正常走路狀態
-  public bool IsCollide; //尖刺陷阱碰撞判定
+  public bool SpikedIsCollide; //尖刺陷阱碰撞判定
+
+  public bool Traps02IsCollide;//捕獸夾碰撞判定
   public bool blacktrap; //暗黑陷阱碰撞判定
-  public bool spiketrap;
+  // public bool spiketrap; 
   public bool check;
   public int stucktraptime;
   
@@ -28,10 +33,11 @@ public class animy_move : MonoBehaviour
   {
     check = true;
     walking = true;
-    IsCollide = false;
+    SpikedIsCollide = false;
+    Traps02IsCollide=false;
     // blacktrap = 預設 false  第一次碰撞是 true 後退離開後是 false 遇到下一個 trap 才變 true;
     // back = false; 後續被刪除沒用上
-    this.speed = 0.09f; //怪物初始速度
+    this.speed = 0.1f; //怪物初始速度
     blacktrap = false;
     stucktraptime = 0;
   }
@@ -70,7 +76,7 @@ public class animy_move : MonoBehaviour
 
         WalkMode();
     }
-    if (spiketrap)
+    if (SpikedIsCollide)
     {
 
         SpikedTrap();
@@ -79,6 +85,10 @@ public class animy_move : MonoBehaviour
     {
         CheckTime();
         
+    }
+    if(Traps02IsCollide)
+    {
+       Traps02() ;
     }
 
 
@@ -129,22 +139,40 @@ public class animy_move : MonoBehaviour
   void SpikedTrap(){
 
     
-      this.speed = 0.04f;
-      delta += 1;
+      this.speed = 0.05f;
+      Spikedelta += 1;
       // Debug.Log(delta);
       //緩速到一定時間後便正常
-    if (delta >= 800)
+       deltaSum=800*spikecollide; //撞到幾個速度就加成多少
+    if (Spikedelta >= deltaSum)
     {
       //Debug.Log("阿我恢復了!");
-      IsCollide = false;
+      SpikedIsCollide = false;
       this.speed = 0.1f;
+      Spikedelta=0;
+      spikecollide=0;
+      // 速度與原先設定預設速度不同
+      
+    }
+  }
+
+  void Traps02()
+  //當遇到捕獸夾則被困住所以速度為0
+  {
+
+      this.speed = 0;
+      Trapsdelta += 1;
+      //Debug.Log($"撞到捕獸夾 {Trapsdelta}");
+      // Debug.Log(delta);
+      //緩速到一定時間後便正常
+    if (Trapsdelta >= 500)
+    {
+      //Debug.Log("阿我恢復了!");
+      Traps02IsCollide = false;
+      this.speed = 0.1f;
+      Trapsdelta=0;
       // 速度與原先設定預設速度不同
     }
-
-
-
-
-
   }
 
   void Blacktrap(){
@@ -198,9 +226,10 @@ public class animy_move : MonoBehaviour
   {
     if (col.tag == "SpikedTrap")
     {
-      Debug.Log("阿我撞到了QQ");
-      IsCollide = true;
-      SpikedTrap();
+      // Debug.Log("阿我撞到了QQ");
+      SpikedIsCollide = true;
+      //SpikedTrap();
+      spikecollide += 1 ;
     }
     if (col.tag == "DarkTrap")
     {
@@ -212,6 +241,13 @@ public class animy_move : MonoBehaviour
       Debug.Log(stucktraptime);
 
       fearBar.instance.Increase();
+    }
+
+    if (col.tag=="Traps02")
+    {
+      //當撞到捕獸夾，則撞到變true呼叫函式traps02
+      Traps02IsCollide=true;
+      
     }
   }
 

@@ -17,6 +17,7 @@ TagManager:
   - BuildTrap
   - guard
   - DarkTrap
+  - Traps02
   layers:
   - Default
   - TransparentFX
