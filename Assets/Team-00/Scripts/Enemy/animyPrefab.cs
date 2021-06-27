@@ -2,22 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// 更動組員程式碼開發方式以及其解釋理由
+// 若更改造成有 bug 產生，還請多多見諒 !!
+// 更改地方：(commit上也看得到差異哦)
+// 將產生怪物時間設置變數以利團隊遊戲開發
+
 public class animyPrefab : MonoBehaviour
 {
   public GameObject catPrefab;
+
   [Header("TIME")]
   
-  public float delta = 0;
+  public float delta ;
+  public int createtime;
+
+  void Start(){
+
+    delta = 0;
+    createtime = 10;
+  }
  
   
   // 怪物產生位置
   void Update()
   {
     
-    // Debug.Log(catPrefab.transform);
-    //如果時間累積到了5秒針，讓DELTA歸零且產生敵人
+    
     this.delta += Time.deltaTime;
-    if (this.delta > 10f)
+    if (this.delta > createtime)
     {
       this.delta = 0;
       GameObject go = Instantiate(catPrefab) as GameObject;
