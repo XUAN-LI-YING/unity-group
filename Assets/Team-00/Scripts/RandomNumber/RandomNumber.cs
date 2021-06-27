@@ -5,7 +5,7 @@ using UnityEngine;
 public class RandomNumber : MonoBehaviour
 {
 public static RandomNumber instance;
-public int randomnum;
+public int random;
 
     void Start () {
         
@@ -20,10 +20,10 @@ public int randomnum;
     void RandomPick(){
 
             
-            randomnum = Random.Range(0, 100);
+            random = Random.Range(0, 100);
 
             //偵測是否有存回
-            Debug.Log ("randomnum ="+randomnum);
+            // Debug.Log ("random ="+random);
             }
 
 }
