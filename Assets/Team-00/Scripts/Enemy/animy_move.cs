@@ -4,16 +4,20 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class animy_move : MonoBehaviour
 {
+  // 更動組員參數形式及解釋其理由
+  // 遊戲開發設置參數以全域變數設置
+  // 方便後續調整數值遊戲開發，還請見諒
+  // 參數命名調整建議(不敢亂更動所以寫在註解)：
+  // 尖刺陷阱碰撞次數加成 參數為記錄"次數"
+  // 應命名為 xxxtraptime ,spikecollide 適合用在以下參數
+  //  public bool SpikedIsCollide; //尖刺陷阱碰撞判定
 
-  int Spikedelta = 0;
-  int Trapsdelta=0;
- // int times = 0;    //撞到次數
- float deltaSum=0; //delta要比deltaSum大 的值
-  float speed = 0;
-  float spikecollide=0; //尖刺陷阱碰撞次數加成
-  
-// public bool back;      //擊退判定
-//沒用到參數 先註解
+  public int Spikedelta = 0;
+  public int Trapsdelta = 0;
+  public float deltaSum = 0; //delta要比deltaSum大 的值
+  public float speed = 0;
+  public float spikecollide = 0; //尖刺陷阱碰撞次數加成
+
   
   public bool walking;   //正常走路狀態
   public bool SpikedIsCollide; //尖刺陷阱碰撞判定
@@ -55,8 +59,6 @@ public class animy_move : MonoBehaviour
     walking = true;
     SpikedIsCollide = false;
     Traps02IsCollide=false;
-    // blacktrap = 預設 false  第一次碰撞是 true 後退離開後是 false 遇到下一個 trap 才變 true;
-    // back = false; 後續被刪除沒用上
     this.speed = 0.1f; //怪物初始速度
     blacktrap = false;
     stucktraptime = 0;
@@ -151,7 +153,7 @@ public class animy_move : MonoBehaviour
           
 
             // transform.Translate(this.speed*Time.deltaTime, 0, 0);
-             transform.Translate(this.speed, 0, 0);
+             transform.Translate(speed * Time.deltaTime , 0, 0);
             // reference : https://www.jianshu.com/p/d2a83d49d027
             // https://rayfly0225.wordpress.com/2016/07/05/unity-time時間類1/
         
@@ -269,8 +271,7 @@ public class animy_move : MonoBehaviour
       // Debug.Log("阿我撞到了QQ");
       SpikedIsCollide = true;
       //SpikedTrap();
-      spikecollide += 1 ;
-    }
+      spikecollide += 1 ;    }
     if (col.tag == "DarkTrap")
     {
       Debug.Log("撞到DarkTrap");
