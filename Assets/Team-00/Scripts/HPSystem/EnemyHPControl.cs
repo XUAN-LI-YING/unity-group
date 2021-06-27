@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHPContron : MonoBehaviour
+// 更動組員程式碼命名方式以及其解釋理由
+// 若更改造成有 bug 產生，還請多多見諒 !!
+// 更改地方：(commit上也看得到差異哦賴訊息會再報備一次)
+// 將 max_hp = 100;
+public class EnemyHPControl : MonoBehaviour
 {
   float hp = 0;
   float spikedelta = 0;
@@ -11,7 +15,7 @@ public class EnemyHPContron : MonoBehaviour
   float spikecollide=0; //尖刺陷阱碰撞次數加成
   public bool spikeIsCollide;
   public bool back; //擊退成立否
-  public int max_hp = 0;
+  public int max_hp ;
   public GameObject EnemyAllHP;
   public int times=0; //擊退次數
   
@@ -21,7 +25,7 @@ public class EnemyHPContron : MonoBehaviour
   { 
     spikeIsCollide = false;
     back=true;
-    max_hp = 10;
+    max_hp = 100;
     hp = max_hp;
   }
 
