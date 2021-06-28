@@ -20,7 +20,6 @@ public class animy_move : MonoBehaviour
    [Header("有限狀態機FSM")] 
     public float speed = 0;    //怪物初始速度
     public bool walking;         //敵人移動狀態開關
-    public bool blacktrap;       //暗黑陷阱碰撞判定
     public bool check;           //判斷碰觸何種陷阱
     public Vector3 EnemyPos;     //偵測敵人當下位置
 
@@ -31,6 +30,7 @@ public class animy_move : MonoBehaviour
     public float spikecollide;   //尖刺陷阱碰撞次數
  
    [Header("暗黑陷阱")] 
+    public bool blacktrap;       //暗黑陷阱碰撞判定
     public int stucktraptime; //單一暗黑陷阱碰撞次數
     public int caseSwitch ;   //暗黑陷阱觸發事件判定
    
