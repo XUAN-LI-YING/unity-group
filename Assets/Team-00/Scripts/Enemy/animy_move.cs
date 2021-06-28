@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+ // 第二次更動：修正註解，並刪除 debug 
+ // 若造成不便，還請多多寬待 i am sorry
+ 
  //更動組員程式碼命名方式以及其解釋理由
  // 若更改造成有 bug 產生，還請多多見諒 !!
  // 很想要更改的地方：(commit上也看得到差異哦)
@@ -12,43 +16,40 @@ using UnityEngine.SceneManagement;
 
 public class animy_move : MonoBehaviour
 {
-  // public static animy_move instance;
-
-
-  public int Spikedelta = 0;
-  public int Trapsdelta = 0;
-  public float deltaSum = 0; //delta要比deltaSum大 的值
-  public float speed = 0;    //怪物初始速度
-  public float spikecollide = 0; //尖刺陷阱碰撞次數加成
-
-  
-
     
    [Header("有限狀態機FSM")] 
-    public bool walking;   //正常走路狀態
-    public bool SpikedIsCollide; //尖刺陷阱碰撞判定
-    public bool Traps02IsCollide;//捕獸夾碰撞判定
+    public float speed = 0;    //怪物初始速度
+    public bool walking;         //敵人移動狀態開關
     public bool blacktrap;       //暗黑陷阱碰撞判定
     public bool check;           //判斷碰觸何種陷阱
-    public Vector3 EnemyPos; //偵測敵人當下位置
+    public Vector3 EnemyPos;     //偵測敵人當下位置
 
    [Header("尖刺陷阱")] 
-    public bool spiketrap;   //尖刺陷阱碰撞判定  
+    public bool SpikedIsCollide; //尖刺陷阱碰撞判定
+    public int Spikedelta = 0;   //碰撞緩速計時器
+    public float deltaSum = 0;   //減緩速度加乘參數(800倍x碰撞次數)
+    public float spikecollide;   //尖刺陷阱碰撞次數
  
    [Header("暗黑陷阱")] 
-    public int stucktraptime; //單一陷阱碰撞次數
+    public int stucktraptime; //單一暗黑陷阱碰撞次數
     public int caseSwitch ;   //暗黑陷阱觸發事件判定
+   
+   [Header("捕獸陷阱")] 
+    public bool Traps02IsCollide;   //捕獸陷阱碰撞判定
+    public int Trapsdelta = 0;      //捕獸陷阱緩速計時器
+    
+    // public int slowdowntime = 0; //緩速時間
 
-    [Header("秒數設置")]
-    public float turnbacktime;  //陷阱效果敵人後退時間
-    public float canceltime;    //陷阱效果關閉扣血時間
+
+    [Header("暗黑秒數設置")]
+    public float turnbacktime;  //暗黑陷阱效果敵人後退時間
+    public float canceltime;    //暗黑陷阱效果關閉扣血時間
 
     [Header("停血開關")]
-    public bool Turnon;
+    public bool Turnon;         //暗黑陷阱效果開關
 
   void Start()
   {
-    // instance = this;
     check = true;
     walking = true;
     SpikedIsCollide = false;
@@ -58,7 +59,9 @@ public class animy_move : MonoBehaviour
     stucktraptime = 0;
     turnbacktime = 3;
     canceltime = 5;
- 
+    spikecollide = 0
+
+    // 設置參數初始數值
   }
   void Update()
   {
@@ -66,7 +69,7 @@ public class animy_move : MonoBehaviour
     
     if (check)
     {
-      CheckCondition(); 
+      CheckCondition();                //判斷碰觸何種陷阱
     }
     if (walking)
     {
@@ -118,12 +121,11 @@ public class animy_move : MonoBehaviour
     
       this.speed = 9f;
       Spikedelta += 1;
-      // Debug.Log(delta);
-      //緩速到一定時間後便正常
-       deltaSum=800*spikecollide; //撞到幾個速度就加成多少
-    if (Spikedelta >= deltaSum)
+                                           
+      deltaSum=800*spikecollide;           //撞到幾個速度就加成多少
+    if (Spikedelta >= deltaSum)            //緩速到一定時間後便正常 
     {
-      //Debug.Log("阿我恢復了!");
+
       SpikedIsCollide = false;
 
       this.speed = 10f;
@@ -134,19 +136,14 @@ public class animy_move : MonoBehaviour
     }
   }
 
-  void Traps02()
-  //當遇到捕獸夾則被困住所以速度為0
-  {
+  void Traps02(){
 
-      this.speed = 0;
+      this.speed = 0;                     //當遇到捕獸夾則被困住所以速度為0
       Trapsdelta += 1;
-      //Debug.Log($"撞到捕獸夾 {Trapsdelta}");
-      // Debug.Log(delta);
-      //緩速到一定時間後便正常
-    if (Trapsdelta >= 500)
-    //
+
+    if (Trapsdelta >= 500)                //緩速到一定時間後便正常
     {
-      //Debug.Log("阿我恢復了!");
+
       Traps02IsCollide = false;
       this.speed = 10f;
      
@@ -156,8 +153,7 @@ public class animy_move : MonoBehaviour
   
   void CheckTime(){
 
-    check = false;
-    // 停止偵測 碰觸何種陷阱狀態
+    check = false;                         // 停止偵測 碰觸何種陷阱狀態
     
     BlackTrap();
 
@@ -169,9 +165,8 @@ public class animy_move : MonoBehaviour
       Turnon = true;
       FriendlyHPControl.instance.StopBloodon();
 
-       // CancelTime();
       InvokeRepeating("CancelTime", 0, 1);
-       //InokeRepeating 重複呼叫(“函式名”，第一次間隔幾秒呼叫，每幾秒呼叫一次)。
+      //InokeRepeating 重複呼叫(“函式名”，第一次間隔幾秒呼叫，每幾秒呼叫一次)。
 
 
   }
@@ -181,7 +176,7 @@ public class animy_move : MonoBehaviour
 
     canceltime -= 1;
 
-    if (canceltime < 1)
+    if (canceltime < 1)                             //停止扣血計時器
     {
       Turnon = false;
       FriendlyHPControl.instance.StopBloodoff();
@@ -189,14 +184,14 @@ public class animy_move : MonoBehaviour
       canceltime = 5;
 
     }
-    // 顯示倒數幾秒
-    Debug.Log($"停止攻擊效果倒數{canceltime}sec");
+
+    Debug.Log($"停止攻擊效果倒數{canceltime}sec");     //顯示停止攻擊倒數幾秒
 
   }
   
 
   
-  IEnumerator TurnbackTime()
+  IEnumerator TurnbackTime()                        //往後走更好的寫法，關卡設計者容易調整數值
   
   {
 
@@ -210,11 +205,9 @@ public class animy_move : MonoBehaviour
 
 
   void BlackTrap(){
+                                                    //判斷單一陷阱碰撞次數
+          switch (stucktraptime)                   
 
-      // Debug.Log("執行判斷");
-          
-          switch (stucktraptime)
-          
           {
           
           case 1: 
@@ -229,11 +222,10 @@ public class animy_move : MonoBehaviour
 
           case 2:
           
-          
-          Debug.Log("Case 2略過");
           check = true;
           stucktraptime = 0;
           blacktrap = false;
+
             break;
           
           default:
@@ -248,31 +240,24 @@ public class animy_move : MonoBehaviour
   {
     if (col.tag == "SpikedTrap")
     {
-      // Debug.Log("阿我撞到了QQ");
       SpikedIsCollide = true;
-      //SpikedTrap();
-      spikecollide += 1 ;    }
+      spikecollide += 1 ;    
+    
+    }
+
     if (col.tag == "DarkTrap")
     {
-
-      
-
       blacktrap = true;
 
-      stucktraptime += 1;
-      // 確認是否第一次碰撞暗黑陷阱
+      stucktraptime += 1;                       //確認是否第一次碰撞暗黑陷阱
 
       Debug.Log("碰撞黑暗第"+(stucktraptime)+"次");
-
-      
-  
     
     }
 
     if (col.tag=="Traps02")
     {
-      //當撞到捕獸夾，則撞到變true呼叫函式traps02
-      Traps02IsCollide=true;
+      Traps02IsCollide=true;                    //當撞到捕獸夾，則撞到變true呼叫函式traps02
       
     }
   }
