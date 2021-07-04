@@ -2,20 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FriendlyHPContron : MonoBehaviour
+// 更動組員程式碼命名方式以及其解釋理由
+// 若更改造成有 bug 產生，還請多多見諒 !!
+// 更改地方：(commit上也看得到差異哦)
+// 將 Contron 改為 Control 控制的英文單字
+// 可安裝拼字檢查套件避免英文拼字錯誤哦
+// https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
+public class FriendlyHPControl : MonoBehaviour
 {
+    public static FriendlyHPControl instance;
+ 
     float hp=0;
     public int max_hp=0;
     public bool back;
+    public bool stopblood;
     public int times=0;
     public GameObject FriendlyAllHP;
     // Start is called before the first frame update
     //最大血量為10，而初始HP血量=最大血量
     void Start()
     { 
+        instance = this;
         max_hp=10;
         hp=max_hp;
         back=true;
+        stopblood=false;
+
+
     }
 
     // Update is called once per frame
@@ -30,6 +43,13 @@ public class FriendlyHPContron : MonoBehaviour
         FriendlyAllHP.transform.localScale=new Vector3(_percent, FriendlyAllHP.transform.localScale.y,FriendlyAllHP.transform.localScale.z);
 
     }
+    public void StopBloodon(){
+        stopblood = true;
+    }
+
+    public void StopBloodoff(){
+        stopblood = false;
+    }
 
     //碰撞後bool為真開始持續扣血
     //  void OnTriggerEnter2D(Collider2D col)
@@ -39,7 +59,13 @@ public class FriendlyHPContron : MonoBehaviour
 
         //如果碰撞到cat
         if(col.gameObject.tag=="Cat")
-        {    hp -= 0.05f;
+        { 
+            if (stopblood)
+            {
+                Debug.Log($"目前血量 {hp} ");
+            } 
+            
+            hp -= 0.05f;
             //  hp -= Time.deltaTime * 5;
             
             // //偵測現在move到哪裡的位置

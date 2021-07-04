@@ -2,23 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHPContron : MonoBehaviour
+// 更動組員程式碼命名方式以及其解釋理由
+// 若更改造成有 bug 產生，還請多多見諒 !!
+// 更改地方：(commit上也看得到差異哦賴訊息會再報備一次)
+// 將 max_hp = 100;
+public class EnemyHPControl : MonoBehaviour
 {
   float hp = 0;
-  float delta = 0;
-  public bool IsCollide;
-  public bool back;
-  public int max_hp = 0;
+  float spikedelta = 0;
+  float deltaSum=0; //delta要比deltaSum大 的值
+
+  float spikecollide=0; //尖刺陷阱碰撞次數加成
+  public bool spikeIsCollide;
+  public bool back; //擊退成立否
+  public int max_hp ;
   public GameObject EnemyAllHP;
-  public int times=0;
+  public int times=0; //擊退次數
   
   // Start is called before the first frame update
   //最大血量為10，而初始HP血量=最大血量
   void Start()
   { 
-    IsCollide = false;
+    spikeIsCollide = false;
     back=true;
-    max_hp = 10;
+    max_hp = 100;
     hp = max_hp;
   }
 
@@ -35,16 +42,22 @@ public class EnemyHPContron : MonoBehaviour
     float _percent = ((float)hp / (float)max_hp);
     EnemyAllHP.transform.localScale = new Vector3(_percent, EnemyAllHP.transform.localScale.y, EnemyAllHP.transform.localScale.z);
 
-    //如果deltaTime>=500，就停止扣血，如果還沒超過時間碰撞後持續扣血
-    if (IsCollide == true)
+    //如果spikedeltaTime>=500，就停止扣血，如果還沒超過時間碰撞後持續扣血
+    if (spikeIsCollide == true)
     {
       //每秒扣血
-      hp -= Time.deltaTime * 0.5f;
-      delta += 1;
+      // hp -= Time.spikedeltaTime * 0.5f;
+      hp-=0.005f;
+      spikedelta += 1;
+      deltaSum=800*spikecollide;  //扣血加成
     }
-    if (delta >= 800)
+    if (spikedelta >= deltaSum)
     {
-      IsCollide = false;
+     
+
+      spikeIsCollide = false;
+      spikedelta=0;
+      spikecollide=0;
     }
     //Debug.Log(hp);
     
@@ -56,13 +69,18 @@ public class EnemyHPContron : MonoBehaviour
   {
     if (col.tag == "SpikedTrap")
     {
-      IsCollide = true;
+      spikeIsCollide = true;
+      spikecollide += 1 ;
     }
 
     if (col.tag == "rockboom")
     {
       hp -= 1;
       // trap-02物件 要更換tag哦 
+    }
+    if (col.tag=="Traps02")
+    {
+      hp -= 1;  
     }
 
     // 如果敵人撞到友軍則扣血
@@ -91,7 +109,7 @@ void OnCollisionEnter2D(Collision2D coll)
   if(coll.gameObject.tag=="Friendly")
   {     if( times>=2)
             {
-              back=true;
+              back=true;     //當遇到我方友軍則會擊退並計算擊退次數
               times=0;
             }
 
