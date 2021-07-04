@@ -6,6 +6,8 @@ public class FriendlyHPContron : MonoBehaviour
 {
     float hp=0;
     public int max_hp=0;
+    public bool back;
+    public int times=0;
     public GameObject FriendlyAllHP;
     // Start is called before the first frame update
     //最大血量為10，而初始HP血量=最大血量
@@ -13,6 +15,7 @@ public class FriendlyHPContron : MonoBehaviour
     { 
         max_hp=10;
         hp=max_hp;
+        back=true;
     }
 
     // Update is called once per frame
@@ -31,7 +34,10 @@ public class FriendlyHPContron : MonoBehaviour
     //碰撞後bool為真開始持續扣血
     //  void OnTriggerEnter2D(Collider2D col)
      void OnCollisionStay2D(Collision2D col) 
-    {   //如果碰撞到cat
+    {   
+        
+
+        //如果碰撞到cat
         if(col.gameObject.tag=="Cat")
         {    hp -= 0.05f;
             //  hp -= Time.deltaTime * 5;
@@ -44,6 +50,33 @@ public class FriendlyHPContron : MonoBehaviour
             // gameObject.transform.position = move;
         }
     }
+
+    void OnCollisionEnter2D(Collision2D coll) 
+    {
+      if(coll.gameObject.tag=="Cat")
+      {     if( times>=2)
+            {
+              back=true;
+              times=0;
+            }            
+            else
+            {
+              times += 1 ;
+            }
+            if(back==true)
+            {
+            //偵測現在move到哪裡的位置
+            Vector3 move = gameObject.transform.position;
+            //move比現在的位置-5
+            move = new Vector3(move.x+10f, move.y, move.z);
+            //現在的位置等於現在-5後的move
+            gameObject.transform.position = move;
+            back=false;
+            
+            }
+        }
+    }
+
 
 } 
 

@@ -243,8 +243,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsCollide: 0
+  back: 0
   max_hp: 0
   EnemyAllHP: {fileID: 4913606489332287915}
+  times: 0
+  playerAni: {fileID: 0}
+  IsWalking: 0
 --- !u!50 &-1033775970712159221
 Rigidbody2D:
   serializedVersion: 4
