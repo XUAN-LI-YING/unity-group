@@ -6,8 +6,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Main Main;
-    [SerializeField] private float speed = 0.1f;
-    public Animator Animator;
+    //[SerializeField] private float speed = 0.1f;
+    Animator animator;
     public SpriteRenderer Sprite;
     public  bool IsLadder;
     public Collider2D Collider2D;
@@ -18,59 +18,64 @@ public class Player : MonoBehaviour
     private void Start()
     {
         GoalPos = transform.position;       //定位
-        
+        this.animator = GetComponent<Animator>();
     }
-    internal void MoveTo(Vector2 pos, string animation)
+    /*internal void MoveTo(Vector2 pos, string animation)
     {
         GoalPos = pos;
         Animator.Play(animation);           //動畫
         //Debug.Log("1");
         
-    }
+    }*/
     private void Update()
     {
-        Movement();
+        Move();
+        //Movement();
         //Debug.Log(CurrentPos.x);
         //Debug.Log(GoalPos.y);
         //Debug.Log()
     }
 
-    private void Movement()
+    private void Move()
     {
-        
-                
-       // Vector2.Distance(transform.position, GoalPos
-        if (transform.position.x == GoalPos.x) { Stop(); return; }
-            CurrentPos = transform.position;        //當前位置
-
-            Sprite.flipX = true;
-            if (CurrentPos.x > GoalPos.x) Sprite.flipX = false;
-            Sprite.flipY = false;
-
-            Collider2D.enabled = false;
-            //transform.position = Vector2.MoveTowards(CurrentPos, GoalPos, speed);
-                
-            if ( 23 < CurrentPos.x && CurrentPos.x < 33 )
+        if(!Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.W))
+        {
+            if(Input.GetKey(KeyCode.A))
             {
-                
-                Collider2D.enabled = false;
-                transform.position = Vector2.MoveTowards(new Vector3(CurrentPos.x,CurrentPos.y,0), new Vector3(GoalPos.x,GoalPos.y,0), speed);
-                return;
-                
+                gameObject.transform.position += new Vector3(-0.3f,0,0);
+                animator.Play("Player@Walk");
+                Sprite.flipX = false;
             }
-            else
+            if(Input.GetKey(KeyCode.D))
             {
-                Collider2D.enabled = false;
-                transform.position = Vector2.MoveTowards(new Vector3(CurrentPos.x,CurrentPos.y,0), new Vector3(GoalPos.x,CurrentPos.y,0), speed);
+                gameObject.transform.position += new Vector3(0.3f,0,0);
+                animator.Play("Player@Walk");
+                Sprite.flipX = true;
             }
-            
-        //Debug.Log("2");
+        }
+
+        if (IsLadder == true)
+        {
+            if(Input.GetKey(KeyCode.W))
+            {
+                gameObject.transform.position += new Vector3(0,0.2f,0);  
+            }
+            if(Input.GetKey(KeyCode.S))
+            {
+                gameObject.transform.position += new Vector3(0,-0.2f,0);
+            }
+        }
+
+        if(!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+        {
+            animator.Play("Player@Idle");
+        }
     }
 
     private void Stop()
     {
-        Animator.Play("Player@Idle");
-        Main.MoveCursor.SetActive(false);
+        animator.Play("Player@Idle");
+        //Main.MoveCursor.SetActive(false);
         Collider2D.enabled = true;
     }
 
