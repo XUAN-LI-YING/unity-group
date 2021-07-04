@@ -125,14 +125,17 @@
      <Compile Include="Assets\Team-00\Scripts\Main.cs" />
      <Compile Include="Assets\Team-00\Scripts\ChangeScene\StartButton.cs" />
      <Compile Include="Assets\Team-00\Scripts\TrapSystem\TrapOnDrag.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapObject\DarkTrap.cs" />
      <Compile Include="Assets\Team-00\Scripts\MiddleManager.cs" />
      <Compile Include="Assets\Team-00\Scripts\FriendlySystem\friendlyPref.cs" />
      <Compile Include="Assets\StartQTE.cs" />
      <Compile Include="Assets\StartGame\script\MenuButtonController.cs" />
      <Compile Include="Assets\Team-00\Scripts\QTE.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapSystem\trapstatus.cs" />
      <Compile Include="Assets\Team-00\Scripts\FriendlySystem\friendlyButton.cs" />
      <Compile Include="Assets\Team-00\Scripts\Enemy\animyPrefab.cs" />
      <Compile Include="Assets\Team-00\Scripts\RandomNumber\RandomNumber.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapObject\Traps02.cs" />
      <Compile Include="Assets\Team-00\Scripts\Builder.cs" />
      <Compile Include="Assets\Team-00\Scripts\GuardSystem\GuardHP01.cs" />
      <Compile Include="Assets\StartGame\script\AnimatorFunctions.cs" />

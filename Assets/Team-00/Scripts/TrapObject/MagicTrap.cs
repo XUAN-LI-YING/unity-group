@@ -18,7 +18,7 @@ public class MagicTrap : MonoBehaviour
    public void OnTriggerEnter2D(Collider2D other)
    {
      collision = true;
-     Debug.Log("only meet sth");
+    //  Debug.Log("only meet sth");
    }
    public void OnTriggerExit2D(Collider2D other)
   {

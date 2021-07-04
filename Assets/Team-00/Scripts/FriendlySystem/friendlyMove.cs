@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// 更動組員程式碼命名方式以及其解釋理由
+// 若更改造成有 bug 產生，還請多多見諒 !!
+// 更改地方：(commit上也看得到差異哦)
+// 將友軍速度 設置全部區域變數 方便遊戲開發
 public class friendlyMove : MonoBehaviour
 {
-    float speed=0;
+    public float speed=0;
     //int times= 0;           //撞到次數
 
     public bool back;      //擊退判定
@@ -29,7 +33,7 @@ public class friendlyMove : MonoBehaviour
         //物體在第一層超過畫面時則讓她消失
         if(transform.position.x<-100 && transform.position.y <= 20 && transform.position.y > 12)
         {
-            Destroy(gameObject);
+            // Destroy(gameObject);
         }
     }
 
