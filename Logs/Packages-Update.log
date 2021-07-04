@@ -66,7 +66,11 @@ The following packages were updated:
   com.unity.test-framework from version 1.1.16 to 1.1.18
   com.unity.textmeshpro from version 2.1.1 to 3.0.1
 
+<<<<<<< Updated upstream
 === Tue Jun  8 15:13:31 2021
+=======
+=== Sun Jul  4 20:58:41 2021
+>>>>>>> Stashed changes
 
 Packages were changed.
 Update Mode: updateDependencies

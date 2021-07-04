@@ -36,6 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+<<<<<<< Updated upstream
      <Compile Include="Assets\Team-00\Scripts\TrapOnDrag.cs" />
      <Compile Include="Assets\StartGame\script\MenuButton.cs" />
      <Compile Include="Assets\Team-00\Scripts\EnemyHPContron.cs" />
@@ -68,6 +69,46 @@
      <Compile Include="Assets\Team-00\Scripts\animyPrefab.cs" />
      <Compile Include="Assets\Team-00\Scripts\SpikedTrapAni.cs" />
      <Compile Include="Assets\Team-00\Scripts\Slot.cs" />
+=======
+     <Compile Include="Assets\Team-00\Scripts\TrapSystem\TrapOnDrag.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapObject\Traps02.cs" />
+     <Compile Include="Assets\StartGame\script\MenuButton.cs" />
+     <Compile Include="Assets\Team-00\Scripts\HPSystem\EnemyHPControl.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapSystem\Player.cs" />
+     <Compile Include="Assets\Team-00\Scripts\Item.cs" />
+     <Compile Include="Assets\StartGame\script\AnimatorFunctions.cs" />
+     <Compile Include="Assets\Team-00\Scripts\QTE.cs" />
+     <Compile Include="Assets\Team-00\Scripts\RandomNumber\RandomNumber.cs" />
+     <Compile Include="Assets\Team-00\Scripts\FriendlySystem\friendlyButton.cs" />
+     <Compile Include="Assets\Team-00\Scripts\FearSystem\fearBar.cs" />
+     <Compile Include="Assets\StartQTE.cs" />
+     <Compile Include="Assets\MainMenu\Scripts\ButtonCheck.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapObject\DarkTrap.cs" />
+     <Compile Include="Assets\Team-00\Scripts\ChangeScene\StartButton.cs" />
+     <Compile Include="Assets\Team-00\Scripts\RandomNumber\DataManager.cs" />
+     <Compile Include="Assets\Team-00\Scripts\MiddleManager.cs" />
+     <Compile Include="Assets\Team-00\Scripts\FriendlySystem\FriendlyHPControl.cs" />
+     <Compile Include="Assets\Team-00\Scripts\GuardSystem\GuardHP02.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapSystem\CoolDown.cs" />
+     <Compile Include="Assets\Team-00\Scripts\FriendlySystem\friendlyMove.cs" />
+     <Compile Include="Assets\Team-00\Scripts\FriendlySystem\friendlyPref.cs" />
+     <Compile Include="Assets\Team-00\Scripts\GuardSystem\GuardHP01.cs" />
+     <Compile Include="Assets\Team-00\Scripts\ButtomManager.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapObject\MagicTrap.cs" />
+     <Compile Include="Assets\Team-00\Scripts\Animation\boomAnimation.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TopManager.cs" />
+     <Compile Include="Assets\Team-00\Scripts\InventoryManager.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapSystem\trapOnRoad.cs" />
+     <Compile Include="Assets\Team-00\Scripts\Main.cs" />
+     <Compile Include="Assets\Plugin\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
+     <Compile Include="Assets\Team-00\Scripts\Enemy\animy_move.cs" />
+     <Compile Include="Assets\Team-00\Scripts\Inventory.cs" />
+     <Compile Include="Assets\StartGame\script\MenuButtonController.cs" />
+     <Compile Include="Assets\Team-00\Scripts\Enemy\animyPrefab.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapSystem\trapstatus.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapObject\SpikedTrapAni.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapSystem\Slot.cs" />
+>>>>>>> Stashed changes
      <Compile Include="Assets\Team-00\Scripts\Builder.cs" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
