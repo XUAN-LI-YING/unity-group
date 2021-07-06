@@ -59,7 +59,7 @@ public class animy_move : MonoBehaviour
     stucktraptime = 0;
     turnbacktime = 3;
     canceltime = 5;
-    spikecollide = 0
+    spikecollide = 0;
 
     // 設置參數初始數值
   }
