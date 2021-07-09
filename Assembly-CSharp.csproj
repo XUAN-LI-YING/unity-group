@@ -36,8 +36,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Team-00\Scripts\Animation\boomAnimation.cs" />
-     <Compile Include="Assets\Team-00\Scripts\HPSystem\EnemyHPContron.cs" />
+     <Compile Include="Assets\Team-00\Scripts\boomAnimation.cs" />
+     <Compile Include="Assets\Team-00\Scripts\HPSystem\EnemyHPControl.cs" />
      <Compile Include="Assets\StartGame\script\MenuButton.cs" />
      <Compile Include="Assets\Team-00\Scripts\Enemy\animy_move.cs" />
      <Compile Include="Assets\Team-00\Scripts\TrapSystem\Player.cs" />
@@ -68,13 +68,14 @@
      <Compile Include="Assets\Team-00\Scripts\TrapObject\MagicTrap.cs" />
      <Compile Include="Assets\Team-00\Scripts\RandomNumber\DataManager.cs" />
      <Compile Include="Assets\Team-00\Scripts\ButtomManager.cs" />
-     <Compile Include="Assets\Team-00\Scripts\FriendlySystem\FriendlyHPContron.cs" />
+     <Compile Include="Assets\Team-00\Scripts\FriendlySystem\FriendlyHPControl.cs" />
      <Compile Include="Assets\Team-00\Scripts\GuardSystem\GuardHP02.cs" />
      <Compile Include="Assets\Team-00\Scripts\TrapSystem\trapOnRoad.cs" />
      <Compile Include="Assets\Team-00\Scripts\TrapSystem\CoolDown.cs" />
      <Compile Include="Assets\Team-00\Scripts\TrapSystem\Slot.cs" />
      <Compile Include="Assets\Team-00\Scripts\Item.cs" />
      <Compile Include="Assets\Team-00\Scripts\FriendlySystem\friendlyMove.cs" />
+     <Compile Include="Assets\Team-00\Scripts\rollanimation.cs" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

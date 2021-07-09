@@ -48,6 +48,10 @@ public class animy_move : MonoBehaviour
     [Header("停血開關")]
     public bool Turnon;         //暗黑陷阱效果開關
 
+    [Header("巨型滾筒")]
+    public float rollerdelta;
+    public bool rollerCollide;
+    // public Animator playerAni; //巨型滾筒呼叫動畫
   void Start()
   {
     check = true;
@@ -59,13 +63,14 @@ public class animy_move : MonoBehaviour
     stucktraptime = 0;
     turnbacktime = 3;
     canceltime = 5;
-    spikecollide = 0
+    spikecollide = 0;
+    rollerCollide=false;
 
     // 設置參數初始數值
   }
   void Update()
   {
-
+  
     
     if (check)
     {
@@ -77,7 +82,11 @@ public class animy_move : MonoBehaviour
 
         WalkMode();
     }
-
+    
+    if(rollerCollide)
+    {
+      rollerTrap();
+    }
   }
   void CheckCondition(){
 
@@ -119,7 +128,7 @@ public class animy_move : MonoBehaviour
   void SpikedTrap(){
 
     
-      this.speed = 9f;
+      this.speed = 5f;
       Spikedelta += 1;
                                            
       deltaSum=800*spikecollide;           //撞到幾個速度就加成多少
@@ -149,6 +158,18 @@ public class animy_move : MonoBehaviour
      
       Trapsdelta=0;
     }
+  }
+
+  void rollerTrap(){
+            this.speed = 0;                     //暈眩
+            rollerdelta += 1;
+
+            if (rollerdelta >= 100)                //暈眩到一定時間後便正常
+            {
+             rollerCollide = false;
+             this.speed = 10f;
+             rollerdelta=0;
+            }
   }
   
   void CheckTime(){
@@ -260,6 +281,20 @@ public class animy_move : MonoBehaviour
       Traps02IsCollide=true;                    //當撞到捕獸夾，則撞到變true呼叫函式traps02
       
     }
+    if (col.gameObject.tag=="roller")
+    {
+      rollerCollide =true;                       //當撞到巨型滾筒，則呼叫rollerTrap函式
+      //偵測現在move到哪裡的位置
+      Vector3 move = gameObject.transform.position;
+      //move比現在的位置-5
+      move = new Vector3(move.x-5f, move.y, move.z);
+      //現在的位置等於現在-5後的move
+      gameObject.transform.position = move;
+      // if(playerAni.GetInteger("roll")==0)
+      // {      
+      //   playerAni.SetInteger("roll",1);
+      // }
+    }
+  
   }
-
 }
