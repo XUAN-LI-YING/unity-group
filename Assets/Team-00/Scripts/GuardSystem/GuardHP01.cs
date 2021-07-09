@@ -20,8 +20,8 @@ public class GuardHP01 : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   //如果目前血量HP小於等於0，那就會讓這個物件，也就是敵人消失
-        
+    {   
+        //如果IsWalking則呼叫sword動畫
         if(IsWalking==true)
         {
             if(playerAni.GetInteger("sword")==0)

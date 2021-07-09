@@ -46,8 +46,8 @@ public class EnemyHPControl : MonoBehaviour
     if (spikeIsCollide == true)
     {
       //每秒扣血
-      // hp -= Time.spikedeltaTime * 0.5f;
-      hp-=0.005f;
+      hp -= Time.deltaTime * 10f;
+      
       spikedelta += 1;
       deltaSum=800*spikecollide;  //扣血加成
     }
@@ -93,7 +93,7 @@ public class EnemyHPControl : MonoBehaviour
 void OnCollisionStay2D(Collision2D coll) 
     {   //如果碰撞到cat
         if(coll.gameObject.tag=="Friendly")
-        {   hp -=0.03f;
+        {   hp -=0.1f;
             
         
         }
@@ -118,7 +118,8 @@ void OnCollisionEnter2D(Collision2D coll)
               times += 1 ;
             }
             if(back==true)
-            {//偵測現在move到哪裡的位置
+            {
+            //偵測現在move到哪裡的位置
             Vector3 move = gameObject.transform.position;
             //move比現在的位置-5
             move = new Vector3(move.x-20f, move.y, move.z);

@@ -18,6 +18,7 @@ TagManager:
   - guard
   - DarkTrap
   - Traps02
+  - roller
   layers:
   - Default
   - TransparentFX
