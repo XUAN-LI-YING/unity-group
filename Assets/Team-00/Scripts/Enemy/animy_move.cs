@@ -64,7 +64,10 @@ public class animy_move : MonoBehaviour
     turnbacktime = 3;
     canceltime = 5;
     spikecollide = 0;
+<<<<<<< HEAD
     rollerCollide=false;
+=======
+>>>>>>> befd3252d1c1c43fc5d53ea30bfed28a54094c01
 
     // 設置參數初始數值
   }
