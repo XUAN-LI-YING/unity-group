@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8434979036201812795}
   - component: {fileID: 8434979036201812793}
   - component: {fileID: -3251426306813243282}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: boom animation
   m_TagString: boom
   m_Icon: {fileID: 0}
