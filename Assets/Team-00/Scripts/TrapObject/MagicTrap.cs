@@ -25,34 +25,48 @@ public class MagicTrap : MonoBehaviour
      collision = false;
      if (other.gameObject.tag == "Cat")
     {
-      Debug.Log("遇到敵方沒點擊");
+      // Debug.Log("遇到敵方沒點擊");
 
     }
 
 
   }
 
-  public void OnMouseDown()
-  {
 
+  void update()
+  {
+    if ( Input.GetMouseButtonDown(0) ){　
+    Debug.Log("滑鼠在點我了!");
+    if (collision == true)
+     {
+
+      Correct();
+     }
+    Instantiate(aniexplo, gameObject.transform.position, gameObject.transform.rotation);
+    Destroy(this.gameObject);
+     
+     }
+  }
+
+  //這串function無法觸發
+  void OnMouseDown()
+  {
+     Debug.Log("滑鼠在點我了!");
      if (collision == true)
      {
 
-
       Correct();
-
      }
-
-    Instantiate(aniexplo, gameObject.transform.position, gameObject.transform.rotation);
-     Destroy(this.gameObject);
-
+    
+    
     // 日後再自動產生
 
   }
 
   void Correct()
   {
-    Debug.Log("click correct");
+    
+     Debug.Log("click correct");
     fearBar.instance.Increase();
 
 

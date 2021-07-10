@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class MenuButton : MonoBehaviour
 {
-	[SerializeField] MenuButtonController menuButtonController;
+	[SerializeField] MenuButtonController menuButtonController= null;
 
-	[SerializeField] Animator animator;
+	[SerializeField] Animator animator= null;
 
-	[SerializeField] AnimatorFunctions animatorFunctions;
+	[SerializeField] AnimatorFunctions animatorFunctions= null;
 	
-	[SerializeField] int thisIndex;
+	[SerializeField] int thisIndex=0;
 
     // Update is called once per frame
     void Update()

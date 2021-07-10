@@ -5,7 +5,7 @@ using UnityEngine;
 public class DarkTrap : MonoBehaviour
 {
     public GameObject enemy;
-    bool collision = false;
+    // bool collision = false;
     void Start()
     {
 
@@ -18,7 +18,7 @@ public class DarkTrap : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D other)
     {
-        collision = true;
+        // collision = true;
         // Debug.Log("only catch sth");
 
             if (other.gameObject.tag == "Cat")

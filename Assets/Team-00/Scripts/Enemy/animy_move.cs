@@ -161,7 +161,7 @@ public class animy_move : MonoBehaviour
             this.speed = 0;                     //暈眩
             rollerdelta += 1;
 
-            if (rollerdelta >= 100)                //暈眩到一定時間後便正常
+            if (rollerdelta >= 200)                //暈眩到一定時間後便正常
             {
              rollerCollide = false;
              this.speed = 10f;

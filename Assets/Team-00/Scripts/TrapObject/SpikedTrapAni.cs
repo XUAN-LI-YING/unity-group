@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpikedTrapAni : MonoBehaviour
-{
+ {
   public static SpikedTrapAni instance;
   public bool touch;
   
@@ -16,6 +16,7 @@ public class SpikedTrapAni : MonoBehaviour
 
   public void bomb()
   {
+    Debug.Log("蹦蹦蹦");
     Instantiate(explo, monster.gameObject.transform.position, monster.gameObject.transform.rotation);
     touch = false;
   }
@@ -24,10 +25,10 @@ public class SpikedTrapAni : MonoBehaviour
     if(CoolDown.instance.filledImage.fillAmount == 0)
     {
       if(touch == true)
-      bomb();
-      // 下方若要 debug 應該放置在此 commit by 01
+       bomb();
+      
     }
-    //Debug.Log(touch);
+   
   }
   //產生黃色爆炸物件
   public void OnTriggerStay2D(Collider2D col)
@@ -43,10 +44,21 @@ public class SpikedTrapAni : MonoBehaviour
       //Debug.Log(col);
       touch = true;
       monster = col.gameObject;
-
-      //Instantiate(explo, col.gameObject.transform.position, col.gameObject.transform.rotation);
+  
     }
     
   }
+
+  public void OnTriggerEnter2D(Collider2D col)
+  {
+    
+    if (col.tag == "Cat")
+    {
+      Instantiate(explo, transform.position, transform.rotation);
+  
+    }
+    
+  }
+
   
 }
