@@ -163,9 +163,10 @@ public class animy_move : MonoBehaviour
 
             if (rollerdelta >= 200)                //暈眩到一定時間後便正常
             {
-             rollerCollide = false;
+             
              this.speed = 10f;
              rollerdelta=0;
+             rollerCollide = false;
             }
   }
   
@@ -287,10 +288,7 @@ public class animy_move : MonoBehaviour
       move = new Vector3(move.x-5f, move.y, move.z);
       //現在的位置等於現在-5後的move
       gameObject.transform.position = move;
-      // if(playerAni.GetInteger("roll")==0)
-      // {      
-      //   playerAni.SetInteger("roll",1);
-      // }
+      
     }
   
   }
