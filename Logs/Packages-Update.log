@@ -66,11 +66,7 @@ The following packages were updated:
   com.unity.test-framework from version 1.1.16 to 1.1.18
   com.unity.textmeshpro from version 2.1.1 to 3.0.1
 
-<<<<<<< Updated upstream
-=== Tue Jun  8 15:13:31 2021
-=======
 === Sun Jul  4 20:58:41 2021
->>>>>>> Stashed changes
 
 Packages were changed.
 Update Mode: updateDependencies
@@ -88,13 +84,13 @@ The following packages were updated:
   com.unity.textmeshpro from version 3.0.3 to 3.0.6
   com.unity.timeline from version 1.2.16 to 1.5.5
 
-=== Tue Jul  6 13:03:56 2021
+=== Sun Jul 18 21:15:26 2021
 
 Packages were changed.
 Update Mode: updateDependencies
 
 The following packages were added:
-  com.unity.ads@3.4.9
-  com.unity.analytics@3.3.5
-  com.unity.purchasing@2.1.1
-  com.unity.xr.legacyinputhelpers@2.1.4
+  com.unity.ads@3.7.1
+  com.unity.analytics@3.5.3
+  com.unity.purchasing@3.1.0
+  com.unity.xr.legacyinputhelpers@2.1.7
