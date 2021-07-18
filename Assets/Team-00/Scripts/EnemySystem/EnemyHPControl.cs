@@ -80,7 +80,7 @@ public class EnemyHPControl : MonoBehaviour
     }
     if (col.tag=="Traps02")
     {
-      hp -= 1;  
+      hp -= 10;  
     }
 
     // 如果敵人撞到友軍則扣血
@@ -104,32 +104,32 @@ void OnCollisionStay2D(Collision2D coll)
         }
     }
 
-void OnCollisionEnter2D(Collision2D coll) 
-{
-  if(coll.gameObject.tag=="Friendly")
-  {     if( times>=2)
-            {
-              back=true;     //當遇到我方友軍則會擊退並計算擊退次數
-              times=0;
-            }
+// void OnCollisionEnter2D(Collision2D coll) 
+// {
+//   if(coll.gameObject.tag=="Friendly")
+//   {     if( times>=2)
+//             {
+//               back=true;     //當遇到我方友軍則會擊退並計算擊退次數
+//               times=0;
+//             }
 
-            else
-            {
-              times += 1 ;
-            }
-            if(back==true)
-            {
-            //偵測現在move到哪裡的位置
-            Vector3 move = gameObject.transform.position;
-            //move比現在的位置-5
-            move = new Vector3(move.x-20f, move.y, move.z);
-            //現在的位置等於現在-5後的move
-            gameObject.transform.position = move;
-            back=false;
-            }
-  }
+//             else
+//             {
+//               times += 1 ;
+//             }
+//             if(back==true)
+//             {
+//             //偵測現在move到哪裡的位置
+//             Vector3 move = gameObject.transform.position;
+//             //move比現在的位置-5
+//             move = new Vector3(move.x-20f, move.y, move.z);
+//             //現在的位置等於現在-5後的move
+//             gameObject.transform.position = move;
+//             back=false;
+//             }
+//   }
   
-}
+// }
 
 
 

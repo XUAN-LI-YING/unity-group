@@ -185,10 +185,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spikeIsCollide: 0
-  back: 0
   max_hp: 0
   EnemyAllHP: {fileID: 4913606489332287915}
   times: 0
+  friendTime: 0
 --- !u!114 &61797436552318614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,23 +201,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e43496f199b3b0d4a80023ecf6854ef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Spikedelta: 0
-  Trapsdelta: 0
-  deltaSum: 0
   speed: 0
-  spikecollide: 0
   walking: 0
-  SpikedIsCollide: 0
-  Traps02IsCollide: 0
-  blacktrap: 0
   check: 0
   EnemyPos: {x: 0, y: 0, z: 0}
-  spiketrap: 0
+  SpikedIsCollide: 0
+  Spikedelta: 0
+  deltaSum: 0
+  spikecollide: 0
+  blacktrap: 0
   stucktraptime: 0
   caseSwitch: 0
+  Traps02IsCollide: 0
+  Trapsdelta: 0
   turnbacktime: 0
   canceltime: 0
   Turnon: 0
+  rollerdelta: 0
+  rollerCollide: 0
 --- !u!95 &6547853523155515524
 Animator:
   serializedVersion: 3
@@ -275,7 +276,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 99
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
