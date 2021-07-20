@@ -19,6 +19,7 @@ TagManager:
   - DarkTrap
   - Traps02
   - roller
+  - Trap-05
   layers:
   - Default
   - TransparentFX
