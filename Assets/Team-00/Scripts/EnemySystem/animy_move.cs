@@ -254,6 +254,36 @@ public class animy_move : MonoBehaviour
           }
 
   }
+  void Checkbuff(){
+    
+    // 檢查是曾經深陷過那黑暗陷阱當中 have enemy stuck in black trap during ____canceltime in stopblood funtion___ time ?
+    // Turnon = true 狀態下
+    if (Turnon)
+    {
+      //查語法  increse . CostmoreBlood();
+    }
+
+    
+    // 有的話 要 增加 "我方扣敵方更多血量"
+    // 去找程式哪邊扣敵方血量 新增並調用 CostmoreBlood();
+    // void CostmoreBlood(){
+    //  e.g   hp -= 20f;
+    // }
+    //  when to stop it ?
+    //  
+    //  到黑暗狀態結束
+    //  canceltime < 0 時，Turnon = false
+    
+    
+    //  先前沒碰到 
+        //狀況一： 先踩大規模但下個黑暗敵人往後走不回大規模
+        //狀況二： 先踩了黑暗，但黑暗狀態結束了
+
+    //  Turnon = false 狀態下
+    //  沒事情～～～～～
+    //
+
+  }
 
   void OnTriggerEnter2D(Collider2D col)
   {
@@ -271,7 +301,14 @@ public class animy_move : MonoBehaviour
       stucktraptime += 1;                       //確認是否第一次碰撞暗黑陷阱
 
       Debug.Log("碰撞黑暗第"+(stucktraptime)+"次");
+
+      
+
     
+    }
+    if (col.tag == "Trap-05")
+    {
+        Checkbuff();
     }
 
     if (col.tag=="Traps02")
