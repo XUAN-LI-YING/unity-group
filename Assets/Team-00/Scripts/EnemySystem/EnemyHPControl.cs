@@ -8,25 +8,34 @@ using UnityEngine;
 // 將 max_hp = 100;
 public class EnemyHPControl : MonoBehaviour
 {
-  float hp = 0;
+  //陷阱跟擊退效果可以寫在 animy_move.cs 再調用特定函式
+  //這邊放血量控制效果會比較ok
+
+  [Header("尖刺陷阱效果")] 
+  public bool spikeIsCollide;
   float spikedelta = 0;
   float deltaSum=0; //delta要比deltaSum大 的值
-
   float spikecollide=0; //尖刺陷阱碰撞次數加成
-  public bool spikeIsCollide;
-  public bool back; //擊退成立否
-  public int max_hp ;
-  public GameObject EnemyAllHP;
-  public int times=0; //擊退次數
   
-  // Start is called before the first frame update
-  //最大血量為10，而初始HP血量=最大血量
+  [Header("血量控制")] 
+  public int max_hp ;
+  float hp;
+  [Header("血量圖像")] 
+  public GameObject EnemyAllHP;
+
+  [Header("擊退效果")] 
+  public bool back;   //擊退狀態
+  public int times=0; //擊退次數
+
+
+
   void Start()
   { 
     spikeIsCollide = false;
     back=true;
     max_hp = 100;
     hp = max_hp;
+      //最大血量設置數值，初始HP血量=最大血量
   }
 
   // Update is called once per frame
@@ -93,16 +102,29 @@ public class EnemyHPControl : MonoBehaviour
 void OnCollisionStay2D(Collision2D coll) 
     {   //如果碰撞到cat
         if(coll.gameObject.tag=="Friendly")
-        {   hp -=0.1f;
+        {  
+          // 這邊預計會重寫 用呼叫函式方式 因為要從 enemymove.cs  調用這邊完成 啟動 and 關閉扣血 "我方扣敵方更多血量"
+          // costblood之類的();
+           hp -=0.1f;
             
         
         }
         if(coll.gameObject.tag=="guard")
         {   //hp-0.1
-            hp -= 0.1f;
+            
+           hp -= 0.1f;
             
         }
     }
+// void CostmoreBlood(){
+    //  e.g   hp -= 20f;
+    // }
+    //  when to stop it ?
+    //  
+    //  到黑暗狀態結束
+    //  canceltime < 0 時，Turnon = false
+
+
 
 // void OnCollisionEnter2D(Collision2D coll) 
 // {

@@ -14,7 +14,7 @@ using UnityEngine.SceneManagement;
  // 2. 緩速時間參數設置為全域變數
  // 解釋其理由：容易在 unity 調整數值方便團隊開發
 
-public class animy_move : MonoBehaviour
+public class EnemyMove : MonoBehaviour
 {
     
    [Header("有限狀態機FSM")] 

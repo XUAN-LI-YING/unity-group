@@ -8,7 +8,7 @@ using UnityEngine;
 // 更改地方：(commit上也看得到差異哦)
 // 將產生怪物時間設置變數以利團隊遊戲開發
 
-public class animyPrefab : MonoBehaviour
+public class EnemyPrefab : MonoBehaviour
 {
   public GameObject catPrefab;
 
