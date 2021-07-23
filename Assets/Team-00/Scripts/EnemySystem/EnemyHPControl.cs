@@ -8,8 +8,11 @@ using UnityEngine;
 // 將 max_hp = 100;
 public class EnemyHPControl : MonoBehaviour
 {
+  public static EnemyHPControl instance;
+  // 函式 instance
+
   //陷阱跟擊退效果可以寫在 animy_move.cs 再調用特定函式
-  //這邊放血量控制效果會比較ok
+  //這邊放血量控制效決定扣多少即可 commit by 01
 
   [Header("尖刺陷阱效果")] 
   public bool spikeIsCollide;
@@ -31,6 +34,7 @@ public class EnemyHPControl : MonoBehaviour
 
   void Start()
   { 
+    instance = this;
     spikeIsCollide = false;
     back=true;
     max_hp = 100;
@@ -103,26 +107,51 @@ void OnCollisionStay2D(Collision2D coll)
     {   //如果碰撞到cat
         if(coll.gameObject.tag=="Friendly")
         {  
-          // 這邊預計會重寫 用呼叫函式方式 因為要從 enemymove.cs  調用這邊完成 啟動 and 關閉扣血 "我方扣敵方更多血量"
-          // costblood之類的();
-           hp -=0.1f;
-            
-        
+          // 這邊預計會重寫判斷 才可能達到功能
+          // 寫個 switch 隨時判斷狀態 切換扣多少血量狀態
+          // default : 普通扣血 Costblood();
+          
+          // 1.遇到大規模 : 扣多
+          // 2.遇到巴拉巴拉：扣___看企劃怎寫
+          // 3.以次類推續加
+
+          // 本來寫在這的  hp -= 0.5f;
+          // 用呼叫函式方式 costblood之類的();
+          // 因為 enemymove.cs  要調用這邊完成 啟動 and 關閉扣血 "我方扣敵方更多血量"
+
+          // 不好意思擅自更動啦~~~
+          // commit by 01 賴上面也會有截圖哦
+
+          // 方便企劃測試 血量扣的速率寫在介面上
+          // 大概會變 hp - "一秒扣多少數值"
+          // 目前是只要 collisionstay 就會扣沒有秒數在裡頭
+          // 想法： 用 StartCoroutine 協程去寫
+          hp -= 0.5f;
+          
+          Costblood();
         }
         if(coll.gameObject.tag=="guard")
         {   //hp-0.1
             
-           hp -= 0.1f;
+          Costblood();
             
         }
     }
-// void CostmoreBlood(){
-    //  e.g   hp -= 20f;
-    // }
-    //  when to stop it ?
-    //  
-    //  到黑暗狀態結束
-    //  canceltime < 0 時，Turnon = false
+    public void CostmoreBlood(){
+
+
+      hp -= 0.6f;
+    
+    
+    }
+    public void Costblood(){
+
+       hp -=0.1f;
+      //  StartCoroutine
+
+
+
+    }
 
 
 
