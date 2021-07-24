@@ -197,6 +197,8 @@ public class EnemyMove : MonoBehaviour
 
     canceltime -= 1;
 
+     Debug.Log($"停止攻擊效果倒數{canceltime}sec");     //顯示停止攻擊倒數幾秒
+
     if (canceltime < 1)                             //停止扣血計時器
     {
       Turnon = false;
@@ -206,7 +208,7 @@ public class EnemyMove : MonoBehaviour
 
     }
 
-    Debug.Log($"停止攻擊效果倒數{canceltime}sec");     //顯示停止攻擊倒數幾秒
+
 
   }
   
@@ -262,6 +264,7 @@ public class EnemyMove : MonoBehaviour
     // Turnon = true 狀態下
     if (Turnon)
     {
+      EnemyHPControl.instance.CostmoreBlood();
       //查語法  increse . CostmoreBlood();
     }
 
