@@ -23,7 +23,7 @@ public class FriendlyHPControl : MonoBehaviour
     void Start()
     { 
         instance = this;
-        max_hp=10;
+        max_hp=100;
         hp=max_hp;
         back=true;
         stopblood=false;
@@ -45,10 +45,13 @@ public class FriendlyHPControl : MonoBehaviour
     }
     public void StopBloodon(){
         stopblood = true;
+        CheckCondition();
+
     }
 
     public void StopBloodoff(){
         stopblood = false;
+        CheckCondition();
     }
 
     //碰撞後bool為真開始持續扣血
@@ -60,12 +63,9 @@ public class FriendlyHPControl : MonoBehaviour
         //如果碰撞到cat
         if(col.gameObject.tag=="Cat")
         { 
-            if (stopblood)
-            {
-                Debug.Log($"目前血量 {hp} ");
-            } 
-            
-            hp -= 0.05f;
+            StopBloodoff();
+
+
             //  hp -= Time.deltaTime * 5;
             
             // //偵測現在move到哪裡的位置
@@ -75,6 +75,19 @@ public class FriendlyHPControl : MonoBehaviour
             // //現在的位置等於現在+5後的move
             // gameObject.transform.position = move;
         }
+    }
+    void CheckCondition(){
+        
+        if (stopblood)
+        
+            {
+            
+                Debug.Log($"friendly目前血量 {hp} ");
+            } 
+            
+        hp -= 1;
+
+
     }
 
     // void OnCollisionEnter2D(Collision2D coll) 
