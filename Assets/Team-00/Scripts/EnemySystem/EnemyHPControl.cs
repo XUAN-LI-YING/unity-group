@@ -11,20 +11,23 @@ public class EnemyHPControl : MonoBehaviour
   public static EnemyHPControl instance;
   // 函式 instance
 
-  //陷阱跟擊退效果可以寫在 animy_move.cs 再調用特定函式
-  //這邊放血量控制效決定扣多少即可 commit by 01
-
   [Header("尖刺陷阱效果")] 
   public bool spikeIsCollide;
   float spikedelta = 0;
   float deltaSum=0; //delta要比deltaSum大 的值
   float spikecollide=0; //尖刺陷阱碰撞次數加成
   
-  [Header("血量控制")] 
-  public int max_hp ;
-  float hp;
+  [Header("血量控制")]
+  public int checkHP; // 扣血量狀態判斷 check how many blood cost persecond
+  
+  public bool timer1bool; 
+  public bool timer2bool;
+  public int hp;     // 敵人當前血量
+  public int max_hp ;  // 最大血量數值 max blood value
+  public int costtime; // 每幾秒扣一次
+
   [Header("血量圖像")] 
-  public GameObject EnemyAllHP;
+  public GameObject EnemyAllHP;  
 
   [Header("擊退效果")] 
   public bool back;   //擊退狀態
@@ -38,11 +41,11 @@ public class EnemyHPControl : MonoBehaviour
     spikeIsCollide = false;
     back=true;
     max_hp = 100;
-    hp = max_hp;
-      //最大血量設置數值，初始HP血量=最大血量
+    hp = max_hp;   
+    checkHP = 1;             //最大血量設置數值，初始HP血量=最大血量
+    costtime = 1;
   }
 
-  // Update is called once per frame
   void Update()
   {   //如果目前血量HP小於等於0，那就會讓這個物件，也就是敵人消失
     if (hp <= 0)
@@ -59,10 +62,16 @@ public class EnemyHPControl : MonoBehaviour
     if (spikeIsCollide == true)
     {
       //每秒扣血
-      hp -= Time.deltaTime * 10f;
+      // hp -= Time.deltaTime * 10f;
+
+      CostBlood();
       
+      // 更改地方還有 hp 的資料型態變為 int ; 
+      // time.deltatime 通常是用在角色實體每秒速度~
+      // 另外有寫每多少秒扣血的 funtion了 方便凱倫關卡設計參數還有完成我的進度
+
       spikedelta += 1;
-      deltaSum=800*spikecollide;  //扣血加成
+      deltaSum=2*spikecollide;  //扣血加成
     }
     if (spikedelta >= deltaSum)
     {
@@ -107,9 +116,11 @@ void OnCollisionStay2D(Collision2D coll)
     {   //如果碰撞到cat
         if(coll.gameObject.tag=="Friendly")
         {  
+
+          CheckCondition();
           // 這邊預計會重寫判斷 才可能達到功能
           // 寫個 switch 隨時判斷狀態 切換扣多少血量狀態
-          // default : 普通扣血 Costblood();
+          // default : 普通扣血 CostBlood();
           
           // 1.遇到大規模 : 扣多
           // 2.遇到巴拉巴拉：扣___看企劃怎寫
@@ -126,29 +137,80 @@ void OnCollisionStay2D(Collision2D coll)
           // 大概會變 hp - "一秒扣多少數值"
           // 目前是只要 collisionstay 就會扣沒有秒數在裡頭
           // 想法： 用 StartCoroutine 協程去寫
-          hp -= 0.5f;
           
-          Costblood();
+        
         }
         if(coll.gameObject.tag=="guard")
         {   //hp-0.1
             
-          Costblood();
+          CheckCondition();
             
         }
     }
-    public void CostmoreBlood(){
+    public void CheckCondition(){
 
+      switch (checkHP)                   
 
-      hp -= 0.6f;
+          {
+          
+          case 1: 
+          CostBlood();
+
+            break;
+
+          case 2:
+          
+          CostmoreBlood();
+
+            break;
+          
+          default:
+
+          CostBlood();
+
+            break;
+
+          }
+      
     
     
     }
-    public void Costblood(){
+    public void CostmoreBlood(){
 
-       hp -=0.1f;
-      //  StartCoroutine
+      if (timer2bool){
+          StartCoroutine("timer2");
+      }
+ 
+    
+    
+    }
+    public void CostBlood(){
 
+      if (timer1bool){
+          StartCoroutine("timer1");  
+      }
+
+  
+      
+
+
+
+    }
+    IEnumerator timer1(){
+      
+      yield return new WaitForSeconds(costtime);
+      hp = hp - 3;
+       Debug.Log($"敵人每{costtime}秒扣3滴血");     
+       Debug.Log($"剩餘{hp}滴血"); 
+       timer1bool = false ;
+
+    }
+    IEnumerator timer2(){
+      
+      yield return new WaitForSeconds(costtime);
+      hp = hp - 10;
+      Debug.Log($"敵人每{costtime}秒扣10滴血");     
+      Debug.Log($"剩餘{hp}滴血");     
 
 
     }
