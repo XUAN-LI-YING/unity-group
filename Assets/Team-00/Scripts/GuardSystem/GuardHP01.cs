@@ -27,7 +27,7 @@ public class GuardHP01 : MonoBehaviour
             if(playerAni.GetInteger("sword")==0)
               
                 playerAni.SetInteger("sword",1);
-                Debug.Log("IsWalking");
+                // Debug.Log("IsWalking");
          
         }
         else
