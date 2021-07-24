@@ -16,6 +16,19 @@ using UnityEngine.SceneManagement;
 
 public class EnemyMove : MonoBehaviour
 {
+
+    [Header("停血開關")]
+    public bool Turnon;         //暗黑陷阱效果開關
+  
+    [Header("暗黑陷阱")] 
+    public bool blacktrap;       //暗黑陷阱碰撞判定
+    public int stucktraptime; //單一暗黑陷阱碰撞次數
+    public int caseSwitch ;   //暗黑陷阱觸發事件判定
+
+
+    [Header("暗黑秒數設置")]
+    public float turnbacktime;  //暗黑陷阱效果敵人後退時間
+    public float canceltime;    //暗黑陷阱效果關閉扣血時間
     
    [Header("有限狀態機FSM")] 
     public float speed = 0;    //怪物初始速度
@@ -29,24 +42,13 @@ public class EnemyMove : MonoBehaviour
     public float deltaSum = 0;   //減緩速度加乘參數(800倍x碰撞次數)
     public float spikecollide;   //尖刺陷阱碰撞次數
  
-   [Header("暗黑陷阱")] 
-    public bool blacktrap;       //暗黑陷阱碰撞判定
-    public int stucktraptime; //單一暗黑陷阱碰撞次數
-    public int caseSwitch ;   //暗黑陷阱觸發事件判定
+
    
    [Header("捕獸陷阱")] 
     public bool Traps02IsCollide;   //捕獸陷阱碰撞判定
     public int Trapsdelta = 0;      //捕獸陷阱緩速計時器
     
     // public int slowdowntime = 0; //緩速時間
-
-
-    [Header("暗黑秒數設置")]
-    public float turnbacktime;  //暗黑陷阱效果敵人後退時間
-    public float canceltime;    //暗黑陷阱效果關閉扣血時間
-
-    [Header("停血開關")]
-    public bool Turnon;         //暗黑陷阱效果開關
 
     [Header("巨型滾筒")]
     public float rollerdelta;
@@ -61,8 +63,8 @@ public class EnemyMove : MonoBehaviour
     this.speed = 10f; 
     blacktrap = false;
     stucktraptime = 0;
-    turnbacktime = 3;
-    canceltime = 5;
+    turnbacktime = 1;
+    canceltime = 10;
     spikecollide = 0;
   }
   void Update()
@@ -200,7 +202,7 @@ public class EnemyMove : MonoBehaviour
       Turnon = false;
       FriendlyHPControl.instance.StopBloodoff();
       CancelInvoke("CancelTime");
-      canceltime = 5;
+      canceltime = 10;
 
     }
 
@@ -306,7 +308,7 @@ public class EnemyMove : MonoBehaviour
 
     
     }
-    if (col.tag == "Trap-05")
+    if (col.tag == "Trap-05")                   // 撞到大規模，檢查前面是否觸發黑暗
     {
         Checkbuff();
     }
