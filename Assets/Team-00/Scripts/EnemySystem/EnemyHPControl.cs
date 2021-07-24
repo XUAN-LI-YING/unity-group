@@ -25,6 +25,8 @@ public class EnemyHPControl : MonoBehaviour
   public int hp;     // 敵人當前血量
   public int max_hp ;  // 最大血量數值 max blood value
   public int costtime; // 每幾秒扣一次
+  public int cost1; //正常模式扣血量
+  public int cost2; //大規模模式扣血量
 
   [Header("血量圖像")] 
   public GameObject EnemyAllHP;  
@@ -199,8 +201,8 @@ void OnCollisionStay2D(Collision2D coll)
     IEnumerator timer1(){
       
       yield return new WaitForSeconds(costtime);
-      hp = hp - 3;
-       Debug.Log($"敵人每{costtime}秒扣3滴血");     
+      hp = hp - cost1;
+       Debug.Log($"敵人每{costtime}秒扣{cost1}滴血");     
        Debug.Log($"剩餘{hp}滴血"); 
        timer1bool = false ;
 
@@ -208,8 +210,8 @@ void OnCollisionStay2D(Collision2D coll)
     IEnumerator timer2(){
       
       yield return new WaitForSeconds(costtime);
-      hp = hp - 10;
-      Debug.Log($"敵人每{costtime}秒扣10滴血");     
+      hp = hp - cost2;
+      Debug.Log($"敵人每{costtime}秒扣10{cost2}滴血");     
       Debug.Log($"剩餘{hp}滴血");     
 
 
