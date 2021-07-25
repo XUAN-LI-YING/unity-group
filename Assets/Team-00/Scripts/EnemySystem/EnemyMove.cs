@@ -4,16 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
- // 第二次更動：修正註解，並刪除 debug 
- // 若造成不便，還請多多寬待 i am sorry
- 
- //更動組員程式碼命名方式以及其解釋理由
- // 若更改造成有 bug 產生，還請多多見諒 !!
- // 很想要更改的地方：(commit上也看得到差異哦)
- // 1. trap02 speed 速度太慢了我想更改
- // 2. 緩速時間參數設置為全域變數
- // 解釋其理由：容易在 unity 調整數值方便團隊開發
-
 public class EnemyMove : MonoBehaviour
 {
 
