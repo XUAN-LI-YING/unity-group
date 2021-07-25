@@ -39,7 +39,7 @@
      <Compile Include="Assets\Team-00\Scripts\TrapSystem\boomAnimation.cs" />
      <Compile Include="Assets\Team-00\Scripts\EnemySystem\EnemyHPControl.cs" />
      <Compile Include="Assets\StartGame\script\MenuButton.cs" />
-     <Compile Include="Assets\Team-00\Scripts\EnemySystem\animy_move.cs" />
+     <Compile Include="Assets\Team-00\Scripts\EnemySystem\EnemyMove.cs" />
      <Compile Include="Assets\Team-00\Scripts\TrapSystem\Player.cs" />
      <Compile Include="Assets\Team-00\Scripts\TrapObject\SpikedTrapAni.cs" />
      <Compile Include="Assets\Team-00\Scripts\TrapObject\rollTouch.cs" />
@@ -58,7 +58,7 @@
      <Compile Include="Assets\Team-00\Scripts\QTE.cs" />
      <Compile Include="Assets\Team-00\Scripts\TrapSystem\trapstatus.cs" />
      <Compile Include="Assets\Team-00\Scripts\FriendlySystem\friendlyButton.cs" />
-     <Compile Include="Assets\Team-00\Scripts\EnemySystem\animyPrefab.cs" />
+     <Compile Include="Assets\Team-00\Scripts\EnemySystem\EnemyPrefab.cs" />
      <Compile Include="Assets\Team-00\Scripts\RandomNumber\RandomNumber.cs" />
      <Compile Include="Assets\Team-00\Scripts\TrapSystem\rollanimation.cs" />
      <Compile Include="Assets\Team-00\Scripts\TrapObject\Traps02.cs" />

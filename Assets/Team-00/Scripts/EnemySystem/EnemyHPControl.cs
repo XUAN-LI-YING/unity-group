@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// 更動組員程式碼命名方式以及其解釋理由
-// 若更改造成有 bug 產生，還請多多見諒 !!
-// 更改地方：(commit上也看得到差異哦賴訊息會再報備一次)
-// 將 max_hp = 100;
+
 public class EnemyHPControl : MonoBehaviour
 {
   public static EnemyHPControl instance;
@@ -107,11 +104,7 @@ public class EnemyHPControl : MonoBehaviour
       hp -= 10;  
     }
 
-    // 如果敵人撞到友軍則扣血
-    // if (col.tag == "Friendly")
-    // {   //hp-0.1
-    //   hp -= 1f;
-    // }
+  
 
   }
 void OnCollisionStay2D(Collision2D coll) 
@@ -143,7 +136,8 @@ void OnCollisionStay2D(Collision2D coll)
         
         }
         if(coll.gameObject.tag=="guard")
-        {   //hp-0.1
+        {  
+           hp-=1;
             
           CheckCondition();
             

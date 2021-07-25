@@ -5,13 +5,13 @@ using UnityEngine;
 public class MagicTrap : MonoBehaviour
 {
 
-  public GameObject aniexplo;
+   public GameObject Aniboom;
 
-   public GameObject enemy;
+   
 
    bool collision = false;
 
-  //滑鼠按下時，出現動畫aniexplo，且動畫位置為(X,y)(gameObject.transform.position, gameObject.transform.rotation)
+  //滑鼠按下時，出現動畫Aniboom，且動畫位置為(X,y)(gameObject.transform.position, gameObject.transform.rotation)
 
  
 
@@ -35,17 +35,24 @@ public class MagicTrap : MonoBehaviour
 
   void update()
   {
-    if ( Input.GetMouseButtonDown(0) ){　
-    Debug.Log("滑鼠在點我了!");
+    // if ( Input.GetMouseButtonDown(0) )
+    // {
+    //    Instantiate(Aniboom, gameObject.transform.position, gameObject.transform.rotation);
+    //    Destroy(this.gameObject);
+    if(Input.GetMouseButtonDown(0))
+    {
+      	Debug.Log("Pressed left click.");
+    }
+		
+
+       
     if (collision == true)
      {
 
       Correct();
      }
-    Instantiate(aniexplo, gameObject.transform.position, gameObject.transform.rotation);
-    Destroy(this.gameObject);
      
-     }
+     
   }
 
   //這串function無法觸發
@@ -66,7 +73,7 @@ public class MagicTrap : MonoBehaviour
   void Correct()
   {
     
-     Debug.Log("click correct");
+    //  Debug.Log("click correct");
     fearBar.instance.Increase();
 
 

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7156053143910691164}
   - component: {fileID: 7156053143910691165}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: sword (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1132092615
-  m_SortingLayer: 5
+  m_SortingLayer: 2
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 9d0cc165abe9e1843810210becde174f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7156053144191667384}
   - component: {fileID: 7156053144191667385}
-  m_Layer: 9
+  m_Layer: 15
   m_Name: GuardAllHP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -623233787
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 4a468eab04f80f04cb6d73eec9f106f2, type: 3}
   m_Color: {r: 0.4341157, g: 1, b: 0.32452828, a: 1}
@@ -177,8 +177,8 @@ GameObject:
   - component: {fileID: 7156053144881416726}
   - component: {fileID: 7156053144881416714}
   - component: {fileID: 7156053144881416713}
-  m_Layer: 0
-  m_Name: Guard01
+  m_Layer: 15
+  m_Name: Guard01Prefab
   m_TagString: guard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -238,7 +238,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1132092615
-  m_SortingLayer: 5
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d099ac2d8bb696347bca9bd1ee2c03ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -322,7 +322,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7156053145939551474}
   - component: {fileID: 7156053145939551475}
-  m_Layer: 9
+  m_Layer: 15
   m_Name: GuardHP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -382,7 +382,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -623233787
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4a468eab04f80f04cb6d73eec9f106f2, type: 3}
   m_Color: {r: 0.16975792, g: 0.4811321, b: 0.21285354, a: 1}

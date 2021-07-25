@@ -52,9 +52,17 @@ public class GuardHP01 : MonoBehaviour
     {   //如果碰撞到cat
         if(coll.gameObject.tag=="Cat")
         {   //hp-0.1
-            hp -= 0.09f;
+            hp -= 0.01f;
             IsWalking = true ;      
         }
     }
+    void OnCollisionExit2D(Collision2D coll)
+    
+    {
+        if(coll.gameObject.tag=="Cat")
+        {
+           IsWalking = false ;   
+        }
+    }　
 
 } 
