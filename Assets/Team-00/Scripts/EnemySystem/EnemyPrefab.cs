@@ -20,7 +20,7 @@ public class EnemyPrefab : MonoBehaviour
   void Start(){
 
     delta = 0;
-    createtime = 10;
+    createtime = 20;
   }
  
   

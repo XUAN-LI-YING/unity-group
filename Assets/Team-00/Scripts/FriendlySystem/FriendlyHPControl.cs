@@ -2,31 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// 更動組員程式碼命名方式以及其解釋理由
-// 若更改造成有 bug 產生，還請多多見諒 !!
-// 更改地方：(commit上也看得到差異哦)
-// 將 Contron 改為 Control 控制的英文單字
-// 可安裝拼字檢查套件避免英文拼字錯誤哦
-// https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
 public class FriendlyHPControl : MonoBehaviour
 {
     public static FriendlyHPControl instance;
  
-    float hp=0;
-    public int max_hp=0;
-    public bool back;
-    public bool stopblood;
-    public int times=0;
+    [Header("血條物件")]
     public GameObject FriendlyAllHP;
+    [Header("友軍目前血量")]
+    public float hp=0;
+    [Header("友軍最大血量")]
+    public int max_hp=0;
+    [Header("每幾秒扣一次")]
+    public int costtime; // 每幾秒扣一次
+    [Header("正常模式扣血量")]
+    public int cost1; //正常模式扣血量
+    [Header("停止受傷效果")]
+    public bool stopblood;
+    [Header("扣血計時開關")]
+    public bool timer1bool;
+
+    [Header("友軍退後(目前無效果)")]
+    public bool back = true;
+     public int times =0;
+
+
     // Start is called before the first frame update
-    //最大血量為10，而初始HP血量=最大血量
+    //最大血量為100，而初始HP血量=最大血量
     void Start()
     { 
         instance = this;
         max_hp=100;
         hp=max_hp;
-        back=true;
         stopblood=false;
+        timer1bool=false;
+        costtime = 3;
+        cost1 = 1;
 
 
     }
@@ -63,7 +73,7 @@ public class FriendlyHPControl : MonoBehaviour
         //如果碰撞到cat
         if(col.gameObject.tag=="Cat")
         { 
-            StopBloodoff();
+            
 
 
             //  hp -= Time.deltaTime * 5;
@@ -81,13 +91,40 @@ public class FriendlyHPControl : MonoBehaviour
         if (stopblood)
         
             {
-            
+                Debug.Log($"停止受傷狀態：{stopblood} ");
                 Debug.Log($"friendly目前血量 {hp} ");
             } 
+
+        else{
+
+
+            timer1bool = true;
+            CostBlood();
+             Debug.Log($"friendly目前血量 {hp} ");
+        }
             
-        hp -= 1;
+ 
 
 
+    }
+    public void CostBlood(){
+
+      if (timer1bool){
+          StartCoroutine("timer1");  
+      }
+
+  
+      
+
+
+
+    }
+    IEnumerator timer1(){
+      
+      yield return new WaitForSeconds(costtime);
+      hp = hp - cost1;
+       Debug.Log($"友軍每{costtime}秒扣{cost1}滴血");     
+       Debug.Log($"剩餘{hp}滴血"); 
     }
 
     // void OnCollisionEnter2D(Collision2D coll) 
