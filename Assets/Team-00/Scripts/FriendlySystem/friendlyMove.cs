@@ -8,20 +8,24 @@ using UnityEngine;
 // 將友軍速度 設置全部區域變數 方便遊戲開發
 public class friendlyMove : MonoBehaviour
 {
-    public float speed=0;
+    [Header("友軍速度")]
+
+    public float speed = 0;
     //int times= 0;           //撞到次數
 
     public bool back;      //擊退判定
+    
     void Start()
     {
       back=false;
       //怪物初始數度
-      this.speed=-0.08f;  
+      this.speed = -10f;  
     }
     void Update()
     {
+        transform.Translate(speed * Time.deltaTime , 0, 0);
+
         //怪物速度
-        transform.Translate(this.speed,0,0);
 
         //當物體超過畫面時(x=200)怪物移動到第一層的位置
         if(transform.position.x<-101 && transform.position.y <= -15 && transform.position.y > -20)    

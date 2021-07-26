@@ -54,7 +54,7 @@ public class EnemyMove : MonoBehaviour
     blacktrap = false;
     stucktraptime = 0;
     turnbacktime = 1;
-    canceltime = 10;
+    canceltime = 5;
     spikecollide = 0;
   }
   void Update()
@@ -173,11 +173,11 @@ public class EnemyMove : MonoBehaviour
 
   void StopBlood(){      
 
-      Turnon = true;
-      FriendlyHPControl.instance.StopBloodon();
+      Turnon = true;                                // 純粹寫介面方便偵錯
+      FriendlyHPControl.instance.StopBloodon();     // 調用 友軍血量控制器 停止敵方扣友軍血量
 
-      InvokeRepeating("CancelTime", 0, 1);
-      //InokeRepeating 重複呼叫(“函式名”，第一次間隔幾秒呼叫，每幾秒呼叫一次)。
+      InvokeRepeating("CancelTime", 0, 1);          // 停止攻擊效果秒數 turn on
+      //InokeRepeating 重複呼叫(“函式名”，第一次間隔幾秒呼叫，每幾秒呼叫一次)。 
 
 
   }
@@ -192,9 +192,9 @@ public class EnemyMove : MonoBehaviour
     if (canceltime < 1)                             //停止扣血計時器
     {
       Turnon = false;
-      FriendlyHPControl.instance.StopBloodoff();
+      // FriendlyHPControl.instance.StopBloodoff();      // 調用 友軍血量控制器 恢復正常扣友軍血量
       CancelInvoke("CancelTime");
-      canceltime = 10;
+      canceltime = 10;                                // 重新啟動計時
 
     }
 
@@ -208,9 +208,9 @@ public class EnemyMove : MonoBehaviour
   
   {
 
-    yield return new WaitForSeconds(turnbacktime);
+    yield return new WaitForSeconds(turnbacktime);      //往後走秒數
      speed = 10f;
-     check = true;
+     check = true;                                      
     
 
   }
@@ -224,25 +224,25 @@ public class EnemyMove : MonoBehaviour
           {
           
           case 1: 
-            StopBlood();
-            fearBar.instance.Increase();
-            speed = -10f;
-            WalkMode();
-            StartCoroutine(TurnbackTime());
-            blacktrap = false;
+            StopBlood();                            // 停止敵方扣友軍血量
+            fearBar.instance.Increase();            // 增加恐懼值
+            speed = -10f;                           // 反方向速度
+            WalkMode();                             // 開始移動
+            StartCoroutine(TurnbackTime());         // 孩子該回來了
+            blacktrap = false;                      // 結束這一回合
 
             break;
 
           case 2:
           
-          check = true;
-          stucktraptime = 0;
-          blacktrap = false;
+          check = true;                             // 恢復預設持續偵測路上陷阱
+          stucktraptime = 0;                        // 重置遇到黑暗陷阱次數
+          blacktrap = false;                        // 結束這一回合
 
             break;
           
-          default:
-
+          default:                                  // 預設 數值無定義時啟動
+                                                    // 一開始就有定義所以不用這行
             break;
 
           }
@@ -250,33 +250,14 @@ public class EnemyMove : MonoBehaviour
   }
   void Checkbuff(){
     
-    // 檢查是曾經深陷過那黑暗陷阱當中 have enemy stuck in black trap during ____canceltime in stopblood funtion___ time ?
-    // Turnon = true 狀態下
     if (Turnon)
     {
-      EnemyHPControl.instance.CostmoreBlood();
-      //查語法  increse . CostmoreBlood();
+      Debug.Log("執行扣更多血");
+      EnemyHPControl.instance.ChangBleeding();      //遇上大規模 敵方失血量轉變
+      //調用敵人HP控制器 script ;
     }
 
-    
-    // 有的話 要 增加 "我方扣敵方更多血量"
-    // 去找程式哪邊扣敵方血量 新增並調用 CostmoreBlood();
-    // void CostmoreBlood(){
-    //  e.g   hp -= 20f;
-    // }
-    //  when to stop it ?
-    //  
-    //  到黑暗狀態結束
-    //  canceltime < 0 時，Turnon = false
-    
-    
-    //  先前沒碰到 
-        //狀況一： 先踩大規模但下個黑暗敵人往後走不回大規模
-        //狀況二： 先踩了黑暗，但黑暗狀態結束了
-
-    //  Turnon = false 狀態下
-    //  沒事情～～～～～
-    //
+  
 
   }
 

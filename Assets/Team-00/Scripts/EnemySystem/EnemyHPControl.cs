@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,17 +15,21 @@ public class EnemyHPControl : MonoBehaviour
   float deltaSum=0; //delta要比deltaSum大 的值
   float spikecollide=0; //尖刺陷阱碰撞次數加成
   
-  [Header("血量控制")]
-  public int checkHP; // 扣血量狀態判斷 check how many blood cost persecond
-  
-  public bool timer1bool; 
-  public bool timer2bool;
+  [Header("重新啟動扣血判斷")] 
+  public bool circle;
+  [Header("敵人血量設定")] 
   public int hp;     // 敵人當前血量
   public int max_hp ;  // 最大血量數值 max blood value
+  [Header("每__秒扣一次")]
   public int costtime; // 每幾秒扣一次
+  [Header("正常模式扣血量1")]
   public int cost1; //正常模式扣血量
+  [Header("大規模扣血量2")]
   public int cost2; //大規模模式扣血量
-
+  [Header("扣血量切換模式1and2")]
+  public int checkHP; // 扣血量狀態判斷 check how many blood cost persecond
+  public bool timer1bool; //啟動秒數開關
+  public bool timer2bool; //啟動秒數開關
   [Header("血量圖像")] 
   public GameObject EnemyAllHP;  
 
@@ -41,8 +46,13 @@ public class EnemyHPControl : MonoBehaviour
     back=true;
     max_hp = 100;
     hp = max_hp;   
-    checkHP = 1;             //最大血量設置數值，初始HP血量=最大血量
-    costtime = 1;
+    checkHP  = 1;            //最大血量設置數值，初始HP血量=最大血量
+    costtime = 4 ;
+    cost1 = 5;
+    cost2 = 10;
+    timer2bool = true;
+    timer1bool = true;
+    circle = true;
   }
 
   void Update()
@@ -110,39 +120,28 @@ public class EnemyHPControl : MonoBehaviour
 void OnCollisionStay2D(Collision2D coll) 
     {   //如果碰撞到cat
         if(coll.gameObject.tag=="Friendly")
-        {  
+        { 
+          if (circle)
+          {  
+            CheckCondition();
+              
+          } 
 
-          CheckCondition();
-          // 這邊預計會重寫判斷 才可能達到功能
-          // 寫個 switch 隨時判斷狀態 切換扣多少血量狀態
-          // default : 普通扣血 CostBlood();
-          
-          // 1.遇到大規模 : 扣多
-          // 2.遇到巴拉巴拉：扣___看企劃怎寫
-          // 3.以次類推續加
-
-          // 本來寫在這的  hp -= 0.5f;
-          // 用呼叫函式方式 costblood之類的();
-          // 因為 enemymove.cs  要調用這邊完成 啟動 and 關閉扣血 "我方扣敵方更多血量"
-
-          // 不好意思擅自更動啦~~~
-          // commit by 01 賴上面也會有截圖哦
-
-          // 方便企劃測試 血量扣的速率寫在介面上
-          // 大概會變 hp - "一秒扣多少數值"
-          // 目前是只要 collisionstay 就會扣沒有秒數在裡頭
-          // 想法： 用 StartCoroutine 協程去寫
-          
+        
         
         }
         if(coll.gameObject.tag=="guard")
         {  
-           hp-=1;
+           
             
           CheckCondition();
             
         }
     }
+    public void ChangBleeding(){
+        checkHP = 2;
+    }
+
     public void CheckCondition(){
 
       switch (checkHP)                   
@@ -150,19 +149,24 @@ void OnCollisionStay2D(Collision2D coll)
           {
           
           case 1: 
+
+          circle = false; 
+          
           CostBlood();
 
             break;
 
           case 2:
           
+          circle = false;
+
           CostmoreBlood();
 
             break;
           
           default:
 
-          CostBlood();
+          // CostBlood();
 
             break;
 
@@ -196,17 +200,20 @@ void OnCollisionStay2D(Collision2D coll)
       
       yield return new WaitForSeconds(costtime);
       hp = hp - cost1;
-       Debug.Log($"敵人每{costtime}秒扣{cost1}滴血");     
+       Debug.Log($"敵人正常狀態每{costtime}秒扣{cost1}滴血");     
        Debug.Log($"剩餘{hp}滴血"); 
-       timer1bool = false ;
+      circle = true;
+      //  timer1bool = false ; 停止計時 但暫時不用寫 因為必有一方消失 沒碰撞擊不會執行 checkcondition
 
     }
     IEnumerator timer2(){
       
       yield return new WaitForSeconds(costtime);
       hp = hp - cost2;
-      Debug.Log($"敵人每{costtime}秒扣10{cost2}滴血");     
-      Debug.Log($"剩餘{hp}滴血");     
+      Debug.Log($"敵人大規模下每{costtime}秒扣{cost2}滴血");     
+      Debug.Log($"剩餘{hp}滴血");  
+      circle = true;
+
 
 
     }
