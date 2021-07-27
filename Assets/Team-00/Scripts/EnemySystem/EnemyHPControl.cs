@@ -121,9 +121,9 @@ void OnCollisionStay2D(Collision2D coll)
     {   //如果碰撞到cat
         if(coll.gameObject.tag=="Friendly")
         { 
-          if (circle)
+          if (circle)                       //重複計時啟動開關 
           {  
-            CheckCondition();
+            CheckCondition();               //檢查敵人扣血狀態
               
           } 
 
@@ -138,13 +138,15 @@ void OnCollisionStay2D(Collision2D coll)
             
         }
     }
-    public void ChangBleeding(){
+    public void ChangBleeding(){          // enenmymove.cs checkbuff()調用的函式 
         checkHP = 2;
     }
 
     public void CheckCondition(){
 
+                                         // case1 一般扣血  case2 因碰撞到大規模扣較多血
       switch (checkHP)                   
+
 
           {
           
@@ -203,7 +205,7 @@ void OnCollisionStay2D(Collision2D coll)
        Debug.Log($"敵人正常狀態每{costtime}秒扣{cost1}滴血");     
        Debug.Log($"剩餘{hp}滴血"); 
       circle = true;
-      //  timer1bool = false ; 停止計時 但暫時不用寫 因為必有一方消失 沒碰撞擊不會執行 checkcondition
+      //  timer1bool = false ; 停止計時 但暫時沒用上 因為必有一方消失 所以一旦沒碰撞即自動停止執行 checkcondition
 
     }
     IEnumerator timer2(){
@@ -213,7 +215,7 @@ void OnCollisionStay2D(Collision2D coll)
       Debug.Log($"敵人大規模下每{costtime}秒扣{cost2}滴血");     
       Debug.Log($"剩餘{hp}滴血");  
       circle = true;
-
+      //  timer1bool = false ; 停止計時 但暫時沒用上 因為必有一方消失 所以一旦沒碰撞即自動停止執行 checkcondition
 
 
     }
