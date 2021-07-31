@@ -10,20 +10,23 @@ public class EnemyHPControl : MonoBehaviour
   // 函式 instance
 
   [Header("尖刺陷阱效果")] 
-  public bool spikeIsCollide;
-  float spikedelta = 0;
-  float deltaSum=0; //delta要比deltaSum大 的值
-  float spikecollide=0; //尖刺陷阱碰撞次數加成
+  // public bool spikeIsCollide;
+  // float spikedelta = 0;
+  // float deltaSum=0;  //delta要比deltaSum大 的值
+  float bonustime = 0; //尖刺陷阱碰撞次數加成  可客製化秒數及加成倍數
   
   [Header("重新啟動扣血判斷")] 
   public bool circle;
   [Header("敵人血量設定")] 
-  public int hp;     // 敵人當前血量
+  public float hp;     // 敵人當前血量
   public int max_hp ;  // 最大血量數值 max blood value
-  [Header("每__秒扣一次")]
+  
+  [Header("每__秒扣一次(加乘效果)")]
+  public int costtime1;
+  [Header("每__秒扣一次(正常模式與大規模)")]
   public int costtime; // 每幾秒扣一次
   [Header("正常模式扣血量1")]
-  public int cost1; //正常模式扣血量
+  public float cost1; //正常模式扣血量
   [Header("大規模扣血量2")]
   public int cost2; //大規模模式扣血量
   [Header("扣血量切換模式1and2")]
@@ -42,12 +45,13 @@ public class EnemyHPControl : MonoBehaviour
   void Start()
   { 
     instance = this;
-    spikeIsCollide = false;
+    
     back=true;
-    max_hp = 100;
-    hp = max_hp;   
-    checkHP  = 1;            //最大血量設置數值，初始HP血量=最大血量
+    max_hp = 200;
+    hp = max_hp;                    //最大血量設置數值，初始HP血量=最大血量
+    checkHP  = 1;            
     costtime = 4 ;
+    costtime1 = 1;
     cost1 = 5;
     cost2 = 10;
     timer2bool = true;
@@ -56,41 +60,19 @@ public class EnemyHPControl : MonoBehaviour
   }
 
   void Update()
-  {   //如果目前血量HP小於等於0，那就會讓這個物件，也就是敵人消失
+  {                                                             //如果目前血量HP小於等於0，那就會讓這個物件，也就是敵人消失
     if (hp <= 0)
     {
       Destroy(this.gameObject);
       
     }
    
-    //如果HP沒有小於0目前的血條位置就會為 目前血量/最大血量
+                                                                //如果HP沒有小於0目前的血條位置就會為 目前血量/最大血量
     float _percent = ((float)hp / (float)max_hp);
     EnemyAllHP.transform.localScale = new Vector3(_percent, EnemyAllHP.transform.localScale.y, EnemyAllHP.transform.localScale.z);
 
-    //如果spikedeltaTime>=500，就停止扣血，如果還沒超過時間碰撞後持續扣血
-    if (spikeIsCollide == true)
-    {
-      //每秒扣血
-      // hp -= Time.deltaTime * 10f;
+                                                                //如果 spikedeltaTime >= 500，就停止扣血，如果還沒超過 時間 撞後持續扣血
 
-      CostBlood();
-      
-      // 更改地方還有 hp 的資料型態變為 int ; 
-      // time.deltatime 通常是用在角色實體每秒速度~
-      // 另外有寫每多少秒扣血的 funtion了 方便凱倫關卡設計參數還有完成我的進度
-
-      spikedelta += 1;
-      deltaSum=2*spikecollide;  //扣血加成
-    }
-    if (spikedelta >= deltaSum)
-    {
-     
-
-      spikeIsCollide = false;
-      spikedelta=0;
-      spikecollide=0;
-    }
-    //Debug.Log(hp);
     
   
   }
@@ -100,8 +82,11 @@ public class EnemyHPControl : MonoBehaviour
   {
     if (col.tag == "SpikedTrap")
     {
-      spikeIsCollide = true;
-      spikecollide += 1 ;
+      // spikeIsCollide = true;
+      InvokeRepeating("AutoAddBonus", 0, 1);  
+      InvokeRepeating("CostBloodBonus",0,costtime1);   //扣血加成優化
+      
+      
     }
 
     if (col.tag == "rockboom")
@@ -117,7 +102,22 @@ public class EnemyHPControl : MonoBehaviour
   
 
   }
-void OnCollisionStay2D(Collision2D coll) 
+  void AutoAddBonus(){
+    bonustime += 1.5f ; 
+    cost1 = 5 + bonustime;
+      
+         
+    
+    if (bonustime > 6 )   //     6 / 1.5  =  4 秒加乘時間
+    {
+      Debug.Log($"結束{(bonustime/1.5)-1}秒加乘時間"); 
+      CancelInvoke("AutoAddBonus");
+      cost1 = 5;
+        
+    }
+
+  }
+  void OnCollisionStay2D(Collision2D coll) 
     {   //如果碰撞到cat
         if(coll.gameObject.tag=="Friendly")
         { 
@@ -181,6 +181,7 @@ void OnCollisionStay2D(Collision2D coll)
 
       if (timer2bool){
           StartCoroutine("timer2");
+          circle = true;
       }
  
     
@@ -190,22 +191,29 @@ void OnCollisionStay2D(Collision2D coll)
 
       if (timer1bool){
           StartCoroutine("timer1");  
+          circle = true;
       }
+ 
 
-  
-      
+    }
+       
+    public void CostBloodBonus(){
 
+      hp = hp - cost1;
+       Debug.Log($"敵人加乘狀態每{costtime1}秒扣{cost1}滴血");     
+       Debug.Log($"剩餘{hp}滴血"); 
 
 
     }
+
     IEnumerator timer1(){
       
       yield return new WaitForSeconds(costtime);
       hp = hp - cost1;
        Debug.Log($"敵人正常狀態每{costtime}秒扣{cost1}滴血");     
        Debug.Log($"剩餘{hp}滴血"); 
-      circle = true;
-      //  timer1bool = false ; 停止計時 但暫時沒用上 因為必有一方消失 所以一旦沒碰撞即自動停止執行 checkcondition
+      
+      //  timer1bool = false ; 停止計時 但暫時沒用上 因為必有一方消失 (組員已經寫成 onstay 的狀態) 所以一旦沒碰撞即自動停止執行 checkcondition
 
     }
     IEnumerator timer2(){
@@ -214,8 +222,8 @@ void OnCollisionStay2D(Collision2D coll)
       hp = hp - cost2;
       Debug.Log($"敵人大規模下每{costtime}秒扣{cost2}滴血");     
       Debug.Log($"剩餘{hp}滴血");  
-      circle = true;
-      //  timer1bool = false ; 停止計時 但暫時沒用上 因為必有一方消失 所以一旦沒碰撞即自動停止執行 checkcondition
+      
+      //  timer2bool = false ; 停止計時 但暫時沒用上 因為必有一方消失 (組員已經寫成 onstay 的狀態)  所以一旦沒碰撞即自動停止執行 checkcondition
 
 
     }

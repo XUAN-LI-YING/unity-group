@@ -3,20 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-// 更動組員程式碼開發方式以及其解釋理由
-// 若更改造成有 bug 產生，還請多多見諒 !!
-// 更改地方：(commit上也看得到差異哦)
-// 將產生怪物時間設置變數以利團隊遊戲開發
 
 public class EnemyPrefab : MonoBehaviour
 {
   public GameObject catPrefab;
 
-  [Header("TIME")]
-  
-  public float delta ;
+  [Header("每__秒製造敵人")]
   public int createtime;
 
+  [Header("計時器")]
+  
+  public float delta ;
+  
   void Start(){
 
     delta = 0;
