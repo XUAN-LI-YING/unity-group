@@ -6,6 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class EnemyMove : MonoBehaviour
 {
+  // 感覺陷阱名稱要統一命名規則XD  要依照編號或是中文名稱命名
+  // -----------------------------我是整理線-----------------------------------
+  // 大規模 tag : Trap-05 
+  // 捕獸夾 tag : Traps02
+  // 巨型滾筒 tag : roller
+  //  rollerTrap() 應該要放到 checkcondition 裡面呦～～
 
     [Header("停血開關")]
     public bool Turnon;         //暗黑陷阱效果開關
@@ -69,26 +75,26 @@ public class EnemyMove : MonoBehaviour
     {
         EnemyPos = transform.position; //隨時偵測敵人位置並放入參數中
 
-        WalkMode();
+        WalkMode();                    //敵人移動模式啟動
     }
     
-    if(rollerCollide)
+    if(rollerCollide)                  //巨型滾筒
     {
       rollerTrap();
     }
   }
-  void CheckCondition(){
+  void CheckCondition(){                //判別狀態
 
 
-    if (SpikedIsCollide)
+    if (SpikedIsCollide)                //尖刺陷阱碰撞
     {
         SpikedTrap();
     }
-    if (blacktrap)
+    if (blacktrap)                      //黑暗陷阱碰撞
     {
         CheckTime();  
     }
-    if(Traps02IsCollide)
+    if(Traps02IsCollide)                //捕獸夾陷阱碰撞 
     {
        Traps02() ;
     }
@@ -98,35 +104,38 @@ public class EnemyMove : MonoBehaviour
   void WalkMode(){
 
 
-             transform.Translate(speed * Time.deltaTime , 0, 0);
+             transform.Translate(speed * Time.deltaTime , 0, 0);          //固定一秒走固定距離
 
     	  
-            if (EnemyPos.x > 101 && EnemyPos.y >= 10 && EnemyPos.y <= 20){
+            if (EnemyPos.x > 101 && EnemyPos.y >= 10 && EnemyPos.y <= 20){    //移動至下層樓
 
             gameObject.transform.position = new Vector3(-104, -18, 0);
 
             }
             if (EnemyPos.y >= -20 && EnemyPos.y <= -15 && EnemyPos.x > 69)
             {
+              
               Destroy(gameObject);
+              
               //SceneManager.LoadScene("gameOver"); //跳到結束畫面
             }
       
   }
 
   void SpikedTrap(){
-
+                                          //停止走路模式再執行該陷阱效果
+                                          //commit by 01
     
       this.speed = 5f;
       Spikedelta += 1;
                                            
       deltaSum=800*spikecollide;           //撞到幾個速度就加成多少
-    if (Spikedelta >= deltaSum)            //緩速到一定時間後便正常 
+    if (Spikedelta >= deltaSum)            //緩速到 一定時間 後便正常 
     {
 
       SpikedIsCollide = false;
 
-      this.speed = 10f;
+      this.speed = 10f;                    // 重啟走路模式
       Spikedelta=0;
       spikecollide=0;
 
@@ -150,13 +159,16 @@ public class EnemyMove : MonoBehaviour
   }
 
   void rollerTrap(){
+                                                //停止走路模式再執行該陷阱效果
+                                                //commit by 01
+
             this.speed = 0;                     //暈眩
             rollerdelta += 1;
 
-            if (rollerdelta >= 200)                //暈眩到一定時間後便正常
+            if (rollerdelta >= 200)             //暈眩到 一定時間 後便正常
             {
              
-             this.speed = 10f;
+             this.speed = 10f;                   //恢復 walkmode
              rollerdelta=0;
              rollerCollide = false;
             }
@@ -187,14 +199,14 @@ public class EnemyMove : MonoBehaviour
 
     canceltime -= 1;
 
-     Debug.Log($"停止攻擊效果倒數{canceltime}sec");     //顯示停止攻擊倒數幾秒
+     Debug.Log($"停止攻擊效果倒數{canceltime}sec");     // 顯示停止攻擊倒數幾秒
 
-    if (canceltime < 1)                             //停止扣血計時器
+    if (canceltime < 1)                              // 停止扣血計時器
     {
       Turnon = false;
-      // FriendlyHPControl.instance.StopBloodoff();      // 調用 友軍血量控制器 恢復正常扣友軍血量
+      // FriendlyHPControl.instance.StopBloodoff();  // 調用 友軍血量控制器 恢復正常扣友軍血量
       CancelInvoke("CancelTime");
-      canceltime = 10;                                // 重新啟動計時
+      canceltime = 10;                               // 重新啟動計時
 
     }
 
@@ -210,7 +222,7 @@ public class EnemyMove : MonoBehaviour
 
     yield return new WaitForSeconds(turnbacktime);      //往後走秒數
      speed = 10f;
-     check = true;                                      
+     check = true;                                      //恢復偵測狀態
     
 
   }
@@ -254,7 +266,7 @@ public class EnemyMove : MonoBehaviour
     {
       Debug.Log("執行扣更多血");
       EnemyHPControl.instance.ChangBleeding();      //遇上大規模 敵方失血量轉變
-      //調用敵人HP控制器 script ;
+                                                    //調用敵人HP控制器 script ;
     }
 
   
@@ -276,7 +288,7 @@ public class EnemyMove : MonoBehaviour
 
       stucktraptime += 1;                       //確認是否第一次碰撞暗黑陷阱
 
-      Debug.Log("碰撞黑暗第"+(stucktraptime)+"次");
+      // Debug.Log("碰撞黑暗第"+(stucktraptime)+"次");
 
       
 
