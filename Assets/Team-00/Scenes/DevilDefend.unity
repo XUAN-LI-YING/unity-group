@@ -4730,7 +4730,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
-<<<<<<< HEAD
 --- !u!1 &1121848584
 GameObject:
   m_ObjectHideFlags: 0
@@ -4814,8 +4813,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-=======
->>>>>>> a59ae7fd5614271de57c5f33e828f14b9118aa74
 --- !u!1 &1155583963
 GameObject:
   m_ObjectHideFlags: 0
