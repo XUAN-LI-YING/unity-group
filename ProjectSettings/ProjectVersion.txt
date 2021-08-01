@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 m_EditorVersion: 2021.1.10f1
 m_EditorVersionWithRevision: 2021.1.10f1 (b15f561b2cef)
 =======
@@ -10,3 +11,7 @@ m_EditorVersion: 2020.1.0f1
 m_EditorVersionWithRevision: 2020.1.0f1 (2ab9c4179772)
 >>>>>>> a59ae7fd5614271de57c5f33e828f14b9118aa74
 >>>>>>> ca777733fdcb7331c4fc13a16f7fbba2646125ea
+=======
+m_EditorVersion: 2020.1.0f1
+m_EditorVersionWithRevision: 2020.1.0f1 (2ab9c4179772)
+>>>>>>> 631cadfbccc7a2ef3d082b466402c1ed4726effb
