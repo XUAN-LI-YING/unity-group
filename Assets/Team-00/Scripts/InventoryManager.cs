@@ -33,7 +33,9 @@ public class InventoryManager : MonoBehaviour
 
     
     private void OnEnable()
-    {
+    {   
+
+        //這裡有問題
         RefreshItem();
         instance.itemInformation.text = "";
     }
@@ -52,6 +54,8 @@ public class InventoryManager : MonoBehaviour
         //CreateNewItem.slotImage.sprite = item.itemImage;
         //CreateNewItem.slotNum.text = item.itemHeld.ToString();
     } */ 
+    
+    //這裡好像有問題
 
     public static void RefreshItem()    //myBag 參數須代換
     {

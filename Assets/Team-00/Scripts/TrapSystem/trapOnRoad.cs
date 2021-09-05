@@ -27,7 +27,8 @@ public class trapOnRoad : MonoBehaviour
         {
             thisItem.itemHeld += 1;     //列表持有+1
         }
-
+         
+        //這裡有問題
         InventoryManager.RefreshItem();
     }
 }
