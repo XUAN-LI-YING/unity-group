@@ -22,6 +22,8 @@ public class SpikedTrapAni : MonoBehaviour
   }
   public void Update()
   {
+
+    //這裡有問題
     if(CoolDown.instance.filledImage.fillAmount == 0)
     {
       if(touch == true)

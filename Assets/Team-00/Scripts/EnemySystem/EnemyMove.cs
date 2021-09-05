@@ -186,7 +186,7 @@ public class EnemyMove : MonoBehaviour
   void StopBlood(){      
 
       Turnon = true;                                // 純粹寫介面方便偵錯
-      FriendlyHPControl.instance.StopBloodon();     // 調用 友軍血量控制器 停止敵方扣友軍血量
+      //  FriendlyHPControl.instance.StopBloodon();     //這行有問題// 調用 友軍血量控制器 停止敵方扣友軍血量
 
       InvokeRepeating("CancelTime", 0, 1);          // 停止攻擊效果秒數 turn on
       //InokeRepeating 重複呼叫(“函式名”，第一次間隔幾秒呼叫，每幾秒呼叫一次)。 
