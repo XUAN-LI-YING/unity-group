@@ -41,7 +41,7 @@ public class friendlyPref : MonoBehaviour
   void Start()
   {
     instance = this;
-    fearBar.instance.Decrease01();
+    // fearBar.instance.Decrease01();
     //目前只扣一次
 
   }
