@@ -11,6 +11,7 @@ public class Item : ScriptableObject
     
     [TextArea]
     public string itemInfo;
+    public Sprite itemEffect;
 
     
 }

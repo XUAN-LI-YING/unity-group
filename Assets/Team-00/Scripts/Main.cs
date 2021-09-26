@@ -39,12 +39,12 @@ public class Main : MonoBehaviour
         Vector3 pos = hit.point;
         pos = new Vector3(pos.x, pos.y, pos.z);
         
-        if (Player.IsLadder) Player.MoveTo(pos, "Player@Back");
-        if (Mathf.Abs(pos.y - Player.transform.position.y) >= 1) Player.MoveTo(pos, "Player@Walk");
+        //if (Player.IsLadder) Player.MoveTo(pos, "Player@Back");
+        //if (Mathf.Abs(pos.y - Player.transform.position.y) >= 1) Player.MoveTo(pos, "Player@Walk");
         //Debug.Log(Mathf.Abs(pos.y - Player.transform.position.y));
         MoveCursor.transform.position = pos;
         MoveCursor.SetActive(true);
-        Debug.Log(pos);
+        //Debug.Log(pos);
         //Debug.Log(Player.CurrentPos.y);
     }
 }
