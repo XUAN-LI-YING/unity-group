@@ -9,7 +9,7 @@ public class ButtomManager : MonoBehaviour
 
     public Inventory trapBox;
     //public Inventory trapselect;
-    public GameObject slotGrid;
+    public GameObject slotGrid=null;
     //public Slot slotPrefab;
     public GameObject emptySlot;
     public Text itemInformation;

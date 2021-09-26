@@ -21,7 +21,7 @@ public class LoadingControl : MonoBehaviour {
         if (currentAmount < 100)
         {
             currentAmount += speed * Time.deltaTime;
-            Debug.Log((int)currentAmount);
+            // Debug.Log((int)currentAmount);
         }
         else
         {

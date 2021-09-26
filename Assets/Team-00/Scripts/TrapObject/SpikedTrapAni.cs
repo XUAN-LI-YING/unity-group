@@ -12,12 +12,12 @@ public class SpikedTrapAni : MonoBehaviour
   {
       instance = this;
   }
-  public GameObject explo;
+  public GameObject explode=null;
 
   public void bomb()
   {
-    Debug.Log("蹦蹦蹦");
-    Instantiate(explo, monster.gameObject.transform.position, monster.gameObject.transform.rotation);
+    
+    Instantiate(explode, monster.gameObject.transform.position, monster.gameObject.transform.rotation);
     touch = false;
   }
   public void Update()
@@ -56,7 +56,7 @@ public class SpikedTrapAni : MonoBehaviour
     
     if (col.tag == "Cat")
     {
-      Instantiate(explo, transform.position, transform.rotation);
+      Instantiate(explode, transform.position, transform.rotation);
   
     }
     
