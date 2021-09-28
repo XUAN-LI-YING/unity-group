@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 //拖曳
 public class TrapOnDrag : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHandler
 {
+    //public GameObject Slot;//copytrap
     public Transform originalParent;
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -12,6 +13,11 @@ public class TrapOnDrag : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragH
         transform.SetParent(transform.parent.parent);      //拖動時在其他圖層上
         transform.position = eventData.position;        //隨滑鼠位置拖動
         GetComponent<CanvasGroup>().blocksRaycasts = false;
+        /*if(Input.GetMouseButton(0))
+        {
+            Instantiate(Slot, this.gameObject.transform.position,Quaternion.identity);
+        }*/
+        
     }
 
     public void OnDrag(PointerEventData eventData)

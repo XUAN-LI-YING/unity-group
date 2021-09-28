@@ -18,6 +18,8 @@ TagManager:
   - guard
   - DarkTrap
   - Traps02
+  - tbox
+  - bbox
   layers:
   - Default
   - TransparentFX

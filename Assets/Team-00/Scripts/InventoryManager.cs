@@ -14,7 +14,9 @@ public class InventoryManager : MonoBehaviour
     public GameObject emptySlot;
     public Text itemInformation;
     public List<GameObject> slots = new List<GameObject>();
-    
+    //public GameObject SubTrap;//copy
+    public Item Slot;
+
     void Awake()
     {
         if (instance != null)
@@ -32,6 +34,13 @@ public class InventoryManager : MonoBehaviour
     } */
 
     
+    void Update()
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
+            Instantiate(emptySlot, this.transform.position,Quaternion.identity);
+        }
+    }
     private void OnEnable()
     {
         RefreshItem();
