@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     Animator animator;
     public SpriteRenderer Sprite;
     public  bool IsLadder;
+    //public bool Istbox;
+    //public bool Isbbox; 
     public Collider2D Collider2D;
 
     public Vector3 GoalPos;
@@ -30,25 +32,33 @@ public class Player : MonoBehaviour
     private void Update()
     {
         Move();
+        
         //Movement();
         //Debug.Log(CurrentPos.x);
-        //Debug.Log(GoalPos.y);
+        //Debug.Log(transform.position.y);
         //Debug.Log()
     }
-
+    
+    /*void LateUpdate()
+    {
+        if(transform.position.y > 16)
+        {
+            gameObject.transform.position -= new Vector3(0,1f,0);
+        }
+    }*/
     private void Move()
     {
         if(!Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.W))
         {
             if(Input.GetKey(KeyCode.A))
             {
-                gameObject.transform.position += new Vector3(-0.3f,0,0);
+                gameObject.transform.position += new Vector3(-0.03f,0,0);
                 animator.Play("Player@Walk");
                 Sprite.flipX = false;
             }
             if(Input.GetKey(KeyCode.D))
             {
-                gameObject.transform.position += new Vector3(0.3f,0,0);
+                gameObject.transform.position += new Vector3(0.03f,0,0);
                 animator.Play("Player@Walk");
                 Sprite.flipX = true;
             }
@@ -56,14 +66,68 @@ public class Player : MonoBehaviour
 
         if (IsLadder == true)
         {
-            if(Input.GetKey(KeyCode.W))
+            if(gameObject.transform.position.y <= 14.2 && gameObject.transform.position.y >= -20.5)
             {
-                gameObject.transform.position += new Vector3(0,0.2f,0);  
-            }
-            if(Input.GetKey(KeyCode.S))
+            if(Input.GetKey(KeyCode.W) && gameObject.transform.position.y < 14)
             {
-                gameObject.transform.position += new Vector3(0,-0.2f,0);
+                gameObject.transform.position += new Vector3(0,0.02f,0);
+                //if(transform.position.y >= 14.1)
+                //gameObject.transform.position += new Vector3(0,0,0);
+                Debug.Log("1");
             }
+            if(Input.GetKey(KeyCode.S) && gameObject.transform.position.y > -20)
+            {
+                gameObject.transform.position += new Vector3(0,-0.02f,0);
+                //if(transform.position.y <= -18.8)
+                //gameObject.transform.position += new Vector3(0,0,0);
+                Debug.Log("2");
+            }
+            }
+            /*if(gameObject.transform.position.y >= 14.2)
+            {
+                if(Input.GetKey(KeyCode.W))
+                {
+                    gameObject.transform.position += new Vector3(0,0,0);
+                    //if(transform.position.y >= 14.1)
+                    //gameObject.transform.position += new Vector3(0,0,0);
+                }
+                if(Input.GetKey(KeyCode.S))
+                {
+                    gameObject.transform.position += new Vector3(0,-0.02f,0);
+                    //if(transform.position.y <= -18.8)
+                    //gameObject.transform.position += new Vector3(0,0,0);
+                }
+            }
+            if(gameObject.transform.position.y <= -20.5)
+            {
+                if(Input.GetKey(KeyCode.W))
+                {
+                    gameObject.transform.position += new Vector3(0,0.02f,0);
+                    //if(transform.position.y >= 14.1)
+                    //gameObject.transform.position += new Vector3(0,0,0);
+                }
+                if(Input.GetKey(KeyCode.S))
+                {
+                    gameObject.transform.position += new Vector3(0,0,0);
+                    //if(transform.position.y <= -18.8)
+                    //gameObject.transform.position += new Vector3(0,0,0);
+                }
+            }
+            else
+            {
+                if(Input.GetKey(KeyCode.W))
+                {
+                    gameObject.transform.position += new Vector3(0,0.02f,0);
+                    //if(transform.position.y >= 14.1)
+                    //gameObject.transform.position += new Vector3(0,0,0);
+                }
+                if(Input.GetKey(KeyCode.S))
+                {
+                   gameObject.transform.position += new Vector3(0,-0.02f,0);
+                    //if(transform.position.y <= -18.8)
+                    //gameObject.transform.position += new Vector3(0,0,0);
+                }
+            }*/
         }
 
         if(!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
@@ -88,12 +152,26 @@ public class Player : MonoBehaviour
         {
             Collider2D.enabled = false;
         }*/
+        //if (other.gameObject.CompareTag ("tbox"))
+        /*if (other != Main.tbox) return;
+        Istbox = true;*/
+        
+        //if (other.gameObject.CompareTag ("bbox"))
+        /*if (other != Main.bbox) return;
+        Isbbox = true;*/
+        
     }
 
     void OnTriggerExit2D(Collider2D other)//離開物件
     {
         if (other != Main.Ladder) return;
         IsLadder = false;       //IsLadder不為真 
+
+        /*if (other != Main.tbox) return;
+        Istbox = false;*/
+
+        /*if (other != Main.bbox) return;
+        Isbbox = false;*/
     }
 
 }
