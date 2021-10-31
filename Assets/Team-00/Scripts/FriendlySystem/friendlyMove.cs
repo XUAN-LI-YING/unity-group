@@ -19,7 +19,7 @@ public class friendlyMove : MonoBehaviour
     {
       back=false;
       //怪物初始數度
-      this.speed = -10f;  
+      this.speed = -5f;  
     }
     void Update()
     {
