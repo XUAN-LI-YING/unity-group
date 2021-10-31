@@ -36,7 +36,7 @@ public class FriendlyHPControl : MonoBehaviour
         stopblood=false;
         timer1bool=false;
         costtime = 3;
-        cost1 = 1;
+        cost1 = 5;
 
 
     }
@@ -100,7 +100,7 @@ public class FriendlyHPControl : MonoBehaviour
 
             timer1bool = true;
             CostBlood();
-             Debug.Log($"friendly目前血量 {hp} ");
+            //  Debug.Log($"friendly目前血量 {hp} ");
         }
             
  
@@ -110,7 +110,7 @@ public class FriendlyHPControl : MonoBehaviour
     public void CostBlood(){
 
       if (timer1bool){
-          StartCoroutine("timer1");  
+         InvokeRepeating("timer1", 0, costtime);  
       }
 
   
@@ -119,12 +119,11 @@ public class FriendlyHPControl : MonoBehaviour
 
 
     }
-    IEnumerator timer1(){
+    void timer1(){
       
-      yield return new WaitForSeconds(costtime);
       hp = hp - cost1;
-       Debug.Log($"友軍每{costtime}秒扣{cost1}滴血");     
-       Debug.Log($"剩餘{hp}滴血"); 
+    //    Debug.Log($"友軍每{costtime}秒扣{cost1}滴血");     
+       Debug.Log($"友軍剩餘{hp}滴血"); 
     }
 
     // void OnCollisionEnter2D(Collision2D coll) 

@@ -12,11 +12,17 @@ public class EnemyMove : MonoBehaviour
   // 捕獸夾 tag : Traps02
   // 巨型滾筒 tag : roller
   //  rollerTrap() 應該要放到 checkcondition 裡面呦～～
-
-    [Header("停血開關")]
+    
+   [Header("有限狀態機FSM")] 
+    public float speed = 0;    //怪物初始速度
+    public bool walking;         //敵人移動狀態開關
+    public bool check;           //判斷碰觸何種陷阱
+    public Vector3 EnemyPos;     //偵測敵人當下位置
+     
+   [Header("暗黑停血開關")]
     public bool Turnon;         //暗黑陷阱效果開關
   
-    [Header("暗黑陷阱")] 
+    [Header("暗黑陷阱-Trap03")] 
     public bool blacktrap;       //暗黑陷阱碰撞判定
     public int stucktraptime; //單一暗黑陷阱碰撞次數
     public int caseSwitch ;   //暗黑陷阱觸發事件判定
@@ -25,14 +31,14 @@ public class EnemyMove : MonoBehaviour
     [Header("暗黑秒數設置")]
     public float turnbacktime;  //暗黑陷阱效果敵人後退時間
     public float canceltime;    //暗黑陷阱效果關閉扣血時間
-    
-   [Header("有限狀態機FSM")] 
-    public float speed = 0;    //怪物初始速度
-    public bool walking;         //敵人移動狀態開關
-    public bool check;           //判斷碰觸何種陷阱
-    public Vector3 EnemyPos;     //偵測敵人當下位置
 
-   [Header("尖刺陷阱")] 
+
+    [Header("大規模設置")]
+    public float effecttime;  //大規模陷阱效果時間
+
+
+
+   [Header("尖刺陷阱-Trap01")] 
     public bool SpikedIsCollide; //尖刺陷阱碰撞判定
     public int Spikedelta = 0;   //碰撞緩速計時器
     public float deltaSum = 0;   //減緩速度加乘參數(800倍x碰撞次數)
@@ -40,16 +46,18 @@ public class EnemyMove : MonoBehaviour
  
 
    
-   [Header("捕獸陷阱")] 
+   [Header("捕獸陷阱-Trap02")] 
     public bool Traps02IsCollide;   //捕獸陷阱碰撞判定
     public int Trapsdelta = 0;      //捕獸陷阱緩速計時器
     
     // public int slowdowntime = 0; //緩速時間
 
-    [Header("巨型滾筒")]
+    [Header("巨型滾筒-roller")]
     public float rollerdelta;
     public bool rollerCollide;
     // public Animator playerAni; //巨型滾筒呼叫動畫
+
+
   void Start()
   {
     check = true;
@@ -204,8 +212,11 @@ public class EnemyMove : MonoBehaviour
     if (canceltime < 1)                              // 停止扣血計時器
     {
       Turnon = false;
-      // FriendlyHPControl.instance.StopBloodoff();  // 調用 友軍血量控制器 恢復正常扣友軍血量
+      FriendlyHPControl.instance.StopBloodoff();  // 調用 友軍血量控制器 恢復正常扣友軍血量
       CancelInvoke("CancelTime");
+      EnemyHPControl.instance.SwitchCost();
+
+      //
       canceltime = 10;                               // 重新啟動計時
 
     }
@@ -260,11 +271,10 @@ public class EnemyMove : MonoBehaviour
           }
 
   }
-  void Checkbuff(){
+  public void Checkbuff(){
     
     if (Turnon)
     {
-      Debug.Log("執行扣更多血");
       EnemyHPControl.instance.ChangBleeding();      //遇上大規模 敵方失血量轉變
                                                     //調用敵人HP控制器 script ;
     }
@@ -296,6 +306,7 @@ public class EnemyMove : MonoBehaviour
     }
     if (col.tag == "Trap-05")                   // 撞到大規模，檢查前面是否觸發黑暗
     {
+        Debug.Log("觸發大規模");
         Checkbuff();
     }
 

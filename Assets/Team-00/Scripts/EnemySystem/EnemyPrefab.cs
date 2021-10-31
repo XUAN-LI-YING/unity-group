@@ -18,7 +18,7 @@ public class EnemyPrefab : MonoBehaviour
   void Start(){
 
     delta = 0;
-    createtime = 20;
+    createtime = 50;  // 2021.10.03 改久一點方便齡移偵錯看 log 場上兩隻會產生的狀況夠燒腦ㄌ
   }
  
   
