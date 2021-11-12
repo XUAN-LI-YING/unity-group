@@ -116,7 +116,9 @@ public class fearBar : MonoBehaviour
       FearEvent();
 
     }
-    //判斷晉級或失敗事件  
+    //判斷晉級或失敗事件
+    // 欸這邊以前已經有寫了耶我好棒，剩下步驟是如何調用 "禁止按鈕點擊" 功能  
+    // 教學參考：https://youtu.be/uBJvOa78t-g end 結束 11/12 今日進度
 
   }
 
@@ -143,9 +145,20 @@ public class fearBar : MonoBehaviour
     //InokeRepeating 重複呼叫(“函式名”，第一次間隔幾秒呼叫，每幾秒呼叫一次)。
   }
 
+  public void Update() 
+  {
+  // 修改之前把註解 review 一遍，忘了差不多ㄌ
+  // 
+  // 思路：一直偵測 是否超過 value 區間 不過看了 112-116行先前有撰寫 所以這邊不用 update了
+  // 
+
+
+  //  
+  }
+
+
 
   // 顯示耗費多少恐懼
-  // When pressing the Increase button
   public void Decrease()
   {
 
@@ -172,6 +185,8 @@ public class fearBar : MonoBehaviour
     StartCoroutine(RepeatDecrease());
   }
 
+  
+  
   //When pressing the Increase button
 
   public void Increase()
@@ -228,6 +243,8 @@ public class fearBar : MonoBehaviour
     StartCoroutine(RepeatDecrease());
   }
 
+  // 顯示增加多少恐懼
+  // 
   public void DetectAdd()
   {
 
