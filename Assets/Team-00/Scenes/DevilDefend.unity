@@ -2282,11 +2282,13 @@ MonoBehaviour:
   ui_addvalue: {fileID: 945175216}
   ui_costvalue: {fileID: 1821532443}
   ui_countvalue: {fileID: 715203913}
+  waitingForInput: 0
   points: 40
   autoAddValue: 5
   addValue: 10
   costvalue: 20
   eachpresscost: 10
+  button: {fileID: 856459747}
 --- !u!4 &604770288
 Transform:
   m_ObjectHideFlags: 0
@@ -3577,7 +3579,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.06892133, g: 0.0728095, b: 0.103773594, a: 0.8392157}
     m_PressedColor: {r: 0.4811321, g: 0.07443927, b: 0.108330406, a: 1}
     m_SelectedColor: {r: 0.03773582, g: 0.03773582, b: 0.03773582, a: 0.7019608}
-    m_DisabledColor: {r: 0.21960784, g: 0.21960784, b: 0.21960784, a: 0.72156864}
+    m_DisabledColor: {r: 1, g: 0.4210502, b: 0.41037738, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:

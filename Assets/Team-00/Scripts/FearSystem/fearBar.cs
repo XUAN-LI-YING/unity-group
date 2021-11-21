@@ -24,7 +24,7 @@ public class fearBar : MonoBehaviour
   // [Range(0,100)]
   [Header("Value")]
   public int value_Min = 0;
-  public float value_Max = 200;
+  public float value_Max = 100;
 
 
   //各種 UI 
@@ -39,7 +39,7 @@ public class fearBar : MonoBehaviour
   public Text ui_countvalue;
 
 
-  bool waitingForInput = false;
+  public bool waitingForInput = true;
   bool createMonster = false;
   bool combo = false;
   bool Checking = true;
@@ -58,6 +58,9 @@ public class fearBar : MonoBehaviour
   public int eachpresscost;
   //出動友軍耗費值(單次)
   //關聯-- decrease01 函式
+
+  public Button button;
+  //開開關關
 
   // 持續偵測有無事件
   void Update()
@@ -109,16 +112,21 @@ public class fearBar : MonoBehaviour
     }
 
 
-    if (points < value_Min || points >= value_Max)
+    if (points <= value_Min || points >= value_Max)
     {
       waitingForInput = false;
-      CancelInvoke("AutoAddFear");
       FearEvent();
+      // CancelInvoke("AutoAddFear");
+      
+      
 
     }
-    //判斷晉級或失敗事件
-    // 欸這邊以前已經有寫了耶我好棒，剩下步驟是如何調用 "禁止按鈕點擊" 功能  
-    // 教學參考：https://youtu.be/uBJvOa78t-g end 結束 11/12 今日進度
+    else if(points > value_Min && points < value_Max){
+        
+      button.interactable = true;
+
+    }
+ 
 
   }
 
@@ -126,12 +134,10 @@ public class fearBar : MonoBehaviour
   //Start the game
   public void StartGame()
   {
+    button.interactable = true;
     waitingForInput = true;
-    // float fillAmount = points / value_Max;
-    // points = 0 顯示初始數值
+
     ui_value.text = points.ToString() + "";
-    // ui_addvalue.text = (autoAddValue.ToString()) + "points/sec";
-    // ui_costvalue.text = "- " + (costvalue.ToString());
     ui_countvalue.text = timeToAdd.ToString() + "sec";
 
     ui_Hurteffect.fillAmount = ui_fillBar.fillAmount;
@@ -144,18 +150,6 @@ public class fearBar : MonoBehaviour
     InvokeRepeating("AutoAddFear", 1, 1);
     //InokeRepeating 重複呼叫(“函式名”，第一次間隔幾秒呼叫，每幾秒呼叫一次)。
   }
-
-  public void Update() 
-  {
-  // 修改之前把註解 review 一遍，忘了差不多ㄌ
-  // 
-  // 思路：一直偵測 是否超過 value 區間 不過看了 112-116行先前有撰寫 所以這邊不用 update了
-  // 
-
-
-  //  
-  }
-
 
 
   // 顯示耗費多少恐懼
@@ -361,23 +355,23 @@ public class fearBar : MonoBehaviour
   }
   void FearEvent()
   {
-    if (points < value_Min)
+    if (points <= value_Min)
     {
-
+      points = 0;
+      button.interactable = false;
       Debug.Log($"LOSE！");
       ui_fillBar.fillAmount = 0;
 
     }
-    if (points >= value_Max)
+    else if (points >= value_Max)
     {
-
+      points = 100;
       //   Debug.Log($"WIN！");
       // ui_fillBar.fillAmount = 1;
       StartCoroutine(RunSecvalue());
 
 
     }
-
   }
 
 
