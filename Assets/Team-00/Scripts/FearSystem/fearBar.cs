@@ -8,13 +8,16 @@ public class fearBar : MonoBehaviour
 {
   public static fearBar instance;
   // 時間參數
-  [Header("Timer")]
+  [Header("倒數幾秒")]
   public int timeToAdd;
   //倒數幾秒
+  [Header("魔法地雷加分用")]
   public int timePress;
   //QTE連擊次數 (變為魔法地累加分用 參數名稱之後要改掉)
+  [Header("倒數器間隔時間")]
   public float delayBetweenAdd;
   //倒數器間隔時間
+  [Header("扣血動畫延遲時間")]
   public float delaySec;
   // 扣血動畫延遲時間
 
@@ -22,7 +25,7 @@ public class fearBar : MonoBehaviour
 
   // 恐懼最大最小數值
   // [Range(0,100)]
-  [Header("Value")]
+  [Header("魔力數值區間")]
   public int value_Min = 0;
   public float value_Max = 100;
 
@@ -31,7 +34,9 @@ public class fearBar : MonoBehaviour
   [Header("UI")]
   public Image ui_fillBar;
   //主要血條 淺綠色
+  [Header("增血特效")]
   public Image ui_Addeffect;
+  [Header("扣血特效")]
   public Image ui_Hurteffect;
   public Text ui_value;
   public Text ui_addvalue;
@@ -46,15 +51,17 @@ public class fearBar : MonoBehaviour
 
 
   //Other 反應事件
-  [Header("FearEvent")]
+  [Header("目前存量值")]
   public float points;
   //目前存量值
+  [Header("增加值")]
   public int autoAddValue;
   //倒數增加”值“
   public int addValue;
   //一般情況增加值
   public int costvalue;
   //一般情況耗費值
+  [Header("出動友軍耗費值")]
   public int eachpresscost;
   //出動友軍耗費值(單次)
   //關聯-- decrease01 函式
