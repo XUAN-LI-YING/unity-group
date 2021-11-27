@@ -2,10 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// 更動組員程式碼命名方式以及其解釋理由
-// 若更改造成有 bug 產生，還請多多見諒 !!
-// 更改地方：(commit上也看得到差異哦)
-// 將友軍速度 設置全部區域變數 方便遊戲開發
 public class friendlyMove : MonoBehaviour
 {
     [Header("友軍速度")]
