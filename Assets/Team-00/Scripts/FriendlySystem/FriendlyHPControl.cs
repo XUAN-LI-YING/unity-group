@@ -31,12 +31,12 @@ public class FriendlyHPControl : MonoBehaviour
     void Start()
     { 
         instance = this;
-        max_hp=100;
+        max_hp=50;
         hp=max_hp;
         stopblood=false;
         timer1bool=false;
-        costtime = 3;
-        cost1 = 5;
+        costtime = 1;
+        cost1 = 15;
 
 
     }
@@ -100,7 +100,7 @@ public class FriendlyHPControl : MonoBehaviour
 
             timer1bool = true;
             CostBlood();
-            //  Debug.Log($"friendly目前血量 {hp} ");
+             Debug.Log($"friendly目前血量 {hp} ");
         }
             
  

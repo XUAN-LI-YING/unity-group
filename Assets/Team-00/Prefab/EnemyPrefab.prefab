@@ -69,7 +69,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -623233787
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 868a3c9332d5fce4dab5e481b11410fc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -159,7 +159,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -623233787
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 3607966741a8f524995eb9af69fbb820, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -184,11 +184,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8ed5bb062f45cd4299d791ded4b739c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spikeIsCollide: 0
+  circle: 0
+  hp: 0
   max_hp: 0
+  costtime1: 0
+  costtime: 0
+  cost1: 0
+  cost2: 0
+  checkHP: 0
+  timer1bool: 0
+  timer2bool: 0
+  changmode: 0
   EnemyAllHP: {fileID: 4913606489332287915}
+  back: 0
   times: 0
-  friendTime: 0
 --- !u!114 &61797436552318614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,18 +214,19 @@ MonoBehaviour:
   walking: 0
   check: 0
   EnemyPos: {x: 0, y: 0, z: 0}
+  Turnon: 0
+  blacktrap: 0
+  stucktraptime: 0
+  caseSwitch: 0
+  turnbacktime: 0
+  canceltime: 0
+  effecttime: 0
   SpikedIsCollide: 0
   Spikedelta: 0
   deltaSum: 0
   spikecollide: 0
-  blacktrap: 0
-  stucktraptime: 0
-  caseSwitch: 0
   Traps02IsCollide: 0
   Trapsdelta: 0
-  turnbacktime: 0
-  canceltime: 0
-  Turnon: 0
   rollerdelta: 0
   rollerCollide: 0
 --- !u!95 &6547853523155515524
@@ -341,7 +351,7 @@ Transform:
   m_GameObject: {fileID: 4913606489332287915}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 7060406964334100700}
   m_RootOrder: 0
@@ -384,7 +394,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -623233787
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 4a468eab04f80f04cb6d73eec9f106f2, type: 3}
   m_Color: {r: 0.4341157, g: 1, b: 0.32452828, a: 1}
@@ -422,8 +432,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5910298976523036281}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.43, y: 0.631, z: 0}
-  m_LocalScale: {x: 0.8333334, y: 0.11620632, z: 0}
+  m_LocalPosition: {x: -0.2, y: 0.631, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.1, z: 0}
   m_Children:
   - {fileID: 483494975635963174}
   m_Father: {fileID: 61797436552318610}
@@ -467,7 +477,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -623233787
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4a468eab04f80f04cb6d73eec9f106f2, type: 3}
   m_Color: {r: 0.16975792, g: 0.4811321, b: 0.21285354, a: 1}
