@@ -91,7 +91,8 @@ public class EnemyHPControl : MonoBehaviour
 
     if (col.tag == "rockboom")
     {
-      hp -= 1;
+      hp -= 100;
+      
       // trap-02物件 要更換tag哦 
     }
     if (col.tag=="Traps02")
