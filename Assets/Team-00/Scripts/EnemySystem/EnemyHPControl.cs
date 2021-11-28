@@ -29,10 +29,11 @@ public class EnemyHPControl : MonoBehaviour
   public float cost1; //正常模式扣血量
   [Header("大規模扣血量2")]
   public int cost2; //大規模模式扣血量
-  [Header("扣血量切換模式1and2")]
+  [Header("扣血量模式 check 1 OR 2")]
   public int checkHP; // 扣血量狀態判斷 check how many blood cost persecond
   public bool timer1bool; //啟動秒數開關
   public bool timer2bool; //啟動秒數開關
+  public bool changmode; //切換模式 2大規模 切到 1普通扣血
   [Header("血量圖像")] 
   public GameObject EnemyAllHP;  
 
@@ -50,13 +51,14 @@ public class EnemyHPControl : MonoBehaviour
     max_hp = 200;
     hp = max_hp;                    //最大血量設置數值，初始HP血量=最大血量
     checkHP  = 1;            
-    costtime = 4 ;
+    costtime = 1 ;
     costtime1 = 1;
-    cost1 = 5;
+    cost1 = 2;
     cost2 = 10;
-    timer2bool = true;
+    timer2bool = false;
     timer1bool = true;
     circle = true;
+    changmode = false;
   }
 
   void Update()
@@ -119,14 +121,14 @@ public class EnemyHPControl : MonoBehaviour
 
   }
   void OnCollisionStay2D(Collision2D coll) 
-    {   //如果碰撞到cat
+    {   //如果碰撞到cat     10.03 齡移 commit : 應該要寫成碰到當下反應事件 stay 會一直觸發而無法計時將扣血機制給量化 所以就寫在下面啦
+
+        // 這邊留給判斷何時作切換
+
         if(coll.gameObject.tag=="Friendly")
         { 
-          if (circle)                       //重複計時啟動開關 
-          {  
-            CheckCondition();               //檢查敵人扣血狀態
-              
-          } 
+   
+
 
         
         
@@ -134,16 +136,53 @@ public class EnemyHPControl : MonoBehaviour
         if(coll.gameObject.tag=="guard")
         {  
            
-            
-          CheckCondition();
+
             
         }
     }
-    public void ChangBleeding(){          // enenmymove.cs checkbuff()調用的函式 
+
+
+
+  
+
+  void OnCollisionEnter2D(Collision2D coll){
+
+        if(coll.gameObject.tag=="Friendly")
+        { 
+
+             CheckCondition();               
+            //檢查敵人扣血狀態 至於哪個扣血模式才會真的執行取決於 checkHP 的狀態呦～～ 
+            
+            //1 的時候代表遇敵人普通扣血， 2代表遇到大規模且遇敵人那瞬間，checkHP的狀態取決於 敵人有沒有碰到大規模 and 大規模效果要多久喔
+
+            // 大規模效果要多久又是根據 EnemyMove 腳本 StopBlood() 函式中 turnon 的開關狀態～  開關狀態又是根據 canceltime 扣血時間(10秒)控制的
+
+            // 至於何時取消扣血，兩種狀況 一: 敵人沒血了，二種模式都要取消 上面映璇有寫了 hp <0 destory 
+
+            // 二 : 敵人有血但大規模效果失效了，切換普通扣血
+
+            // 思考點：何時失效。 turnon 關掉的時候，
+            
+        }
+
+  }
+  public void ChangBleeding(){          // enenmymove.cs checkbuff()調用的函式 
+        
         checkHP = 2;
+        
+
+    }
+  public void SwitchCost(){
+        changmode = true;
+        CancelInvoke("timer2");
+        checkHP = 1 ;
+        CheckCondition();// 不管有無碰到，往後都是普通扣血，除非再次觸發
+
+
     }
 
-    public void CheckCondition(){
+
+    void CheckCondition(){
 
                                          // case1 一般扣血  case2 因碰撞到大規模扣較多血
       switch (checkHP)                   
@@ -153,52 +192,63 @@ public class EnemyHPControl : MonoBehaviour
           
           case 1: 
 
-          circle = false; 
-          
+          timer1bool = true;
+
+          timer2bool = false;
+
           CostBlood();
+          
+
+
+          
 
             break;
 
           case 2:
           
-          circle = false;
+          timer1bool = false;
+
+          timer2bool = true;
 
           CostmoreBlood();
+          
+          
+
+
 
             break;
           
           default:
 
-          // CostBlood();
-
             break;
 
           }
+
+
       
     
     
     }
-    public void CostmoreBlood(){
+   void CostmoreBlood(){
 
-      if (timer2bool){
-          StartCoroutine("timer2");
-          circle = true;
-      }
+      Debug.Log("翻開大規模術士效果！");
+
+    InvokeRepeating("timer2",0f,costtime);
  
     
     
     }
-    public void CostBlood(){
+   void CostBlood(){
 
-      if (timer1bool){
-          StartCoroutine("timer1");  
-          circle = true;
-      }
- 
+      
+    Debug.Log($"正常狀態下扣血");
+
+    InvokeRepeating("timer1",0f,costtime);
+
 
     }
        
-    public void CostBloodBonus(){
+    void CostBloodBonus(){
 
       hp = hp - cost1;
        Debug.Log($"敵人加乘狀態每{costtime1}秒扣{cost1}滴血");     
@@ -207,25 +257,21 @@ public class EnemyHPControl : MonoBehaviour
 
     }
 
-    IEnumerator timer1(){
-      
-      yield return new WaitForSeconds(costtime);
+    void timer1(){
+
       hp = hp - cost1;
-       Debug.Log($"敵人正常狀態每{costtime}秒扣{cost1}滴血");     
-       Debug.Log($"剩餘{hp}滴血"); 
-      
-      //  timer1bool = false ; 停止計時 但暫時沒用上 因為必有一方消失 (組員已經寫成 onstay 的狀態) 所以一旦沒碰撞即自動停止執行 checkcondition
 
+       Debug.Log($"普通模式：每{costtime}秒扣{cost1}滴血，敵人剩餘{hp}滴血"); 
+          
     }
-    IEnumerator timer2(){
-      
-      yield return new WaitForSeconds(costtime);
-      hp = hp - cost2;
-      Debug.Log($"敵人大規模下每{costtime}秒扣{cost2}滴血");     
-      Debug.Log($"剩餘{hp}滴血");  
-      
-      //  timer2bool = false ; 停止計時 但暫時沒用上 因為必有一方消失 (組員已經寫成 onstay 的狀態)  所以一旦沒碰撞即自動停止執行 checkcondition
 
+    
+    void timer2(){
+      
+      hp = hp - cost2;  
+      Debug.Log($"術式模式：每{costtime}秒扣{cost2}滴血，敵人剩餘{hp}滴血");  
+      
+       
 
     }
 
