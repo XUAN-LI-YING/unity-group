@@ -6,16 +6,14 @@ public class DarkTrap : MonoBehaviour
 {
     public GameObject enemy;
     // bool collision = false;
+    
     void Start()
     {
-
+     
     }
 
     // Update is called once per frame
-    void Update()
-    {
-
-    }
+    
     public void OnTriggerEnter2D(Collider2D other)
     {
         // collision = true;
@@ -24,6 +22,8 @@ public class DarkTrap : MonoBehaviour
             if (other.gameObject.tag == "Cat")
             {
             Correct();
+
+              
             }
     }
     

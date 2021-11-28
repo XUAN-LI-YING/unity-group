@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/StartGame/Scenes/Loading.unity
     guid: 75899e8ffffabce4fa2550f5b08436c8
+  - enabled: 1
+    path: Assets/StartGame/Scenes/TeachingSlide.unity
+    guid: 7300ed8c7eeef23478059469364fa1a7
   m_configObjects: {}

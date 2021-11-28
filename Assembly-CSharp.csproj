@@ -55,9 +55,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Team-00\Scripts\TrapSystem\boomAnimation.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapAni\boomAnimation.cs" />
      <Compile Include="Assets\Team-00\Scripts\EnemySystem\EnemyHPControl.cs" />
      <Compile Include="Assets\StartGame\script\MenuButton.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapObject\magicTrap2.cs" />
      <Compile Include="Assets\Team-00\Scripts\EnemySystem\EnemyMove.cs" />
      <Compile Include="Assets\Team-00\Scripts\TrapSystem\Player.cs" />
      <Compile Include="Assets\Team-00\Scripts\TrapObject\SpikedTrapAni.cs" />
@@ -80,8 +81,9 @@
      <Compile Include="Assets\Team-00\Scripts\FriendlySystem\friendlyButton.cs" />
      <Compile Include="Assets\Team-00\Scripts\EnemySystem\EnemyPrefab.cs" />
      <Compile Include="Assets\Team-00\Scripts\RandomNumber\RandomNumber.cs" />
-     <Compile Include="Assets\Team-00\Scripts\TrapSystem\rollanimation.cs" />
-     <Compile Include="Assets\Team-00\Scripts\TrapObject\Traps02.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapAni\rollanimation.cs" />
+     <Compile Include="Assets\Team-00\Scripts\ChangeScene\startTeach.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapObject\TrapeTrap.cs" />
      <Compile Include="Assets\Team-00\Scripts\Splash\LoadingControl.cs" />
      <Compile Include="Assets\Team-00\Scripts\Builder.cs" />
      <Compile Include="Assets\Team-00\Scripts\GuardSystem\GuardHP01.cs" />
@@ -99,6 +101,10 @@
      <Compile Include="Assets\Team-00\Scripts\TrapSystem\Slot.cs" />
      <Compile Include="Assets\Team-00\Scripts\Item.cs" />
      <Compile Include="Assets\Team-00\Scripts\FriendlySystem\friendlyMove.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapObject\blackTrap.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapAni\blackAni.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapObject\bigTrap.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapAni\bigAni.cs" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -130,11 +136,20 @@
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/desk/UnityGroup/unityGroup/New unity group/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.2D.Animation.Runtime">
+ <HintPath>D:/desk/UnityGroup/unityGroup/New unity group/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.VSCode.Editor">
  <HintPath>D:/desk/UnityGroup/unityGroup/New unity group/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.2D.SpriteShape.Editor">
+ <HintPath>D:/desk/UnityGroup/unityGroup/New unity group/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>D:/desk/UnityGroup/unityGroup/New unity group/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Path.Editor">
+ <HintPath>D:/desk/UnityGroup/unityGroup/New unity group/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/desk/UnityGroup/unityGroup/New unity group/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
@@ -142,14 +157,44 @@
  <Reference Include="Unity.Timeline">
  <HintPath>D:/desk/UnityGroup/unityGroup/New unity group/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.2D.Animation.Triangle.Runtime">
+ <HintPath>D:/desk/UnityGroup/unityGroup/New unity group/Library/ScriptAssemblies/Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.Rider.Editor">
  <HintPath>D:/desk/UnityGroup/unityGroup/New unity group/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Mathematics">
+ <HintPath>D:/desk/UnityGroup/unityGroup/New unity group/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.InternalAPIEngineBridge.001">
+ <HintPath>D:/desk/UnityGroup/unityGroup/New unity group/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Sprite.Editor">
+ <HintPath>D:/desk/UnityGroup/unityGroup/New unity group/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Common.Runtime">
+ <HintPath>D:/desk/UnityGroup/unityGroup/New unity group/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.SpriteShape.Runtime">
+ <HintPath>D:/desk/UnityGroup/unityGroup/New unity group/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Animation.Editor">
+ <HintPath>D:/desk/UnityGroup/unityGroup/New unity group/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VisualStudio.Editor">
  <HintPath>D:/desk/UnityGroup/unityGroup/New unity group/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.Mathematics.Editor">
+ <HintPath>D:/desk/UnityGroup/unityGroup/New unity group/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.TextMeshPro">
  <HintPath>D:/desk/UnityGroup/unityGroup/New unity group/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Common.Editor">
+ <HintPath>D:/desk/UnityGroup/unityGroup/New unity group/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.InternalAPIEditorBridge.001">
+ <HintPath>D:/desk/UnityGroup/unityGroup/New unity group/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>D:/desk/UnityGroup/unityGroup/New unity group/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>

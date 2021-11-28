@@ -12,7 +12,7 @@ public class rollTouch : MonoBehaviour
       rollTime = 0;
     }
 
-        //當捕獸夾圖卡觸碰敵方，則呼叫撞木動畫
+        //當滾筒圖卡觸碰敵方，則呼叫撞木動畫
         public void OnTriggerEnter2D(Collider2D col)
         {
            if (col.gameObject.tag == "Cat")
@@ -24,7 +24,7 @@ public class rollTouch : MonoBehaviour
                 case 1 :
                 Vector3 move = gameObject.transform.position;
             
-                move = new Vector3(move.x, move.y+20f, move.z);
+                move = new Vector3(move.x, move.y+25f, move.z);
                 Instantiate(aniroll, move, gameObject.transform.rotation);
                 break;
 

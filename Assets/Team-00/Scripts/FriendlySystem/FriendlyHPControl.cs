@@ -76,7 +76,7 @@ public class FriendlyHPControl : MonoBehaviour
             
 
 
-            //  hp -= Time.deltaTime * 5;
+             hp -= Time.deltaTime * 5;
             
             // //偵測現在move到哪裡的位置
             // Vector3 move = gameObject.transform.position;
@@ -112,12 +112,6 @@ public class FriendlyHPControl : MonoBehaviour
       if (timer1bool){
           StartCoroutine("timer1");  
       }
-
-  
-      
-
-
-
     }
     IEnumerator timer1(){
       
