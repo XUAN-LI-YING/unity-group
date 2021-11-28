@@ -8,13 +8,16 @@ public class fearBar : MonoBehaviour
 {
   public static fearBar instance;
   // 時間參數
-  [Header("Timer")]
+  [Header("倒數幾秒")]
   public int timeToAdd;
   //倒數幾秒
+  [Header("魔法地雷加分用")]
   public int timePress;
   //QTE連擊次數 (變為魔法地累加分用 參數名稱之後要改掉)
+  [Header("倒數器間隔時間")]
   public float delayBetweenAdd;
   //倒數器間隔時間
+  [Header("扣血動畫延遲時間")]
   public float delaySec;
   // 扣血動畫延遲時間
 
@@ -22,16 +25,18 @@ public class fearBar : MonoBehaviour
 
   // 恐懼最大最小數值
   // [Range(0,100)]
-  [Header("Value")]
+  [Header("魔力數值區間")]
   public int value_Min = 0;
-  public float value_Max = 200;
+  public float value_Max = 100;
 
 
   //各種 UI 
   [Header("UI")]
   public Image ui_fillBar;
   //主要血條 淺綠色
+  [Header("增血特效")]
   public Image ui_Addeffect;
+  [Header("扣血特效")]
   public Image ui_Hurteffect;
   public Text ui_value;
   public Text ui_addvalue;
@@ -39,25 +44,30 @@ public class fearBar : MonoBehaviour
   public Text ui_countvalue;
 
 
-  bool waitingForInput = false;
+  public bool waitingForInput = true;
   bool createMonster = false;
   bool combo = false;
   bool Checking = true;
 
 
   //Other 反應事件
-  [Header("FearEvent")]
+  [Header("目前存量值")]
   public float points;
   //目前存量值
+  [Header("增加值")]
   public int autoAddValue;
   //倒數增加”值“
   public int addValue;
   //一般情況增加值
   public int costvalue;
   //一般情況耗費值
+  [Header("出動友軍耗費值")]
   public int eachpresscost;
   //出動友軍耗費值(單次)
   //關聯-- decrease01 函式
+
+  public Button button;
+  //開開關關
 
   // 持續偵測有無事件
   void Update()
@@ -109,14 +119,21 @@ public class fearBar : MonoBehaviour
     }
 
 
-    if (points < value_Min || points >= value_Max)
+    if (points <= value_Min || points >= value_Max)
     {
       waitingForInput = false;
-      CancelInvoke("AutoAddFear");
       FearEvent();
+      // CancelInvoke("AutoAddFear");
+      
+      
 
     }
-    //判斷晉級或失敗事件  
+    else if(points > value_Min && points < value_Max){
+        
+      button.interactable = true;
+
+    }
+ 
 
   }
 
@@ -124,12 +141,10 @@ public class fearBar : MonoBehaviour
   //Start the game
   public void StartGame()
   {
+    button.interactable = true;
     waitingForInput = true;
-    // float fillAmount = points / value_Max;
-    // points = 0 顯示初始數值
+
     ui_value.text = points.ToString() + "";
-    // ui_addvalue.text = (autoAddValue.ToString()) + "points/sec";
-    // ui_costvalue.text = "- " + (costvalue.ToString());
     ui_countvalue.text = timeToAdd.ToString() + "sec";
 
     ui_Hurteffect.fillAmount = ui_fillBar.fillAmount;
@@ -145,7 +160,6 @@ public class fearBar : MonoBehaviour
 
 
   // 顯示耗費多少恐懼
-  // When pressing the Increase button
   public void Decrease()
   {
 
@@ -172,6 +186,8 @@ public class fearBar : MonoBehaviour
     StartCoroutine(RepeatDecrease());
   }
 
+  
+  
   //When pressing the Increase button
 
   public void Increase()
@@ -228,6 +244,8 @@ public class fearBar : MonoBehaviour
     StartCoroutine(RepeatDecrease());
   }
 
+  // 顯示增加多少恐懼
+  // 
   public void DetectAdd()
   {
 
@@ -344,23 +362,23 @@ public class fearBar : MonoBehaviour
   }
   void FearEvent()
   {
-    if (points < value_Min)
+    if (points <= value_Min)
     {
-
+      points = 0;
+      button.interactable = false;
       Debug.Log($"LOSE！");
       ui_fillBar.fillAmount = 0;
 
     }
-    if (points >= value_Max)
+    else if (points >= value_Max)
     {
-
+      points = 100;
       //   Debug.Log($"WIN！");
       // ui_fillBar.fillAmount = 1;
       StartCoroutine(RunSecvalue());
 
 
     }
-
   }
 
 
