@@ -7,6 +7,8 @@ public class Main : MonoBehaviour
     public GameObject MoveCursor;
     public Player Player;
     public Collider2D Ladder;
+    //public Collider2D tbox;
+    //public Collider2D bbox;
     // Use this for initialization
     public Camera cam;
     public LayerMask groundLayer;

@@ -89,8 +89,9 @@ public class animy_move : MonoBehaviour
     {
        Traps02() ;
     }
-
   }
+  
+
   
   void WalkMode(){
 
