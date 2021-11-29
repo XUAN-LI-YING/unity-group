@@ -6,6 +6,7 @@ public class trapOnRoad : MonoBehaviour
 {
     public Item thisItem;
     public Inventory playerInventory;
+    //public GameObject Slot;//copytrap
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -15,6 +16,21 @@ public class trapOnRoad : MonoBehaviour
             Destroy(gameObject);
         }          
     }
+
+    /*void Update()
+    {
+        if(Input.GetMouseButton(0))
+        {
+            Instantiate(Slot, this.gameObject.transform.position,Quaternion.identity);
+        }
+    }
+    public void AddItem()
+    {
+        if(Input.GetMouseButton(0))
+        {
+            Instantiate(Slot, this.gameObject.transform.position,Quaternion.identity);
+        }
+    }*/
 
     public void AddNewItem()
     {
