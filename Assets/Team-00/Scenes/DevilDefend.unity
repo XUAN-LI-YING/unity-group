@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &50189838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trapBox: {fileID: 11400000, guid: bbef765b079cd234d85cc2a594107370, type: 2}
   slotGrid: {fileID: 2074175113}
-  emptySlot: {fileID: 2191812211548486607, guid: 4dfb9d6773bab7f46a13853434fcd36d,
+  emptySlot: {fileID: 5674225513363844645, guid: 4dfb9d6773bab7f46a13853434fcd36d,
     type: 3}
   itemInformation: {fileID: 0}
   slots: []
@@ -4829,7 +4829,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1155583964
 Transform:
   m_ObjectHideFlags: 0
@@ -4858,7 +4858,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trapBox: {fileID: 11400000, guid: 512a82b972c630f4e9bc85a0c80b9a4d, type: 2}
   slotGrid: {fileID: 151087420}
-  emptySlot: {fileID: 2191812211548486607, guid: 4dfb9d6773bab7f46a13853434fcd36d,
+  emptySlot: {fileID: 5674225513363844645, guid: 4dfb9d6773bab7f46a13853434fcd36d,
     type: 3}
   itemInformation: {fileID: 0}
   slots: []
@@ -6894,11 +6894,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trapBox: {fileID: 11400000, guid: ae6cd05a0fa6a7b4d941203a58725c36, type: 2}
   slotGrid: {fileID: 1431890968}
-  emptySlot: {fileID: 2191812211548486607, guid: 4dfb9d6773bab7f46a13853434fcd36d,
+  emptySlot: {fileID: 5674225513363844645, guid: 4dfb9d6773bab7f46a13853434fcd36d,
+    type: 3}
+  emptySlot2: {fileID: 4951676059485846841, guid: 4e207d301091cc04e8ea6d1d25d129ec,
+    type: 3}
+  emptySlot3: {fileID: 1590133974324182527, guid: 4ec324e3bd349c84f8156d4a9653cb7f,
+    type: 3}
+  emptySlot4: {fileID: 4115222302049043928, guid: 377c4e568a097dd459762d0fc09b066b,
+    type: 3}
+  emptySlot5: {fileID: 1758328880752898807, guid: 49da848d9dbcbf740acc1364d1af51f9,
+    type: 3}
+  emptySlot6: {fileID: 701512080708194927, guid: 299aa6795db642f48868ad999543aa74,
     type: 3}
   itemInformation: {fileID: 255969613}
   slots: []
-  Slot: {fileID: 11400000, guid: 941fe5181aadc6f429e91884f8aa3e7c, type: 2}
+  Slot: {fileID: 0}
 --- !u!4 &1703180493
 Transform:
   m_ObjectHideFlags: 0
