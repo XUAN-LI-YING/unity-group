@@ -72,11 +72,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
-<<<<<<< HEAD
       "version": "2.0.12",
-=======
-      "version": "2.0.3",
->>>>>>> 88bf90e4ef40953704d09b0085d39a2e10416f72
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -85,11 +81,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.vscode": {
-<<<<<<< HEAD
       "version": "1.2.4",
-=======
-      "version": "1.2.2",
->>>>>>> 88bf90e4ef40953704d09b0085d39a2e10416f72
       "depth": 0,
       "source": "registry",
       "dependencies": {},
@@ -103,11 +95,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.test-framework": {
-<<<<<<< HEAD
       "version": "1.1.30",
-=======
-      "version": "1.1.18",
->>>>>>> 88bf90e4ef40953704d09b0085d39a2e10416f72
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -143,8 +131,7 @@
       "depth": 0,
       "source": "builtin",
       "dependencies": {
-        "com.unity.modules.ui": "1.0.0",
-        "com.unity.modules.imgui": "1.0.0"
+        "com.unity.modules.ui": "1.0.0"
       }
     },
     "com.unity.modules.ai": {
