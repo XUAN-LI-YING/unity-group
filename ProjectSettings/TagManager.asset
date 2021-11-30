@@ -18,14 +18,11 @@ TagManager:
   - guard
   - DarkTrap
   - Traps02
-<<<<<<< HEAD
   - roller
   - Trap-05
   - Trap-06
-=======
   - tbox
   - bbox
->>>>>>> 01
   layers:
   - Default
   - TransparentFX
