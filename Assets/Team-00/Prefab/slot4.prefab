@@ -68,7 +68,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -211,7 +210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   touch: 0
   monster: {fileID: 0}
-  explo: {fileID: 8434979036201812742, guid: ff197d2ad652ae34898aadd64f6191e1, type: 3}
+  explode: {fileID: 0}
 --- !u!1 &4047539822663326425
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,7 +303,6 @@ GameObject:
   - component: {fileID: 5067646180167896065}
   - component: {fileID: 5688884490765393563}
   - component: {fileID: 8173083234760351758}
-  - component: {fileID: 8533994890178623347}
   - component: {fileID: 4128324537413704446}
   - component: {fileID: 8164114509292885829}
   m_Layer: 5
@@ -374,7 +372,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -440,21 +437,6 @@ MonoBehaviour:
   coldTime: 0
   filledImage: {fileID: 0}
   isStartTime: 0
---- !u!114 &8533994890178623347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4115222302049043928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16ef7872d85519a48aa99e2a05b75000, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  touch: 0
-  monster: {fileID: 0}
-  explo: {fileID: 8434979036201812742, guid: ff197d2ad652ae34898aadd64f6191e1, type: 3}
 --- !u!114 &4128324537413704446
 MonoBehaviour:
   m_ObjectHideFlags: 0

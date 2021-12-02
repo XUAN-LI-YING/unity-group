@@ -245,7 +245,6 @@ GameObject:
   - component: {fileID: 2238696535651098456}
   - component: {fileID: 1968536448922879834}
   - component: {fileID: 2114866967706444423}
-  - component: {fileID: 4542395076719655499}
   m_Layer: 5
   m_Name: Item
   m_TagString: SpikedTrap
@@ -297,7 +296,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -426,21 +424,6 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!114 &4542395076719655499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7338422761927027192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16ef7872d85519a48aa99e2a05b75000, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  touch: 0
-  monster: {fileID: 0}
-  explode: {fileID: 0}
 --- !u!1 &8663581377662308885
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,7 +437,6 @@ GameObject:
   - component: {fileID: 5644418043949555633}
   - component: {fileID: 829035501540771676}
   - component: {fileID: 8470090996535537683}
-  - component: {fileID: 8834693070969378692}
   - component: {fileID: 7769529490298487767}
   - component: {fileID: 6799271177315590704}
   - component: {fileID: 1901018566022140721}
@@ -472,7 +454,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8663581377662308885}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
@@ -507,7 +489,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -591,21 +572,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8834693070969378692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8663581377662308885}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16ef7872d85519a48aa99e2a05b75000, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  touch: 0
-  monster: {fileID: 0}
-  explode: {fileID: 0}
 --- !u!114 &7769529490298487767
 MonoBehaviour:
   m_ObjectHideFlags: 0

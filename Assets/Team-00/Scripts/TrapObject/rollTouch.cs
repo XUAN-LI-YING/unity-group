@@ -24,7 +24,7 @@ public class rollTouch : MonoBehaviour
                 case 1 :
                 Vector3 move = gameObject.transform.position;
             
-                move = new Vector3(move.x, move.y+25f, move.z);
+                move = new Vector3(move.x, move.y+34f, move.z);
                 Instantiate(aniroll, move, gameObject.transform.rotation);
                 break;
 

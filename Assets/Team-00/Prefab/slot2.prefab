@@ -89,7 +89,6 @@ GameObject:
   - component: {fileID: 8275885718473994397}
   - component: {fileID: 3966977608552507504}
   - component: {fileID: 5262197341758807871}
-  - component: {fileID: 5050779228212689064}
   - component: {fileID: 346707097487725150}
   m_Layer: 5
   m_Name: slot2
@@ -170,7 +169,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -254,21 +252,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5050779228212689064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4951676059485846841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16ef7872d85519a48aa99e2a05b75000, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  touch: 0
-  monster: {fileID: 0}
-  explo: {fileID: 8434979036201812742, guid: ff197d2ad652ae34898aadd64f6191e1, type: 3}
 --- !u!114 &346707097487725150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,7 +335,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -495,7 +477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   touch: 0
   monster: {fileID: 0}
-  explo: {fileID: 8434979036201812742, guid: ff197d2ad652ae34898aadd64f6191e1, type: 3}
+  explode: {fileID: 0}
 --- !u!1 &6935995090513793663
 GameObject:
   m_ObjectHideFlags: 0

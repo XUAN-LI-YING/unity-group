@@ -115,12 +115,12 @@ public class EnemyMove : MonoBehaviour
              transform.Translate(speed * Time.deltaTime , 0, 0);          //固定一秒走固定距離
 
     	  
-            if (EnemyPos.x > 101 && EnemyPos.y >= 10 && EnemyPos.y <= 20){    //移動至下層樓
+            if (EnemyPos.x > 100 && EnemyPos.y >= 0 && EnemyPos.y <= 28){    //移動至下層樓
 
-            gameObject.transform.position = new Vector3(-104, -18, 0);
+            gameObject.transform.position = new Vector3(-99f, -18f, 0);
 
             }
-            if (EnemyPos.y >= -20 && EnemyPos.y <= -15 && EnemyPos.x > 69)
+            if (EnemyPos.y >= -20 && EnemyPos.y <= -5 && EnemyPos.x > 97)
             {
               
               Destroy(gameObject);
