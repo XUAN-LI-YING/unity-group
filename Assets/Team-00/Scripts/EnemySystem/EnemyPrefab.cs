@@ -18,7 +18,7 @@ public class EnemyPrefab : MonoBehaviour
   void Start(){
 
     delta = 0;
-    createtime = 50;  // 2021.10.03 改久一點方便齡移偵錯看 log 場上兩隻會產生的狀況夠燒腦ㄌ
+    createtime = 10;  // 2021.10.03 改久一點方便齡移偵錯看 log 場上兩隻會產生的狀況夠燒腦ㄌ
   }
  
   
@@ -33,7 +33,7 @@ public class EnemyPrefab : MonoBehaviour
       this.delta = 0;
       GameObject go = Instantiate(catPrefab) as GameObject;
       //定義產生位置
-      go.transform.position = new Vector3(-104, 13.6f, 0);
+      go.transform.position = new Vector3(-104, 22f, 0);
 
 
 
