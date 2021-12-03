@@ -30,7 +30,7 @@ public class bigTrap : MonoBehaviour
                 //Screen Height : 1080
                 Vector3 move = gameObject.transform.position;
             
-                move = new Vector3(move.x, move.y+10f, move.z);
+                move = new Vector3(move.x, move.y+20f, move.z);
                 Instantiate(aniBig, move, gameObject.transform.rotation);
                 
               }
