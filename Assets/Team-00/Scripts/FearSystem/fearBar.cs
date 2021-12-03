@@ -121,9 +121,11 @@ public class fearBar : MonoBehaviour
 
     if (points <= value_Min || points >= value_Max)
     {
+      CancelInvoke("AutoAddFear");
       waitingForInput = false;
+      Checking = false;
       FearEvent();
-      // CancelInvoke("AutoAddFear");
+      
       
       
 
@@ -374,8 +376,8 @@ public class fearBar : MonoBehaviour
     {
       points = 100;
       //   Debug.Log($"WIN！");
-      // ui_fillBar.fillAmount = 1;
-      StartCoroutine(RunSecvalue());
+      ui_fillBar.fillAmount = 1;
+      // StartCoroutine(RunSecvalue());
 
 
     }
