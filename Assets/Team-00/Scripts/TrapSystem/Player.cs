@@ -52,13 +52,13 @@ public class Player : MonoBehaviour
         {
             if(Input.GetKey(KeyCode.A))
             {
-                gameObject.transform.position += new Vector3(-0.03f,0,0);
+                gameObject.transform.position += new Vector3(-0.1f,0,0);
                 animator.Play("Player@Walk");
                 Sprite.flipX = false;
             }
             if(Input.GetKey(KeyCode.D))
             {
-                gameObject.transform.position += new Vector3(0.03f,0,0);
+                gameObject.transform.position += new Vector3(0.1f,0,0);
                 animator.Play("Player@Walk");
                 Sprite.flipX = true;
             }
