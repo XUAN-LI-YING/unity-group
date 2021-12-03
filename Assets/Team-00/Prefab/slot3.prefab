@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 6661292927868882425}
   - component: {fileID: 7996100693456541585}
   - component: {fileID: 8993448672544338446}
+  - component: {fileID: 7690936216962808364}
   m_Layer: 5
   m_Name: Item
   m_TagString: SpikedTrap
@@ -147,6 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -290,6 +292,20 @@ MonoBehaviour:
   touch: 0
   monster: {fileID: 0}
   explode: {fileID: 0}
+--- !u!114 &7690936216962808364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492829485497325768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fe5b2b2c1fd47a479a6267846d9979f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aniroll: {fileID: 5806993997562585069, guid: 7cb855148438f8149a803e89ea1357c8, type: 3}
+  rollTime: 0
 --- !u!1 &1590133974324182527
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,6 +321,7 @@ GameObject:
   - component: {fileID: 2470314624934225217}
   - component: {fileID: 7012655736840751730}
   - component: {fileID: 2315210731526071797}
+  - component: {fileID: 7209645750130388568}
   m_Layer: 5
   m_Name: slot3
   m_TagString: Untagged
@@ -339,7 +356,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1590133974324182527}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -372,6 +389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -482,6 +500,27 @@ MonoBehaviour:
   slotItem: {fileID: 0}
   slotImage: {fileID: 3597350745746706445}
   itemInSlot: {fileID: 1492829485497325768}
+--- !u!50 &7209645750130388568
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590133974324182527}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &5244719172628786459
 GameObject:
   m_ObjectHideFlags: 0
