@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 9128344862959182658}
   - component: {fileID: 8956721100105125909}
   - component: {fileID: 6056795492793826731}
+  - component: {fileID: 7897887059746128735}
   m_Layer: 5
   m_Name: slot5
   m_TagString: Untagged
@@ -157,6 +158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -267,6 +269,20 @@ MonoBehaviour:
   slotItem: {fileID: 0}
   slotImage: {fileID: 3186405977209063523}
   itemInSlot: {fileID: 4378495939911215561}
+--- !u!114 &7897887059746128735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758328880752898807}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6180f9740905dd440885e98b48535e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  darkAni: {fileID: 6485434449390409373, guid: bc93ddcc54d50854e8360fa4e2ec012e, type: 3}
+  blackAnimationTime: 0
 --- !u!1 &2624361919426616981
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,6 +454,7 @@ GameObject:
   - component: {fileID: 1487580509431121395}
   - component: {fileID: 7691486934541775787}
   - component: {fileID: 3236076625714598584}
+  - component: {fileID: 8264334528974118059}
   m_Layer: 5
   m_Name: Item
   m_TagString: SpikedTrap
@@ -489,6 +506,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -632,3 +650,17 @@ MonoBehaviour:
   touch: 0
   monster: {fileID: 0}
   explode: {fileID: 0}
+--- !u!114 &8264334528974118059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4378495939911215561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6180f9740905dd440885e98b48535e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  darkAni: {fileID: 6485434449390409373, guid: bc93ddcc54d50854e8360fa4e2ec012e, type: 3}
+  blackAnimationTime: 0
