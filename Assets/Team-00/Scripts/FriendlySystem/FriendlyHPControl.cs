@@ -76,7 +76,7 @@ public class FriendlyHPControl : MonoBehaviour
             
 
 
-             hp -= Time.deltaTime * 5;
+             hp -= Time.deltaTime * 20;
             
             // //偵測現在move到哪裡的位置
             // Vector3 move = gameObject.transform.position;
@@ -115,7 +115,7 @@ public class FriendlyHPControl : MonoBehaviour
     }
     void timer1(){
       
-      hp = hp - cost1;
+    //   hp = hp - cost1;
     //    Debug.Log($"友軍每{costtime}秒扣{cost1}滴血");     
        Debug.Log($"友軍剩餘{hp}滴血"); 
     }

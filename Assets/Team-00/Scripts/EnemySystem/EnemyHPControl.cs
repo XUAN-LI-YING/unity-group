@@ -53,7 +53,7 @@ public class EnemyHPControl : MonoBehaviour
     checkHP  = 1;            
     costtime = 1 ;
     costtime1 = 1;
-    cost1 = 2;
+    cost1 = 6;
     cost2 = 10;
     timer2bool = false;
     timer1bool = true;
