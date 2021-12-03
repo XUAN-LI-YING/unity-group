@@ -29,7 +29,7 @@ public class blackTrap : MonoBehaviour
                 case 1 :
                 Vector3 move = gameObject.transform.position;
             
-                move = new Vector3(move.x, move.y+15f, move.z);
+                move = new Vector3(move.x, move.y+10f, move.z);
                 Instantiate(darkAni, move, gameObject.transform.rotation);
                 break;
 
