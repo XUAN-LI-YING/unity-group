@@ -241,7 +241,7 @@ public class EnemyHPControl : MonoBehaviour
    void CostBlood(){
 
       
-    Debug.Log($"正常狀態下扣血");
+    // Debug.Log($"正常狀態下扣血");
 
     InvokeRepeating("timer1",0f,costtime);
 
@@ -251,8 +251,8 @@ public class EnemyHPControl : MonoBehaviour
     void CostBloodBonus(){
 
       hp = hp - cost1;
-       Debug.Log($"敵人加乘狀態每{costtime1}秒扣{cost1}滴血");     
-       Debug.Log($"剩餘{hp}滴血"); 
+      //  Debug.Log($"敵人加乘狀態每{costtime1}秒扣{cost1}滴血");     
+      //  Debug.Log($"剩餘{hp}滴血"); 
 
 
     }
@@ -261,7 +261,7 @@ public class EnemyHPControl : MonoBehaviour
 
       hp = hp - cost1;
 
-       Debug.Log($"普通模式：每{costtime}秒扣{cost1}滴血，敵人剩餘{hp}滴血"); 
+      //  Debug.Log($"普通模式：每{costtime}秒扣{cost1}滴血，敵人剩餘{hp}滴血"); 
           
     }
 

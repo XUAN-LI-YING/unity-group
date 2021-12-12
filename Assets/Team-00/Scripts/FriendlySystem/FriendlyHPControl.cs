@@ -100,7 +100,7 @@ public class FriendlyHPControl : MonoBehaviour
 
             timer1bool = true;
             CostBlood();
-             Debug.Log($"friendly目前血量 {hp} ");
+            //  Debug.Log($"friendly目前血量 {hp} ");
         }
             
  
@@ -117,7 +117,7 @@ public class FriendlyHPControl : MonoBehaviour
       
     //   hp = hp - cost1;
     //    Debug.Log($"友軍每{costtime}秒扣{cost1}滴血");     
-       Debug.Log($"友軍剩餘{hp}滴血"); 
+    //    Debug.Log($"友軍剩餘{hp}滴血"); 
     }
 
     // void OnCollisionEnter2D(Collision2D coll) 

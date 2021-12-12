@@ -180,7 +180,7 @@ public class fearBar : MonoBehaviour
     points = points - eachpresscost;
     float fillAmount = points / value_Max;
     ui_value.text = $"{points}";
-    Debug.Log($"出動友軍耗費{eachpresscost}魔力值");
+    // Debug.Log($"出動友軍耗費{eachpresscost}魔力值");
     ui_fillBar.fillAmount = fillAmount;
 
 
@@ -260,7 +260,7 @@ public class fearBar : MonoBehaviour
     ui_Addeffect.fillAmount = fillAmount;
 
 
-    Debug.Log("add進行中!!");
+    // Debug.Log("add進行中!!");
 
     StartCoroutine(DelayAddEffect());
     StartCoroutine(RepeatDecrease());

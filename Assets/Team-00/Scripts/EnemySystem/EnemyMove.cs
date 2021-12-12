@@ -207,7 +207,7 @@ public class EnemyMove : MonoBehaviour
 
     canceltime -= 1;
 
-     Debug.Log($"停止攻擊效果倒數{canceltime}sec");     // 顯示停止攻擊倒數幾秒
+    //  Debug.Log($"停止攻擊效果倒數{canceltime}sec");     // 顯示停止攻擊倒數幾秒
 
     if (canceltime < 1)                              // 停止扣血計時器
     {
@@ -306,7 +306,7 @@ public class EnemyMove : MonoBehaviour
     }
     if (col.tag == "Trap-05")                   // 撞到大規模，檢查前面是否觸發黑暗
     {
-        Debug.Log("觸發大規模");
+        // Debug.Log("觸發大規模");
         Checkbuff();
     }
 

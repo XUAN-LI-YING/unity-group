@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using UnityEngine.UI;
 
 public class friendlyButton : MonoBehaviour
 {   
@@ -8,6 +10,7 @@ public class friendlyButton : MonoBehaviour
     // public bool appear_toggle = false;
     //點擊時friendly_force這個空物(並之後掛上friendlyforce物件)會去掛上的物件friendlyforce找到裡面的activeSelf，
     //並把他變否
+    
     public void Object_Toggle(GameObject friendly_force)
     {   
         // appear_toggle = !appear_toggle;
@@ -15,4 +18,11 @@ public class friendlyButton : MonoBehaviour
         friendly_force.SetActive( !friendly_force.activeSelf);
       
     }
+    void Update() {
+        
+    }
+    void Start() {
+
+    }
+
 }
