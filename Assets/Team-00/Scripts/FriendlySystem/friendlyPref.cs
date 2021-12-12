@@ -13,7 +13,7 @@ public class friendlyPref : MonoBehaviour
 {
   public static friendlyPref instance;
   //一開始沒有友軍為false
-  public bool activeSelf = false;
+  public bool activeSelf;
   public GameObject friendlyForce;
 
   [Header("TIME")]
@@ -41,10 +41,26 @@ public class friendlyPref : MonoBehaviour
   void Start()
   {
     instance = this;
+    activeSelf = true;
     // fearBar.instance.Decrease01();
     //目前只扣一次
+    if (activeSelf)
+    {
+          InvokeRepeating("AutocostFear", 3, 2);
+    }
+    else
+      Debug.Log($"停止扣魔力"); //不知道如何關掉
+ 
 
+  
   }
+  void AutocostFear()
+  {
+    fearBar.instance.Decrease01(); 
+    Debug.Log($"出動友軍扣魔力"); 
+  }
+
+
 
 
 
