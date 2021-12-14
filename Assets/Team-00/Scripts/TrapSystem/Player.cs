@@ -159,6 +159,12 @@ public class Player : MonoBehaviour
         //if (other.gameObject.CompareTag ("bbox"))
         /*if (other != Main.bbox) return;
         Isbbox = true;*/
+
+        // 碰到 觸發
+
+        // fearbar 增加 調用~~~~待處理
+
+        
         
     }
 

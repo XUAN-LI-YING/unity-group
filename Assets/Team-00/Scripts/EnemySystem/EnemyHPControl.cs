@@ -54,7 +54,7 @@ public class EnemyHPControl : MonoBehaviour
     costtime = 1 ;
     costtime1 = 1;
     cost1 = 6;
-    cost2 = 10;
+    cost2 = 20;
     timer2bool = false;
     timer1bool = true;
     circle = true;
@@ -121,9 +121,7 @@ public class EnemyHPControl : MonoBehaviour
 
   }
   void OnCollisionStay2D(Collision2D coll) 
-    {   //如果碰撞到cat     10.03 齡移 commit : 應該要寫成碰到當下反應事件 stay 會一直觸發而無法計時將扣血機制給量化 所以就寫在下面啦
-
-        // 這邊留給判斷何時作切換
+    {   
 
         if(coll.gameObject.tag=="Friendly")
         { 
@@ -151,21 +149,18 @@ public class EnemyHPControl : MonoBehaviour
         { 
 
              CheckCondition();               
-            //檢查敵人扣血狀態 至於哪個扣血模式才會真的執行取決於 checkHP 的狀態呦～～ 
             
-            //1 的時候代表遇敵人普通扣血， 2代表遇到大規模且遇敵人那瞬間，checkHP的狀態取決於 敵人有沒有碰到大規模 and 大規模效果要多久喔
+        }
+        if(coll.gameObject.tag=="Trap-05")
+        { 
 
-            // 大規模效果要多久又是根據 EnemyMove 腳本 StopBlood() 函式中 turnon 的開關狀態～  開關狀態又是根據 canceltime 扣血時間(10秒)控制的
-
-            // 至於何時取消扣血，兩種狀況 一: 敵人沒血了，二種模式都要取消 上面映璇有寫了 hp <0 destory 
-
-            // 二 : 敵人有血但大規模效果失效了，切換普通扣血
-
-            // 思考點：何時失效。 turnon 關掉的時候，
+                hp = hp - cost1;        
             
         }
 
-  }
+  }  
+
+
   public void ChangBleeding(){          // enenmymove.cs checkbuff()調用的函式 
         
         checkHP = 2;
@@ -233,7 +228,7 @@ public class EnemyHPControl : MonoBehaviour
 
       Debug.Log("翻開大規模術士效果！");
 
-    InvokeRepeating("timer2",0f,costtime);
+    InvokeRepeating("timer2",0f,1);
  
     
     
@@ -243,7 +238,7 @@ public class EnemyHPControl : MonoBehaviour
       
     // Debug.Log($"正常狀態下扣血");
 
-    InvokeRepeating("timer1",0f,costtime);
+    InvokeRepeating("timer1",0f,1);
 
 
     }
@@ -251,7 +246,7 @@ public class EnemyHPControl : MonoBehaviour
     void CostBloodBonus(){
 
       hp = hp - cost1;
-      //  Debug.Log($"敵人加乘狀態每{costtime1}秒扣{cost1}滴血");     
+       Debug.Log($"敵人加乘狀態每{costtime1}秒扣{cost1}滴血");     
       //  Debug.Log($"剩餘{hp}滴血"); 
 
 
@@ -267,10 +262,16 @@ public class EnemyHPControl : MonoBehaviour
 
     
     void timer2(){
+
+      if (costtime<3)
+      {
+          
+      }
       
       hp = hp - cost2;  
-      Debug.Log($"術式模式：每{costtime}秒扣{cost2}滴血，敵人剩餘{hp}滴血");  
+      Debug.Log($"術式模式：{costtime}秒扣{cost2}滴血，敵人剩餘{hp}滴血");  
       
+
        
 
     }
