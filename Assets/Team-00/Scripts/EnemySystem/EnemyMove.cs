@@ -308,6 +308,7 @@ public class EnemyMove : MonoBehaviour
     {
         // Debug.Log("觸發大規模");
         Checkbuff();
+        
     }
 
     if (col.tag=="Traps02")

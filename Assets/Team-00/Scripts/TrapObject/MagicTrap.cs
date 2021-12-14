@@ -63,7 +63,7 @@ public class MagicTrap : MonoBehaviour
     
    //   Debug.Log("click correct");
    //  fearBar.instance.Increase();
-
+   //  
 
 
   // }

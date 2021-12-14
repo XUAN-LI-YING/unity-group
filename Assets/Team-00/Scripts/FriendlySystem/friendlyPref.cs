@@ -19,7 +19,7 @@ public class friendlyPref : MonoBehaviour
   [Header("TIME")]
   public float delta = 0;
   // 友軍產生計時器
-  public int createtime = 10;
+  public int createtime = 2;
 
 
   // 友軍產生位置
@@ -41,23 +41,11 @@ public class friendlyPref : MonoBehaviour
   void Start()
   {
     instance = this;
-    activeSelf = true;
-    // fearBar.instance.Decrease01();
-    //目前只扣一次
-    if (activeSelf)
-    {
-          InvokeRepeating("AutocostFear", 3, 2);
-    }
-    else
-      Debug.Log($"停止扣魔力"); //不知道如何關掉
+
+
  
 
   
-  }
-  void AutocostFear()
-  {
-    fearBar.instance.Decrease01(); 
-    Debug.Log($"出動友軍扣魔力"); 
   }
 
 
