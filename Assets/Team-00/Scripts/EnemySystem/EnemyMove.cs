@@ -6,12 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class EnemyMove : MonoBehaviour
 {
-  // 感覺陷阱名稱要統一命名規則XD  要依照編號或是中文名稱命名
-  // -----------------------------我是整理線-----------------------------------
-  // 大規模 tag : Trap-05 
-  // 捕獸夾 tag : Traps02
-  // 巨型滾筒 tag : roller
-  //  rollerTrap() 應該要放到 checkcondition 裡面呦～～
+   public static EnemyMove instance;
     
    [Header("有限狀態機FSM")] 
     public float speed = 0;    //怪物初始速度
@@ -60,6 +55,7 @@ public class EnemyMove : MonoBehaviour
 
   void Start()
   {
+    instance = this;
     check = true;
     walking = true;
     SpikedIsCollide = false;
@@ -91,7 +87,7 @@ public class EnemyMove : MonoBehaviour
       rollerTrap();
     }
   }
-  void CheckCondition(){                //判別狀態
+  public void CheckCondition(){                //判別狀態
 
 
     if (SpikedIsCollide)                //尖刺陷阱碰撞
@@ -182,7 +178,7 @@ public class EnemyMove : MonoBehaviour
             }
   }
   
-  void CheckTime(){
+  public void CheckTime(){
 
     check = false;                         // 停止偵測 碰觸何種陷阱狀態
     
@@ -191,10 +187,11 @@ public class EnemyMove : MonoBehaviour
   }
 
 
-  void StopBlood(){      
+  public void StopBlood(){  
+
+
 
       Turnon = true;                                // 純粹寫介面方便偵錯
-      //  FriendlyHPControl.instance.StopBloodon();     //這行有問題// 調用 友軍血量控制器 停止敵方扣友軍血量
 
       InvokeRepeating("CancelTime", 0, 1);          // 停止攻擊效果秒數 turn on
       //InokeRepeating 重複呼叫(“函式名”，第一次間隔幾秒呼叫，每幾秒呼叫一次)。 
@@ -214,7 +211,7 @@ public class EnemyMove : MonoBehaviour
       Turnon = false;
       FriendlyHPControl.instance.StopBloodoff();  // 調用 友軍血量控制器 恢復正常扣友軍血量
       CancelInvoke("CancelTime");
-      EnemyHPControl.instance.SwitchCost();
+      // EnemyHPControl.instance.SwitchCost();
 
       //
       canceltime = 10;                               // 重新啟動計時
@@ -240,13 +237,14 @@ public class EnemyMove : MonoBehaviour
 
 
 
-  void BlackTrap(){
+  public void BlackTrap(){
                                                     //判斷單一陷阱碰撞次數
           switch (stucktraptime)                   
 
           {
           
           case 1: 
+            FriendlyHPControl.instance.StopBloodon();  
             StopBlood();                            // 停止敵方扣友軍血量
             fearBar.instance.Increase();            // 增加恐懼值
             speed = -10f;                           // 反方向速度
@@ -298,7 +296,7 @@ public class EnemyMove : MonoBehaviour
 
       stucktraptime += 1;                       //確認是否第一次碰撞暗黑陷阱
 
-      // Debug.Log("碰撞黑暗第"+(stucktraptime)+"次");
+      Debug.Log("碰撞黑暗第"+(stucktraptime)+"次");
 
       
 
@@ -306,7 +304,7 @@ public class EnemyMove : MonoBehaviour
     }
     if (col.tag == "Trap-05")                   // 撞到大規模，檢查前面是否觸發黑暗
     {
-        // Debug.Log("觸發大規模");
+        Debug.Log("觸發大規模");
         Checkbuff();
         
     }

@@ -86,7 +86,7 @@ public class FriendlyHPControl : MonoBehaviour
             // gameObject.transform.position = move;
         }
     }
-    void CheckCondition(){
+    public void CheckCondition(){
         
         if (stopblood)
         
