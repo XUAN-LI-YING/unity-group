@@ -80,6 +80,7 @@
      <Compile Include="Assets\StartQTE.cs" />
      <Compile Include="Assets\Team-00\Scripts\TeachSlid\SwipeControl.cs" />
      <Compile Include="Assets\Team-00\Scripts\TrapObject\bigTrap.cs" />
+     <Compile Include="Assets\TurnonOff.cs" />
      <Compile Include="Assets\StartGame\script\MenuButtonController.cs" />
      <Compile Include="Assets\Team-00\Scripts\Slot\Slot3.cs" />
      <Compile Include="Assets\Team-00\Scripts\QTE.cs" />
@@ -113,7 +114,6 @@
      <Compile Include="Assets\Team-00\Scripts\Item.cs" />
      <Compile Include="Assets\Team-00\Scripts\TrapAni\blackAni.cs" />
      <Compile Include="Assets\Team-00\Scripts\FriendlySystem\friendlyMove.cs" />
-     <Compile Include="Assets\TurnonOff.cs" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
