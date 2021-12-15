@@ -23,6 +23,7 @@ TagManager:
   - Trap-06
   - tbox
   - bbox
+  - Trap-02
   layers:
   - Default
   - TransparentFX
