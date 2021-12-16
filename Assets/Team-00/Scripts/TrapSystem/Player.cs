@@ -164,6 +164,19 @@ public class Player : MonoBehaviour
 
         // fearbar 增加 調用~~~~待處理
 
+        if (other.tag == "SpikedTrap")
+        {
+            
+            
+            
+        }        
+        if (other.tag == "SpikedTrap")
+        {
+            
+            
+            
+        }
+
         
         
     }
