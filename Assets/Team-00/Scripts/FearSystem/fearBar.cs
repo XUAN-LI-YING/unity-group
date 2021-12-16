@@ -382,6 +382,53 @@ public class fearBar : MonoBehaviour
 
     }
   }
+  public void MgmineBuild()
+  {
+    Checking = false;
+
+    points = points - 20;
+
+    float fillAmount = points / value_Max;
+    ui_fillBar.fillAmount = fillAmount;
+
+    Debug.Log("建造陷阱中!");
+
+
+    StartCoroutine(DelayCostEffect());
+    StartCoroutine(RepeatDecrease());
+  }
+  public void DarktrapBuild()
+  {
+    Checking = false;
+
+    points = points - 50;
+
+    float fillAmount = points / value_Max;
+    ui_fillBar.fillAmount = fillAmount;
+
+    Debug.Log("建造陷阱中!");
+
+
+    StartCoroutine(DelayCostEffect());
+    StartCoroutine(RepeatDecrease());
+
+  }
+  public void BigtrapBuild()
+  {
+    Checking = false;
+
+    points = points - 80;
+
+    float fillAmount = points / value_Max;
+    ui_fillBar.fillAmount = fillAmount;
+
+    Debug.Log("建造陷阱中!");
+
+
+    StartCoroutine(DelayCostEffect());
+    StartCoroutine(RepeatDecrease());
+
+  }
 
 
 
