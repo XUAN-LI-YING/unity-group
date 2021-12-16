@@ -262,7 +262,7 @@ public class EnemyHPControl : MonoBehaviour
 
       hp = hp - cost1;
 
-       Debug.Log($"普通模式：每{costtime}秒扣{cost1}滴血，敵人剩餘{hp}滴血"); 
+      //  Debug.Log($"普通模式：每{costtime}秒扣{cost1}滴血，敵人剩餘{hp}滴血"); 
           
     }
 

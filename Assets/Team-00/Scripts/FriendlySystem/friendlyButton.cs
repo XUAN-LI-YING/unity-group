@@ -71,7 +71,7 @@ public class friendlyButton : MonoBehaviour
     public void AutocostFear()
     {
     fearBar.instance.Decrease01(); 
-    Debug.Log($"給我運作啦=.="); 
+    // Debug.Log($"給我運作啦=.="); 
 
     }
 
