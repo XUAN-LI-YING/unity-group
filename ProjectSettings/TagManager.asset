@@ -23,6 +23,7 @@ TagManager:
   - Trap-06
   - tbox
   - bbox
+  - devil
   layers:
   - Default
   - TransparentFX
@@ -75,17 +76,11 @@ TagManager:
   - name: trap
     uniqueID: 3036948621
     locked: 0
-  - name: UI
-    uniqueID: 3278200885
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: boomeffect
     uniqueID: 3822751351
-    locked: 0
-  - name: guard
-    uniqueID: 1132092615
     locked: 0
   - name: FriendlyPrefab
     uniqueID: 134500273
@@ -93,6 +88,12 @@ TagManager:
   - name: EnemyPrefab
     uniqueID: 3671733509
     locked: 0
+  - name: guard
+    uniqueID: 1132092615
+    locked: 0
   - name: Player
     uniqueID: 3226078249
+    locked: 0
+  - name: UI
+    uniqueID: 3278200885
     locked: 0

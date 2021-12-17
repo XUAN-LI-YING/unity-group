@@ -122,6 +122,35 @@ public class Player : MonoBehaviour
         //if (other.gameObject.CompareTag ("bbox"))
         /*if (other != Main.bbox) return;
         Isbbox = true;*/
+
+        // 碰到 觸發
+
+        // fearbar 增加 調用~~~~待處理
+       
+        if (other.tag == "Mg_LandimineTrap")
+        {
+            
+            fearBar.instance.MgmineBuild();
+             Debug.Log("觸發mine");
+            
+        }
+
+        if (other.tag == "DarkTrap")
+        {
+             fearBar.instance.DarktrapBuild();
+             Debug.Log("觸發dark");
+            
+            
+        } 
+        if (other.tag == "Trap-05")
+        {
+             fearBar.instance.BigtrapBuild();
+             Debug.Log("觸發dark");
+            
+            
+        } 
+
+        
         
     }
 

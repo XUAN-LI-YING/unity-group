@@ -7,7 +7,7 @@ public class magicTrap2 : MonoBehaviour
 
     void OnMouseDown()
     {
-        //     Debug.Log("按到我了");
+             Debug.Log("按到我了");
             Vector3 move = gameObject.transform.position;
             
             move = new Vector3(move.x, move.y+10f, move.z);

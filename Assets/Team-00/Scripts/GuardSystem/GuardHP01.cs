@@ -8,12 +8,12 @@ public class GuardHP01 : MonoBehaviour
     public int max_hp=0;
     public GameObject GuardAllHP01;
     public Animator playerAni;
-    public bool IsWalking;
+    public bool IsAttacking;
     // Start is called before the first frame update
     //最大血量為10，而初始HP血量=最大血量
     void Start()
     { 
-        IsWalking = false ;
+        IsAttacking = false ;
         max_hp=20;
         hp=max_hp;
     }
@@ -21,20 +21,20 @@ public class GuardHP01 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        //如果IsWalking則呼叫sword動畫
-        if(IsWalking==true)
+        //如果IsWalking則呼叫status動畫
+        if(IsAttacking==true)
         {
-            if(playerAni.GetInteger("sword")==0)
+            if(playerAni.GetInteger("status")==0)
               
-                playerAni.SetInteger("sword",1);
-                // Debug.Log("IsWalking");
+                playerAni.SetInteger("status",1);
+                // Debug.Log("IsAttacking");
          
         }
         else
         {
-            if(playerAni.GetInteger("sword")==1)
+            if(playerAni.GetInteger("status")==1)
             {   
-                playerAni.SetInteger("sword",0);
+                playerAni.SetInteger("status",0);
             }
         }
         if(hp<=0)
@@ -53,7 +53,7 @@ public class GuardHP01 : MonoBehaviour
         if(coll.gameObject.tag=="Cat")
         {   //hp-0.1
             hp -= 0.01f;
-            IsWalking = true ;      
+            IsAttacking = true ;      
         }
     }
     void OnCollisionExit2D(Collision2D coll)
@@ -61,8 +61,8 @@ public class GuardHP01 : MonoBehaviour
     {
         if(coll.gameObject.tag=="Cat")
         {
-           IsWalking = false ;   
+           IsAttacking = false ;   
         }
-    }　
+    }
 
 } 

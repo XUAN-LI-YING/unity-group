@@ -13,13 +13,13 @@ public class friendlyPref : MonoBehaviour
 {
   public static friendlyPref instance;
   //一開始沒有友軍為false
-  public bool activeSelf = false;
+  public bool activeSelf;
   public GameObject friendlyForce;
 
   [Header("TIME")]
   public float delta = 0;
   // 友軍產生計時器
-  public int createtime = 10;
+  public int createtime = 2;
 
 
   // 友軍產生位置
@@ -34,17 +34,21 @@ public class friendlyPref : MonoBehaviour
       this.delta = 0;
       GameObject go = Instantiate(friendlyForce) as GameObject;
       //定義產生位置
-      go.transform.position = new Vector3(70, -18, 0);
+      go.transform.position = new Vector3(66, -15, 0);
     }
 
   }
   void Start()
   {
     instance = this;
-    // fearBar.instance.Decrease01();
-    //目前只扣一次
 
+
+ 
+
+  
   }
+
+
 
 
 

@@ -76,7 +76,7 @@ public class FriendlyHPControl : MonoBehaviour
             
 
 
-             hp -= Time.deltaTime * 5;
+             hp -= Time.deltaTime * 20;
             
             // //偵測現在move到哪裡的位置
             // Vector3 move = gameObject.transform.position;
@@ -86,7 +86,7 @@ public class FriendlyHPControl : MonoBehaviour
             // gameObject.transform.position = move;
         }
     }
-    void CheckCondition(){
+    public void CheckCondition(){
         
         if (stopblood)
         
@@ -100,7 +100,7 @@ public class FriendlyHPControl : MonoBehaviour
 
             timer1bool = true;
             CostBlood();
-             Debug.Log($"friendly目前血量 {hp} ");
+            //  Debug.Log($"friendly目前血量 {hp} ");
         }
             
  
