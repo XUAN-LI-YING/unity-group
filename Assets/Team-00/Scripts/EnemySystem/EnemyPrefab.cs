@@ -33,7 +33,7 @@ public class EnemyPrefab : MonoBehaviour
       this.delta = 0;
       GameObject go = Instantiate(catPrefab) as GameObject;
       //定義產生位置
-      go.transform.position = new Vector3(-104, 22f, 0);
+      go.transform.position = new Vector3(-104, 24f, 0);
 
 
 
