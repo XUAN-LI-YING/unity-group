@@ -52,6 +52,8 @@ public class friendlyButton : MonoBehaviour
         Debug.Log($"關閉友軍扣魔力"); 
         // fearBar.instance.Decrease01(); 
             CancelInvoke("AutocostFear");
+
+        //放切換按鈕的程式 但我不會沒頭緒 QQ
        
      
     }
