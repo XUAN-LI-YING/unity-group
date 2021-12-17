@@ -5,6 +5,7 @@ using UnityEngine.UI;
 //我也不知道叫甚麼
 public class Slot : MonoBehaviour
 {
+    //static Slot instance;
     public Item slotItem;
     public Image slotImage;
     //public Text slotNum;

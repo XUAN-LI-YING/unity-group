@@ -5,8 +5,9 @@ using UnityEngine.EventSystems;
 //拖曳
 public class TrapOnDrag : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHandler
 {
-    //public GameObject Slot;//copytrap
+    public GameObject Slot;//copytrap
     public Transform originalParent;
+    static InventoryManager instance;
     public void OnBeginDrag(PointerEventData eventData)
     {
         originalParent = transform.parent;      //與拖曳之物件交換位置
@@ -15,7 +16,8 @@ public class TrapOnDrag : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragH
         GetComponent<CanvasGroup>().blocksRaycasts = false;
         /*if(Input.GetMouseButton(0))
         {
-            Instantiate(Slot, this.gameObject.transform.position,Quaternion.identity);
+            var newSlot = Instantiate(Slot, this.gameObject.transform.position,Quaternion.identity);
+            newSlot.transform.SetParent(instance.slotGrid.transform);
         }*/
         
     }
@@ -28,7 +30,7 @@ public class TrapOnDrag : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragH
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if(eventData.pointerCurrentRaycast.gameObject.name == "Item Image")
+        if(eventData.pointerCurrentRaycast.gameObject.name == "Item Image") //若物件為Item Image互換位置
         {
             transform.SetParent(eventData.pointerCurrentRaycast.gameObject.transform.parent.parent);
             transform.position = eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.position;
@@ -38,9 +40,14 @@ public class TrapOnDrag : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragH
             return;
         }
 
+        //if(eventData.pointerCurrentRaycast.gameObject.name == "slot1(Clone)")
+        
         transform.SetParent(eventData.pointerCurrentRaycast.gameObject.transform);
         transform.position = eventData.pointerCurrentRaycast.gameObject.transform.position;
         GetComponent<CanvasGroup>().blocksRaycasts = true;
+            
+        
+        
     }
 
     

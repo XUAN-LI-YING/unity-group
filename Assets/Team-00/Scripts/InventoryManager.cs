@@ -19,8 +19,9 @@ public class InventoryManager : MonoBehaviour
     public GameObject emptySlot6;
     public Text itemInformation;
     public List<GameObject> slots = new List<GameObject>();
+    //public GameObject Item;
     //public GameObject SubTrap;//copy
-    public Item Slot;
+    //public Item Slot;
     //public Item Slot2;
 
     void Awake()
@@ -40,19 +41,76 @@ public class InventoryManager : MonoBehaviour
     } */
 
     
-    /*void Update()
+    void Update()
     {
         if(Input.GetMouseButtonDown(0))
         {
-            Instantiate(emptySlot, this.transform.position,Quaternion.identity);
+            //var item = Instantiate(Item, this.transform.position, Quaternion.identity);
+            //item.transform.SetParent(instance.slotGrid.transform)
+            
+            
+
+            for (int i = 0; i <instance.trapBox.itemList.Count; i++)
+        {
+            
+            //CreateNewItem(instance.trapBox.itemList[i])       //重新創造列表中物件
+            
+            
+            if(i==0)
+            {
+                instance.slots.Add(Instantiate(instance.emptySlot));
+                instance.slots[i].GetComponent<Slot>().SetupSlot(instance.trapBox.itemList[i]);
+                instance.slots[i].transform.SetParent(instance.slotGrid.transform);
+                /*var emptyslot = Instantiate(emptySlot, this.transform.position,Quaternion.identity);
+                emptyslot.transform.SetParent(instance.slotGrid.transform);*/
+            }
+            
+            else if(i==1)
+            {
+                instance.slots.Add(Instantiate(instance.emptySlot2));
+                instance.slots[i].GetComponent<Slot2>().SetupSlot(instance.trapBox.itemList[i]);
+                instance.slots[i].transform.SetParent(instance.slotGrid.transform);
+            }
+            
+            else if(i==2)
+            {
+                instance.slots.Add(Instantiate(instance.emptySlot3));
+                instance.slots[i].GetComponent<Slot3>().SetupSlot(instance.trapBox.itemList[i]);
+                instance.slots[i].transform.SetParent(instance.slotGrid.transform);
+            }
+
+            else if(i==3)
+            {
+                instance.slots.Add(Instantiate(instance.emptySlot4));
+                instance.slots[i].GetComponent<Slot4>().SetupSlot(instance.trapBox.itemList[i]);
+                instance.slots[i].transform.SetParent(instance.slotGrid.transform);
+            }
+
+            else if(i==4)
+            {
+                instance.slots.Add(Instantiate(instance.emptySlot5));
+                instance.slots[i].GetComponent<Slot5>().SetupSlot(instance.trapBox.itemList[i]);
+                instance.slots[i].transform.SetParent(instance.slotGrid.transform);
+            }
+
+            else if(i==5)
+            {
+                instance.slots.Add(Instantiate(instance.emptySlot6));
+                instance.slots[i].GetComponent<Slot6>().SetupSlot(instance.trapBox.itemList[i]);
+                instance.slots[i].transform.SetParent(instance.slotGrid.transform);
+            }
+            
         }
-    }*/
+        }
+        
+    }
+
     private void OnEnable()
     {   
 
         //這裡有問題
         RefreshItem();
-        instance.itemInformation.text = "";
+        //instance.itemInformation.text = "";
     }
 
     public static void UpdateItemInfo(string trapDescription)
@@ -86,44 +144,49 @@ public class InventoryManager : MonoBehaviour
             
             //CreateNewItem(instance.trapBox.itemList[i])       //重新創造列表中物件
             
-            instance.slots.Add(Instantiate(instance.emptySlot));
-            instance.slots.Add(Instantiate(instance.emptySlot2));
-            instance.slots.Add(Instantiate(instance.emptySlot3));
-            instance.slots.Add(Instantiate(instance.emptySlot4));
-            instance.slots.Add(Instantiate(instance.emptySlot5));
-            instance.slots.Add(Instantiate(instance.emptySlot6));
-            instance.slots[i].transform.SetParent(instance.slotGrid.transform);
+            
             if(i==0)
             {
-                //instance.slots.Add(Instantiate(instance.emptySlot));
-                instance.slots[0].GetComponent<Slot>().SetupSlot(instance.trapBox.itemList[0]);
+                instance.slots.Add(Instantiate(instance.emptySlot));
+                instance.slots[i].GetComponent<Slot>().SetupSlot(instance.trapBox.itemList[i]);
+                instance.slots[i].transform.SetParent(instance.slotGrid.transform);
             }
             
-            if(i==1)
+            else if(i==1)
             {
-                //instance.slots.Add(Instantiate(instance.emptySlot2));
-                instance.slots[1].GetComponent<Slot2>().SetupSlot(instance.trapBox.itemList[1]);
+                instance.slots.Add(Instantiate(instance.emptySlot2));
+                instance.slots[i].GetComponent<Slot2>().SetupSlot(instance.trapBox.itemList[i]);
+                instance.slots[i].transform.SetParent(instance.slotGrid.transform);
             }
             
-            if(i==2)
+            else if(i==2)
             {
-                instance.slots[2].GetComponent<Slot3>().SetupSlot(instance.trapBox.itemList[2]);
+                instance.slots.Add(Instantiate(instance.emptySlot3));
+                instance.slots[i].GetComponent<Slot3>().SetupSlot(instance.trapBox.itemList[i]);
+                instance.slots[i].transform.SetParent(instance.slotGrid.transform);
             }
 
-            if(i==3)
+            else if(i==3)
             {
-                instance.slots[3].GetComponent<Slot4>().SetupSlot(instance.trapBox.itemList[3]);
+                instance.slots.Add(Instantiate(instance.emptySlot4));
+                instance.slots[i].GetComponent<Slot4>().SetupSlot(instance.trapBox.itemList[i]);
+                instance.slots[i].transform.SetParent(instance.slotGrid.transform);
             }
 
-            if(i==4)
+            else if(i==4)
             {
-                instance.slots[4].GetComponent<Slot5>().SetupSlot(instance.trapBox.itemList[4]);
+                instance.slots.Add(Instantiate(instance.emptySlot5));
+                instance.slots[i].GetComponent<Slot5>().SetupSlot(instance.trapBox.itemList[i]);
+                instance.slots[i].transform.SetParent(instance.slotGrid.transform);
             }
 
-            if(i==5)
+            else if(i==5)
             {
-                instance.slots[5].GetComponent<Slot6>().SetupSlot(instance.trapBox.itemList[5]);
+                instance.slots.Add(Instantiate(instance.emptySlot6));
+                instance.slots[i].GetComponent<Slot6>().SetupSlot(instance.trapBox.itemList[i]);
+                instance.slots[i].transform.SetParent(instance.slotGrid.transform);
             }
+            
         }
 
 

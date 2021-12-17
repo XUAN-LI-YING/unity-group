@@ -50,90 +50,53 @@ public class Player : MonoBehaviour
     {
         if(!Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.W))
         {
-            if(Input.GetKey(KeyCode.A))
+            if(gameObject.transform.position.x <= 85.5 && gameObject.transform.position.x >= -90.5)
+            if(Input.GetKey(KeyCode.A) && gameObject.transform.position.x > -89)
             {
-                gameObject.transform.position += new Vector3(-0.1f,0,0);
+                gameObject.transform.position += new Vector3(-0.07f,0,0);
                 animator.Play("Player@Walk");
                 Sprite.flipX = false;
             }
-            if(Input.GetKey(KeyCode.D))
+            if(Input.GetKey(KeyCode.D) && gameObject.transform.position.x < 85)
             {
-                gameObject.transform.position += new Vector3(0.1f,0,0);
+                gameObject.transform.position += new Vector3(0.07f,0,0);
                 animator.Play("Player@Walk");
                 Sprite.flipX = true;
             }
+            if(!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+            {
+                animator.Play("Player@Idle");
+            }
         }
+        
 
         if (IsLadder == true)
         {
-            if(gameObject.transform.position.y <= 14.2 && gameObject.transform.position.y >= -20.5)
+            if(gameObject.transform.position.y <= 16.2 && gameObject.transform.position.y >= -20.5)
             {
-            if(Input.GetKey(KeyCode.W) && gameObject.transform.position.y < 14)
+            if(Input.GetKey(KeyCode.W) && gameObject.transform.position.y < 16)
             {
-                gameObject.transform.position += new Vector3(0,0.02f,0);
+                gameObject.transform.position += new Vector3(0,0.07f,0);
+                animator.Play("Player@Climb");
                 //if(transform.position.y >= 14.1)
                 //gameObject.transform.position += new Vector3(0,0,0);
-                Debug.Log("1");
+                //Debug.Log("1");
             }
             if(Input.GetKey(KeyCode.S) && gameObject.transform.position.y > -20)
             {
-                gameObject.transform.position += new Vector3(0,-0.02f,0);
+                gameObject.transform.position += new Vector3(0,-0.07f,0);
+                animator.Play("Player@Climb");
                 //if(transform.position.y <= -18.8)
                 //gameObject.transform.position += new Vector3(0,0,0);
-                Debug.Log("2");
+                //Debug.Log("2");
             }
-            }
-            /*if(gameObject.transform.position.y >= 14.2)
-            {
-                if(Input.GetKey(KeyCode.W))
-                {
-                    gameObject.transform.position += new Vector3(0,0,0);
-                    //if(transform.position.y >= 14.1)
-                    //gameObject.transform.position += new Vector3(0,0,0);
-                }
-                if(Input.GetKey(KeyCode.S))
-                {
-                    gameObject.transform.position += new Vector3(0,-0.02f,0);
-                    //if(transform.position.y <= -18.8)
-                    //gameObject.transform.position += new Vector3(0,0,0);
-                }
-            }
-            if(gameObject.transform.position.y <= -20.5)
-            {
-                if(Input.GetKey(KeyCode.W))
-                {
-                    gameObject.transform.position += new Vector3(0,0.02f,0);
-                    //if(transform.position.y >= 14.1)
-                    //gameObject.transform.position += new Vector3(0,0,0);
-                }
-                if(Input.GetKey(KeyCode.S))
-                {
-                    gameObject.transform.position += new Vector3(0,0,0);
-                    //if(transform.position.y <= -18.8)
-                    //gameObject.transform.position += new Vector3(0,0,0);
-                }
-            }
-            else
-            {
-                if(Input.GetKey(KeyCode.W))
-                {
-                    gameObject.transform.position += new Vector3(0,0.02f,0);
-                    //if(transform.position.y >= 14.1)
-                    //gameObject.transform.position += new Vector3(0,0,0);
-                }
-                if(Input.GetKey(KeyCode.S))
-                {
-                   gameObject.transform.position += new Vector3(0,-0.02f,0);
-                    //if(transform.position.y <= -18.8)
-                    //gameObject.transform.position += new Vector3(0,0,0);
-                }
-            }*/
+            }            
         }
 
-        if(!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+        /*if(!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
         {
             animator.Play("Player@Idle");
-        }
+        }*/
     }
 
     private void Stop()
