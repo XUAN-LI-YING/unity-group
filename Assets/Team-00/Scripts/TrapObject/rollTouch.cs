@@ -5,6 +5,7 @@ using UnityEngine;
 public class rollTouch : MonoBehaviour
 {
     public GameObject aniroll;
+    [Header("碰到滾筒次數")] 
     public int rollTime;//碰到滾筒次數
 
     void Start() 
