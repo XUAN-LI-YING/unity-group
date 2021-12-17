@@ -24,14 +24,14 @@ public class friendlyMove : MonoBehaviour
         //怪物速度
 
         //當物體超過畫面時(x=200)怪物移動到第一層的位置
-        if(transform.position.x<-101 && transform.position.y <= -15 && transform.position.y > -20)    
+        if(transform.position.x<-96 && transform.position.y <= -10 && transform.position.y > -30)    
         {
         
-        gameObject.transform.position = new Vector3(90, 13, 0);
+        gameObject.transform.position = new Vector3(98, 24, 0);
 
         }
         //物體在第一層超過畫面時則讓她消失
-        if(transform.position.x<-100 && transform.position.y <= 20 && transform.position.y > 12)
+        if(transform.position.x<-98 && transform.position.y <= 35 && transform.position.y > 10)
         {
             // Destroy(gameObject);
         }

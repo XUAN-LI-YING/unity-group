@@ -16,10 +16,11 @@ GameObject:
   - component: {fileID: 4290983013040496334}
   - component: {fileID: 8052951746019859548}
   - component: {fileID: 585655911165210838}
-  - component: {fileID: 2349482986343227616}
+  - component: {fileID: 4334363518210955185}
+  - component: {fileID: 4571349670718400430}
   m_Layer: 5
   m_Name: Item
-  m_TagString: SpikedTrap
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,7 +164,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -25.437725, y: 27.27539}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -174,7 +175,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 150.05011, y: 157.22739}
   m_EdgeRadius: 0
 --- !u!114 &585655911165210838
 MonoBehaviour:
@@ -196,7 +197,7 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!114 &2349482986343227616
+--- !u!114 &4334363518210955185
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -205,12 +206,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 2103859432341143005}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16ef7872d85519a48aa99e2a05b75000, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a1d4971691d51d449ff361052e9ca7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touch: 0
-  monster: {fileID: 0}
-  explode: {fileID: 0}
+  Ani: {fileID: 1368976117357701764, guid: e05fb2308af00bf40846066581adf071, type: 3}
+--- !u!50 &4571349670718400430
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103859432341143005}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &4047539822663326425
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,6 +325,7 @@ GameObject:
   - component: {fileID: 8173083234760351758}
   - component: {fileID: 4128324537413704446}
   - component: {fileID: 8164114509292885829}
+  - component: {fileID: 702863364099844852}
   m_Layer: 5
   m_Name: slot4
   m_TagString: Untagged
@@ -319,7 +340,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4115222302049043928}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
@@ -457,7 +478,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: b49bf02c6598a78469f2397f9814a8c1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -482,6 +503,27 @@ MonoBehaviour:
   slotItem: {fileID: 0}
   slotImage: {fileID: 1028296948428995092}
   itemInSlot: {fileID: 2103859432341143005}
+--- !u!50 &702863364099844852
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4115222302049043928}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &8914228888801851089
 GameObject:
   m_ObjectHideFlags: 0
