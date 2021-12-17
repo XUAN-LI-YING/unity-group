@@ -82,14 +82,14 @@ TagManager:
   - name: boomeffect
     uniqueID: 3822751351
     locked: 0
-  - name: guard
-    uniqueID: 1132092615
-    locked: 0
   - name: FriendlyPrefab
     uniqueID: 134500273
     locked: 0
   - name: EnemyPrefab
     uniqueID: 3671733509
+    locked: 0
+  - name: guard
+    uniqueID: 1132092615
     locked: 0
   - name: Player
     uniqueID: 3226078249
