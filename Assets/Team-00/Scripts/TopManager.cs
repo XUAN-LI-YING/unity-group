@@ -14,6 +14,7 @@ public class TopManager : MonoBehaviour
     public GameObject emptySlot;
     public Text itemInformation;
     public List<GameObject> slots = new List<GameObject>();
+    //bool 
     
     void Awake()
     {
@@ -70,7 +71,5 @@ public class TopManager : MonoBehaviour
             instance.slots[i].transform.SetParent(instance.slotGrid.transform);
             instance.slots[i].GetComponent<Slot>().SetupSlot(instance.trapBox.itemList[i]);
         }
-
-
     }
 }

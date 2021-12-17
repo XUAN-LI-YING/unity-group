@@ -332,7 +332,7 @@ public class fearBar : MonoBehaviour
 
 
     // 顯示倒數幾秒增加恐懼數值 
-    // Debug.Log($"{timeToAdd}");
+     Debug.Log($"{timeToAdd}");
 
 
 
@@ -375,7 +375,7 @@ public class fearBar : MonoBehaviour
     else if (points >= value_Max)
     {
       points = 100;
-      //   Debug.Log($"WIN！");
+         Debug.Log($"WIN！");
       ui_fillBar.fillAmount = 1;
       // StartCoroutine(RunSecvalue());
 

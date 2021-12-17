@@ -116,7 +116,7 @@ public class FriendlyHPControl : MonoBehaviour
     void timer1(){
       
       hp = hp - cost1;
-    //    Debug.Log($"友軍每{costtime}秒扣{cost1}滴血");     
+       Debug.Log($"友軍每{costtime}秒扣{cost1}滴血");     
        Debug.Log($"友軍剩餘{hp}滴血"); 
     }
 
