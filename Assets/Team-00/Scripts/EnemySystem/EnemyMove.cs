@@ -117,7 +117,7 @@ public class EnemyMove : MonoBehaviour
     	  
             if (EnemyPos.x > 100 && EnemyPos.y >= 0 && EnemyPos.y <= 28){    //移動至下層樓
 
-            gameObject.transform.position = new Vector3(-99f, -18f, 0);
+            gameObject.transform.position = new Vector3(-99f, -15.3f, 0);
 
             }
             if (EnemyPos.y >= -20 && EnemyPos.y <= -5 && EnemyPos.x > 97)
@@ -325,6 +325,11 @@ public class EnemyMove : MonoBehaviour
       //現在的位置等於現在-5後的move
       gameObject.transform.position = move;
       
+    }
+
+    if (col.tag == "devil")
+    {
+      SceneManager.LoadScene("gameOver");  
     }
   
   }

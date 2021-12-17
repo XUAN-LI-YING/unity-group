@@ -23,6 +23,7 @@ TagManager:
   - Trap-06
   - tbox
   - bbox
+  - devil
   layers:
   - Default
   - TransparentFX
@@ -75,9 +76,6 @@ TagManager:
   - name: trap
     uniqueID: 3036948621
     locked: 0
-  - name: UI
-    uniqueID: 3278200885
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
@@ -95,4 +93,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3226078249
+    locked: 0
+  - name: UI
+    uniqueID: 3278200885
     locked: 0

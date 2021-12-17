@@ -29,7 +29,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701512080708194927}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
@@ -283,10 +283,10 @@ GameObject:
   - component: {fileID: 8515466772479835220}
   - component: {fileID: 1859938084750676837}
   - component: {fileID: 8350983771855968906}
-  - component: {fileID: 6426891705333072972}
+  - component: {fileID: 598456996691360234}
   m_Layer: 5
   m_Name: Item
-  m_TagString: SpikedTrap
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -430,7 +430,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 2.1589127, y: 27.42265}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -441,7 +441,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 99.612656, y: 165.52753}
   m_EdgeRadius: 0
 --- !u!114 &8350983771855968906
 MonoBehaviour:
@@ -463,7 +463,7 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!114 &6426891705333072972
+--- !u!114 &598456996691360234
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -472,12 +472,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3664426906792447244}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16ef7872d85519a48aa99e2a05b75000, type: 3}
+  m_Script: {fileID: 11500000, guid: 05961a7646d4f924dabe95c653ffc4e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touch: 0
-  monster: {fileID: 0}
-  explode: {fileID: 0}
+  aniBig: {fileID: 2681744641076440816, guid: ea5ae6fb408112843ae6507e7e88371b, type: 3}
 --- !u!1 &5031431283966583704
 GameObject:
   m_ObjectHideFlags: 0
