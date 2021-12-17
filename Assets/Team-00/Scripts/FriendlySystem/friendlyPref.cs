@@ -34,7 +34,7 @@ public class friendlyPref : MonoBehaviour
       this.delta = 0;
       GameObject go = Instantiate(friendlyForce) as GameObject;
       //定義產生位置
-      go.transform.position = new Vector3(96, -15, 0);
+      go.transform.position = new Vector3(66, -15, 0);
     }
 
   }
