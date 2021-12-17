@@ -17,16 +17,16 @@ public class bigTrap : MonoBehaviour
         {
            if (col.gameObject.tag == "Cat")
            {  
-               Debug.Log("撞到了啦");
-                 Debug.Log(Screen.currentResolution);
+              //  Debug.Log("撞到了啦");
+                //  Debug.Log(Screen.currentResolution);
                 //1920 x 1080 @ 60Hz
 
                 //Output the current screen window width in the console
-                Debug.Log("Screen Width : " + Screen.width);
+                // Debug.Log("Screen Width : " + Screen.width);
                 //Screen Width : 1920
 
                 //Output the current screen window height in the console
-                Debug.Log("Screen Height : " + Screen.height);
+                // Debug.Log("Screen Height : " + Screen.height);
                 //Screen Height : 1080
                 Vector3 move = gameObject.transform.position;
             
