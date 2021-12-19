@@ -195,7 +195,7 @@ MonoBehaviour:
   timer1bool: 0
   timer2bool: 0
   changmode: 0
-  EnemyAllHP: {fileID: 0}
+  EnemyAllHP: {fileID: 2559293700636036488}
   back: 0
   times: 0
 --- !u!114 &61797436552318614
@@ -442,6 +442,12 @@ PrefabInstance:
 --- !u!4 &8424216153400921872 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1564592523288630561, guid: 4f80ff5563cf0435a99e11848c338d61,
+    type: 3}
+  m_PrefabInstance: {fileID: 7016150174171404849}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2559293700636036488 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4817214869109888953, guid: 4f80ff5563cf0435a99e11848c338d61,
     type: 3}
   m_PrefabInstance: {fileID: 7016150174171404849}
   m_PrefabAsset: {fileID: 0}

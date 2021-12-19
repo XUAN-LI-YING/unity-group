@@ -16,7 +16,7 @@ public class friendlyButton : MonoBehaviour
     public GameObject turnonoff;
     public Button button;
 
-    public int turnon = 1;
+    public bool turnon ;
 
 
     
@@ -28,6 +28,13 @@ public class friendlyButton : MonoBehaviour
       
     }
     void Update() {
+
+        if (turnon)
+        {
+             
+        }
+
+    
         
     }
     public void Start() {
@@ -45,10 +52,11 @@ public class friendlyButton : MonoBehaviour
     }
     public void TurnEffect()
     {
+         
          Debug.Log(turnonoff.activeSelf); 
     if (!turnonoff.activeSelf)
     {
-        turnon = 2;
+        turnon = false;
         Debug.Log($"關閉友軍扣魔力"); 
         // fearBar.instance.Decrease01(); 
             CancelInvoke("AutocostFear");
@@ -59,8 +67,9 @@ public class friendlyButton : MonoBehaviour
     }
     else if (turnonoff.activeSelf)
     {
-        turnon = 1;
+         
         InvokeRepeating("AutocostFear", 0, 1);
+
     }
     else{};
     
@@ -72,9 +81,9 @@ public class friendlyButton : MonoBehaviour
     }
     public void AutocostFear()
     {
+    
     fearBar.instance.Decrease01(); 
     // Debug.Log($"給我運作啦=.="); 
-
     }
 
 

@@ -178,10 +178,12 @@ public class fearBar : MonoBehaviour
   {
     Checking = false;
     points = points - eachpresscost;
+      FearEvent();
     float fillAmount = points / value_Max;
     ui_value.text = $"{points}";
     Debug.Log($"出動友軍耗費{eachpresscost}魔力值");
     ui_fillBar.fillAmount = fillAmount;
+
 
 
     StartCoroutine(DelayCostEffect());
@@ -362,7 +364,7 @@ public class fearBar : MonoBehaviour
     // 重新啟動計時器
 
   }
-  void FearEvent()
+  public void FearEvent()
   {
     if (points <= value_Min)
     {
@@ -381,6 +383,7 @@ public class fearBar : MonoBehaviour
 
 
     }
+    else{};
   }
   public void MgmineBuild()
   {

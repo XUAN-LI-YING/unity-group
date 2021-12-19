@@ -108,6 +108,35 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)//接觸梯子物件 
     {
+        if (other.tag == "Mg_LandimineTrap")
+        {
+            
+            fearBar.instance.MgmineBuild();
+             Debug.Log("觸發mine");
+            
+        }
+
+        if (other.tag == "DarkTrap")
+        {
+             fearBar.instance.DarktrapBuild();
+             Debug.Log("觸發dark");
+            
+            
+        } 
+        if (other.tag == "Trap-05")
+        {
+             fearBar.instance.BigtrapBuild();
+             Debug.Log("觸發大規模");
+            
+            
+        }         
+        // if (other.tag == "SpikedTrap")
+        // {
+        //      fearBar.instance.BigtrapBuild();
+        //      Debug.Log("觸發尖刺");
+            
+            
+        // } 
         if (other != Main.Ladder) return;       //若非Ladder 返回
         IsLadder = true;        //IsLadder為真
         //transform.Translate(CurrentPos.y);
@@ -127,35 +156,7 @@ public class Player : MonoBehaviour
 
         // fearbar 增加 調用~~~~待處理
        
-        if (other.tag == "Mg_LandimineTrap")
-        {
-            
-            fearBar.instance.MgmineBuild();
-             Debug.Log("觸發mine");
-            
-        }
 
-        if (other.tag == "DarkTrap")
-        {
-             fearBar.instance.DarktrapBuild();
-             Debug.Log("觸發dark");
-            
-            
-        } 
-        if (other.tag == "Trap-05")
-        {
-             fearBar.instance.BigtrapBuild();
-             Debug.Log("觸發dark");
-            
-            
-        }         
-        if (other.tag == "SpikedTrap")
-        {
-             fearBar.instance.BigtrapBuild();
-             Debug.Log("觸發尖刺");
-            
-            
-        } 
 
         
         
