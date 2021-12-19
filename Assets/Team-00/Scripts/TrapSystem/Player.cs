@@ -148,6 +148,13 @@ public class Player : MonoBehaviour
              Debug.Log("觸發dark");
             
             
+        }         
+        if (other.tag == "SpikedTrap")
+        {
+             fearBar.instance.BigtrapBuild();
+             Debug.Log("觸發尖刺");
+            
+            
         } 
 
         
