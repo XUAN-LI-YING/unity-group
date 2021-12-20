@@ -244,7 +244,7 @@ public class EnemyMove : MonoBehaviour
           {
           
           case 1: 
-            FriendlyHPControl.instance.StopBloodon();  
+            //FriendlyHPControl.instance.StopBloodon();  
             StopBlood();                            // 停止敵方扣友軍血量
             fearBar.instance.Increase();            // 增加恐懼值
             speed = -10f;                           // 反方向速度

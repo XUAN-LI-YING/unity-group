@@ -41,6 +41,7 @@ public class friendlyMove : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D col)
     {
+        
        
         //敵方碰撞到我方友軍被擊退一點
         // if (col.tag == "Cat")

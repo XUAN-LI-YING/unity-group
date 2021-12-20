@@ -6,14 +6,23 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/StartGame/Scenes/Splash.unity
+    guid: 02f2fc1df30c54041a317b70a00e76d2
+  - enabled: 1
+    path: Assets/StartGame/Scenes/Loading.unity
+    guid: 75899e8ffffabce4fa2550f5b08436c8
+  - enabled: 1
     path: Assets/StartGame/Scenes/StartScene.unity
     guid: c5d207e6474914b4988639513fbe8128
   - enabled: 1
-    path: Assets/MainMenu/Scene/MainMenu.unity
-    guid: 24a9687f5fddd4f1393f7df9722d78fd
+    path: Assets/StartGame/Scenes/TeachingSlide.unity
+    guid: 7300ed8c7eeef23478059469364fa1a7
   - enabled: 1
     path: Assets/Team-00/Scenes/DevilDefend.unity
     guid: 7dd44d0a8cbc14255a5c39bdf51ef780
+  - enabled: 0
+    path: Assets/MainMenu/Scene/MainMenu.unity
+    guid: 24a9687f5fddd4f1393f7df9722d78fd
   - enabled: 1
     path: Assets/Team-00/Scenes/gameOver.unity
     guid: 2c1f98b9a8b3c1649a0aa424fac9ab10
@@ -21,12 +30,6 @@ EditorBuildSettings:
     path: Assets/Team-00/Scenes/gameScene.unity
     guid: 929fb6711724e46c3a2d79044188ba7f
   - enabled: 1
-    path: Assets/StartGame/Scenes/Splash.unity
-    guid: 02f2fc1df30c54041a317b70a00e76d2
-  - enabled: 1
-    path: Assets/StartGame/Scenes/Loading.unity
-    guid: 75899e8ffffabce4fa2550f5b08436c8
-  - enabled: 1
-    path: Assets/StartGame/Scenes/TeachingSlide.unity
-    guid: 7300ed8c7eeef23478059469364fa1a7
+    path: Assets/Team-00/Scenes/gameWin.unity
+    guid: 16aaeba127e29a64681fc685beac4831
   m_configObjects: {}

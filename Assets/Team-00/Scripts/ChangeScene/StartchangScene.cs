@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 public class StartchangScene : MonoBehaviour
 {
     public void PlayGame()
@@ -12,5 +13,12 @@ public class StartchangScene : MonoBehaviour
     {
        SceneManager.LoadScene("TeachingSlide");
     }
+    
+
+    public void QuitGame()
+   {
+       Application.Quit();
+      //  EditorApplication.isPlaying = false;
+   }
 
 }
