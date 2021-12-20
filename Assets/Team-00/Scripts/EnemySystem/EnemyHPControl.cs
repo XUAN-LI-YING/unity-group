@@ -137,7 +137,7 @@ public class EnemyHPControl : MonoBehaviour
         }
         if(coll.gameObject.tag=="guard")
         {  
-           
+            hp -= 1;
 
             
         }

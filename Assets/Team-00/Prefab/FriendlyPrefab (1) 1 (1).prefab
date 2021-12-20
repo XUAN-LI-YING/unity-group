@@ -278,7 +278,7 @@ Transform:
   m_GameObject: {fileID: 7325520597019659208}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -17.86, y: -9.53, z: 0}
-  m_LocalScale: {x: 11.686372, y: 10.907482, z: 0}
+  m_LocalScale: {x: 12.178455, y: 11.36677, z: 0}
   m_Children:
   - {fileID: 6022301779793132088}
   - {fileID: 326912168820016513}
@@ -382,7 +382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cecd97cea91a0164cb695dc1f61d4414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FriendlyAllHP: {fileID: 2396571731438701814}
+  FriendlyAllHP: {fileID: 360042184010512544}
   hp: 0
   max_hp: 0
   costtime: 0
@@ -565,6 +565,12 @@ PrefabInstance:
 --- !u!4 &6022301779793132088 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1564592523288630561, guid: 4f80ff5563cf0435a99e11848c338d61,
+    type: 3}
+  m_PrefabInstance: {fileID: 5054462734999777049}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &360042184010512544 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4817214869109888953, guid: 4f80ff5563cf0435a99e11848c338d61,
     type: 3}
   m_PrefabInstance: {fileID: 5054462734999777049}
   m_PrefabAsset: {fileID: 0}
