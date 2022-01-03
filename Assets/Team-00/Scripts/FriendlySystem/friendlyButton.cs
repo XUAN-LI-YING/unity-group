@@ -36,7 +36,7 @@ public class friendlyButton : MonoBehaviour
 
         turnonoff.SetActive(true);
 
-        InvokeRepeating("AutocostFear", 0, 1);
+        InvokeRepeating("AutocostFear", 4, 2);
 
         button.onClick.AddListener(TurnEffect);
 
@@ -60,7 +60,7 @@ public class friendlyButton : MonoBehaviour
     else if (turnonoff.activeSelf)
     {
         turnon = 1;
-        InvokeRepeating("AutocostFear", 0, 1);
+        InvokeRepeating("AutocostFear", 4, 2);
     }
     else{};
     
