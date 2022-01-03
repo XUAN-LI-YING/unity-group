@@ -19,7 +19,7 @@ public class friendlyPref : MonoBehaviour
   [Header("TIME")]
   public float delta = 0;
   // 友軍產生計時器
-  public int createtime = 50;//本來是2
+  public int createtime = 10;//本來是2
 
 
   // 友軍產生位置

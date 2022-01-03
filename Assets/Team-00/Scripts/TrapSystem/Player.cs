@@ -53,13 +53,13 @@ public class Player : MonoBehaviour
             if(gameObject.transform.position.x <= 85.5 && gameObject.transform.position.x >= -90.5)
             if(Input.GetKey(KeyCode.A) && gameObject.transform.position.x > -89)
             {
-                gameObject.transform.position += new Vector3(-0.07f,0,0);
+                gameObject.transform.position += new Vector3(-0.9f,0,0);
                 animator.Play("Player@Walk");
                 Sprite.flipX = false;
             }
             if(Input.GetKey(KeyCode.D) && gameObject.transform.position.x < 85)
             {
-                gameObject.transform.position += new Vector3(0.07f,0,0);
+                gameObject.transform.position += new Vector3(0.9f,0,0);
                 animator.Play("Player@Walk");
                 Sprite.flipX = true;
             }
