@@ -121,9 +121,9 @@ public class fearBar : MonoBehaviour
 
     if (points <= value_Min || points >= value_Max)
     {
-      CancelInvoke("AutoAddFear");
-      waitingForInput = false;
-      Checking = false;
+      // CancelInvoke("AutoAddFear");
+      // waitingForInput = false;
+      // Checking = false;
       FearEvent();
       
       

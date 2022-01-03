@@ -209,7 +209,7 @@ public class EnemyMove : MonoBehaviour
     if (canceltime < 1)                              // 停止扣血計時器
     {
       Turnon = false;
-//      FriendlyHPControl.instance.StopBloodoff();  // 調用 友軍血量控制器 恢復正常扣友軍血量
+      // FriendlyHPControl.instance.StopBloodoff();  // 調用 友軍血量控制器 恢復正常扣友軍血量
       CancelInvoke("CancelTime");
       // EnemyHPControl.instance.SwitchCost();
 
