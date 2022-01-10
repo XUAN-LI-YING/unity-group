@@ -2263,6 +2263,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnonoff: {fileID: 2074146177}
+  StopbuttonImage: {fileID: 21300000, guid: 40b90ca70f0bd4eafa44ffdedd8883cd, type: 3}
+  OrginalbuttonImage: {fileID: 21300000, guid: 0b7d14a36e0624ef4a653678630e4290, type: 3}
   button: {fileID: 856459747}
   turnon: 1
 --- !u!4 &496587190
@@ -4247,19 +4249,18 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 2
   m_Colors:
-    m_NormalColor: {r: 0, g: 0, b: 0, a: 0.36862746}
-    m_HighlightedColor: {r: 0.06892133, g: 0.0728095, b: 0.103773594, a: 0.8392157}
-    m_PressedColor: {r: 0.4811321, g: 0.07443927, b: 0.108330406, a: 1}
-    m_SelectedColor: {r: 0.03773582, g: 0.03773582, b: 0.03773582, a: 0.7019608}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.36862746}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0.8392157}
+    m_PressedColor: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
+    m_SelectedColor: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 0.7019608}
     m_DisabledColor: {r: 1, g: 0.4210502, b: 0.41037738, a: 1}
-    m_ColorMultiplier: 1
+    m_ColorMultiplier: 2
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 40b90ca70f0bd4eafa44ffdedd8883cd,
-      type: 3}
+    m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 21300000, guid: 40b90ca70f0bd4eafa44ffdedd8883cd, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -4295,6 +4296,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: friendlyButton, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &856459748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4309,7 +4322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4317,7 +4330,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 0b7d14a36e0624ef4a653678630e4290, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
