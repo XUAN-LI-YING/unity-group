@@ -108,8 +108,13 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)//接觸梯子物件 
     {
-        if (other != Main.Ladder) return;       //若非Ladder 返回
-        IsLadder = true;        //IsLadder為真
+        // if (other != Main.Ladder) return;       //若非Ladder 返回
+        // IsLadder = true;        //IsLadder為真
+
+        // if (other = Main.Ladder)
+        // {
+        //     IsLadder = true;
+        // }
         //transform.Translate(CurrentPos.y);
         /*if(other.gameObject.CompareTag("Cat"))
         {
@@ -156,10 +161,18 @@ public class Player : MonoBehaviour
             
             
         } 
+        if (other.tag == "Cat")
+        {
+           
+             Debug.Log("cattttttt");
+            
+            
+        } 
 
         
         
     }
+    
 
     void OnTriggerExit2D(Collider2D other)//離開物件
     {
