@@ -18,7 +18,12 @@ public class StartchangScene : MonoBehaviour
     public void QuitGame()
    {
        Application.Quit();
-      //  EditorApplication.isPlaying = false;
+      EditorApplication.isPlaying = false;
    }
+
+    public void LoadScene(string sceneName)
+    {
+       SceneManager.LoadScene(sceneName);
+    }
 
 }
