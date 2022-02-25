@@ -364,11 +364,11 @@ public class fearBar : MonoBehaviour
   }
   void FearEvent()
   {
-    if (points <= value_Min)
+    if (points < value_Min)
     {
       points = 0;
       button.interactable = false;
-      Debug.Log($"LOSE！");
+      // Debug.Log($"LOSE！");
       ui_fillBar.fillAmount = 0;
 
     }
@@ -397,6 +397,7 @@ public class fearBar : MonoBehaviour
     StartCoroutine(DelayCostEffect());
     StartCoroutine(RepeatDecrease());
   }
+
   public void DarktrapBuild()
   {
     Checking = false;

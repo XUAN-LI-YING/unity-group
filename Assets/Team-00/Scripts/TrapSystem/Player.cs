@@ -150,7 +150,7 @@ public class Player : MonoBehaviour
         if (other.tag == "Trap-05")
         {
              fearBar.instance.BigtrapBuild();
-             Debug.Log("觸發dark");
+             Debug.Log("觸發大規模");
             
             
         }         
