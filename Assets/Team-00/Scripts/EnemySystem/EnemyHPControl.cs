@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class EnemyHPControl : MonoBehaviour
@@ -41,8 +42,7 @@ public class EnemyHPControl : MonoBehaviour
   public bool back;   //擊退狀態
   public int times=0; //擊退次數
 
-
-
+ 
   void Start()
   { 
     instance = this;
@@ -59,12 +59,14 @@ public class EnemyHPControl : MonoBehaviour
     timer1bool = true;
     circle = true;
     changmode = false;
+    
   }
 
   void Update()
   {                                                             //如果目前血量HP小於等於0，那就會讓這個物件，也就是敵人消失
     if (hp <= 0)
     {
+      EnemyPrefab.Instance.addEnemyDie();
       Destroy(this.gameObject);
       
     }
