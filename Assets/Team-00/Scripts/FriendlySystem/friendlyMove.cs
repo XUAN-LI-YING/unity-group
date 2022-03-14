@@ -5,36 +5,90 @@ using UnityEngine;
 public class friendlyMove : MonoBehaviour
 {
     [Header("友軍速度")]
-
+    public bool walking;
     public float speed = 0;
     //int times= 0;           //撞到次數
+    // public bool back;      //擊退判定
+    public Vector3 EnemyPos;
 
-    public bool back;      //擊退判定
+    [Header("撞到敵軍")]
+    public Animator playerAni;
+    //呼叫打架動畫
+    public bool IsAttacking;
+    //如果撞到敵軍且正在遭受攻擊
     
     void Start()
     {
-      back=false;
+      //back=false;
       //怪物初始數度
       this.speed = -5f;  
+      IsAttacking = false ;
+      walking = true;
     }
     void Update()
     {
+        if (walking)
+        {
+        EnemyPos = transform.position; //隨時偵測敵人位置並放入參數中
+
+        WalkMode();                    //敵人移動模式啟動
+        }
+
+        if(IsAttacking==true)     //如果受我方友軍攻擊則切換攻擊武裝動畫
+        {
+            if(playerAni.GetInteger("Status")==0)
+              
+                playerAni.SetInteger("Status",1);
+                // Debug.Log("IsAttacking");
+         
+        }
+        else
+        {
+            if(playerAni.GetInteger("Status")==1)
+            {   
+                playerAni.SetInteger("Status",0);
+            }
+        }
+        
+    }
+    void WalkMode(){
         transform.Translate(speed * Time.deltaTime , 0, 0);
 
         //怪物速度
 
         //當物體超過畫面時(x=200)怪物移動到第一層的位置
-        if(transform.position.x<-96 && transform.position.y <= -10 && transform.position.y > -30)    
+        if(EnemyPos.x<-96 && EnemyPos.y <= -10 && EnemyPos.y > -30)    
         {
         
         gameObject.transform.position = new Vector3(98, 24, 0);
 
         }
         //物體在第一層超過畫面時則讓她消失
-        if(transform.position.x<-98 && transform.position.y <= 35 && transform.position.y > 10)
+        if(EnemyPos.x<-98 && EnemyPos.y <= 35 && EnemyPos.y > 10)
         {
-            // Destroy(gameObject);
+            Destroy(gameObject);
         }
+
+    }
+
+     void OnCollisionStay2D(Collision2D coll){
+
+        if(coll.gameObject.tag=="Cat")
+        { 
+          walking = false;
+          IsAttacking = true ;
+        }
+        
+  }
+  void OnCollisionExit2D(Collision2D coll)
+    
+    {
+        if(coll.gameObject.tag=="Cat")
+        {
+          walking = true;
+           IsAttacking = false ;   
+        }
+        
     }
 
 

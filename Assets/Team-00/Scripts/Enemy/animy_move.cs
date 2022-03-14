@@ -41,6 +41,7 @@ public class animy_move : MonoBehaviour
     public float rollerdelta;
     public bool rollerCollide;
     // public Animator playerAni; //巨型滾筒呼叫動畫
+   
   void Start()
   {
     check = true;

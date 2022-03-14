@@ -7,6 +7,11 @@ using UnityEngine.SceneManagement;
 public class EnemyMove : MonoBehaviour
 {
    public static EnemyMove instance;
+    [Header("撞到友軍")]
+    public Animator playerAni;
+    //呼叫打架動畫
+    public bool IsAttacking;
+    //如果撞到友軍且正在遭受攻擊
     
    [Header("有限狀態機FSM")] 
     public float speed = 0;    //怪物初始速度
@@ -66,6 +71,7 @@ public class EnemyMove : MonoBehaviour
     turnbacktime = 1;
     canceltime = 5;
     spikecollide = 0;
+     IsAttacking = false ;
   }
   void Update()
   {
@@ -86,6 +92,22 @@ public class EnemyMove : MonoBehaviour
     {
       rollerTrap();
     }
+
+    if(IsAttacking==true)     //如果受我方友軍攻擊則切換攻擊武裝動畫
+        {
+            if(playerAni.GetInteger("Status")==0)
+              
+                playerAni.SetInteger("Status",1);
+                // Debug.Log("IsAttacking");
+         
+        }
+        else
+        {
+            if(playerAni.GetInteger("Status")==1)
+            {   
+                playerAni.SetInteger("Status",0);
+            }
+        }
   }
   public void CheckCondition(){                //判別狀態
 
@@ -328,8 +350,36 @@ public class EnemyMove : MonoBehaviour
 
     if (col.tag == "devil")
     {
-      SceneManager.LoadScene("gameOver");  
+       Destroy(this.gameObject);  
     }
   
   }
+
+  void OnCollisionStay2D(Collision2D coll){
+
+        if(coll.gameObject.tag=="Friendly")
+        { 
+          walking = false;
+          IsAttacking = true ;
+        }
+        if(coll.gameObject.tag=="guard")
+        { 
+          walking = false;
+          IsAttacking = true ;
+        }
+  }
+  void OnCollisionExit2D(Collision2D coll)
+    
+    {
+        if(coll.gameObject.tag=="Friendly")
+        {
+          walking = true;
+           IsAttacking = false ;   
+        }
+        if(coll.gameObject.tag=="guard")
+        {
+          walking = true;
+           IsAttacking = false ;   
+        }
+    }
 }

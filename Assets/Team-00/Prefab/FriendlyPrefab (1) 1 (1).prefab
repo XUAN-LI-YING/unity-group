@@ -368,8 +368,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eafa00fff34f5224eabc6a27f1b8881d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walking: 0
   speed: 0
-  back: 0
+  EnemyPos: {x: 0, y: 0, z: 0}
+  playerAni: {fileID: 7325520597019659209}
+  IsAttacking: 0
 --- !u!114 &1485137207485364721
 MonoBehaviour:
   m_ObjectHideFlags: 0
