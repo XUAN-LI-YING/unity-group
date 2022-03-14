@@ -1109,7 +1109,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2290,7 +2290,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 568362851}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39, y: -19, z: 0}
+  m_LocalPosition: {x: 25, y: -19, z: 0}
   m_LocalScale: {x: 13, y: 13, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2491,7 +2491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToAdd: 3
-  timePress: 10
+  timePress: 20
   delayBetweenAdd: 0
   delaySec: 0.2
   value_Min: 0
@@ -2505,7 +2505,7 @@ MonoBehaviour:
   ui_countvalue: {fileID: 715203913}
   waitingForInput: 0
   points: 70
-  autoAddValue: 5
+  autoAddValue: 2
   addValue: 10
   costvalue: 20
   eachpresscost: 10
@@ -2819,7 +2819,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4273,7 +4273,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -64.4, y: -27.321}
+  m_AnchoredPosition: {x: -64.3999, y: -27.3208}
   m_SizeDelta: {x: 85.487656, y: 54.642967}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &931437553
@@ -7234,7 +7234,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7264,7 +7264,7 @@ GameObject:
   - component: {fileID: 1465306569}
   m_Layer: 0
   m_Name: Trap-niddle
-  m_TagString: Untagged
+  m_TagString: SpikedTrap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11186,7 +11186,7 @@ GameObject:
   - component: {fileID: 2101815296}
   m_Layer: 0
   m_Name: Trap-magicExplode
-  m_TagString: Untagged
+  m_TagString: Mg_LandmineTrap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
