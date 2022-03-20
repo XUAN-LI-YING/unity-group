@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class EnemyPrefab : MonoBehaviour
 {
+  public static EnemyPrefab instance;
   public GameObject catPrefab;
   
   public static EnemyPrefab Instance;
@@ -32,8 +33,9 @@ public class EnemyPrefab : MonoBehaviour
   
   void Start(){
 
+    instance = this;
     delta = 0;
-    createtime = 5;  // 2021.10.03 改久一點方便齡移偵錯看 log 場上兩隻會產生的狀況夠燒腦ㄌ
+    createtime = 5; 
     createNumber=1;//計算以複製出幾隻敵人，目前已經有一隻敵人在場面上
     Instance=this;
     enemyDie=0;
@@ -66,6 +68,8 @@ public class EnemyPrefab : MonoBehaviour
         go.transform.position = new Vector3(-104, 25f, 0);
         this.delta = 0;
         createNumber+=1;
+        //註解 放這邊
+        fearBar.instance.Increase();   
       }
       else{
         createEnemy=false;

@@ -318,7 +318,7 @@ public class EnemyMove : MonoBehaviour
 
       stucktraptime += 1;                       //確認是否第一次碰撞暗黑陷阱
 
-      Debug.Log("碰撞黑暗第"+(stucktraptime)+"次");
+      // Debug.Log("碰撞黑暗第"+(stucktraptime)+"次");
 
       
 
@@ -326,7 +326,7 @@ public class EnemyMove : MonoBehaviour
     }
     if (col.tag == "Trap-05")                   // 撞到大規模，檢查前面是否觸發黑暗
     {
-        Debug.Log("觸發大規模");
+        // Debug.Log("觸發大規模");
         Checkbuff();
         
     }

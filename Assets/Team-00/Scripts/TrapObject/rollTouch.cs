@@ -33,7 +33,8 @@ public class rollTouch : MonoBehaviour
                 rollTime=0;
                 break;
               }
-              Debug.Log("碰撞roll第"+(rollTime)+"次");
+              // Debug.Log("碰撞roll第"+(rollTime)+"次");
+              
             
             
 
