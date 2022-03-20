@@ -119,7 +119,7 @@ public class EnemyHPControl : MonoBehaviour
     
     if (bonustime > 6 )   //     6 / 1.5  =  4 秒加乘時間
     {
-      Debug.Log($"結束{(bonustime/1.5)-1}秒加乘時間"); 
+      // Debug.Log($"結束{(bonustime/1.5)-1}秒加乘時間"); 
       CancelInvoke("AutoAddBonus");
       cost1 = 5;
         
@@ -253,8 +253,8 @@ public class EnemyHPControl : MonoBehaviour
     void CostBloodBonus(){
 
       hp = hp - cost1;
-       Debug.Log($"敵人加乘狀態每{costtime1}秒扣{cost1}滴血");     
-       Debug.Log($"剩餘{hp}滴血"); 
+      //  Debug.Log($"敵人加乘狀態每{costtime1}秒扣{cost1}滴血");     
+      //  Debug.Log($"剩餘{hp}滴血"); 
 
 
     }

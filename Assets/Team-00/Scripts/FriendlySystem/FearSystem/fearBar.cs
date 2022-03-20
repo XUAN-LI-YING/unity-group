@@ -54,11 +54,13 @@ public class fearBar : MonoBehaviour
   [Header("目前存量值")]
   public float points;
   //目前存量值
-  [Header("增加值")]
+  [Header("倒數增加”值“")]
   public int autoAddValue;
   //倒數增加”值“
+  [Header("砍殺敵人增加值")]
   public int addValue;
-  //一般情況增加值
+  //砍殺敵人增加值，與魔法地雷加分共用 省一波程式碼
+  [Header("一般情況耗費值")]
   public int costvalue;
   //一般情況耗費值
   [Header("出動友軍耗費值")]
@@ -157,7 +159,7 @@ public class fearBar : MonoBehaviour
     waitingForInput = true;
 
     InvokeRepeating("AutoAddFear", 1, 1);
-    //InokeRepeating 重複呼叫(“函式名”，第一次間隔幾秒呼叫，每幾秒呼叫一次)。
+    //InvokeRepeating 重複呼叫(“函式名”，第一次間隔幾秒呼叫，每幾秒呼叫一次)。
   }
 
 
@@ -196,36 +198,6 @@ public class fearBar : MonoBehaviour
   {
     DetectAdd();
 
-    // Debug.Log($"增加恐懼！！");
-    // Debug.Log($"此動作增加了{timePress}魔力值");
-
-    //update points on the UI
-    //更新分數顯示
-
-    // if (combo)
-    // 有機會用在觸發後播放動畫判斷次數用
-    // {
-    //   ui_value.text = $"{points}";
-    //   Debug.Log($"增加{timePress}!\n目前存量={points}");
-    // }
-    // 本來用在 QTE 後來取消先留著 特殊加分
-
-    // 其他一般狀況
-    // else
-    // {
-
-    //   ui_value.text = $"{points}";
-    //   // debug 增加{timePress}!!\n目前存量=
-    //   Debug.Log($"增加{timePress}!\n目前存量={points}");
-
-
-    // }
-
-
-
-
-
-
   }
 
 
@@ -258,9 +230,10 @@ public class fearBar : MonoBehaviour
     float fillAmount = points / value_Max;
 
     ui_Addeffect.fillAmount = fillAmount;
+    
+    ui_countvalue.text = "+20魔力！";
 
-
-    // Debug.Log("add進行中!!");
+    Debug.Log("add進行中!!");
 
     StartCoroutine(DelayAddEffect());
     StartCoroutine(RepeatDecrease());
@@ -317,7 +290,7 @@ public class fearBar : MonoBehaviour
     {
       waitingForInput = false;
       CancelInvoke("AutoAddFear");
-      // ui_countvalue.text = "++魔力值！"
+      ui_countvalue.text = "+2魔力值！";
       points = points + autoAddValue;
       float fillAmount = points / value_Max;
       ui_Addeffect.fillAmount = fillAmount;
@@ -332,9 +305,7 @@ public class fearBar : MonoBehaviour
 
 
     // 顯示倒數幾秒增加恐懼數值 
-     Debug.Log($"{timeToAdd}");
-
-
+    //  Debug.Log($"{timeToAdd}");
 
   }
 

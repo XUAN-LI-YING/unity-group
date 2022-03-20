@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -164,8 +164,7 @@ public class Player : MonoBehaviour
         if (other.tag == "Cat")
         {
            
-             Debug.Log("cattttttt");
-            
+            //  Debug.Log("cattttttt");            
             
         } 
 
