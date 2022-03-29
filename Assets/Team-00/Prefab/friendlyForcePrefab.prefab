@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da0e1345e84dfd940b36e78057c67b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appear_toggle: 1
-  friendlyForce: {fileID: 8023921913532145832, guid: 85cc398dffb1c2545898186c1956f1ff,
+  activeSelf: 0
+  friendlyForce: {fileID: 7325520597019659208, guid: 5769ac57f68b6814a9e7bda955ec6881,
     type: 3}
-  span: 1
   delta: 0
+  createtime: 10
