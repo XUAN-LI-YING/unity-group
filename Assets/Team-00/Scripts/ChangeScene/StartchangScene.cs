@@ -9,7 +9,7 @@ public class StartchangScene : MonoBehaviour
     {
        SceneManager.LoadScene("DevilDefend");
     }
-    public void Treach()
+    public void Treach()  //這應該是 Teach？ 可以載這個 vscode 套件 https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
     {
        SceneManager.LoadScene("TeachingSlide");
     }
@@ -18,7 +18,7 @@ public class StartchangScene : MonoBehaviour
     public void QuitGame()
    {
        Application.Quit();
-      EditorApplication.isPlaying = false;
+      // EditorApplication.isPlaying = false;
    }
 
     public void LoadScene(string sceneName)

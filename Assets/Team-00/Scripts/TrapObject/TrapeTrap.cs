@@ -41,7 +41,7 @@ public class TrapeTrap : MonoBehaviour
     {   //如果碰撞到cat
         if(coll.gameObject.tag=="Cat")
         { 
-            Debug.Log("碰撞到cat")  ;
+            // Debug.Log("碰撞到敵人啦")  ;
             IsAttacking = true ;      
         }
     }

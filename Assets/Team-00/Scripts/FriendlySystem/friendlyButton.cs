@@ -38,7 +38,7 @@ public class friendlyButton : MonoBehaviour
 
         turnonoff.SetActive(true);
 
-        InvokeRepeating("AutocostFear", 4, 2);
+        // InvokeRepeating("AutocostFear", 1, 2);
 
         button.onClick.AddListener(TurnEffect);
 
@@ -47,7 +47,7 @@ public class friendlyButton : MonoBehaviour
     }
     public void TurnEffect()
     {
-         Debug.Log(turnonoff.activeSelf); 
+        //  Debug.Log(turnonoff.activeSelf); 
     if (!turnonoff.activeSelf)
     {
         button.image.sprite = StopbuttonImage;
@@ -56,7 +56,6 @@ public class friendlyButton : MonoBehaviour
         // fearBar.instance.Decrease01(); 
             CancelInvoke("AutocostFear");
 
-        //放切換按鈕的程式 但我不會沒頭緒 QQ
        
      
     }
@@ -76,14 +75,8 @@ public class friendlyButton : MonoBehaviour
     }
     public void AutocostFear()
     {
+    Debug.Log($"出動友軍"); 
     fearBar.instance.Decrease01(); 
-    // Debug.Log($"給我運作啦=.="); 
-
     }
-    // public void ChangeButtonImage()
-    // {
-    //     button.image.sprite = StopbuttonImage;
-    // }
-
 
 }
