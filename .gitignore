@@ -33,3 +33,6 @@ Library/ArtifactDB
 *.csproj
 ProjectSettings/ProjectVersion.txt
 *.json
+.DS_Store
+.vscode/settings.json
+Assets/UI/.DS_Store
