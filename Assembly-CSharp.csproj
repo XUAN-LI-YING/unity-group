@@ -82,6 +82,7 @@
      <Compile Include="Assets\Team-00\Scripts\TrapObject\MagicTrap.cs" />
      <Compile Include="Assets\Team-00\Scripts\Splash\LoadingControl.cs" />
      <Compile Include="Assets\Team-00\Scripts\TrapAni\boomAnimation.cs" />
+     <Compile Include="Assets\Team-00\Scripts\NewSystem\coldtime.cs" />
      <Compile Include="Assets\Team-00\Scripts\FriendlySystem\PowerButton.cs" />
      <Compile Include="Assets\Team-00\Scripts\Main.cs" />
      <Compile Include="Assets\Plugin\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
