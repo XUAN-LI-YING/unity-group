@@ -17,6 +17,8 @@ public class Spawner : MonoBehaviour
     int spawnID = -1;
     //SpawnPoints Tilemap
     public Tilemap spawnTilemap;
+    
+    Vector2 setTrap ;
 
     void Update()
     {
@@ -39,20 +41,24 @@ public class Spawner : MonoBehaviour
         {
             //get the world space poistion of the mouse
             var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Debug.Log(mousePos);
+            //Debug.Log(mousePos);
             //get the position of the cell in the tilemap
             var cellPosDefault = spawnTilemap.WorldToCell(mousePos); 
             //Debug.Log(cellPosDefault);
-            
+            //setTrap = new Vector2(cellPosDefault.x - 0.35f ,cellPosDefault.y + 0.12f);
             // get the center position of the cell
+            //var cellPosCentered = spawnTilemap.GetCellCenterWorld(cellPosDefault);
             var cellPosCentered = spawnTilemap.GetCellCenterWorld(cellPosDefault);
-            Debug.Log(cellPosCentered);
+            setTrap = new Vector2(cellPosCentered.x - 1.22f ,cellPosCentered.y - 0.42f);
+
+            //Debug.Log(cellPosCentered);
+            //Debug.Log(setTrap);
             //check if we can spawn in that cell(collider)
-            if(spawnTilemap.GetColliderType(cellPosDefault)== Tile.ColliderType.Sprite)
+            if(spawnTilemap.GetColliderType(cellPosDefault) == Tile.ColliderType.Sprite)
             {
                 //spawn the trap
                 //testSprite.transform.position = cellPosCentered;
-                SpawnTrap(cellPosCentered);
+                SpawnTrap(setTrap);
                 //Disable the collider
                 spawnTilemap.SetColliderType(cellPosDefault,Tile.ColliderType.None);
                 /*//TEST enable sprite
