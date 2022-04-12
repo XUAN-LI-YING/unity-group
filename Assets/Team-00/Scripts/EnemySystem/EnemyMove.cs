@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class EnemyMove : MonoBehaviour
 {
    public static EnemyMove instance;
-    [Header("撞到友軍")]
+
+    [Header("停止攻擊UI")]
+    public Text stopatk_ui;
+
+    [Header("攻擊動畫判定")]
     public Animator playerAni;
     //呼叫打架動畫
     public bool IsAttacking;
@@ -213,10 +218,14 @@ public class EnemyMove : MonoBehaviour
 
 
 
-      Turnon = true;                                // 純粹寫介面方便偵錯
+      Turnon = true; 
+      
+      FriendlyHPControl.instance.StopBloodon();   
+      
+      stopatk_ui.text = "攻擊無效!!!!!";                            // 純粹寫介面方便偵錯
 
-      InvokeRepeating("CancelTime", 0, 1);          // 停止攻擊效果秒數 turn on
-      //InokeRepeating 重複呼叫(“函式名”，第一次間隔幾秒呼叫，每幾秒呼叫一次)。 
+      InvokeRepeating("CancelTime", 1.5f, 1);          // 停止攻擊效果秒數 turn on
+      //InvokeRepeating 重複呼叫(“函式名”，第一次間隔幾秒呼叫，每幾秒呼叫一次)。 
 
 
   }
@@ -226,12 +235,17 @@ public class EnemyMove : MonoBehaviour
 
     canceltime -= 1;
 
-    //  Debug.Log($"停止攻擊效果倒數{canceltime}sec");     // 顯示停止攻擊倒數幾秒
+    
+    stopatk_ui.text = canceltime.ToString();
+
+    Debug.Log(canceltime);     // 顯示停止攻擊倒數幾秒
 
     if (canceltime < 1)                              // 停止扣血計時器
     {
       Turnon = false;
-      // FriendlyHPControl.instance.StopBloodoff();  // 調用 友軍血量控制器 恢復正常扣友軍血量
+
+      stopatk_ui.text = "恢復攻擊";
+      FriendlyHPControl.instance.StopBloodoff();  // 調用 友軍血量控制器 恢復正常扣友軍血量
       CancelInvoke("CancelTime");
       // EnemyHPControl.instance.SwitchCost();
 
@@ -326,7 +340,7 @@ public class EnemyMove : MonoBehaviour
     }
     if (col.tag == "Trap-05")                   // 撞到大規模，檢查前面是否觸發黑暗
     {
-        // Debug.Log("觸發大規模");
+        Debug.Log("觸發大規模");
         Checkbuff();
         
     }

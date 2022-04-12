@@ -10,6 +10,9 @@ public class EnemyHPControl : MonoBehaviour
   public static EnemyHPControl instance;
   // 函式 instance
 
+  [Header("大規模扣血UI")]
+  public Text costblood_ui;
+
   [Header("尖刺陷阱效果")] 
   // public bool spikeIsCollide;
   // float spikedelta = 0;
@@ -48,7 +51,7 @@ public class EnemyHPControl : MonoBehaviour
     instance = this;
     
     back=true;
-    max_hp = 200;
+    max_hp = 120;
     hp = max_hp;                    //最大血量設置數值，初始HP血量=最大血量
     checkHP  = 1;            
     costtime = 0 ;
@@ -119,8 +122,10 @@ public class EnemyHPControl : MonoBehaviour
     
     if (bonustime > 6 )   //     6 / 1.5  =  4 秒加乘時間
     {
-      // Debug.Log($"結束{(bonustime/1.5)-1}秒加乘時間"); 
+      Debug.Log($"結束{(bonustime/1.5)-1}秒加乘時間"); 
       CancelInvoke("AutoAddBonus");
+      CancelInvoke("CostBloodBonus"); //取消加乘效果
+      Debug.Log("取消加乘效果"); 
       cost1 = 5;
         
     }
@@ -147,6 +152,7 @@ public class EnemyHPControl : MonoBehaviour
         if(coll.gameObject.tag=="Friendly")
         { 
 
+            Debug.Log("meet my friendly");
              CheckCondition();               
             
         }
@@ -190,6 +196,8 @@ public class EnemyHPControl : MonoBehaviour
 
           timer2bool = false;
 
+           Debug.Log($"一般來說"); 
+
           CostBlood();
           
 
@@ -203,6 +211,8 @@ public class EnemyHPControl : MonoBehaviour
           timer1bool = false;
 
           timer2bool = true;
+
+           Debug.Log($"特殊來說"); 
 
           CostmoreBlood();
           
@@ -225,7 +235,9 @@ public class EnemyHPControl : MonoBehaviour
     }
    void CostmoreBlood(){
 
-      Debug.Log("翻開大規模術士效果！");
+    costblood_ui.text = "翻開大規模術士效果！";
+    
+    Debug.Log("翻開大規模術士效果！");
 
     InvokeRepeating("timer2",0f,1);
  
@@ -245,8 +257,10 @@ public class EnemyHPControl : MonoBehaviour
     void CostBloodBonus(){
 
       hp = hp - cost1;
-      //  Debug.Log($"敵人加乘狀態每{costtime1}秒扣{cost1}滴血");     
-      //  Debug.Log($"剩餘{hp}滴血"); 
+
+      costblood_ui.text = "敵人狀態每" + costtime1 + "秒扣" + cost1 + "滴血";
+       Debug.Log($"敵人加乘狀態每{costtime1}秒扣{cost1}滴血");     
+       Debug.Log($"剩餘{hp}滴血"); 
 
 
     }
@@ -270,8 +284,11 @@ public class EnemyHPControl : MonoBehaviour
           SwitchCost();
       }
       
-      hp = hp - cost2;  
-      Debug.Log($"術式模式：1秒扣{cost2}滴血，敵人剩餘{hp}滴血，效果持續{costtime}秒");  
+      hp = hp - cost2; 
+
+      costblood_ui.text = "每1秒扣"+cost2+"滴血"+"敵人剩餘"+hp+"滴血，效果持續"+costtime+"秒";
+
+      // Debug.Log($"術式模式：1秒扣{cost2}滴血，敵人剩餘{hp}滴血，效果持續{costtime}秒");  
       
 
        

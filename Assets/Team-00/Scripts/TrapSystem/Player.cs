@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
     public Vector3 GoalPos;
     public Vector2 CurrentPos;
 
+    public int cdtime = 0;
+
     private void Start()
     {
         GoalPos = transform.position;       //定位
@@ -106,7 +108,17 @@ public class Player : MonoBehaviour
         Collider2D.enabled = true;
     }
 
-    void OnTriggerEnter2D(Collider2D other)//接觸梯子物件 
+    public void Coldtime()
+    {
+
+        // IDK_HOW_CD_SYSTEM_WORK_AND_WHAT_DATA_I_SHOULD_USE = true;
+
+        // MAY_BE_IS_TIME -= 1;
+
+
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)//接觸梯子物件 
     {
         // if (other != Main.Ladder) return;       //若非Ladder 返回
         // IsLadder = true;        //IsLadder為真
@@ -130,13 +142,17 @@ public class Player : MonoBehaviour
 
         // 碰到 觸發
 
-        // fearbar 增加 調用~~~~待處理
+       
        
         if (other.tag == "Mg_LandimineTrap")
         {
-            
-            fearBar.instance.MgmineBuild();
+            if (cdtime == 0)
+            {
+             fearBar.instance.MgmineBuild();
              Debug.Log("觸發mine");
+                
+            }
+
             
         }
 
