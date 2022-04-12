@@ -98,7 +98,7 @@ public class EnemyHPControl : MonoBehaviour
       hp -= 100;
       
     }
-    if (col.tag=="Trap-02")
+    if (col.tag=="Traps02")
     {
       hp -= 20;  
     }    
@@ -126,22 +126,15 @@ public class EnemyHPControl : MonoBehaviour
     }
 
   }
+
+  //這裡有問題
   void OnCollisionStay2D(Collision2D coll) 
     {   
 
-        if(coll.gameObject.tag=="Friendly")
-        { 
-   
-
-
-        
-        
-        }
         if(coll.gameObject.tag=="guard")
         {  
-            hp -= 1;
+          hp -= 1;
 
-            
         }
     }
 
@@ -163,7 +156,6 @@ public class EnemyHPControl : MonoBehaviour
                 hp = hp - cost1;        
             
         }
-
 
   }  
 
@@ -243,7 +235,7 @@ public class EnemyHPControl : MonoBehaviour
    void CostBlood(){
 
       
-    // Debug.Log($"正常狀態下扣血");
+    Debug.Log($"正常狀態下扣血");
 
     InvokeRepeating("timer1",0f,1);
 
@@ -264,7 +256,7 @@ public class EnemyHPControl : MonoBehaviour
 
       hp = hp - cost1;
 
-      //  Debug.Log($"普通模式：每{costtime}秒扣{cost1}滴血，敵人剩餘{hp}滴血"); 
+       Debug.Log($"普通模式：每{costtime}秒扣{cost1}滴血，敵人剩餘{hp}滴血"); 
           
     }
 

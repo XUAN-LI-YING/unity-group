@@ -66,7 +66,7 @@ public class FriendlyHPControl : MonoBehaviour
 
     //碰撞後bool為真開始持續扣血
     //  void OnTriggerEnter2D(Collider2D col)
-     void OnCollisionStay2D(Collision2D col) 
+     void OnCollisionEnter2D(Collision2D col) 
     {   
         
 
@@ -75,8 +75,8 @@ public class FriendlyHPControl : MonoBehaviour
         { 
             
 
-
-             hp -= Time.deltaTime * 20;
+             hp -= 2;
+            //  hp -= Time.deltaTime * 20;
             
             // //偵測現在move到哪裡的位置
             // Vector3 move = gameObject.transform.position;
