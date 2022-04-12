@@ -182,7 +182,8 @@ public class fearBar : MonoBehaviour
     points = points - eachpresscost;
     float fillAmount = points / value_Max;
     ui_value.text = $"{points}";
-    Debug.Log($"出動友軍耗費{eachpresscost}魔力值");
+    // 提醒玩家會耗10魔力值 寫個UI 2秒後消失
+    Debug.Log($"耗費{eachpresscost}魔力值");
     ui_fillBar.fillAmount = fillAmount;
 
 
@@ -233,7 +234,7 @@ public class fearBar : MonoBehaviour
     
     ui_countvalue.text = "+20魔力！";
 
-    Debug.Log("add進行中!!");
+    Debug.Log("add 20 fear bar!");
 
     StartCoroutine(DelayAddEffect());
     StartCoroutine(RepeatDecrease());

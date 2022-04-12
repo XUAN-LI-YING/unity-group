@@ -22,23 +22,30 @@ public class EnemyPrefab : MonoBehaviour
   public bool createEnemy=true;
 
   [Header("顯示已經打死敵人數量的ui")]
-  public Text ui_value;
-
+  public Text ui_value;   // p.s 命名盡量要明確 _做什麼_的數值 e.g countenemy_value committed by 01
   
   [Header("已經打死敵人的數量")]
    public int enemyDie;
 
-  [Header("計時器")]
+  [Header("顯示獲得多少魔力的ui")]
+  public Text addfear_value;   //例如這樣子
+
+  [Header("敵人產生計時器")]
   public float delta ;
+
+  [Header("特效顯示時間長度")]
+  public int count;
   
   void Start(){
 
     instance = this;
     delta = 0;
-    createtime = 5; 
-    createNumber=1;//計算以複製出幾隻敵人，目前已經有一隻敵人在場面上
+    createtime = 20; 
+    createNumber=1;
     Instance=this;
     enemyDie=0;
+    addfear_value.text = "";
+    count = 0;
   }
  
   
@@ -68,8 +75,7 @@ public class EnemyPrefab : MonoBehaviour
         go.transform.position = new Vector3(-104, 25f, 0);
         this.delta = 0;
         createNumber+=1;
-        //註解 放這邊
-        fearBar.instance.Increase();   
+
       }
       else{
         createEnemy=false;
@@ -83,9 +89,40 @@ public class EnemyPrefab : MonoBehaviour
   {
     enemyDie+=1;
     ui_value.text = enemyDie.ToString() + ""; //將死掉的敵人數量變成text檔
+    fearBar.instance.Increase();  
+    // 放一個超大ui顯示砍死+20魔力值 XD
+     InvokeRepeating("showHide", 0.3f, 0.3f);
+    // 人眼頻率大概 25 fps  
+    //然後再去操控他的透明度 我好厲害
+    //想法來自 ae 內建 flicker 特效 
+    // addfear_value.text = "";
     if(enemyDie>=10)
     {
       SceneManager.LoadScene("gameWin"); 
     }
+  }
+  void showHide() {
+
+    
+
+    if (addfear_value.text == ""){ 
+
+      addfear_value.text = "砍死+20魔力值!!!"; 
+
+    }else{ 
+
+    addfear_value.text = ""; 
+
+    }
+    count += 1;
+    // Debug.Log(count);
+    if(count == 10){
+
+      addfear_value.text = "顯示一秒"; 
+      CancelInvoke("showHide");
+      addfear_value.text = ""; 
+      count = 0;
+
+    };
   }
 }
