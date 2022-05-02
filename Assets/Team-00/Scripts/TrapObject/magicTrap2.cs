@@ -17,4 +17,5 @@ public class magicTrap2 : MonoBehaviour
             Destroy(this.gameObject);
         
     }
+   
 }

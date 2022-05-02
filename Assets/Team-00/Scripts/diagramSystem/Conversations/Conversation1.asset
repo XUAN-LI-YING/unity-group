@@ -14,12 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allLines:
   - speaker: {fileID: 11400000, guid: b3655d833b5faf54bbd5c6b1bc4a06d7, type: 2}
-    dialogue: HI LILITH IS SPEAK  hearing me
+    dialogue: "\u6240\u4EE5\u2026\u73FE\u5728\u6211\u8A72\u600E\u9EBC\u8FA6\uFF1F\n\u6559\u6703\u4E0D\u77E5\u9053\u5C0D\u6211\u505A\u4E86\u4EC0\u9EBC\u3001\u6211\u6C92\u8FA6\u6CD5\u4F7F\u7528\u706B\u8853\u4E86\r\n"
   - speaker: {fileID: 11400000, guid: 9748495b957b2d7488b7f6a2750d584b, type: 2}
-    dialogue: ' no shot up'
+    dialogue: "\u5514\u2026\u6211\u60F3\u60F3\u2026\r\r\n"
+  - speaker: {fileID: 11400000, guid: 9748495b957b2d7488b7f6a2750d584b, type: 2}
+    dialogue: "\u554A\uFF01\u9019\u908A\u525B\u597D\u6709\u4E00\u4E9B\u7D20\u6750\u80FD\u7528\uFF0C\u6559\u4F60\u7C21\u55AE\u7684\u6B7B\u9748\u8853\u9084\u6709\u5FF5\u52D5\u5492\u597D\u4E86\r\n\uFF08\u770B\u5411\u4E00\u65C1\u6B7B\u53BB\u7684\u4FE1\u5F92\u5C4D\u9AA8\uFF09"
   - speaker: {fileID: 11400000, guid: b3655d833b5faf54bbd5c6b1bc4a06d7, type: 2}
-    dialogue: im bitch
+    dialogue: "\u5FF5\u52D5\u5492\uFF1F\u90A3\u53EF\u4EE5\u5E79\u561B\uFF1F"
   - speaker: {fileID: 11400000, guid: 9748495b957b2d7488b7f6a2750d584b, type: 2}
-    dialogue: me too
+    dialogue: "\u6BD4\u5982\u2026\u9019\u6A23\uFF01\r\n\uFF08\u4E00\u500B\u8DDF\u5DE8\u5927\u7684\u6728\u982D\u7DAD\u6301\u8457\u8A6D\u7570\u768445\u5EA6\u50BE\u89D2\u61F8\u505C\u5728\u7A7A\u4E2D\uFF09\r"
   - speaker: {fileID: 11400000, guid: 9748495b957b2d7488b7f6a2750d584b, type: 2}
-    dialogue: qqq
+    dialogue: "\u6709\u4EBA\u7D93\u904E\u5C31\u6703\u89E3\u9664\u5492\u5370\u7136\u5F8C\u2026\u78B0\uFF01\r"
+  - speaker: {fileID: 11400000, guid: b3655d833b5faf54bbd5c6b1bc4a06d7, type: 2}
+    dialogue: "\u539F\u4F86\u5982\u6B64\r"
+  - speaker: {fileID: 11400000, guid: f282327034c4e0641aad6753dd165437, type: 2}
+    dialogue: "\u6211\u4F86\u6559\u4F60\u600E\u9EBC\u9A45\u4F7F\u4F7F\u9B54\u5427\r\n\uFF08\u5979\u6162\u6162\u5F9E\u8EAB\u65C1\u7684\u5C4D\u5806\u4E2D\u53EC\u51FA\u4E00\u5718\u9B3C\u706B\uFF0C\u653E\u5165\u8389\u8389\u7D72\u7684\u624B\u4E2D\uFF09\r\n"
+  - speaker: {fileID: 11400000, guid: f282327034c4e0641aad6753dd165437, type: 2}
+    dialogue: "\u9019\u6A23\u2026\u5C31\u53EF\u4EE5\u85C9\u7531\u5B83\u9060\u8DDD\u96E2\u4E0B\u5FF5\u52D5\u5492\u4E86\r\n"
+  - speaker: {fileID: 11400000, guid: b3655d833b5faf54bbd5c6b1bc4a06d7, type: 2}
+    dialogue: "\u5594\u5594\u5594\u2026"
+  - speaker: {fileID: 11400000, guid: f282327034c4e0641aad6753dd165437, type: 2}
+    dialogue: "\u554A\u5566\u3001\u770B\u4F86\u6211\u5011\u6709\u8A2A\u5BA2\u5462\uFF0C\u4F60\u53EF\u4EE5\u8A66\u770B\u770B\u525B\u5B78\u5230\u7684\u6280\u5DE7\u4E86\r\n"

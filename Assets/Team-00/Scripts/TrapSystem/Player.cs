@@ -50,18 +50,18 @@ public class Player : MonoBehaviour
     }*/
     private void Move()
     {
-        if(!Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.W))
-        {
-            if(gameObject.transform.position.x <= 85.5 && gameObject.transform.position.x >= -90.5)
-            if(Input.GetKey(KeyCode.A) && gameObject.transform.position.x > -89)
+        //if(!Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.W))
+        //{
+            //if(gameObject.transform.position.x <= 85.5 && gameObject.transform.position.x >= -90.5)
+            if(Input.GetKey(KeyCode.A))
             {
-                gameObject.transform.position += new Vector3(-0.9f,0,0);
+                gameObject.transform.position += new Vector3(-0.05f,0,0);
                 animator.Play("Player@Walk");
                 Sprite.flipX = false;
             }
-            if(Input.GetKey(KeyCode.D) && gameObject.transform.position.x < 85)
+            if(Input.GetKey(KeyCode.D))
             {
-                gameObject.transform.position += new Vector3(0.9f,0,0);
+                gameObject.transform.position += new Vector3(0.05f,0,0);
                 animator.Play("Player@Walk");
                 Sprite.flipX = true;
             }
@@ -69,31 +69,21 @@ public class Player : MonoBehaviour
             {
                 animator.Play("Player@Idle");
             }
-        }
+        //}
         
+            if (gameObject.transform.position.x > 96 
+            && gameObject.transform.position.y == 21 )
+            {//移動至下層樓
+                gameObject.transform.position = new Vector3(-99f, -19f, 0);
+        
+            }
 
-        if (IsLadder == true)
-        {
-            if(gameObject.transform.position.y <= 16.2 && gameObject.transform.position.y >= -20.5)
-            {
-            if(Input.GetKey(KeyCode.W) && gameObject.transform.position.y < 16)
-            {
-                gameObject.transform.position += new Vector3(0,0.07f,0);
-                animator.Play("Player@Climb");
-                //if(transform.position.y >= 14.1)
-                //gameObject.transform.position += new Vector3(0,0,0);
-                //Debug.Log("1");
+            if (gameObject.transform.position.x < -99 
+            && gameObject.transform.position.y == -19 )
+            {//移動至上層樓
+                gameObject.transform.position = new Vector3(96f, 21f, 0);
+                
             }
-            if(Input.GetKey(KeyCode.S) && gameObject.transform.position.y > -20)
-            {
-                gameObject.transform.position += new Vector3(0,-0.07f,0);
-                animator.Play("Player@Climb");
-                //if(transform.position.y <= -18.8)
-                //gameObject.transform.position += new Vector3(0,0,0);
-                //Debug.Log("2");
-            }
-            }            
-        }
 
         /*if(!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
         {
@@ -189,16 +179,16 @@ public class Player : MonoBehaviour
     }
     
 
-    void OnTriggerExit2D(Collider2D other)//離開物件
-    {
-        if (other != Main.Ladder) return;
-        IsLadder = false;       //IsLadder不為真 
+    // void OnTriggerExit2D(Collider2D other)//離開物件
+    // {
+    //     if (other != Main.Ladder) return;
+    //     IsLadder = false;       //IsLadder不為真 
 
-        /*if (other != Main.tbox) return;
-        Istbox = false;*/
+    //     /*if (other != Main.tbox) return;
+    //     Istbox = false;*/
 
-        /*if (other != Main.bbox) return;
-        Isbbox = false;*/
-    }
+    //     /*if (other != Main.bbox) return;
+    //     Isbbox = false;*/
+    // }
 
 }

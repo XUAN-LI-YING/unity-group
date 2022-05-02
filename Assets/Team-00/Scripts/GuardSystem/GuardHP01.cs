@@ -48,11 +48,11 @@ public class GuardHP01 : MonoBehaviour
     }
 
     //碰撞後bool為真開始持續扣血
-     void OnCollisionStay2D(Collision2D coll) 
+     void OnCollisionEnter2D(Collision2D coll) 
     {   //如果碰撞到cat
         if(coll.gameObject.tag=="Cat")
         {   //hp-0.1
-            hp -= 0.01f;
+             InvokeRepeating("guardBoold", 0f, 2);
             IsAttacking = true ;      
         }
     }
@@ -62,7 +62,12 @@ public class GuardHP01 : MonoBehaviour
         if(coll.gameObject.tag=="Cat")
         {
            IsAttacking = false ;   
+           CancelInvoke("guardBoold");
         }
     }
 
+    void guardBoold()
+    {
+        hp = hp-3;
+    }
 } 

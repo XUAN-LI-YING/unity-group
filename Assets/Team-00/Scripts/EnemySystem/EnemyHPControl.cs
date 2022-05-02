@@ -133,15 +133,7 @@ public class EnemyHPControl : MonoBehaviour
   }
 
   //這裡有問題
-  void OnCollisionStay2D(Collision2D coll) 
-    {   
-
-        if(coll.gameObject.tag=="guard")
-        {  
-          hp -= 1;
-
-        }
-    }
+ 
 
 
 
@@ -163,7 +155,20 @@ public class EnemyHPControl : MonoBehaviour
             
         }
 
+        if(coll.gameObject.tag=="guard")
+        {  
+          InvokeRepeating("guardBoold", 0f, 2);
+
+        }
+
   }  
+
+ void OnCollisionExit2D(Collision2D coll)
+    {
+        
+        CancelInvoke("guardBoold");  //取消呼叫guardBoold
+
+    }
 
 
   public void ChangBleeding(){          // enenmymove.cs checkbuff()調用的函式 
@@ -296,10 +301,10 @@ public class EnemyHPControl : MonoBehaviour
     }
     // 大規模要5秒
 
-
-
-
-
+    void guardBoold()
+    {
+        hp = hp-2;
+    }
 
 
 }
