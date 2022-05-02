@@ -166,7 +166,6 @@ public class EnemyHPControl : MonoBehaviour
  void OnCollisionExit2D(Collision2D coll)
     {
         
-        CancelInvoke("guardBoold");  //取消呼叫guardBoold
 
     }
 
@@ -178,10 +177,6 @@ public class EnemyHPControl : MonoBehaviour
 
     }
   public void SwitchCost(){
-        changmode = true;
-        CancelInvoke("timer2");
-        checkHP = 1 ;
-        // CheckCondition();// 不管有無碰到，往後都是普通扣血，除非再次觸發
 
 
     }

@@ -124,7 +124,10 @@ NavMeshSettings:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> ca09e578bf8dedac27342ae3bdad86950320c0da
 --- !u!1 &48139003
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,6 +251,9 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
+>>>>>>> ca09e578bf8dedac27342ae3bdad86950320c0da
+=======
 >>>>>>> ca09e578bf8dedac27342ae3bdad86950320c0da
 --- !u!1 &2115571710
 GameObject:
@@ -333,6 +339,7 @@ Transform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1001 &8692863643326091705
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -402,5 +409,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6837ff7df0ddc8d4ebff5d1160def536, type: 3}
+=======
+>>>>>>> ca09e578bf8dedac27342ae3bdad86950320c0da
 =======
 >>>>>>> ca09e578bf8dedac27342ae3bdad86950320c0da
