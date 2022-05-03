@@ -552,7 +552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   splashImage: {fileID: 154121106}
-  loadLevel: Loading
+  StartScene: StartScene
 --- !u!4 &1570359935
 Transform:
   m_ObjectHideFlags: 0

@@ -160,7 +160,7 @@ public class EnemyMove : MonoBehaviour
       this.speed = 5f;
       Spikedelta += 1;
                                            
-      deltaSum=100*spikecollide;           //撞到幾個速度就加成多少
+      deltaSum=600*spikecollide;           //撞到幾個速度就加成多少
     if (Spikedelta >= deltaSum)            //緩速到 一定時間 後便正常 
     {
 

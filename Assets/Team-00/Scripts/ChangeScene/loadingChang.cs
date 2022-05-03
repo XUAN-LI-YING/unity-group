@@ -7,7 +7,7 @@ public class loadingChang : MonoBehaviour
 {
    
     void AnimationEnd(){
-        SceneManager.LoadScene("StartScene");
+        SceneManager.LoadScene("diagramSystem");
 
     }
     // Update is called once per frame

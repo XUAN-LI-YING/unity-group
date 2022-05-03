@@ -40,7 +40,7 @@ public class DialogueManager : MonoBehaviour
         if(currentIndex>currentConvo.GetLength())
         {
             
-            SceneManager.LoadScene("DevilDefend");
+            SceneManager.LoadScene("level");
             return;
         }
         speakerName.text=currentConvo.GetLineByIndex(currentIndex).speaker.GetName();

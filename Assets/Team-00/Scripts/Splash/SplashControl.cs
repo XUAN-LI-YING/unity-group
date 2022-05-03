@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class SplashControl : MonoBehaviour {
 
     public Image splashImage;
-    public string loadLevel;
+    public string StartScene;
 
     IEnumerator Start()
     {
@@ -18,7 +18,7 @@ public class SplashControl : MonoBehaviour {
 
         FadeOut();
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(loadLevel);
+        SceneManager.LoadScene(StartScene);
     }
 
     void FadeIn()
