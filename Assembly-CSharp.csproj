@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -36,102 +36,102 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets/Team-00/Scripts/NewSystem/Spawner.cs" />
-     <Compile Include="Assets/Team-00/Scripts/FriendlySystem/ZButton.cs" />
-     <Compile Include="Assets/Team-00/Scripts/TrapObject/blackTrap.cs" />
-     <Compile Include="Assets/Team-00/Scripts/TeachSlid/SwipeControl.cs" />
-     <Compile Include="Assets/Team-00/Scripts/TrapObject/magicTrap2.cs" />
-     <Compile Include="Assets/Team-00/Scripts/TrapObject/TrapeTrap.cs" />
-     <Compile Include="Assets/Team-00/Scripts/TrapAni/bigAni.cs" />
-     <Compile Include="Assets/StartGame/script/MenuButton.cs" />
-     <Compile Include="Assets/Team-00/Scripts/EnemySystem/EnemyHPControl.cs" />
-     <Compile Include="Assets/Team-00/Scripts/TrapSystem/Player.cs" />
-     <Compile Include="Assets/Team-00/Scripts/GuardSystem/Devil.cs" />
-     <Compile Include="Assets/Team-00/Scripts/settingButton.cs" />
-     <Compile Include="Assets/StartGame/script/AnimatorFunctions.cs" />
-     <Compile Include="Assets/Team-00/Scripts/Enemy/animy_move.cs" />
-     <Compile Include="Assets/Team-00/Scripts/QTE.cs" />
-     <Compile Include="Assets/Team-00/Scripts/pause/pauseMenu.cs" />
-     <Compile Include="Assets/Team-00/Scripts/TrapObject/bigTrap.cs" />
-     <Compile Include="Assets/Team-00/Scripts/diagramSystem/Speaker.cs" />
-     <Compile Include="Assets/Team-00/Scripts/RandomNumber/RandomNumber.cs" />
-     <Compile Include="Assets/TurnonOff.cs" />
-     <Compile Include="Assets/Team-00/Scripts/FriendlySystem/friendlyButton.cs" />
-     <Compile Include="Assets/Team-00/Scripts/FriendlySystem/FearSystem/fearBar.cs" />
-     <Compile Include="Assets/Team-00/Scripts/ChangeScene/startTeach.cs" />
-     <Compile Include="Assets/StartQTE.cs" />
-     <Compile Include="Assets/Team-00/Scripts/diagramSystem/Tester.cs" />
-     <Compile Include="Assets/Team-00/Scripts/ChangeScene/StartchangScene.cs" />
-     <Compile Include="Assets/Samples/2D SpriteShape/4.1.5/Sprite Shape Extras/Scripts/GenerateSpriteShapes.cs" />
-     <Compile Include="Assets/MainMenu/Scripts/ButtonCheck.cs" />
-     <Compile Include="Assets/Team-00/Scripts/TrapObject/DarkTrap.cs" />
-     <Compile Include="Assets/Team-00/Scripts/ChangeScene/StartButton.cs" />
-     <Compile Include="Assets/Team-00/Scripts/TrapAni/blackAni.cs" />
-     <Compile Include="Assets/Team-00/Scripts/TrapAni/rollanimation.cs" />
-     <Compile Include="Assets/Team-00/Scripts/RandomNumber/DataManager.cs" />
-     <Compile Include="Assets/Team-00/Scripts/ChangeScene/win.cs" />
-     <Compile Include="Assets/Team-00/Scripts/FriendlySystem/FriendlyHPControl.cs" />
-     <Compile Include="Assets/Team-00/Scripts/GuardSystem/GuardHP02.cs" />
-     <Compile Include="Assets/Team-00/Scripts/TrapSystem/CoolDown.cs" />
-     <Compile Include="Assets/Samples/2D SpriteShape/4.1.5/Sprite Shape Extras/Scripts/ConformingSpline.cs" />
-     <Compile Include="Assets/Team-00/Scripts/FriendlySystem/friendlyMove.cs" />
-     <Compile Include="Assets/Team-00/Scripts/FriendlySystem/friendlyPref.cs" />
-     <Compile Include="Assets/Samples/2D SpriteShape/4.1.5/Sprite Shape Extras/Scripts/SimpleDraw.cs" />
-     <Compile Include="Assets/Team-00/Scripts/GuardSystem/GuardHP01.cs" />
-     <Compile Include="Assets/Team-00/Scripts/ChangeScene/QUIT.cs" />
-     <Compile Include="Assets/Samples/2D SpriteShape/4.1.5/Sprite Shape Extras/Scripts/Clipper.cs" />
-     <Compile Include="Assets/Team-00/Scripts/ChangeScene/backStart.cs" />
-     <Compile Include="Assets/Samples/2D SpriteShape/4.1.5/Sprite Shape Extras/Scripts/GeometryCollider.cs" />
-     <Compile Include="Assets/Team-00/Scripts/TrapObject/MagicTrap.cs" />
-     <Compile Include="Assets/Team-00/Scripts/Splash/LoadingControl.cs" />
-     <Compile Include="Assets/Team-00/Scripts/TrapAni/boomAnimation.cs" />
-     <Compile Include="Assets/Team-00/Scripts/NewSystem/coldtime.cs" />
-     <Compile Include="Assets/Team-00/Scripts/diagramSystem/Conversation.cs" />
-     <Compile Include="Assets/Team-00/Scripts/FriendlySystem/PowerButton.cs" />
-     <Compile Include="Assets/Team-00/Scripts/diagramSystem/DialogueLine.cs" />
-     <Compile Include="Assets/Team-00/Scripts/Main.cs" />
-     <Compile Include="Assets/Plugin/TextMesh Pro/Examples &amp; Extras/Scripts/DropdownSample.cs" />
-     <Compile Include="Assets/Team-00/Scripts/EnemySystem/EnemyMove.cs" />
-     <Compile Include="Assets/Team-00/Scripts/TrapObject/rollTouch.cs" />
-     <Compile Include="Assets/StartGame/script/MenuButtonController.cs" />
-     <Compile Include="Assets/Samples/2D SpriteShape/4.1.5/Sprite Shape Extras/Scripts/Sprinkler.cs" />
-     <Compile Include="Assets/Team-00/Scripts/ChangeScene/loadingChang.cs" />
-     <Compile Include="Assets/Team-00/Scripts/diagramSystem/DialogueManager.cs" />
-     <Compile Include="Assets/Team-00/Scripts/ChangeScene/setting.cs" />
-     <Compile Include="Assets/Team-00/Scripts/EnemySystem/EnemyPrefab.cs" />
-     <Compile Include="Assets/Team-00/Scripts/TrapSystem/trapstatus.cs" />
-     <Compile Include="Assets/Team-00/Scripts/TrapObject/SpikedTrapAni.cs" />
-     <Compile Include="Assets/Team-00/Scripts/Builder.cs" />
-     <Compile Include="Assets/Samples/2D SpriteShape/4.1.5/Sprite Shape Extras/Scripts/LegacyCollider.cs" />
-     <Compile Include="Assets/Team-00/Scripts/Splash/SplashControl.cs" />
-     <None Include="Assets/Plugin/TextMesh Pro/Shaders/TMPro.cginc" />
-     <None Include="Assets/Plugin/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
-     <None Include="Assets/Plugin/TextMesh Pro/Shaders/TMP_Bitmap.shader" />
-     <None Include="Assets/UI/fonts/fonts/Font2/license.txt" />
-     <None Include="Assets/Plugin/TextMesh Pro/Examples &amp; Extras/Fonts/Oswald-Bold - OFL.txt" />
-     <None Include="Assets/Plugin/TextMesh Pro/Examples &amp; Extras/Fonts/Anton OFL.txt" />
-     <None Include="Assets/Plugin/TextMesh Pro/Shaders/TMPro_Mobile.cginc" />
-     <None Include="Assets/Plugin/TextMesh Pro/Shaders/TMP_SDF SSD.shader" />
-     <None Include="Assets/Plugin/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" />
-     <None Include="Assets/Plugin/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" />
-     <None Include="Assets/Plugin/TextMesh Pro/Sprites/EmojiOne Attribution.txt" />
-     <None Include="Assets/UI/fonts/fonts/Font1/license.txt" />
-     <None Include="Assets/Plugin/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" />
-     <None Include="Assets/Plugin/TextMesh Pro/Shaders/TMP_SDF.shader" />
-     <None Include="Assets/Plugin/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader" />
-     <None Include="Assets/Plugin/TextMesh Pro/Resources/LineBreaking Leading Characters.txt" />
-     <None Include="Assets/Plugin/TextMesh Pro/Shaders/TMPro_Properties.cginc" />
-     <None Include="Assets/Plugin/TextMesh Pro/Shaders/TMPro_Surface.cginc" />
-     <None Include="Assets/Plugin/TextMesh Pro/Resources/LineBreaking Following Characters.txt" />
-     <None Include="Assets/UI/fonts/fonts/Font1/readme.txt" />
-     <None Include="Assets/Plugin/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" />
-     <None Include="Assets/UI/fonts/fonts/Font2/readme.txt" />
-     <None Include="Assets/Plugin/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" />
-     <None Include="Assets/Plugin/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" />
-     <None Include="Assets/Plugin/TextMesh Pro/Fonts/LiberationSans - OFL.txt" />
-     <None Include="Assets/Plugin/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader" />
-     <None Include="Assets/Plugin/TextMesh Pro/Shaders/TMP_Sprite.shader" />
-     <None Include="Assets/Plugin/TextMesh Pro/Examples &amp; Extras/Fonts/Bangers - OFL.txt" />
+     <Compile Include="Assets\Team-00\Scripts\NewSystem\Spawner.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapObject\magicTrap2.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapAni\bigAni.cs" />
+     <Compile Include="Assets\Team-00\Scripts\GuardSystem\Devil.cs" />
+     <Compile Include="Assets\StartGame\script\AnimatorFunctions.cs" />
+     <Compile Include="Assets\Team-00\Scripts\Enemy\animy_move.cs" />
+     <Compile Include="Assets\Team-00\Scripts\diagramSystem\Speaker.cs" />
+     <Compile Include="Assets\TurnonOff.cs" />
+     <Compile Include="Assets\Team-00\Scripts\FriendlySystem\friendlyButton.cs" />
+     <Compile Include="Assets\Team-00\Scripts\FriendlySystem\FearSystem\fearBar.cs" />
+     <Compile Include="Assets\Team-00\Scripts\ChangeScene\startTeach.cs" />
+     <Compile Include="Assets\Team-00\Scripts\diagramSystem\Tester.cs" />
+     <Compile Include="Assets\Team-00\Scripts\ChangeScene\StartchangScene.cs" />
+     <Compile Include="Assets\Samples\2D SpriteShape\4.1.5\Sprite Shape Extras\Scripts\GenerateSpriteShapes.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapAni\blackAni.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapAni\rollanimation.cs" />
+     <Compile Include="Assets\Team-00\Scripts\ChangeScene\win.cs" />
+     <Compile Include="Assets\Team-00\Scripts\FriendlySystem\friendlyMove.cs" />
+     <Compile Include="Assets\Team-00\Scripts\FriendlySystem\friendlyPref.cs" />
+     <Compile Include="Assets\Team-00\Scripts\ChangeScene\QUIT.cs" />
+     <Compile Include="Assets\Samples\2D SpriteShape\4.1.5\Sprite Shape Extras\Scripts\Clipper.cs" />
+     <Compile Include="Assets\Team-00\Scripts\Splash\LoadingControl.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapAni\boomAnimation.cs" />
+     <Compile Include="Assets\Team-00\Scripts\NewSystem\coldtime.cs" />
+     <Compile Include="Assets\Team-00\Scripts\diagramSystem\Conversation.cs" />
+     <Compile Include="Assets\Team-00\Scripts\FriendlySystem\PowerButton.cs" />
+     <Compile Include="Assets\Team-00\Scripts\diagramSystem\DialogueLine.cs" />
+     <Compile Include="Assets\Team-00\Scripts\Main.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapObject\rollTouch.cs" />
+     <Compile Include="Assets\Team-00\Scripts\EnemySystem\EnemyPrefab.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapObject\SpikedTrapAni.cs" />
+     <Compile Include="Assets\Team-00\Scripts\FriendlySystem\ZButton.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapObject\blackTrap.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TeachSlid\SwipeControl.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapObject\TrapeTrap.cs" />
+     <Compile Include="Assets\StartGame\script\MenuButton.cs" />
+     <Compile Include="Assets\Team-00\Scripts\EnemySystem\EnemyHPControl.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapSystem\Player.cs" />
+     <Compile Include="Assets\Team-00\Scripts\settingButton.cs" />
+     <Compile Include="Assets\Team-00\Scripts\QTE.cs" />
+     <Compile Include="Assets\Team-00\Scripts\pause\pauseMenu.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapObject\bigTrap.cs" />
+     <Compile Include="Assets\Team-00\Scripts\RandomNumber\RandomNumber.cs" />
+     <Compile Include="Assets\StartQTE.cs" />
+     <Compile Include="Assets\MainMenu\Scripts\ButtonCheck.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapObject\DarkTrap.cs" />
+     <Compile Include="Assets\Team-00\Scripts\ChangeScene\StartButton.cs" />
+     <Compile Include="Assets\Team-00\Scripts\RandomNumber\DataManager.cs" />
+     <Compile Include="Assets\Team-00\Scripts\FriendlySystem\FriendlyHPControl.cs" />
+     <Compile Include="Assets\Team-00\Scripts\GuardSystem\GuardHP02.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapSystem\CoolDown.cs" />
+     <Compile Include="Assets\Samples\2D SpriteShape\4.1.5\Sprite Shape Extras\Scripts\ConformingSpline.cs" />
+     <Compile Include="Assets\Samples\2D SpriteShape\4.1.5\Sprite Shape Extras\Scripts\SimpleDraw.cs" />
+     <Compile Include="Assets\Team-00\Scripts\GuardSystem\GuardHP01.cs" />
+     <Compile Include="Assets\Team-00\Scripts\ChangeScene\backStart.cs" />
+     <Compile Include="Assets\Samples\2D SpriteShape\4.1.5\Sprite Shape Extras\Scripts\GeometryCollider.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapObject\MagicTrap.cs" />
+     <Compile Include="Assets\Plugin\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
+     <Compile Include="Assets\Team-00\Scripts\EnemySystem\EnemyMove.cs" />
+     <Compile Include="Assets\StartGame\script\MenuButtonController.cs" />
+     <Compile Include="Assets\Samples\2D SpriteShape\4.1.5\Sprite Shape Extras\Scripts\Sprinkler.cs" />
+     <Compile Include="Assets\Team-00\Scripts\ChangeScene\loadingChang.cs" />
+     <Compile Include="Assets\Team-00\Scripts\diagramSystem\DialogueManager.cs" />
+     <Compile Include="Assets\Team-00\Scripts\ChangeScene\setting.cs" />
+     <Compile Include="Assets\Team-00\Scripts\TrapSystem\trapstatus.cs" />
+     <Compile Include="Assets\Team-00\Scripts\Builder.cs" />
+     <Compile Include="Assets\Samples\2D SpriteShape\4.1.5\Sprite Shape Extras\Scripts\LegacyCollider.cs" />
+     <Compile Include="Assets\Team-00\Scripts\Splash\SplashControl.cs" />
+     <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMPro.cginc" />
+     <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+     <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+     <None Include="Assets\UI\fonts\fonts\Font2\license.txt" />
+     <None Include="Assets\Plugin\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
+     <None Include="Assets\Plugin\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
+     <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+     <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+     <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+     <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+     <None Include="Assets\Plugin\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+     <None Include="Assets\UI\fonts\fonts\Font1\license.txt" />
+     <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+     <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_SDF.shader" />
+     <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+     <None Include="Assets\Plugin\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+     <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+     <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+     <None Include="Assets\Plugin\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+     <None Include="Assets\UI\fonts\fonts\Font1\readme.txt" />
+     <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+     <None Include="Assets\UI\fonts\fonts\Font2\readme.txt" />
+     <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+     <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+     <None Include="Assets\Plugin\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+     <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+     <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_Sprite.shader" />
+     <None Include="Assets\Plugin\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
     <Reference Include="UnityEngine">
         <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -362,6 +362,12 @@
     </Reference>
     <Reference Include="UnityEditor.UnityConnectModule">
         <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="MiscUtil">
+        <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/PackageCache/com.unity.visualscripting@1.5.2/Runtime/VisualScripting.Core/Dependencies/MiscUtil/MiscUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+        <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/PackageCache/com.unity.visualscripting@1.5.2/Runtime/VisualScripting.Flow/Dependencies/NCalc/Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>/Applications/Unity/Unity.app/Contents/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -708,8 +714,8 @@
     <Reference Include="mscorlib">
         <HintPath>/Applications/Unity/Unity.app/Contents/NetStandard/compat/2.0.0/shims/netfx/mscorlib.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.IK.Runtime">
-        <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.2D.IK.Runtime.dll</HintPath>
+    <Reference Include="Unity.VisualScripting.Flow.Editor">
+        <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.VisualScripting.Flow.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Animation.Editor">
         <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
@@ -720,44 +726,41 @@
     <Reference Include="Unity.VSCode.Editor">
         <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Animation.Triangle.Runtime">
-        <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
         <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
         <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Animation.Runtime">
-        <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline.Editor">
-        <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Timeline">
         <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Core.Editor">
+        <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.VisualScripting.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
         <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Mathematics.Editor">
-        <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Common.Runtime">
-        <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
+    <Reference Include="Unity.VisualScripting.State.Editor">
+        <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.IK.Editor">
         <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.2D.IK.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Path.Editor">
-        <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
+    <Reference Include="Unity.2D.Sprite.Editor">
+        <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="VSSettingsProvider">
+        <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/VSSettingsProvider.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InternalAPIEditorBridge.001">
         <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-        <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    <Reference Include="Unity.2D.Path.Editor">
+        <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Flow">
+        <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
         <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
@@ -768,17 +771,41 @@
     <Reference Include="UnityEngine.UI">
         <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.VisualScripting.Core">
+        <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+        <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.IK.Runtime">
+        <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.2D.IK.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Animation.Triangle.Runtime">
+        <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Animation.Runtime">
+        <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline.Editor">
+        <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+        <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Common.Runtime">
+        <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.SpriteShape.Editor">
+        <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.Common.Editor">
         <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Runtime">
         <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Editor">
-        <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics">
-        <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+    <Reference Include="Unity.VisualScripting.State">
+        <HintPath>/Users/wa.01/Documents/GitHub/unity-group/Library/ScriptAssemblies/Unity.VisualScripting.State.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
