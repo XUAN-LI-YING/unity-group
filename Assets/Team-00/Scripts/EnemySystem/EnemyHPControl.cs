@@ -54,7 +54,7 @@ public class EnemyHPControl : MonoBehaviour
     max_hp = 120;
     hp = max_hp;                    //最大血量設置數值，初始HP血量=最大血量
     checkHP  = 1;            
-    costtime = 0 ;
+    costtime = 1 ;
     costtime1 = 1;
     cost1 = 6;
     cost2 = 20;
@@ -163,6 +163,14 @@ public class EnemyHPControl : MonoBehaviour
             
         }
 
+  }
+
+  void OnCollisionExit2D(Collision2D coll)
+    
+  {
+        // 離開當然取消攻擊啦
+        CancelInvoke("timer1");
+
   }  
 
 
@@ -174,6 +182,7 @@ public class EnemyHPControl : MonoBehaviour
     }
   public void SwitchCost(){
         changmode = true;
+        CancelInvoke("timer1");
         CancelInvoke("timer2");
         checkHP = 1 ;
         // CheckCondition();// 不管有無碰到，往後都是普通扣血，除非再次觸發
@@ -249,7 +258,7 @@ public class EnemyHPControl : MonoBehaviour
       
     Debug.Log($"正常狀態下扣血");
 
-    InvokeRepeating("timer1",0f,1);
+    InvokeRepeating("timer1",0f,costtime);
 
 
     }
@@ -271,6 +280,7 @@ public class EnemyHPControl : MonoBehaviour
       hp = hp - cost1;
 
        Debug.Log($"普通模式：每{costtime}秒扣{cost1}滴血，敵人剩餘{hp}滴血"); 
+       costblood_ui.text = $"普通模式：每{costtime}秒扣{cost1}滴血，敵人剩餘{hp}滴血";
           
     }
 

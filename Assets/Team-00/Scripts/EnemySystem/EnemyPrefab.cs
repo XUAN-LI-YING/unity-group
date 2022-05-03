@@ -40,7 +40,7 @@ public class EnemyPrefab : MonoBehaviour
 
     instance = this;
     delta = 0;
-    createtime = 20; 
+    createtime = 5; 
     createNumber=1;
     Instance=this;
     enemyDie=0;

@@ -1,0 +1,72 @@
+Using pre-set license
+
+ COMMAND LINE ARGUMENTS:
+/Applications/Unity/Unity.app/Contents/MacOS/Unity
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+/Users/wa.01/Documents/GitHub/unity-group
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+57690
+Successfully changed project path to: /Users/wa.01/Documents/GitHub/unity-group
+/Users/wa.01/Documents/GitHub/unity-group
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 46.95 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.1.0f1 (61a549675243)
+[Subsystems] Discovering subsystems at path /Applications/Unity/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/wa.01/Documents/GitHub/unity-group/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+2022-04-30 21:23:32.168 Unity[17885:1226549] iMac preferred device: AMD Radeon Pro 560X (high power)
+2022-04-30 21:23:32.168 Unity[17885:1226549] Metal devices available: 1
+2022-04-30 21:23:32.168 Unity[17885:1226549] 0: AMD Radeon Pro 560X (high power)
+2022-04-30 21:23:32.168 Unity[17885:1226549] Using device AMD Radeon Pro 560X (high power)
+Initializing Metal device caps: AMD Radeon Pro 560X
+Initialize mono
+Mono path[0] = '/Applications/Unity/Unity.app/Contents/Managed'
+Mono path[1] = '/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = '/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56885
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Registered in 0.001060 seconds.
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 44.94 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.860 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.001154 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.40 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.920 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launching external process: /Applications/Unity/Unity.app/Contents/Tools/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.06 seconds
+Refreshing native plugins compatible for Editor in 0.47 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1810 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 148.4 MB.
+System memory in use after: 148.5 MB.
+
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 2269.
+Total: 3.788052 ms (FindLiveObjects: 0.241453 ms CreateObjectMapping: 0.119525 ms MarkObjects: 3.365647 ms  DeleteObjects: 0.059918 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/GOLD.asset
+  artifactKey: Guid(d9f35b930c3654fc3a0b8004d9ed1c94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GOLD.asset using Guid(d9f35b930c3654fc3a0b8004d9ed1c94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b5aeb91dc84cb1294525b5270e208eb') in 0.118863 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
