@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public static Player instance;
     public Main Main;
     //[SerializeField] private float speed = 0.1f;
     Animator animator;
     public SpriteRenderer Sprite;
-    public  bool IsLadder;
+    public bool IsLadder;
     //public bool Istbox;
     //public bool Isbbox; 
     public Collider2D Collider2D;
@@ -17,10 +18,12 @@ public class Player : MonoBehaviour
     public Vector3 GoalPos;
     public Vector2 CurrentPos;
 
-    public int cdtime = 0;
+    public bool isLaunch;
 
     private void Start()
     {
+        instance = this;
+        isLaunch = false;
         GoalPos = transform.position;       //定位
         this.animator = GetComponent<Animator>();
     }
@@ -34,13 +37,13 @@ public class Player : MonoBehaviour
     private void Update()
     {
         Move();
-        
+
         //Movement();
         //Debug.Log(CurrentPos.x);
         //Debug.Log(transform.position.y);
         //Debug.Log()
     }
-    
+
     /*void LateUpdate()
     {
         if(transform.position.y > 16)
@@ -65,7 +68,7 @@ public class Player : MonoBehaviour
                 animator.Play("Player@Walk");
                 Sprite.flipX = true;
             }
-            if(!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+            if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
             {
                 animator.Play("Player@Idle");
             }
@@ -98,15 +101,14 @@ public class Player : MonoBehaviour
         Collider2D.enabled = true;
     }
 
-    public void Coldtime()
+    public void LaunchTrap()
     {
 
-        // IDK_HOW_CD_SYSTEM_WORK_AND_WHAT_DATA_I_SHOULD_USE = true;
-
-        // MAY_BE_IS_TIME -= 1;
-
+        isLaunch = true;
 
     }
+
+    
 
     public void OnTriggerEnter2D(Collider2D other)//接觸梯子物件 
     {
@@ -125,59 +127,59 @@ public class Player : MonoBehaviour
         //if (other.gameObject.CompareTag ("tbox"))
         /*if (other != Main.tbox) return;
         Istbox = true;*/
-        
+
         //if (other.gameObject.CompareTag ("bbox"))
         /*if (other != Main.bbox) return;
         Isbbox = true;*/
 
         // 碰到 觸發
 
-       
-       
+    if (isLaunch)
+    {
+        
+
         if (other.tag == "Mg_LandimineTrap")
         {
-            if (cdtime == 0)
-            {
-             fearBar.instance.MgmineBuild();
-             Debug.Log("觸發mine");
-                
-            }
 
-            
+            fearBar.instance.MgmineBuild();
+            Debug.Log("觸發mine");
+
+
         }
 
         if (other.tag == "DarkTrap")
         {
-             fearBar.instance.DarktrapBuild();
-             Debug.Log("觸發dark");
-            
-            
-        } 
+            fearBar.instance.DarktrapBuild();
+            Debug.Log("觸發dark");
+
+
+        }
         if (other.tag == "Trap-05")
         {
-             fearBar.instance.BigtrapBuild();
-             Debug.Log("觸發大規模");
-            
-            
-        }         
+            fearBar.instance.BigtrapBuild();
+            Debug.Log("觸發大規模");
+
+
+        }
         if (other.tag == "SpikedTrap")
         {
-             fearBar.instance.BigtrapBuild();
-             Debug.Log("觸發尖刺");
-            
-            
-        } 
+            fearBar.instance.BigtrapBuild();
+            Debug.Log("觸發尖刺");
+
+
+        }
         if (other.tag == "Cat")
         {
-           
-            //  Debug.Log("cattttttt");            
-            
-        } 
 
-        
-        
+            //  Debug.Log("cattttttt");            
+
+        }
+
     }
-    
+
+
+    }
+
 
     // void OnTriggerExit2D(Collider2D other)//離開物件
     // {

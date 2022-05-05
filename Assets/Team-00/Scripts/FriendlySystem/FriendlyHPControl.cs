@@ -42,6 +42,7 @@ public class FriendlyHPControl : MonoBehaviour
     {   //如果目前血量HP小於等於0，那就會讓這個物件，也就是敵人消失
         if(hp<=0)
         {
+            
             Destroy(this.gameObject);
         } 
         //如果HP沒有小於0目前的血條位置就會為 目前血量/最大血量
