@@ -17,8 +17,11 @@ public class Spawner : MonoBehaviour
     int spawnID = -1;
     //SpawnPoints Tilemap
     public Tilemap spawnTilemap;
-    
+    //Animator animator;
+
     Vector2 setTrap ;
+    public static Spawner instance;
+    
 
     void Update()
     {
@@ -79,7 +82,7 @@ public class Spawner : MonoBehaviour
     {
         GameObject trap = Instantiate(trapsPrefabs[spawnID],spawnTrapRoot);
         trap.transform.position = position;
-
+        //if ()
         DeselectTrap();
     }
 
@@ -101,5 +104,15 @@ public class Spawner : MonoBehaviour
         }
     }
 
+    /*public void OnTriggerEnter2D(Collider2D other)
+    {
+        if(spawnID != -1)
+        {
+            if(other.CompareTag ("Player"))
+            {
+                animator.Play("Player@Build");
+            }
+        }
+    }*/
 
 }

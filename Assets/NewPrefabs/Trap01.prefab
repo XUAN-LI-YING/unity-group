@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8106179715988397118}
   m_Layer: 7
   m_Name: Trap01
-  m_TagString: Untagged
+  m_TagString: CanSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,6 +160,7 @@ MonoBehaviour:
   timeCD: 2
   filledImage: {fileID: 962022204733693587}
   isCooling: 0
+  isLaunch: 0
 --- !u!61 &8106179715988397118
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -506,3 +507,4 @@ MonoBehaviour:
   timeCD: 2
   filledImage: {fileID: 0}
   isCooling: 0
+  isLaunch: 0

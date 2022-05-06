@@ -24,7 +24,7 @@ public class SpikedTrapAni : MonoBehaviour
   {
 
     //這裡有問題
-    if(CoolDown.instance.filledImage.fillAmount == 0)
+    if(coldtime.instance.filledImage.fillAmount == 0)
     {
       if(touch == true)
        bomb();

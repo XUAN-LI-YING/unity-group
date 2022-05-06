@@ -21,9 +21,8 @@ TagManager:
   - roller
   - Trap-05
   - Trap-06
-  - tbox
-  - bbox
   - devil
+  - CanSpawn
   layers:
   - Default
   - TransparentFX

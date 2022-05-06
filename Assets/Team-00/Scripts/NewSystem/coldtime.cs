@@ -10,17 +10,22 @@ public class coldtime : MonoBehaviour
     public Image filledImage;//遮罩圖片
     //public Text text;//計時文本
     //public Button btn;//按鈕
+    Animator animator;
     public bool isCooling = false;//是否為冷卻
     public bool isLaunch ; //可否觸發 true為可發動 false為已使用
+
+    private bool Built;
     
     int i = 0;
     public static coldtime instance;
+    //private Player Build;
     
     // Start is called before the first frame update
     
     void Start()
     {
-        instance = this;
+        //instance = this;
+        //Switch = GameData.Switch;
         //filledImage = transform.Find("FillImage").GetComponent<Image>();
     }
 
@@ -39,22 +44,14 @@ public class coldtime : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if(isCooling)
-        {
-            timeCount += Time.deltaTime;//計時器
-            filledImage.fillAmount = (timeCD - timeCount) / timeCD;
-            //text.text = timeCount.ToString("f1");
-            if(timeCount>=timeCD)
-            {
-                filledImage.fillAmount = 0;
-                timeCount = 0;
-                isCooling = false;
-                //filledImage.gameObject.SetActive(false);
-                //text.gameObject.SetActive(false);
-            }
-        }
-
+        Built = GameData.Built;
+        //Debug.Log(Built + "02");
+        //Switch = GameData.Switch;
+        //Debug.Log("Player.Switch="+GameData.Switch);
+        //Debug.Log(Switch);
+        if(Built == true)
+        CD();
+        //AFbuild();
         /*if(isLaunch)
         {
             isCooling = false;
@@ -85,6 +82,39 @@ public class coldtime : MonoBehaviour
         }*/
     }
 
+    void CD()
+    {
+        if(isCooling)
+        {
+            timeCount += Time.deltaTime;//計時器
+            filledImage.fillAmount = (timeCD - timeCount) / timeCD;
+            //text.text = timeCount.ToString("f1");
+            if(timeCount>=timeCD)
+            {
+                filledImage.fillAmount = 0;
+                timeCount = 0;
+                isCooling = false;
+                //filledImage.gameObject.SetActive(false);
+                //text.gameObject.SetActive(false);
+            }
+        }
+    }
+
+    void AFbuild()
+    {
+        //Debug.Log(Switch);
+        //if(Built == true)
+        {
+            //Debug.Log(Built + "02");
+            if(isLaunch == true)
+            {
+                return;
+            }
+            //Build.instance;
+            isCooling = true;   
+        }
+    }
+
     public void OnShow()
     {
         
@@ -94,11 +124,19 @@ public class coldtime : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            if(isLaunch == true)
+            
+            //if(Switch == true)
+            AFbuild();
+            /*if(Switch == true)
             {
-                return;
-            }
-            isCooling = true;             
+                if(isLaunch == true)
+                {
+                    return;
+                }
+                //Build.instance;
+                isCooling = true;
+            }*/
+            //Debug.Log(Switch);             
         }
     }
 }
