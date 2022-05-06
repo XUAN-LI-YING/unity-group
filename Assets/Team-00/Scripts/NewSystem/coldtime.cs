@@ -64,6 +64,8 @@ public class coldtime : MonoBehaviour
             if(i == 1) 
             {
                 isLaunch = true;
+
+                //Player.instance.LaunchTrap();
                 
             }
             

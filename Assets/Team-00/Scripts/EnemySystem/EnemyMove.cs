@@ -160,7 +160,7 @@ public class EnemyMove : MonoBehaviour
       this.speed = 5f;
       Spikedelta += 1;
                                            
-      deltaSum=800*spikecollide;           //撞到幾個速度就加成多少
+      deltaSum=600*spikecollide;           //撞到幾個速度就加成多少
     if (Spikedelta >= deltaSum)            //緩速到 一定時間 後便正常 
     {
 
@@ -245,7 +245,7 @@ public class EnemyMove : MonoBehaviour
       Turnon = false;
 
       stopatk_ui.text = "恢復攻擊";
-      FriendlyHPControl.instance.StopBloodoff();  // 調用 友軍血量控制器 恢復正常扣友軍血量
+       FriendlyHPControl.instance.StopBloodoff();  // 調用 友軍血量控制器 恢復正常扣友軍血量
       CancelInvoke("CancelTime");
       // EnemyHPControl.instance.SwitchCost();
 

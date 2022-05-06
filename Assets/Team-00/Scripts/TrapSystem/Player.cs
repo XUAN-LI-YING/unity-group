@@ -28,6 +28,8 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        instance = this;
+        //isLaunch = false;
         GoalPos = transform.position;       //定位
         /*this.*/animator = gameObject.GetComponent<Animator>();
         //Switch = GameData.Switch;
@@ -68,7 +70,7 @@ public class Player : MonoBehaviour
         //Debug.Log(transform.position.y);
         //Debug.Log()
     }
-    
+
     /*void LateUpdate()
     {
         if(transform.position.y > 16)
@@ -94,7 +96,7 @@ public class Player : MonoBehaviour
                     Sprite.flipX = true;
                 }
             }
-            if(!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+            if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
             {
                 animator.SetBool("Walking", false);
             }
@@ -169,60 +171,67 @@ public class Player : MonoBehaviour
 
         // 碰到 觸發
 
-       
-       
+    //if (isLaunch)
+    {
+        
+
         if (other.tag == "Mg_LandimineTrap")
         {
-            if (cdtime == 0)
-            {
-             fearBar.instance.MgmineBuild();
-             Debug.Log("觸發mine");
-                
-            }
 
-            
+            fearBar.instance.MgmineBuild();
+            Debug.Log("觸發mine");
+
+
         }
 
         if (other.tag == "DarkTrap")
         {
-             fearBar.instance.DarktrapBuild();
-             Debug.Log("觸發dark");
-            
-            
-        } 
+            fearBar.instance.DarktrapBuild();
+            Debug.Log("觸發dark");
+
+
+        }
         if (other.tag == "Trap-05")
         {
-             fearBar.instance.BigtrapBuild();
-             Debug.Log("觸發大規模");
-            
-            
-        }         
+            fearBar.instance.BigtrapBuild();
+            Debug.Log("觸發大規模");
+
+
+        }
         if (other.tag == "SpikedTrap")
         {
-             fearBar.instance.BigtrapBuild();
-             Debug.Log("觸發尖刺");
-            
-            
-        } 
+            fearBar.instance.BigtrapBuild();
+            Debug.Log("觸發尖刺");
+
+
+        }
         if (other.tag == "Cat")
         {
-           
+
             //  Debug.Log("cattttttt");            
-            
-        } 
 
-        
-        
+        }
     }
-    
-
-    void OnTriggerExit2D(Collider2D other)//離開物件
+    /*void OnTriggerExit2D(Collider2D other)//離開物件
     {
         if(other.CompareTag("CanSpawn"))
         {
             IsLadder = false;
             //Built = false;
         }
-    }
+    }*/
 
+
+    // void OnTriggerExit2D(Collider2D other)//離開物件
+    // {
+    //     if (other != Main.Ladder) return;
+    //     IsLadder = false;       //IsLadder不為真 
+
+    //     /*if (other != Main.tbox) return;
+    //     Istbox = false;*/
+
+    //     /*if (other != Main.bbox) return;
+    //     Isbbox = false;*/
+    // }
+    }
 }

@@ -7,7 +7,7 @@ public class StartchangScene : MonoBehaviour
 {
     public void PlayGame()
     {
-       SceneManager.LoadScene("DevilDefend");
+       SceneManager.LoadScene("Loading");
     }
     public void Treach()  //這應該是 Teach？ 可以載這個 vscode 套件 https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
     {

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e619475c42bd2744acf597e12d3f867, type: 3}
   m_Name: Lilith
   m_EditorClassIdentifier: 
-  speakerName: Lilith
+  speakerName: "\u8389\u8389\u7D72"
   speakerSprite: {fileID: 21300000, guid: 5b4851d227998d444a6290448eada4ee, type: 3}

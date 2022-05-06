@@ -38,7 +38,7 @@ public class friendlyButton : MonoBehaviour
 
         turnonoff.SetActive(true);
 
-        // InvokeRepeating("AutocostFear", 1, 2);
+        InvokeRepeating("AutocostFear", 1, 2);
 
         button.onClick.AddListener(TurnEffect);
 
@@ -47,7 +47,7 @@ public class friendlyButton : MonoBehaviour
     }
     public void TurnEffect()
     {
-        //  Debug.Log(turnonoff.activeSelf); 
+    Debug.Log(turnonoff.activeSelf); 
     if (!turnonoff.activeSelf)
     {
         button.image.sprite = StopbuttonImage;
