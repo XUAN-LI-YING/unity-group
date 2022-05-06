@@ -104,6 +104,7 @@
      <Compile Include="Assets\Team-00\Scripts\Builder.cs" />
      <Compile Include="Assets\Samples\2D SpriteShape\4.1.5\Sprite Shape Extras\Scripts\LegacyCollider.cs" />
      <Compile Include="Assets\Team-00\Scripts\Splash\SplashControl.cs" />
+     <Compile Include="Assets\Team-00\Picture\button\Changimage.cs" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
