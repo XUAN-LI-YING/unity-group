@@ -175,7 +175,7 @@ public class Player : MonoBehaviour
     {
         
 
-        if (other.tag == "Mg_LandimineTrap")
+        if (other.tag == "Trap04")
         {
 
             fearBar.instance.MgmineBuild();
@@ -184,21 +184,21 @@ public class Player : MonoBehaviour
 
         }
 
-        if (other.tag == "DarkTrap")
+        if (other.tag == "Trap05")
         {
             fearBar.instance.DarktrapBuild();
             Debug.Log("觸發dark");
 
 
         }
-        if (other.tag == "Trap-05")
+        if (other.tag == "Trap06")
         {
             fearBar.instance.BigtrapBuild();
             Debug.Log("觸發大規模");
 
 
         }
-        if (other.tag == "SpikedTrap")
+        if (other.tag == "Trap01")
         {
             fearBar.instance.BigtrapBuild();
             Debug.Log("觸發尖刺");
