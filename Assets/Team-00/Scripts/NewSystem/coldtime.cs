@@ -15,7 +15,7 @@ public class coldtime : MonoBehaviour
     public bool isLaunch ; //可否觸發 true為可發動 false為已使用
 
     private bool Built;
-    
+    private bool IsLadder;
     int i = 0;
     public static coldtime instance;
     //private Player Build;
@@ -45,10 +45,14 @@ public class coldtime : MonoBehaviour
     void Update()
     {
         Built = GameData.Built;
+        IsLadder = GameData.IsLadder;
         //Debug.Log(Built + "02");
         //Switch = GameData.Switch;
         //Debug.Log("Player.Switch="+GameData.Switch);
         //Debug.Log(Switch);
+        if(IsLadder == false)
+        Built = false;
+
         if(Built == true)
         CD();
         //AFbuild();

@@ -4,7 +4,8 @@ using UnityEngine;
 public class magicTrap2 : MonoBehaviour
 {
     public GameObject Ani;
-
+    private bool Des;
+    
     void OnMouseDown()
     {
         Debug.Log("按到我了");
@@ -15,7 +16,8 @@ public class magicTrap2 : MonoBehaviour
         //Instantiate(Ani, gameObject.transform.position, gameObject.transform.rotation);
 
         Destroy(this.gameObject);
-
+        Des = true;
+        GameData.Des = Des;
     }
 
     public void OnTriggerEnter2D(Collider2D other)

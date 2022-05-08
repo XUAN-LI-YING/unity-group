@@ -20,11 +20,11 @@ public class Player : MonoBehaviour
     //private Spawner CanSpawn;
     public static Player instance;
     //private Spawner setTrap.poistion;
-     bool Switch;//private
-     //bool Walk;
+     private bool Walk = true;
+     private bool Walk1 = true;
      private bool Built;
      public bool isPlaying;
-    int X = 0;
+    //int X = 0;
 
     private void Start()
     {
@@ -54,6 +54,7 @@ public class Player : MonoBehaviour
         stateInfo = animator.GetCurrentAnimatorStateInfo(0);
         isAniEnd();
         Info();
+        //Debug.Log(IsLadder);
         /*else if(Built == false)
         {
             
@@ -63,6 +64,7 @@ public class Player : MonoBehaviour
         {
             animator.SetBool("Building", false);
         }*/
+        if(Built == true)
         Move();
         //Build();
         //Debug.Log("Player.Switch="+GameData.Switch);
@@ -82,14 +84,28 @@ public class Player : MonoBehaviour
     {               
             if(Input.GetKey(KeyCode.A))
             {
+                if(Walk == false)
+                {
+                    animator.SetBool("Walking", true);
+                    gameObject.transform.position += new Vector3(0,0,0);                    
+                    Sprite.flipX = false;
+                }
+                else if(Walk == true)
                 {
                     animator.SetBool("Walking", true);
                     gameObject.transform.position += new Vector3(-0.05f,0,0);                    
                     Sprite.flipX = false;
-                }                                  
+                }                                 
             }
             if(Input.GetKey(KeyCode.D))
             {
+                if(Walk1 == false)
+                {
+                    animator.SetBool("Walking", true);
+                    gameObject.transform.position += new Vector3(0,0,0);
+                    Sprite.flipX = true;
+                }
+                else if(Walk1 == true)
                 {
                     animator.SetBool("Walking", true);
                     gameObject.transform.position += new Vector3(0.05f,0,0);
@@ -119,12 +135,20 @@ public class Player : MonoBehaviour
     void Info()//冷卻調用
     {
         if(IsLadder == true)
+        {
             if(Input.GetKey(KeyCode.Space))
             {
                 animator.SetTrigger("Built");
-                //GameData.Built = Built;         
+                //GameData.Built = Built;
+                IsLadder = true;  
+                GameData.IsLadder =  IsLadder;   
             }
-        //Debug.Log(Built + "01");
+        }    
+        else if(IsLadder == false)
+        {
+            IsLadder = false;
+            GameData.IsLadder =  IsLadder;
+        } 
     }
 
     private void isAniEnd()//動畫狀態判斷
@@ -161,14 +185,30 @@ public class Player : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.tag == "Stop")
+        {
+            Walk = false; 
+        }
+        if (other.tag == "Stop1")
+        {
+            Walk1 = false;
+        }
         if(other.CompareTag("CanSpawn"))
         {   
             IsLadder = true; 
         }
-
+        if (other.tag == "Trap-06")
+        {
+            IsLadder = true; 
+            //fearBar.instance.MgmineBuild();  
+        }
+        if (other.tag == "SpikedTrap")
+        {
+            IsLadder = true;
+            fearBar.instance.BigtrapBuild();
+            //Debug.Log("觸發尖刺");
+        }
         
-        
-
         // 碰到 觸發
 
     //if (isLaunch)
@@ -195,7 +235,28 @@ public class Player : MonoBehaviour
 
 
         // }
-
-
+    }
+    void OnTriggerExit2D(Collider2D other)//離開物件
+    {
+        if (other.tag == "Stop")
+        {
+            Walk = true; 
+        }
+        if (other.tag == "Stop1")
+        {
+            Walk1 = true;
+        }
+        if(other.CompareTag("CanSpawn"))
+        {
+            IsLadder = false;
+        }
+        if (other.tag == "SpikedTrap")
+        {
+            IsLadder = false;
+        }
+        if (other.tag == "Trap-06")
+        {
+            IsLadder = false; 
+        }
     }
 }

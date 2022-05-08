@@ -18,13 +18,15 @@ public class Spawner : MonoBehaviour
     //SpawnPoints Tilemap
     public Tilemap spawnTilemap;
     //Animator animator;
-
+    private bool Des;
     Vector2 setTrap ;
     public static Spawner instance;
     
 
     void Update()
     {
+        Des = GameData.Des;
+        //Debug.Log(Des);
         if(CanSpawn())
             DetectSpawnPoint();
     }
@@ -39,10 +41,7 @@ public class Spawner : MonoBehaviour
 
     void DetectSpawnPoint()
     {
-        //Detect when mouse id clicked (first touch clicked)
-        if(Input.GetMouseButtonDown(0))
-        {
-            //get the world space poistion of the mouse
+        //get the world space poistion of the mouse
             var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             //Debug.Log(mousePos);
             //get the position of the cell in the tilemap
@@ -57,6 +56,10 @@ public class Spawner : MonoBehaviour
             //Debug.Log(cellPosCentered);
             //Debug.Log(setTrap);
             //check if we can spawn in that cell(collider)
+        //Detect when mouse id clicked (first touch clicked)
+        if(Input.GetMouseButtonDown(0))
+        {
+            
             if(spawnTilemap.GetColliderType(cellPosDefault) == Tile.ColliderType.Sprite)
             {
                 //spawn the trap
@@ -66,6 +69,8 @@ public class Spawner : MonoBehaviour
                 spawnTilemap.SetColliderType(cellPosDefault,Tile.ColliderType.None);
                 /*//TEST enable sprite
                 testSprite.enabled = true;*/
+                Des = false;
+                GameData.Des = Des;
             }
             /*else
             {
@@ -75,6 +80,10 @@ public class Spawner : MonoBehaviour
                 spawnTilemap.SetColliderType(cellPosDefault, Tile.ColliderType.Sprite);
             }*/
         }
+        if(Des == true)
+            {
+                spawnTilemap.SetColliderType(cellPosDefault, Tile.ColliderType.Sprite);  
+            }
         
     }
 
