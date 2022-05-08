@@ -63,7 +63,7 @@ public class friendlyButton : MonoBehaviour
     {
         button.image.sprite = OrginalbuttonImage;
         turnon = 1;
-        InvokeRepeating("AutocostFear", 4, 2);
+        InvokeRepeating("AutocostFear", 8, 8);
     }
     else{};
     
