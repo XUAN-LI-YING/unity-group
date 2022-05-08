@@ -172,66 +172,30 @@ public class Player : MonoBehaviour
         // 碰到 觸發
 
     //if (isLaunch)
-    {
         
 
-        if (other.tag == "Trap04")
-        {
-
-            fearBar.instance.MgmineBuild();
-            Debug.Log("觸發mine");
-
-
-        }
-
-        if (other.tag == "Trap05")
-        {
-            fearBar.instance.DarktrapBuild();
-            Debug.Log("觸發dark");
+        // if (other.tag == "Trap05")
+        // {
+        //     fearBar.instance.DarktrapBuild();
+        //     Debug.Log("觸發dark");
 
 
-        }
-        if (other.tag == "Trap06")
-        {
-            fearBar.instance.BigtrapBuild();
-            Debug.Log("觸發大規模");
+        // }
+        // if (other.tag == "Trap06")
+        // {
+        //     fearBar.instance.BigtrapBuild();
+        //     Debug.Log("觸發大規模");
 
 
-        }
-        if (other.tag == "Trap01")
-        {
-            fearBar.instance.BigtrapBuild();
-            Debug.Log("觸發尖刺");
+        // }
+        // if (other.tag == "Trap01")
+        // {
+        //     fearBar.instance.BigtrapBuild();
+        //     Debug.Log("觸發尖刺");
 
 
-        }
-        if (other.tag == "Cat")
-        {
-
-            //  Debug.Log("cattttttt");            
-
-        }
-    }
-    /*void OnTriggerExit2D(Collider2D other)//離開物件
-    {
-        if(other.CompareTag("CanSpawn"))
-        {
-            IsLadder = false;
-            //Built = false;
-        }
-    }*/
+        // }
 
 
-    // void OnTriggerExit2D(Collider2D other)//離開物件
-    // {
-    //     if (other != Main.Ladder) return;
-    //     IsLadder = false;       //IsLadder不為真 
-
-    //     /*if (other != Main.tbox) return;
-    //     Istbox = false;*/
-
-    //     /*if (other != Main.bbox) return;
-    //     Isbbox = false;*/
-    // }
     }
 }
