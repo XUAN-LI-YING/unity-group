@@ -22,6 +22,8 @@ public class blackTrap : MonoBehaviour
         {
 
 
+            
+
             blackAnimationTime += 1;
 
             switch (blackAnimationTime)
