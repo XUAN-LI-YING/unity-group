@@ -48,7 +48,7 @@ public class FriendlyHPControl : MonoBehaviour
         //如果HP沒有小於0目前的血條位置就會為 目前血量/最大血量
         float _percent=((float)hp /(float) max_hp);
         FriendlyAllHP.transform.localScale=new Vector3(_percent, FriendlyAllHP.transform.localScale.y,FriendlyAllHP.transform.localScale.z);
-        CheckCondition();
+        // CheckCondition();
 
     }
     public void StopBloodon(){
@@ -79,11 +79,6 @@ public class FriendlyHPControl : MonoBehaviour
                 
             }else{
 
-                // 原本的：hp -= Time.deltaTime * 20;
-
-                // 扣血量要以固定頻率運作，通常用在速度哦哦
-                // 幫你找了相關資料：https://ithelp.ithome.com.tw/articles/10273201?sc=hot
-                // 再幫你寫了另一個函式去計時扣血，還能設定秒數呢～
                InvokeRepeating("timer1", 0, costtime);
 
             }
@@ -98,7 +93,7 @@ public class FriendlyHPControl : MonoBehaviour
     void OnCollisionExit2D(Collision2D coll)
     {
         // 離開當然取消攻擊啦
-        CancelInvoke("timer1");
+        // CancelInvoke("timer1");
 
     }
 
@@ -108,13 +103,13 @@ public class FriendlyHPControl : MonoBehaviour
         if (stopblood)
         
             {
-                // Debug.Log($"友軍停止受傷狀態：{stopblood} ");
-                // Debug.Log($"friendly目前血量 {hp} ");
+                Debug.Log($"友軍停止受傷狀態：{stopblood} ");
+                Debug.Log($"friendly目前血量 {hp} ");
             } 
 
         else{
             
-            //  Debug.Log($"友軍停止受傷狀態：{stopblood} ");
+             Debug.Log($"友軍停止受傷狀態：{stopblood} ");
         }
             
  
