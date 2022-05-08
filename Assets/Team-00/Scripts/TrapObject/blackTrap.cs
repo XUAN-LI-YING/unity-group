@@ -7,6 +7,7 @@ public class blackTrap : MonoBehaviour
 
     public GameObject darkAni;
     public int blackAnimationTime;//是否播放過黑暗陷阱動畫
+    private bool Des;
     void Start()
     {
         blackAnimationTime = 0;
@@ -37,6 +38,9 @@ public class blackTrap : MonoBehaviour
                     blackAnimationTime = 0;
                     break;
             }
+            Destroy(this.gameObject);
+            Des = true;
+            GameData.Des = Des;
         }
 
         if (other.tag == "Player")

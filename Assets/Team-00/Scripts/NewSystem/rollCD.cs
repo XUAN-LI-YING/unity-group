@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class coldtime : MonoBehaviour
+public class rollCD : MonoBehaviour
 {
     public float timeCount = 0;//計時器
     public float  timeCD = 2.0f;//CD
@@ -13,20 +13,18 @@ public class coldtime : MonoBehaviour
     Animator animator;
     public bool isCooling = false;//是否為冷卻
     public bool isLaunch ; //可否觸發 true為可發動 false為已使用
-    public GameObject Trap;
     private bool Built;
     private bool IsLadder;
-    //public bool roll;
+    public bool roll;
     int i = 0;
-    public static coldtime instance;
+    public static rollCD instance;
     //private Player Build;
     
     // Start is called before the first frame update
     
     void Start()
     {
-        Trap.SetActive(false);
-        //instance = this;
+        instance = this;
         //Switch = GameData.Switch;
         //filledImage = transform.Find("FillImage").GetComponent<Image>();
     }
@@ -61,7 +59,7 @@ public class coldtime : MonoBehaviour
 
         if(filledImage.fillAmount == 0)
         {
-            Trap.SetActive(true);
+            roll = true;
         }
         /*else if(filledImage.fillAmount != 0)
         {

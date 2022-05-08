@@ -7,7 +7,6 @@ public class rollTouch : MonoBehaviour
     public GameObject aniroll;
     [Header("碰到滾筒次數")] 
     public int rollTime;//碰到滾筒次數
-
     void Start() 
     {
       rollTime = 0;
@@ -16,6 +15,7 @@ public class rollTouch : MonoBehaviour
         //當滾筒圖卡觸碰敵方，則呼叫撞木動畫
         public void OnTriggerEnter2D(Collider2D col)
         {
+          if(rollCD.instance.roll == true)
            if (col.gameObject.tag == "Cat")
            {  
               rollTime +=1;

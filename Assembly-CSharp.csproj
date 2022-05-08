@@ -108,6 +108,7 @@
      <Compile Include="Assets\Team-00\Scripts\Builder.cs" />
      <Compile Include="Assets\Samples\2D SpriteShape\4.1.5\Sprite Shape Extras\Scripts\LegacyCollider.cs" />
      <Compile Include="Assets\Team-00\Scripts\Splash\SplashControl.cs" />
+     <Compile Include="Assets\Team-00\Scripts\NewSystem\rollCD.cs" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -367,6 +368,9 @@
     </Reference>
     <Reference Include="UnityEditor.UnityConnectModule">
         <HintPath>D:/unity/2021.1.10f1/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+        <HintPath>D:/group/team-group/unity-group/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>D:/unity/2021.1.10f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -748,6 +752,9 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
         <HintPath>D:/group/team-group/unity-group/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PlasticSCM.Editor">
+        <HintPath>D:/group/team-group/unity-group/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
         <HintPath>D:/group/team-group/unity-group/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>

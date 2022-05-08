@@ -9,4 +9,5 @@ static class GameData
     public static bool Built = true;//是否可冷卻
     public static bool IsLadder;//是否碰撞
     public static bool Des;
+    public static bool roll = false;
 }
