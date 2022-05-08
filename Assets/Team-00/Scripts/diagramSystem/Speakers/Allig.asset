@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Allig
   m_EditorClassIdentifier: 
   speakerName: "\u827E\u5229\u683C"
-  speakerSprite: {fileID: 21300000, guid: f67a6edcf86799b408835e9f5ed7d760, type: 3}
+  speakerSprite: {fileID: 21300000, guid: eae27da7b82b0474ca37d196f0483c4b, type: 3}

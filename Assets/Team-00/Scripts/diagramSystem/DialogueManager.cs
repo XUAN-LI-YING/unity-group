@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
-    public TextMeshProUGUI speakerName, dialogue,navButtonText;
+    public Text speakerName, dialogue;
+    public TextMeshProUGUI navButtonText;
     public Image speakerSprite;
 
     private int currentIndex;
@@ -31,9 +32,21 @@ public class DialogueManager : MonoBehaviour
         instance.speakerName.text="";
         instance.dialogue.text="";
         instance.navButtonText.text= ">";
-
         instance.ReadNext();
     }
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            instance.ReadNext();
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            instance.ReadNext();
+        }
+    }
+
 
     public void ReadNext()
     {

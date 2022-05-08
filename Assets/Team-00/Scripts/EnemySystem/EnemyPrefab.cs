@@ -68,7 +68,7 @@ public class EnemyPrefab : MonoBehaviour
     this.delta += Time.deltaTime;
     if (this.delta > createtime)
     {
-      if(createNumber<10) //總共只能複製出10隻
+      if(createNumber<11) //總共只能複製出10隻
       {
          GameObject go = Instantiate(catPrefab) as GameObject;
         //定義產生位置

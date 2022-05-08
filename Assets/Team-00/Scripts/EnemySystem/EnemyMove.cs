@@ -184,7 +184,7 @@ public class EnemyMove : MonoBehaviour
         this.speed = 0;                     //當遇到捕獸夾則被困住所以速度為0
         Trapsdelta += 1;
 
-        if (Trapsdelta >= 500)                //緩速到一定時間後便正常
+        if (Trapsdelta >= 200)                //緩速到一定時間後便正常
         {
 
             Traps02IsCollide = false;

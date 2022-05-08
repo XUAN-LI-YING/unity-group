@@ -98,7 +98,7 @@ public class EnemyHPControl : MonoBehaviour
 
     if (col.tag == "rockboom")
     {
-      hp -= 100;
+      hp -= 50;
       
     }
     if (col.tag=="Traps02")

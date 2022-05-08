@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Nicholas
   m_EditorClassIdentifier: 
   speakerName: "\u5C3C\u53EF\u62C9\u65AF"
-  speakerSprite: {fileID: 21300000, guid: 0bf4bb3bc562ec44aae4d2580333360e, type: 3}
+  speakerSprite: {fileID: 21300000, guid: 8ab12e4e22d464a48b313999fbe08ec4, type: 3}

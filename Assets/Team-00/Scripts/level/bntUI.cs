@@ -18,5 +18,11 @@ public class bntUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         levelMenu.SetActive(false); 
     }
+     void OnMouseDown()
+    {
+            levelMenu.SetActive(true);
+             
+        
+    }
    
 }

@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 364212917
+CRC: 1385741937
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 0b3a62fdb0d0b111c9a2719d085ae77a
+    Hash: 90d3e853ce74d600f981ac02baa85a68
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 5500fc80e4c069296d50401cc5d79d8e
+    Hash: b13e42d738df253f41dd22feb7203a54
 HashAppended: 0
 ClassTypes:
 - Class: 28
@@ -17,8 +17,7 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 213
   Script: {instanceID: 0}
-SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Samples/2D Animation/4.2.8/Samples/5 SpriteSwap/Sprite Library/Rikr Rage.asset
 - Assets/Samples/2D Animation/4.2.8/Samples/5 SpriteSwap/Sprites/Rikr Rage.png
+- Assets/Samples/2D Animation/4.2.8/Samples/5 SpriteSwap/Sprite Library/Rikr Rage.asset
 Dependencies: []
