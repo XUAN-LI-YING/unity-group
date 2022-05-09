@@ -71,6 +71,13 @@ public class fearBar : MonoBehaviour
     public Button button;
     //開開關關
 
+    public Button Trap04;
+    public Button Trap05;
+    public Button Trap06;
+    // public GameObject Trap04;
+    // public GameObject Trap05;
+    // public GameObject Trap06;
+
     // 持續偵測有無事件
     void Update()
     {
@@ -341,6 +348,13 @@ public class fearBar : MonoBehaviour
         {
             points = 0;
             button.interactable = false;
+            Trap04.interactable = false;
+            Trap05.interactable = false;
+            Trap06.interactable = false;
+            // Trap04.SetActive(false);
+            // Trap05.SetActive(false);
+            // Trap06.SetActive(false);
+
             // Debug.Log($"LOSE！");
             ui_fillBar.fillAmount = 0;
 

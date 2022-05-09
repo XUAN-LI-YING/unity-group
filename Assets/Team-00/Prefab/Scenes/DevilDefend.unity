@@ -3295,6 +3295,9 @@ MonoBehaviour:
   costvalue: 20
   eachpresscost: 10
   button: {fileID: 1319658584}
+  Trap04: {fileID: 0}
+  Trap05: {fileID: 0}
+  Trap06: {fileID: 0}
 --- !u!4 &604770288
 Transform:
   m_ObjectHideFlags: 0
