@@ -25,6 +25,18 @@ public class DarkTrap : MonoBehaviour
 
 
         }
+        if (other.gameObject.tag == "bigEnemy")
+        {
+            Correct();
+
+
+        }
+        if (other.gameObject.tag == "DevilEnemy")
+        {
+            Correct();
+
+
+        }
     }
 
     void Correct()

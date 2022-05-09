@@ -228,7 +228,7 @@ public class EnemyMove : MonoBehaviour
 
         Turnon = true;
 
-        FriendlyHPControl.instance.StopBloodon();
+        // FriendlyHPControl.instance.StopBloodon();
 
         stopatk_ui.text = "攻擊無效!!!!!";                            // 純粹寫介面方便偵錯
 

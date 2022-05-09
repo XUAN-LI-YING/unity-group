@@ -93,12 +93,36 @@ public class FriendlyHPControl : MonoBehaviour
             // 上方映璇寫的重新調整
 
         }
+         if(col.gameObject.tag=="DevilEnemy")
+        { 
+            
+            if (stopblood)
+            {
+                // 效果開了當然不能扣！
+                
+            }else{
+
+                // 原本的：hp -= Time.deltaTime * 20;
+
+                // 扣血量要以固定頻率運作，通常用在速度哦哦
+                // 幫你找了相關資料：https://ithelp.ithome.com.tw/articles/10273201?sc=hot
+                // 再幫你寫了另一個函式去計時扣血，還能設定秒數呢～
+               InvokeRepeating("Deviltimer1", 0, costtime);
+
+            }
+
+             
+            
+            // 上方映璇寫的重新調整
+
+        }
     }
 
     void OnCollisionExit2D(Collision2D coll)
     {
         // 離開當然取消攻擊啦
         CancelInvoke("timer1");
+        CancelInvoke("Deviltimer1");
 
     }
 
@@ -125,6 +149,12 @@ public class FriendlyHPControl : MonoBehaviour
     void timer1(){
       
       hp = hp - cost1;
+       Debug.Log($"友軍每{costtime}秒扣{cost1}滴血");     
+       Debug.Log($"友軍剩餘{hp}滴血"); 
+    }
+     void Deviltimer1(){
+      
+      hp = hp - 25;
        Debug.Log($"友軍每{costtime}秒扣{cost1}滴血");     
        Debug.Log($"友軍剩餘{hp}滴血"); 
     }

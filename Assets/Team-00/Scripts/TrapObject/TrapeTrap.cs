@@ -44,11 +44,29 @@ public class TrapeTrap : MonoBehaviour
             // Debug.Log("碰撞到敵人啦")  ;
             IsAttacking = true ;      
         }
+         if(coll.gameObject.tag=="DevilEnemy")
+        { 
+            // Debug.Log("碰撞到敵人啦")  ;
+            IsAttacking = true ;      
+        }
+         if(coll.gameObject.tag=="bigEnemy")
+        { 
+            // Debug.Log("碰撞到敵人啦")  ;
+            IsAttacking = true ;      
+        }
     }
     void OnTriggerExit2D(Collider2D coll)
     
     {
         if(coll.gameObject.tag=="Cat")
+        {
+           IsAttacking = false ;   
+        }
+        if(coll.gameObject.tag=="DevilEnemy")
+        {
+           IsAttacking = false ;   
+        }
+        if(coll.gameObject.tag=="bigEnemy")
         {
            IsAttacking = false ;   
         }

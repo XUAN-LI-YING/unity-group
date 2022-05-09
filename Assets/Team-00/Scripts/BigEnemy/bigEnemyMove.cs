@@ -179,7 +179,7 @@ public class bigEnemyMove : MonoBehaviour
       this.speed = 0;                     //當遇到捕獸夾則被困住所以速度為0
       Trapsdelta += 1;
 
-    if (Trapsdelta >= 300)                //緩速到一定時間後便正常
+    if (Trapsdelta >= 200)                //緩速到一定時間後便正常
     {
 
       Traps02IsCollide = false;
@@ -220,7 +220,7 @@ public class bigEnemyMove : MonoBehaviour
 
       Turnon = true; 
       
-      FriendlyHPControl.instance.StopBloodon();   
+      // FriendlyHPControl.instance.StopBloodon();   
       
       stopatk_ui.text = "攻擊無效!!!!!";                            // 純粹寫介面方便偵錯
 

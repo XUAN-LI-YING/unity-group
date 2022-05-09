@@ -11,17 +11,26 @@ public class bntUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
      
     public void OnPointerEnter(PointerEventData eventData)    //滑鼠移入
     {
-       levelMenu.SetActive(true); //顯示關卡畫面
+          if (gameObject != null)
+          {
+               levelMenu.SetActive(true); //顯示關卡畫面
+          }
+      
     }
 
     public void OnPointerExit(PointerEventData eventData)    //滑鼠移出
     {
-        levelMenu.SetActive(false); 
+        if (gameObject != null)
+        {
+        levelMenu.SetActive(false);
+        } 
     }
      void OnMouseDown()
     {
+            if (gameObject != null)
+            {
             levelMenu.SetActive(true);
-             
+            }
         
     }
    

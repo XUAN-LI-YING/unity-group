@@ -5,7 +5,7 @@ using UnityEngine;
 public class bigTrap : MonoBehaviour
 {
     public GameObject aniBig;
-    
+    private bool Des;
 
     void Start() 
     {
@@ -32,7 +32,32 @@ public class bigTrap : MonoBehaviour
             
                 move = new Vector3(move.x, move.y+20f, move.z);
                 Instantiate(aniBig, move, gameObject.transform.rotation);
-                
+                Destroy(this.gameObject);
+                Des = true;
+                GameData.Des = Des;
+              }
+
+              if (col.gameObject.tag == "bigEnemy")
+              {
+              
+                Vector3 move = gameObject.transform.position;
+            
+                move = new Vector3(move.x, move.y+20f, move.z);
+                Instantiate(aniBig, move, gameObject.transform.rotation);
+                Destroy(this.gameObject);
+                Des = true;
+                GameData.Des = Des;
+              }
+              if (col.gameObject.tag == "DevilEnemy")
+              {
+              
+                Vector3 move = gameObject.transform.position;
+            
+                move = new Vector3(move.x, move.y+20f, move.z);
+                Instantiate(aniBig, move, gameObject.transform.rotation);
+                Destroy(this.gameObject);
+                Des = true;
+                GameData.Des = Des;
               }
               
               

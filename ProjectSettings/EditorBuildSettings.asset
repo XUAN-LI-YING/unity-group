@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/StartGame/Scenes/level.unity
     guid: 609904cbbc2164144b35a4c3d6ff1246
   - enabled: 1
-    path: Assets/Team-00/Scenes/DevilDefend.unity
+    path: Assets/Team-00/Prefab/Scenes/DevilDefend.unity
     guid: 7dd44d0a8cbc14255a5c39bdf51ef780
   - enabled: 1
     path: Assets/StartGame/Scenes/TeachingSlide.unity
@@ -30,12 +30,24 @@ EditorBuildSettings:
     path: Assets/MainMenu/Scene/MainMenu.unity
     guid: 24a9687f5fddd4f1393f7df9722d78fd
   - enabled: 1
-    path: Assets/Team-00/Scenes/gameOver.unity
+    path: Assets/Team-00/Prefab/Scenes/gameOver.unity
     guid: 2c1f98b9a8b3c1649a0aa424fac9ab10
   - enabled: 1
-    path: Assets/Team-00/Scenes/gameWin.unity
+    path: Assets/Team-00/Prefab/Scenes/gameWin.unity
     guid: 16aaeba127e29a64681fc685beac4831
   - enabled: 1
-    path: Assets/Team-00/Scenes/gameScene.unity
+    path: Assets/Team-00/Prefab/Scenes/gameScene.unity
     guid: 929fb6711724e46c3a2d79044188ba7f
+  - enabled: 1
+    path: Assets/Team-00/Prefab/Scenes/Devil2.unity
+    guid: 64dbfca0b8da23947937bc917e236ad1
+  - enabled: 1
+    path: Assets/Team-00/Prefab/Scenes/Devil3.unity
+    guid: 7ac17e8fdc532b24ca495caf33e36156
+  - enabled: 1
+    path: Assets/Team-00/Prefab/Scenes/gameWin2.unity
+    guid: 2e3aec814e415064ca9d8d1fac2cd0ee
+  - enabled: 1
+    path: Assets/Team-00/Prefab/Scenes/gameWin3.unity
+    guid: 04cc24aa11813474b8239097f166b36e
   m_configObjects: {}

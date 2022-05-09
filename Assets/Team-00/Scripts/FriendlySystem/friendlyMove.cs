@@ -78,12 +78,23 @@ public class friendlyMove : MonoBehaviour
           walking = false;
           IsAttacking = true ;
         }
+
+         if(coll.gameObject.tag=="bigEnemy")
+        { 
+          walking = false;
+          IsAttacking = true ;
+        }
         
   }
   void OnCollisionExit2D(Collision2D coll)
     
     {
         if(coll.gameObject.tag=="Cat")
+        {
+          walking = true;
+           IsAttacking = false ;   
+        }
+        if(coll.gameObject.tag=="bigEnemy")
         {
           walking = true;
            IsAttacking = false ;   

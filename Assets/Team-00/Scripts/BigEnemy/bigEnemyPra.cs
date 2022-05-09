@@ -135,7 +135,7 @@ public class bigEnemyPra : MonoBehaviour
 
     if(enemyDie>=15)                                    //第二關
     {
-      SceneManager.LoadScene("gameWin"); 
+      SceneManager.LoadScene("gameWin2"); 
     }
 
   }

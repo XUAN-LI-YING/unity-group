@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4543704054227758036}
   - component: {fileID: 2279264464924564116}
   - component: {fileID: 4083398223061589081}
-  - component: {fileID: 6861402032040529410}
+  - component: {fileID: 293525547382623667}
   - component: {fileID: 5608348819690497545}
   - component: {fileID: 4050468275237228527}
   - component: {fileID: -2202947934105843644}
@@ -48,6 +48,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -102,6 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -131,9 +133,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6861402032040529410}
+      - m_Target: {fileID: 293525547382623667}
         m_TargetAssemblyTypeName: coldtime, Assembly-CSharp
-        m_MethodName: OnShow
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -143,7 +145,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6861402032040529410
+--- !u!114 &293525547382623667
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,7 +154,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 442396043864897266}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ca510ec4e5da0843b2661c904b6bfae, type: 3}
+  m_Script: {fileID: 11500000, guid: ac4c9352d8934cd4c941e321ed962894, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeCount: 0
@@ -160,6 +162,7 @@ MonoBehaviour:
   filledImage: {fileID: 6839356554405218166}
   isCooling: 0
   isLaunch: 0
+  roll: 0
 --- !u!61 &5608348819690497545
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -303,6 +306,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 1
 --- !u!114 &6120356812009752193
 MonoBehaviour:
   m_ObjectHideFlags: 0

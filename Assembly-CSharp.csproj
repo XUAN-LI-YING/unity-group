@@ -47,6 +47,7 @@
      <Compile Include="Assets\Team-00\Scripts\ChangeScene\win.cs" />
      <Compile Include="Assets\Team-00\Scripts\EnemySystem\EnemyMove.cs" />
      <Compile Include="Assets\Team-00\Scripts\TrapSystem\Player.cs" />
+     <Compile Include="Assets\Team-00\Scripts\NewSystem\rollCD.cs" />
      <Compile Include="Assets\Team-00\Scripts\TrapObject\SpikedTrapAni.cs" />
      <Compile Include="Assets\Team-00\Scripts\BigEnemy\bigEnemyHP.cs" />
      <Compile Include="Assets\Team-00\Scripts\ChangeScene\loadingChang.cs" />
@@ -112,6 +113,12 @@
      <Compile Include="Assets\Team-00\Scripts\level\edgeScrollingl.cs" />
      <Compile Include="Assets\Team-00\Scripts\TrapAni\blackAni.cs" />
      <Compile Include="Assets\Team-00\Scripts\FriendlySystem\friendlyMove.cs" />
+     <Compile Include="Assets\Team-00\Scripts\DevilEnemy\DevilEnemyPra.cs" />
+     <Compile Include="Assets\Team-00\Scripts\DevilEnemy\DevilEnemyMove.cs" />
+     <Compile Include="Assets\Team-00\Scripts\DevilEnemy\DevilEnemyHP.cs" />
+     <Compile Include="Assets\Team-00\Scripts\EnemySystem\level3catEnemyHP.cs" />
+     <Compile Include="Assets\Team-00\Scripts\EnemySystem\DevilCatMove.cs" />
+     <Compile Include="Assets\Team-00\Scripts\EnemySystem\level2CatMove.cs" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Plugin\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

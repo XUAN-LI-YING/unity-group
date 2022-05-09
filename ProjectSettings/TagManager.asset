@@ -23,6 +23,8 @@ TagManager:
   - Trap-06
   - devil
   - CanSpawn
+  - bigEnemy
+  - DevilEnemy
   layers:
   - Default
   - TransparentFX
@@ -30,8 +32,8 @@ TagManager:
   - 
   - Water
   - UI
-  - Ground
-  - Spawnpoint
+  - 
+  - 
   - monster
   - cat
   - Frienfly
@@ -40,11 +42,11 @@ TagManager:
   - animation
   - trap
   - Guard
-  - 
-  - 
-  - 
-  - 
-  - 
+  - bigenemy
+  - DevilEnemy
+  - sprike
+  - trapetrap
+  - DevilEnimy
   - 
   - 
   - 

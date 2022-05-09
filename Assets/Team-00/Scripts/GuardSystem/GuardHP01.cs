@@ -55,6 +55,16 @@ public class GuardHP01 : MonoBehaviour
              InvokeRepeating("guardBoold", 0f, 2);
             IsAttacking = true ;      
         }
+        if(coll.gameObject.tag=="bigEnemy")
+        {   //hp-0.1
+            
+            IsAttacking = true ;      
+        }
+        if(coll.gameObject.tag=="DevilEnemy")
+        {   //hp-0.1
+            InvokeRepeating("DevilguardBoold", 0f, 2);
+            IsAttacking = true ;      
+        }
     }
     void OnCollisionExit2D(Collision2D coll)
     
@@ -64,10 +74,25 @@ public class GuardHP01 : MonoBehaviour
            IsAttacking = false ;   
            CancelInvoke("guardBoold");
         }
+         if(coll.gameObject.tag=="bigEnemy")
+        {
+           IsAttacking = false ;   
+          
+        }
+         if(coll.gameObject.tag=="DevilEnemy")
+        {
+           IsAttacking = false ;   
+           CancelInvoke("DevilguardBoold");
+        }
     }
 
     void guardBoold()
     {
         hp = hp-3;
+    }
+
+    void DevilguardBoold()
+    {
+        hp = hp-6;
     }
 } 

@@ -27,5 +27,15 @@ public class Devil : MonoBehaviour
        touchCat+=1;
       
     }
+    if (col.tag == "bigEnemy")
+    {
+       touchCat+=1;
+      
+    }
+     if (col.tag == "DevilEnemy")
+    {
+       touchCat+=2;
+      
+    }
   }
 }
