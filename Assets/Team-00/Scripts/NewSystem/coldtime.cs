@@ -63,6 +63,10 @@ public class coldtime : MonoBehaviour
         {
             Trap.SetActive(true);
         }
+        // else                                            //映璇加的
+        // {
+        //     Trap.SetActive(false);
+        // }
         /*else if(filledImage.fillAmount != 0)
         {
             Trap.SetActive(true);

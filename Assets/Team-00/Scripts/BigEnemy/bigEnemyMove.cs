@@ -363,11 +363,17 @@ public class bigEnemyMove : MonoBehaviour
     }
 
     if (col.tag == "devil")
-    {
-       Destroy(this.gameObject);  
-    }
+        {
+            Invoke("destroy", 1.5f);
+           
+        }
   
   }
+
+  void destroy()
+    {
+         Destroy(this.gameObject);
+    }
 
   void OnCollisionStay2D(Collision2D coll){
 

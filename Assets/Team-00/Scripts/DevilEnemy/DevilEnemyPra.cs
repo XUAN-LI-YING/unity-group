@@ -84,7 +84,7 @@ public class DevilEnemyPra : MonoBehaviour
       {
          GameObject go = Instantiate(DevilPrefab) as GameObject;
         //定義產生位置
-        go.transform.position = new Vector3(-104, -17.3f, 0);
+        go.transform.position = new Vector3(-104, 31.2f, 16);
         this.delta = 0;
         createNumber+=1;
       }

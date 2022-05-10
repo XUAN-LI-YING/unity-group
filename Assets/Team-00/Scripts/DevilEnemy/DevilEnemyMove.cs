@@ -138,9 +138,9 @@ public class DevilEnemyMove : MonoBehaviour
              transform.Translate(speed * Time.deltaTime , 0, 0);          //固定一秒走固定距離
 
     	  
-            if (EnemyPos.x > 100 && EnemyPos.y >= 0 && EnemyPos.y <= 30){    //移動至下層樓
+            if (EnemyPos.x > 100 && EnemyPos.y >= 0 && EnemyPos.y <= 40){    //移動至下層樓
 
-            gameObject.transform.position = new Vector3(-99f, -10.8f, 0);
+            gameObject.transform.position = new Vector3(-114f, -13.5f, 16);
 
             }
             if (EnemyPos.y >= -20 && EnemyPos.y <= -5 && EnemyPos.x > 97)

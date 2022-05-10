@@ -14,7 +14,7 @@ public class GuardHP01 : MonoBehaviour
     void Start()
     { 
         IsAttacking = false ;
-        max_hp=20;
+        max_hp=50;
         hp=max_hp;
     }
 

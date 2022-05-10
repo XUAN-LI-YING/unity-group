@@ -6,6 +6,7 @@ public class SpikedTrapAni : MonoBehaviour
  {
   public static SpikedTrapAni instance;
   public bool touch;
+  public float fill=1;
   
   public GameObject monster;
   void Start()
@@ -57,7 +58,8 @@ public class SpikedTrapAni : MonoBehaviour
     if (col.tag == "Cat")
     {
       Instantiate(explode, transform.position, transform.rotation);
-  
+      // coldtime.filledImage.fillAmount =fill;
+
     }
     
   }

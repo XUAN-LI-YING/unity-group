@@ -378,12 +378,18 @@ public class DevilCatMove : MonoBehaviour
 
         }
 
-        if (col.tag == "devil")
+          if (col.tag == "devil")
         {
-            Destroy(this.gameObject);
+            Invoke("destroy", 2f);
+           
         }
-
     }
+
+     void destroy()
+    {
+         Destroy(this.gameObject);
+    }
+
 
     void OnCollisionStay2D(Collision2D coll)
     {

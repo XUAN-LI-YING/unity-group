@@ -380,10 +380,20 @@ public class level2CatMove : MonoBehaviour
 
         if (col.tag == "devil")
         {
-            Destroy(this.gameObject);
+            if (col.tag == "devil")
+            {
+            Invoke("destroy", 2f);
+           
+            }
         }
 
     }
+
+     void destroy()
+    {
+         Destroy(this.gameObject);
+    }
+
 
     void OnCollisionStay2D(Collision2D coll)
     {
